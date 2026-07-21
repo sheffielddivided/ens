@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dansk olje-, gass- og vannproduksjon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Dansk olje-, gass- og vannproduksjon</h1>
+    <p class="subtitle">
+      Produksjon fra danske olje- og gassfelt i Nordsjøen. Kilde:
+      <a href="https://ens.dk/en/energy-sources/monthly-and-yearly-production"
+         target="_blank" rel="noopener">Energistyrelsen (ENS)</a>.
+    </p>
+  </header>
+
+  <div id="sample-banner" class="banner hidden">
+    Viser <strong>syntetiske demodata</strong> – reelle data lastes av
+    oppdateringsjobben. Se README for hvordan du kjører pipelinen.
+  </div>
+  <div id="error-banner" class="banner error hidden"></div>
+
+  <main>
+    <section class="controls">
+      <label>
+        Felt
+        <select id="field-select"></select>
+      </label>
+      <label>
+        Serie
+        <select id="series-select"></select>
+      </label>
+      <fieldset class="resolution">
+        <legend>Oppløsning</legend>
+        <label><input type="radio" name="res" value="yearly" checked> År</label>
+        <label><input type="radio" name="res" value="monthly"> Måned</label>
+      </fieldset>
+    </section>
+
+    <section class="chart-wrap">
+      <canvas id="chart" aria-label="Produksjonsgraf" role="img"></canvas>
+    </section>
+
+    <section class="legend-note">
+      <span class="swatch solid"></span> Endelige årstall
+      <span class="swatch dashed"></span> Foreløpige tall (måneds­estimater)
+    </section>
+
+    <section id="summary" class="summary"></section>
+  </main>
+
+  <footer>
+    <p id="last-updated"></p>
+    <p>
+      Månedstall er foreløpige estimater og overstyres av de endelige årstallene.
+      Åpen kildekode på
+      <a href="https://github.com/sheffielddivided/ens" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
