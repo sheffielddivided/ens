@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-21T21:25:10Z",
+  "generated_at": "2026-07-21T22:06:40Z",
   "source_pages": [
     "https://ens.dk/en/energy-sources/monthly-and-yearly-production"
   ],
@@ -1023,28 +1023,28 @@
       "records": 14
     },
     {
-      "url": "https://ens.dk/media/7244/download ",
+      "url": "https://ens.dk/media/7244/download",
       "year": 2025,
       "month": 1,
       "format": "pdf",
       "unit_system": "si",
       "link_text": "January 2025",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "404 Client Error: Not Found for url: https://ens.dk/media/7244/download%20",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:06:43Z",
+      "error": null,
+      "records": 13
     },
     {
-      "url": "https://ens.dk/media/7245/download ",
+      "url": "https://ens.dk/media/7245/download",
       "year": 2025,
       "month": 2,
       "format": "pdf",
       "unit_system": "si",
       "link_text": "February 2025",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "404 Client Error: Not Found for url: https://ens.dk/media/7245/download%20",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:06:45Z",
+      "error": null,
+      "records": 12
     },
     {
       "url": "https://ens.dk/media/7246/download",
