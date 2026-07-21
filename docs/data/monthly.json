@@ -1,0 +1,4146 @@
+{
+  "schema_version": 1,
+  "unit_definitions": {
+    "oil": "1000 m3",
+    "gas": "mio. Nm3",
+    "water": "1000 m3"
+  },
+  "records": [
+    {
+      "field": "0_2",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "0_2",
+      "year": 2025,
+      "month": 5,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "0_3",
+      "year": 2025,
+      "month": 7,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "0_4",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "0_4",
+      "year": 2025,
+      "month": 5,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "0_5",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "0_5",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "0_5",
+      "year": 2025,
+      "month": 5,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "0_6",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "0_6",
+      "year": 2025,
+      "month": 7,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "0_9",
+      "year": 2025,
+      "month": 7,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "100_0",
+      "year": 2024,
+      "month": 5,
+      "gas": 3.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "10_9",
+      "year": 2025,
+      "month": 7,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "11_3",
+      "year": 2025,
+      "month": 7,
+      "gas": 0.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "124_5",
+      "year": 2024,
+      "month": 7,
+      "gas": 3.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "128_1",
+      "year": 2024,
+      "month": 5,
+      "gas": 3.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "14_2",
+      "year": 2025,
+      "month": 5,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "14_3",
+      "year": 2025,
+      "month": 5,
+      "gas": 0.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "15_7",
+      "year": 2025,
+      "month": 5,
+      "gas": 0.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "15_7",
+      "year": 2025,
+      "month": 7,
+      "gas": 0.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "167_7",
+      "year": 2025,
+      "month": 7,
+      "gas": 6.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "16_2",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "17_9",
+      "year": 2025,
+      "month": 5,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "196_4",
+      "year": 2025,
+      "month": 5,
+      "gas": 7.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "19_6",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "19_9",
+      "year": 2025,
+      "month": 5,
+      "gas": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "1_1",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "1_1",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "1_3",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "1_6",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "1_9",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "1_9",
+      "year": 2025,
+      "month": 5,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "207_5",
+      "year": 2024,
+      "month": 7,
+      "gas": 5.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "217_4",
+      "year": 2024,
+      "month": 5,
+      "gas": 6.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "21_5",
+      "year": 2025,
+      "month": 7,
+      "gas": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "222_1",
+      "year": 2025,
+      "month": 5,
+      "gas": 3.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "243_7",
+      "year": 2025,
+      "month": 7,
+      "gas": 4.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "25_2",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "27_3",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "27_3",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "27_4",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "281_1",
+      "year": 2024,
+      "month": 7,
+      "gas": 8.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "288_2",
+      "year": 2025,
+      "month": 7,
+      "gas": 11.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "28_1",
+      "year": 2025,
+      "month": 7,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "28_4",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "28_7",
+      "year": 2025,
+      "month": 7,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "2_0",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "2_1",
+      "year": 2025,
+      "month": 7,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "2_3",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "2_3",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "33_9",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "343_2",
+      "year": 2024,
+      "month": 5,
+      "gas": 9.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "347_9",
+      "year": 2024,
+      "month": 5,
+      "gas": 10.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "35_9",
+      "year": 2024,
+      "month": 5,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "376_7",
+      "year": 2025,
+      "month": 7,
+      "gas": 10.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "386_7",
+      "year": 2024,
+      "month": 7,
+      "gas": 12.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "407_0",
+      "year": 2025,
+      "month": 5,
+      "gas": 9.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "41_1",
+      "year": 2024,
+      "month": 7,
+      "gas": 1.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "41_7",
+      "year": 2025,
+      "month": 5,
+      "gas": 2.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "426_2",
+      "year": 2025,
+      "month": 5,
+      "gas": 12.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "42_0",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "42_2",
+      "year": 2025,
+      "month": 5,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "44_2",
+      "year": 2024,
+      "month": 7,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "4_0",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "4_4",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "4_7",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "4_8",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "4_9",
+      "year": 2025,
+      "month": 5,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "545_1",
+      "year": 2025,
+      "month": 5,
+      "gas": 28.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "54_7",
+      "year": 2025,
+      "month": 5,
+      "gas": 2.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "55_0",
+      "year": 2025,
+      "month": 7,
+      "gas": 2.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "59_8",
+      "year": 2025,
+      "month": 7,
+      "gas": 1.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "5_0",
+      "year": 2025,
+      "month": 5,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "5_4",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "5_6",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "5_6",
+      "year": 2025,
+      "month": 7,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "5_8",
+      "year": 2025,
+      "month": 5,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "60_2",
+      "year": 2025,
+      "month": 7,
+      "gas": 2.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "64_9",
+      "year": 2024,
+      "month": 7,
+      "gas": 1.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "6_4",
+      "year": 2025,
+      "month": 7,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "6_6",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "70_5",
+      "year": 2024,
+      "month": 5,
+      "gas": 2.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "73_7",
+      "year": 2024,
+      "month": 7,
+      "gas": 2.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "742_4",
+      "year": 2025,
+      "month": 7,
+      "gas": 27.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "76_2",
+      "year": 2024,
+      "month": 5,
+      "gas": 2.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "77_2",
+      "year": 2025,
+      "month": 5,
+      "gas": 0.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "78_6",
+      "year": 2025,
+      "month": 7,
+      "gas": 3.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "852_7",
+      "year": 2024,
+      "month": 5,
+      "gas": 27.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "853_7",
+      "year": 2024,
+      "month": 7,
+      "gas": 23.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "89_9",
+      "year": 2025,
+      "month": 5,
+      "gas": 3.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "8_0",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "8_1",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "8_7",
+      "year": 2024,
+      "month": 7,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "8_8",
+      "year": 2025,
+      "month": 5,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7248/download",
+      "retrieved_at": "2026-07-21T21:45:00Z"
+    },
+    {
+      "field": "91_8",
+      "year": 2024,
+      "month": 7,
+      "gas": 3.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6345/download",
+      "retrieved_at": "2026-07-21T21:43:46Z"
+    },
+    {
+      "field": "9_1",
+      "year": 2024,
+      "month": 5,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6341/download",
+      "retrieved_at": "2026-07-21T21:43:43Z"
+    },
+    {
+      "field": "9_5",
+      "year": 2025,
+      "month": 7,
+      "gas": 1.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "9_6",
+      "year": 2025,
+      "month": 7,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7250/download",
+      "retrieved_at": "2026-07-21T21:45:03Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2024,
+      "month": 1,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6333/download",
+      "retrieved_at": "2026-07-21T21:43:37Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2024,
+      "month": 2,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6335/download",
+      "retrieved_at": "2026-07-21T21:43:39Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2024,
+      "month": 3,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6337/download",
+      "retrieved_at": "2026-07-21T21:43:40Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2024,
+      "month": 4,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6339/download",
+      "retrieved_at": "2026-07-21T21:43:41Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2024,
+      "month": 6,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6343/download",
+      "retrieved_at": "2026-07-21T21:43:44Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2024,
+      "month": 8,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6347/download",
+      "retrieved_at": "2026-07-21T21:43:47Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2024,
+      "month": 9,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6349/download",
+      "retrieved_at": "2026-07-21T21:43:49Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2024,
+      "month": 10,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6351/download",
+      "retrieved_at": "2026-07-21T21:43:51Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2024,
+      "month": 11,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6353/download",
+      "retrieved_at": "2026-07-21T21:43:52Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2024,
+      "month": 12,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2025,
+      "month": 3,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2025,
+      "month": 4,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2025,
+      "month": 6,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2025,
+      "month": 8,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2025,
+      "month": 9,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2025,
+      "month": 10,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2025,
+      "month": 11,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2025,
+      "month": 12,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2026,
+      "month": 1,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2026,
+      "month": 2,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2026,
+      "month": 3,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2026,
+      "month": 4,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2026,
+      "month": 5,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "cecilie",
+      "year": 2026,
+      "month": 6,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "dan",
+      "year": 2024,
+      "month": 1,
+      "oil": 29.0,
+      "gas": 24.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6333/download",
+      "retrieved_at": "2026-07-21T21:43:37Z"
+    },
+    {
+      "field": "dan",
+      "year": 2024,
+      "month": 2,
+      "oil": 27.9,
+      "gas": 25.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6335/download",
+      "retrieved_at": "2026-07-21T21:43:39Z"
+    },
+    {
+      "field": "dan",
+      "year": 2024,
+      "month": 3,
+      "oil": 27.1,
+      "gas": 26.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6337/download",
+      "retrieved_at": "2026-07-21T21:43:40Z"
+    },
+    {
+      "field": "dan",
+      "year": 2024,
+      "month": 4,
+      "oil": 27.7,
+      "gas": 26.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6339/download",
+      "retrieved_at": "2026-07-21T21:43:41Z"
+    },
+    {
+      "field": "dan",
+      "year": 2024,
+      "month": 6,
+      "oil": 28.8,
+      "gas": 24.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6343/download",
+      "retrieved_at": "2026-07-21T21:43:44Z"
+    },
+    {
+      "field": "dan",
+      "year": 2024,
+      "month": 8,
+      "oil": 27.5,
+      "gas": 23.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6347/download",
+      "retrieved_at": "2026-07-21T21:43:47Z"
+    },
+    {
+      "field": "dan",
+      "year": 2024,
+      "month": 9,
+      "oil": 26.8,
+      "gas": 28.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6349/download",
+      "retrieved_at": "2026-07-21T21:43:49Z"
+    },
+    {
+      "field": "dan",
+      "year": 2024,
+      "month": 10,
+      "oil": 26.8,
+      "gas": 30.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6351/download",
+      "retrieved_at": "2026-07-21T21:43:51Z"
+    },
+    {
+      "field": "dan",
+      "year": 2024,
+      "month": 11,
+      "oil": 26.8,
+      "gas": 30.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6353/download",
+      "retrieved_at": "2026-07-21T21:43:52Z"
+    },
+    {
+      "field": "dan",
+      "year": 2024,
+      "month": 12,
+      "oil": 27.1,
+      "gas": 29.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "dan",
+      "year": 2025,
+      "month": 3,
+      "oil": 24.6,
+      "gas": 27.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "dan",
+      "year": 2025,
+      "month": 4,
+      "oil": 26.3,
+      "gas": 27.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "dan",
+      "year": 2025,
+      "month": 6,
+      "oil": 24.1,
+      "gas": 28.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "dan",
+      "year": 2025,
+      "month": 8,
+      "oil": 20.6,
+      "gas": 27.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "dan",
+      "year": 2025,
+      "month": 9,
+      "oil": 23.5,
+      "gas": 26.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "dan",
+      "year": 2025,
+      "month": 10,
+      "oil": 24.8,
+      "gas": 26.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "dan",
+      "year": 2025,
+      "month": 11,
+      "oil": 24.8,
+      "gas": 26.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "dan",
+      "year": 2025,
+      "month": 12,
+      "oil": 24.7,
+      "gas": 26.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "dan",
+      "year": 2026,
+      "month": 1,
+      "oil": 25.6,
+      "gas": 25.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "dan",
+      "year": 2026,
+      "month": 2,
+      "oil": 26.4,
+      "gas": 24.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "dan",
+      "year": 2026,
+      "month": 3,
+      "oil": 26.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "dan",
+      "year": 2026,
+      "month": 4,
+      "oil": 25.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "dan",
+      "year": 2026,
+      "month": 5,
+      "oil": 25.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "dan",
+      "year": 2026,
+      "month": 6,
+      "oil": 24.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2024,
+      "month": 1,
+      "oil": 7.6,
+      "gas": 5.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6333/download",
+      "retrieved_at": "2026-07-21T21:43:37Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2024,
+      "month": 2,
+      "oil": 7.6,
+      "gas": 6.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6335/download",
+      "retrieved_at": "2026-07-21T21:43:39Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2024,
+      "month": 3,
+      "oil": 7.9,
+      "gas": 5.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6337/download",
+      "retrieved_at": "2026-07-21T21:43:40Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2024,
+      "month": 4,
+      "oil": 7.8,
+      "gas": 6.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6339/download",
+      "retrieved_at": "2026-07-21T21:43:41Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2024,
+      "month": 6,
+      "oil": 7.2,
+      "gas": 6.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6343/download",
+      "retrieved_at": "2026-07-21T21:43:44Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2024,
+      "month": 8,
+      "oil": 6.6,
+      "gas": 5.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6347/download",
+      "retrieved_at": "2026-07-21T21:43:47Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2024,
+      "month": 9,
+      "oil": 6.9,
+      "gas": 5.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6349/download",
+      "retrieved_at": "2026-07-21T21:43:49Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2024,
+      "month": 10,
+      "oil": 6.8,
+      "gas": 5.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6351/download",
+      "retrieved_at": "2026-07-21T21:43:51Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2024,
+      "month": 11,
+      "oil": 6.1,
+      "gas": 6.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6353/download",
+      "retrieved_at": "2026-07-21T21:43:52Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2024,
+      "month": 12,
+      "oil": 5.7,
+      "gas": 7.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2025,
+      "month": 3,
+      "oil": 5.8,
+      "gas": 7.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2025,
+      "month": 4,
+      "oil": 3.9,
+      "gas": 7.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2025,
+      "month": 6,
+      "oil": 4.4,
+      "gas": 7.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2025,
+      "month": 8,
+      "oil": 6.0,
+      "gas": 6.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2025,
+      "month": 9,
+      "oil": 6.2,
+      "gas": 6.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2025,
+      "month": 10,
+      "oil": 5.7,
+      "gas": 6.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2025,
+      "month": 11,
+      "oil": 6.3,
+      "gas": 6.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2025,
+      "month": 12,
+      "oil": 6.8,
+      "gas": 5.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2026,
+      "month": 1,
+      "oil": 8.1,
+      "gas": 6.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2026,
+      "month": 2,
+      "oil": 7.9,
+      "gas": 6.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2026,
+      "month": 3,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2026,
+      "month": 4,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2026,
+      "month": 5,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "gorm",
+      "year": 2026,
+      "month": 6,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2024,
+      "month": 1,
+      "oil": 2.0,
+      "gas": 2.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6333/download",
+      "retrieved_at": "2026-07-21T21:43:37Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2024,
+      "month": 2,
+      "oil": 1.9,
+      "gas": 2.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6335/download",
+      "retrieved_at": "2026-07-21T21:43:39Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2024,
+      "month": 3,
+      "oil": 1.9,
+      "gas": 2.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6337/download",
+      "retrieved_at": "2026-07-21T21:43:40Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2024,
+      "month": 4,
+      "oil": 1.9,
+      "gas": 2.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6339/download",
+      "retrieved_at": "2026-07-21T21:43:41Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2024,
+      "month": 6,
+      "oil": 2.2,
+      "gas": 2.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6343/download",
+      "retrieved_at": "2026-07-21T21:43:44Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2024,
+      "month": 8,
+      "oil": 2.1,
+      "gas": 1.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6347/download",
+      "retrieved_at": "2026-07-21T21:43:47Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2024,
+      "month": 9,
+      "oil": 2.1,
+      "gas": 2.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6349/download",
+      "retrieved_at": "2026-07-21T21:43:49Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2024,
+      "month": 10,
+      "oil": 2.1,
+      "gas": 1.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6351/download",
+      "retrieved_at": "2026-07-21T21:43:51Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2024,
+      "month": 11,
+      "oil": 2.1,
+      "gas": 1.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6353/download",
+      "retrieved_at": "2026-07-21T21:43:52Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2024,
+      "month": 12,
+      "oil": 2.0,
+      "gas": 1.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2025,
+      "month": 3,
+      "oil": 1.9,
+      "gas": 1.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2025,
+      "month": 4,
+      "oil": 1.8,
+      "gas": 1.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2025,
+      "month": 6,
+      "oil": 1.6,
+      "gas": 2.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2025,
+      "month": 8,
+      "oil": 1.7,
+      "gas": 2.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2025,
+      "month": 9,
+      "oil": 1.8,
+      "gas": 2.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2025,
+      "month": 10,
+      "oil": 1.8,
+      "gas": 2.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2025,
+      "month": 11,
+      "oil": 1.8,
+      "gas": 2.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2025,
+      "month": 12,
+      "oil": 1.8,
+      "gas": 2.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2026,
+      "month": 1,
+      "oil": 1.7,
+      "gas": 2.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2026,
+      "month": 2,
+      "oil": 1.7,
+      "gas": 1.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2026,
+      "month": 3,
+      "oil": 1.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2026,
+      "month": 4,
+      "oil": 1.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2026,
+      "month": 5,
+      "oil": 1.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "halfdan",
+      "year": 2026,
+      "month": 6,
+      "oil": 1.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "harald",
+      "year": 2024,
+      "month": 8,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6347/download",
+      "retrieved_at": "2026-07-21T21:43:47Z"
+    },
+    {
+      "field": "harald",
+      "year": 2024,
+      "month": 9,
+      "oil": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6349/download",
+      "retrieved_at": "2026-07-21T21:43:49Z"
+    },
+    {
+      "field": "harald",
+      "year": 2024,
+      "month": 10,
+      "oil": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6351/download",
+      "retrieved_at": "2026-07-21T21:43:51Z"
+    },
+    {
+      "field": "harald",
+      "year": 2024,
+      "month": 11,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6353/download",
+      "retrieved_at": "2026-07-21T21:43:52Z"
+    },
+    {
+      "field": "harald",
+      "year": 2024,
+      "month": 12,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "harald",
+      "year": 2025,
+      "month": 3,
+      "oil": 1.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "harald",
+      "year": 2025,
+      "month": 4,
+      "oil": 1.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "harald",
+      "year": 2025,
+      "month": 6,
+      "oil": 2.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "harald",
+      "year": 2025,
+      "month": 8,
+      "oil": 2.1,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "harald",
+      "year": 2025,
+      "month": 9,
+      "oil": 2.2,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "harald",
+      "year": 2025,
+      "month": 10,
+      "oil": 2.1,
+      "gas": 0.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "harald",
+      "year": 2025,
+      "month": 11,
+      "oil": 1.9,
+      "gas": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "harald",
+      "year": 2025,
+      "month": 12,
+      "oil": 2.1,
+      "gas": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "harald",
+      "year": 2026,
+      "month": 1,
+      "oil": 2.1,
+      "gas": 0.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "harald",
+      "year": 2026,
+      "month": 2,
+      "oil": 2.3,
+      "gas": 0.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "harald",
+      "year": 2026,
+      "month": 3,
+      "oil": 2.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "harald",
+      "year": 2026,
+      "month": 4,
+      "oil": 2.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "harald",
+      "year": 2026,
+      "month": 5,
+      "oil": 2.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "harald",
+      "year": 2026,
+      "month": 6,
+      "oil": 2.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2024,
+      "month": 1,
+      "oil": 1.2,
+      "gas": 0.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6333/download",
+      "retrieved_at": "2026-07-21T21:43:37Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2024,
+      "month": 2,
+      "oil": 1.2,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6335/download",
+      "retrieved_at": "2026-07-21T21:43:39Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2024,
+      "month": 3,
+      "oil": 1.1,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6337/download",
+      "retrieved_at": "2026-07-21T21:43:40Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2024,
+      "month": 4,
+      "oil": 1.1,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6339/download",
+      "retrieved_at": "2026-07-21T21:43:41Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2024,
+      "month": 6,
+      "oil": 1.1,
+      "gas": 0.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6343/download",
+      "retrieved_at": "2026-07-21T21:43:44Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2024,
+      "month": 8,
+      "oil": 1.0,
+      "gas": 0.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6347/download",
+      "retrieved_at": "2026-07-21T21:43:47Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2024,
+      "month": 9,
+      "oil": 0.8,
+      "gas": 0.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6349/download",
+      "retrieved_at": "2026-07-21T21:43:49Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2024,
+      "month": 10,
+      "oil": 0.8,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6351/download",
+      "retrieved_at": "2026-07-21T21:43:51Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2024,
+      "month": 11,
+      "oil": 0.8,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6353/download",
+      "retrieved_at": "2026-07-21T21:43:52Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2024,
+      "month": 12,
+      "oil": 0.9,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2025,
+      "month": 3,
+      "oil": 0.4,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2025,
+      "month": 4,
+      "oil": 0.4,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2025,
+      "month": 6,
+      "oil": 0.7,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2025,
+      "month": 8,
+      "oil": 0.7,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2025,
+      "month": 9,
+      "oil": 1.3,
+      "gas": 1.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2025,
+      "month": 10,
+      "oil": 1.2,
+      "gas": 1.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2025,
+      "month": 11,
+      "oil": 1.2,
+      "gas": 1.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2025,
+      "month": 12,
+      "oil": 1.2,
+      "gas": 1.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2026,
+      "month": 1,
+      "oil": 1.2,
+      "gas": 1.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2026,
+      "month": 2,
+      "oil": 1.4,
+      "gas": 1.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2026,
+      "month": 3,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2026,
+      "month": 4,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2026,
+      "month": 5,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2026,
+      "month": 6,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "nini",
+      "year": 2024,
+      "month": 1,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6333/download",
+      "retrieved_at": "2026-07-21T21:43:37Z"
+    },
+    {
+      "field": "nini",
+      "year": 2024,
+      "month": 2,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6335/download",
+      "retrieved_at": "2026-07-21T21:43:39Z"
+    },
+    {
+      "field": "nini",
+      "year": 2024,
+      "month": 3,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6337/download",
+      "retrieved_at": "2026-07-21T21:43:40Z"
+    },
+    {
+      "field": "nini",
+      "year": 2024,
+      "month": 4,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6339/download",
+      "retrieved_at": "2026-07-21T21:43:41Z"
+    },
+    {
+      "field": "nini",
+      "year": 2024,
+      "month": 6,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6343/download",
+      "retrieved_at": "2026-07-21T21:43:44Z"
+    },
+    {
+      "field": "nini",
+      "year": 2024,
+      "month": 8,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6347/download",
+      "retrieved_at": "2026-07-21T21:43:47Z"
+    },
+    {
+      "field": "nini",
+      "year": 2024,
+      "month": 9,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6349/download",
+      "retrieved_at": "2026-07-21T21:43:49Z"
+    },
+    {
+      "field": "nini",
+      "year": 2024,
+      "month": 10,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6351/download",
+      "retrieved_at": "2026-07-21T21:43:51Z"
+    },
+    {
+      "field": "nini",
+      "year": 2024,
+      "month": 11,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6353/download",
+      "retrieved_at": "2026-07-21T21:43:52Z"
+    },
+    {
+      "field": "nini",
+      "year": 2024,
+      "month": 12,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "nini",
+      "year": 2025,
+      "month": 3,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "nini",
+      "year": 2025,
+      "month": 4,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "nini",
+      "year": 2025,
+      "month": 6,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "nini",
+      "year": 2025,
+      "month": 8,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "nini",
+      "year": 2025,
+      "month": 9,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "nini",
+      "year": 2025,
+      "month": 10,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "nini",
+      "year": 2025,
+      "month": 11,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "nini",
+      "year": 2025,
+      "month": 12,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "nini",
+      "year": 2026,
+      "month": 1,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "nini",
+      "year": 2026,
+      "month": 2,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "nini",
+      "year": 2026,
+      "month": 3,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "nini",
+      "year": 2026,
+      "month": 4,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "nini",
+      "year": 2026,
+      "month": 5,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "nini",
+      "year": 2026,
+      "month": 6,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "roar",
+      "year": 2025,
+      "month": 3,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "roar",
+      "year": 2025,
+      "month": 4,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "roar",
+      "year": 2025,
+      "month": 6,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "roar",
+      "year": 2025,
+      "month": 8,
+      "oil": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "roar",
+      "year": 2025,
+      "month": 9,
+      "oil": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "roar",
+      "year": 2025,
+      "month": 10,
+      "oil": 0.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "roar",
+      "year": 2025,
+      "month": 11,
+      "oil": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "roar",
+      "year": 2025,
+      "month": 12,
+      "oil": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "roar",
+      "year": 2026,
+      "month": 1,
+      "oil": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "roar",
+      "year": 2026,
+      "month": 2,
+      "oil": 0.4,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "roar",
+      "year": 2026,
+      "month": 3,
+      "oil": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "roar",
+      "year": 2026,
+      "month": 4,
+      "oil": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "roar",
+      "year": 2026,
+      "month": 5,
+      "oil": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "roar",
+      "year": 2026,
+      "month": 6,
+      "oil": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2024,
+      "month": 1,
+      "oil": 1.2,
+      "gas": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6333/download",
+      "retrieved_at": "2026-07-21T21:43:37Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2024,
+      "month": 2,
+      "oil": 1.1,
+      "gas": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6335/download",
+      "retrieved_at": "2026-07-21T21:43:39Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2024,
+      "month": 3,
+      "oil": 1.2,
+      "gas": 0.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6337/download",
+      "retrieved_at": "2026-07-21T21:43:40Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2024,
+      "month": 4,
+      "oil": 1.1,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6339/download",
+      "retrieved_at": "2026-07-21T21:43:41Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2024,
+      "month": 6,
+      "oil": 1.1,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6343/download",
+      "retrieved_at": "2026-07-21T21:43:44Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2024,
+      "month": 8,
+      "oil": 1.3,
+      "gas": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6347/download",
+      "retrieved_at": "2026-07-21T21:43:47Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2024,
+      "month": 9,
+      "oil": 1.2,
+      "gas": 0.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6349/download",
+      "retrieved_at": "2026-07-21T21:43:49Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2024,
+      "month": 10,
+      "oil": 1.1,
+      "gas": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6351/download",
+      "retrieved_at": "2026-07-21T21:43:51Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2024,
+      "month": 11,
+      "oil": 1.0,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6353/download",
+      "retrieved_at": "2026-07-21T21:43:52Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2024,
+      "month": 12,
+      "oil": 1.0,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2025,
+      "month": 3,
+      "oil": 0.6,
+      "gas": 1.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2025,
+      "month": 4,
+      "oil": 0.4,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2025,
+      "month": 6,
+      "oil": 0.1,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2025,
+      "month": 8,
+      "oil": 0.3,
+      "gas": 1.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2025,
+      "month": 9,
+      "oil": 0.3,
+      "gas": 1.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2025,
+      "month": 10,
+      "oil": 0.3,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2025,
+      "month": 11,
+      "oil": 0.4,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2025,
+      "month": 12,
+      "oil": 0.5,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2026,
+      "month": 1,
+      "oil": 0.7,
+      "gas": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2026,
+      "month": 2,
+      "oil": 0.8,
+      "gas": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2026,
+      "month": 3,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2026,
+      "month": 4,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2026,
+      "month": 5,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "rolf",
+      "year": 2026,
+      "month": 6,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "siri",
+      "year": 2024,
+      "month": 1,
+      "oil": 0.0,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6333/download",
+      "retrieved_at": "2026-07-21T21:43:37Z"
+    },
+    {
+      "field": "siri",
+      "year": 2024,
+      "month": 2,
+      "oil": 0.1,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6335/download",
+      "retrieved_at": "2026-07-21T21:43:39Z"
+    },
+    {
+      "field": "siri",
+      "year": 2024,
+      "month": 3,
+      "oil": 0.1,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6337/download",
+      "retrieved_at": "2026-07-21T21:43:40Z"
+    },
+    {
+      "field": "siri",
+      "year": 2024,
+      "month": 4,
+      "oil": 0.1,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6339/download",
+      "retrieved_at": "2026-07-21T21:43:41Z"
+    },
+    {
+      "field": "siri",
+      "year": 2024,
+      "month": 6,
+      "oil": 0.1,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6343/download",
+      "retrieved_at": "2026-07-21T21:43:44Z"
+    },
+    {
+      "field": "siri",
+      "year": 2024,
+      "month": 8,
+      "oil": 0.1,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6347/download",
+      "retrieved_at": "2026-07-21T21:43:47Z"
+    },
+    {
+      "field": "siri",
+      "year": 2024,
+      "month": 9,
+      "oil": 0.1,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6349/download",
+      "retrieved_at": "2026-07-21T21:43:49Z"
+    },
+    {
+      "field": "siri",
+      "year": 2024,
+      "month": 10,
+      "oil": 0.1,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6351/download",
+      "retrieved_at": "2026-07-21T21:43:51Z"
+    },
+    {
+      "field": "siri",
+      "year": 2024,
+      "month": 11,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6353/download",
+      "retrieved_at": "2026-07-21T21:43:52Z"
+    },
+    {
+      "field": "siri",
+      "year": 2024,
+      "month": 12,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "siri",
+      "year": 2025,
+      "month": 3,
+      "oil": 0.0,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "siri",
+      "year": 2025,
+      "month": 4,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "siri",
+      "year": 2025,
+      "month": 6,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "siri",
+      "year": 2025,
+      "month": 8,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "siri",
+      "year": 2025,
+      "month": 9,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "siri",
+      "year": 2025,
+      "month": 10,
+      "oil": 0.0,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "siri",
+      "year": 2025,
+      "month": 11,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "siri",
+      "year": 2025,
+      "month": 12,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "siri",
+      "year": 2026,
+      "month": 1,
+      "oil": 0.0,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "siri",
+      "year": 2026,
+      "month": 2,
+      "oil": 0.1,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "siri",
+      "year": 2026,
+      "month": 3,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "siri",
+      "year": 2026,
+      "month": 4,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "siri",
+      "year": 2026,
+      "month": 5,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "siri",
+      "year": 2026,
+      "month": 6,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2024,
+      "month": 1,
+      "oil": 12.7,
+      "gas": 11.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6333/download",
+      "retrieved_at": "2026-07-21T21:43:37Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2024,
+      "month": 2,
+      "oil": 12.2,
+      "gas": 11.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6335/download",
+      "retrieved_at": "2026-07-21T21:43:39Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2024,
+      "month": 3,
+      "oil": 12.9,
+      "gas": 10.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6337/download",
+      "retrieved_at": "2026-07-21T21:43:40Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2024,
+      "month": 4,
+      "oil": 12.5,
+      "gas": 11.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6339/download",
+      "retrieved_at": "2026-07-21T21:43:41Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2024,
+      "month": 6,
+      "oil": 11.3,
+      "gas": 12.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6343/download",
+      "retrieved_at": "2026-07-21T21:43:44Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2024,
+      "month": 8,
+      "oil": 11.9,
+      "gas": 12.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6347/download",
+      "retrieved_at": "2026-07-21T21:43:47Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2024,
+      "month": 9,
+      "oil": 12.5,
+      "gas": 11.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6349/download",
+      "retrieved_at": "2026-07-21T21:43:49Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2024,
+      "month": 10,
+      "oil": 12.6,
+      "gas": 11.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6351/download",
+      "retrieved_at": "2026-07-21T21:43:51Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2024,
+      "month": 11,
+      "oil": 12.2,
+      "gas": 12.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6353/download",
+      "retrieved_at": "2026-07-21T21:43:52Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2024,
+      "month": 12,
+      "oil": 12.3,
+      "gas": 12.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2025,
+      "month": 3,
+      "oil": 10.8,
+      "gas": 12.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2025,
+      "month": 4,
+      "oil": 7.9,
+      "gas": 12.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2025,
+      "month": 6,
+      "oil": 10.4,
+      "gas": 11.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2025,
+      "month": 8,
+      "oil": 11.6,
+      "gas": 11.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2025,
+      "month": 9,
+      "oil": 10.9,
+      "gas": 12.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2025,
+      "month": 10,
+      "oil": 9.5,
+      "gas": 12.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2025,
+      "month": 11,
+      "oil": 10.1,
+      "gas": 12.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2025,
+      "month": 12,
+      "oil": 10.6,
+      "gas": 12.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2026,
+      "month": 1,
+      "oil": 11.8,
+      "gas": 12.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2026,
+      "month": 2,
+      "oil": 11.6,
+      "gas": 12.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2026,
+      "month": 3,
+      "oil": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2026,
+      "month": 4,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2026,
+      "month": 5,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "skjold",
+      "year": 2026,
+      "month": 6,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2024,
+      "month": 4,
+      "oil": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6339/download",
+      "retrieved_at": "2026-07-21T21:43:41Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2024,
+      "month": 6,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6343/download",
+      "retrieved_at": "2026-07-21T21:43:44Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2024,
+      "month": 8,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6347/download",
+      "retrieved_at": "2026-07-21T21:43:47Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2024,
+      "month": 9,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6349/download",
+      "retrieved_at": "2026-07-21T21:43:49Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2024,
+      "month": 10,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6351/download",
+      "retrieved_at": "2026-07-21T21:43:51Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2024,
+      "month": 11,
+      "oil": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6353/download",
+      "retrieved_at": "2026-07-21T21:43:52Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2024,
+      "month": 12,
+      "oil": 0.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2025,
+      "month": 3,
+      "oil": 0.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2025,
+      "month": 4,
+      "oil": 0.5,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2025,
+      "month": 6,
+      "oil": 0.4,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2025,
+      "month": 8,
+      "oil": 0.4,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2025,
+      "month": 9,
+      "oil": 0.3,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2025,
+      "month": 10,
+      "oil": 0.3,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2025,
+      "month": 11,
+      "oil": 0.2,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2025,
+      "month": 12,
+      "oil": 0.2,
+      "gas": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2026,
+      "month": 1,
+      "oil": 0.1,
+      "gas": 0.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2026,
+      "month": 2,
+      "oil": 0.1,
+      "gas": 0.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2026,
+      "month": 3,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2026,
+      "month": 4,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2026,
+      "month": 5,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2026,
+      "month": 6,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2024,
+      "month": 1,
+      "oil": 0.3,
+      "gas": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6333/download",
+      "retrieved_at": "2026-07-21T21:43:37Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2024,
+      "month": 2,
+      "oil": 0.3,
+      "gas": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6335/download",
+      "retrieved_at": "2026-07-21T21:43:39Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2024,
+      "month": 3,
+      "oil": 0.3,
+      "gas": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6337/download",
+      "retrieved_at": "2026-07-21T21:43:40Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2024,
+      "month": 4,
+      "oil": 0.3,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6339/download",
+      "retrieved_at": "2026-07-21T21:43:41Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2024,
+      "month": 6,
+      "oil": 0.2,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6343/download",
+      "retrieved_at": "2026-07-21T21:43:44Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2024,
+      "month": 8,
+      "oil": 0.2,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6347/download",
+      "retrieved_at": "2026-07-21T21:43:47Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2024,
+      "month": 9,
+      "oil": 0.2,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6349/download",
+      "retrieved_at": "2026-07-21T21:43:49Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2024,
+      "month": 10,
+      "oil": 0.2,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6351/download",
+      "retrieved_at": "2026-07-21T21:43:51Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2024,
+      "month": 11,
+      "oil": 0.2,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6353/download",
+      "retrieved_at": "2026-07-21T21:43:52Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2024,
+      "month": 12,
+      "oil": 0.2,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2025,
+      "month": 3,
+      "oil": 0.2,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2025,
+      "month": 4,
+      "oil": 0.2,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2025,
+      "month": 6,
+      "oil": 0.2,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2025,
+      "month": 8,
+      "oil": 0.2,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2025,
+      "month": 9,
+      "oil": 0.2,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2025,
+      "month": 10,
+      "oil": 0.2,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2025,
+      "month": 11,
+      "oil": 0.2,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2025,
+      "month": 12,
+      "oil": 0.2,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2026,
+      "month": 1,
+      "oil": 0.2,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2026,
+      "month": 2,
+      "oil": 0.2,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2026,
+      "month": 3,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2026,
+      "month": 4,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2026,
+      "month": 5,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "syd_arne",
+      "year": 2026,
+      "month": 6,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2024,
+      "month": 12,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2025,
+      "month": 3,
+      "oil": 1.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2025,
+      "month": 4,
+      "oil": 1.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2025,
+      "month": 6,
+      "oil": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2025,
+      "month": 8,
+      "oil": 2.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2025,
+      "month": 9,
+      "oil": 1.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2025,
+      "month": 10,
+      "oil": 1.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2025,
+      "month": 11,
+      "oil": 1.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2025,
+      "month": 12,
+      "oil": 1.6,
+      "gas": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2026,
+      "month": 1,
+      "oil": 1.7,
+      "gas": 0.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2026,
+      "month": 2,
+      "oil": 2.0,
+      "gas": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2026,
+      "month": 3,
+      "oil": 1.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2026,
+      "month": 4,
+      "oil": 1.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2026,
+      "month": 5,
+      "oil": 1.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "tyra",
+      "year": 2026,
+      "month": 6,
+      "oil": 1.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2024,
+      "month": 12,
+      "oil": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/6355/download",
+      "retrieved_at": "2026-07-21T21:43:54Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2025,
+      "month": 3,
+      "oil": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2025,
+      "month": 4,
+      "oil": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2025,
+      "month": 6,
+      "oil": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2025,
+      "month": 8,
+      "oil": 0.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2025,
+      "month": 9,
+      "oil": 0.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2025,
+      "month": 10,
+      "oil": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2025,
+      "month": 11,
+      "oil": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2025,
+      "month": 12,
+      "oil": 1.0,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2026,
+      "month": 1,
+      "oil": 1.0,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2026,
+      "month": 2,
+      "oil": 1.1,
+      "gas": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2026,
+      "month": 3,
+      "oil": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2026,
+      "month": 4,
+      "oil": 1.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2026,
+      "month": 5,
+      "oil": 1.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "tyra_se",
+      "year": 2026,
+      "month": 6,
+      "oil": 1.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2025,
+      "month": 3,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7246/download",
+      "retrieved_at": "2026-07-21T21:44:57Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2025,
+      "month": 4,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7247/download",
+      "retrieved_at": "2026-07-21T21:44:58Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2025,
+      "month": 6,
+      "oil": 0.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7249/download",
+      "retrieved_at": "2026-07-21T21:45:01Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2025,
+      "month": 8,
+      "oil": 0.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7311/download",
+      "retrieved_at": "2026-07-21T21:45:04Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2025,
+      "month": 9,
+      "oil": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7396/download",
+      "retrieved_at": "2026-07-21T21:45:06Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2025,
+      "month": 10,
+      "oil": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7486/download",
+      "retrieved_at": "2026-07-21T21:45:07Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2025,
+      "month": 11,
+      "oil": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7663/download",
+      "retrieved_at": "2026-07-21T21:45:09Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2025,
+      "month": 12,
+      "oil": 0.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7707/download",
+      "retrieved_at": "2026-07-21T21:45:10Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2026,
+      "month": 1,
+      "oil": 0.4,
+      "gas": 0.0,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/7804/download",
+      "retrieved_at": "2026-07-21T21:45:12Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2026,
+      "month": 2,
+      "oil": 0.5,
+      "gas": 0.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8434/download",
+      "retrieved_at": "2026-07-21T21:45:13Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2026,
+      "month": 3,
+      "oil": 0.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8480/download",
+      "retrieved_at": "2026-07-21T21:45:15Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2026,
+      "month": 4,
+      "oil": 0.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8566/download",
+      "retrieved_at": "2026-07-21T21:45:16Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2026,
+      "month": 5,
+      "oil": 0.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8602/download",
+      "retrieved_at": "2026-07-21T21:45:18Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2026,
+      "month": 6,
+      "oil": 0.4,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8675/download",
+      "retrieved_at": "2026-07-21T21:45:20Z"
+    }
+  ],
+  "last_updated": "2026-07-21T21:45:20Z"
+}

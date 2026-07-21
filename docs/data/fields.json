@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-21T21:42:23Z",
+  "fields": {
+    "cecilie": {
+      "slug": "cecilie",
+      "display_name": "Cecilie",
+      "aliases": [
+        "Cecilie"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "INEOS"
+    },
+    "dagmar": {
+      "slug": "dagmar",
+      "display_name": "Dagmar",
+      "aliases": [
+        "Dagmar"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": null
+    },
+    "dan": {
+      "slug": "dan",
+      "display_name": "Dan",
+      "aliases": [
+        "Dan"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "TotalEnergies"
+    },
+    "gorm": {
+      "slug": "gorm",
+      "display_name": "Gorm",
+      "aliases": [
+        "Gorm"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "TotalEnergies"
+    },
+    "halfdan": {
+      "slug": "halfdan",
+      "display_name": "Halfdan",
+      "aliases": [
+        "Halfdan"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "TotalEnergies"
+    },
+    "harald": {
+      "slug": "harald",
+      "display_name": "Harald",
+      "aliases": [
+        "Harald"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "TotalEnergies"
+    },
+    "kraka": {
+      "slug": "kraka",
+      "display_name": "Kraka",
+      "aliases": [
+        "Kraka"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": null
+    },
+    "lulita": {
+      "slug": "lulita",
+      "display_name": "Lulita",
+      "aliases": [
+        "Lulita"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": null
+    },
+    "nini": {
+      "slug": "nini",
+      "display_name": "Nini",
+      "aliases": [
+        "Nini"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "INEOS"
+    },
+    "ravn": {
+      "slug": "ravn",
+      "display_name": "Ravn",
+      "aliases": [
+        "Ravn"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": null
+    },
+    "regnar": {
+      "slug": "regnar",
+      "display_name": "Regnar",
+      "aliases": [
+        "Regnar"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": null
+    },
+    "roar": {
+      "slug": "roar",
+      "display_name": "Roar",
+      "aliases": [
+        "Roar"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "TotalEnergies"
+    },
+    "rolf": {
+      "slug": "rolf",
+      "display_name": "Rolf",
+      "aliases": [
+        "Rolf"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": null
+    },
+    "siri": {
+      "slug": "siri",
+      "display_name": "Siri",
+      "aliases": [
+        "Siri"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "INEOS"
+    },
+    "skjold": {
+      "slug": "skjold",
+      "display_name": "Skjold",
+      "aliases": [
+        "Skjold"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "TotalEnergies"
+    },
+    "solsort": {
+      "slug": "solsort",
+      "display_name": "Solsort",
+      "aliases": [
+        "Solsort"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": null
+    },
+    "svend": {
+      "slug": "svend",
+      "display_name": "Svend",
+      "aliases": [
+        "Svend"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "TotalEnergies"
+    },
+    "syd_arne": {
+      "slug": "syd_arne",
+      "display_name": "Syd Arne",
+      "aliases": [
+        "Syd Arne"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "Hess"
+    },
+    "tyra": {
+      "slug": "tyra",
+      "display_name": "Tyra",
+      "aliases": [
+        "Tyra"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "TotalEnergies"
+    },
+    "tyra_se": {
+      "slug": "tyra_se",
+      "display_name": "Tyra Se",
+      "aliases": [
+        "Tyra Se"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": null
+    },
+    "valdemar": {
+      "slug": "valdemar",
+      "display_name": "Valdemar",
+      "aliases": [
+        "Valdemar"
+      ],
+      "first_year": 1972,
+      "last_year": 2024,
+      "operator": "TotalEnergies"
+    }
+  }
+}

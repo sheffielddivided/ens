@@ -21,9 +21,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "January 2018",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2018-01: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -33,9 +33,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "February 2018",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2018-02: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -45,9 +45,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "March 2018",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2018-03: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -57,9 +57,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "April 2018",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2018-04: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -69,9 +69,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "May 2018",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2018-05: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -81,9 +81,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "June 2018",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2018-06: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -93,9 +93,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "July 2018",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2018-07: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -105,9 +105,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "August 2018",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2018-08: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -117,9 +117,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "September 2018",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2018-09: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -129,9 +129,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "October 2018",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2018-10: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -141,9 +141,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "November 2018",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2018-11: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -153,9 +153,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "December 2018",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2018-12: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -165,9 +165,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "January 2019",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2019-01: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -177,9 +177,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "February 2019",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2019-02: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -189,9 +189,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "March 2019",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2019-03: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -201,9 +201,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "April 2019",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2019-04: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -213,9 +213,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "May 2019",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2019-05: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -225,9 +225,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "June 2019",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2019-06: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -237,9 +237,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "July 2019",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2019-07: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -249,9 +249,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "August 2019",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2019-08: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -261,9 +261,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "September 2019",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2019-09: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -273,9 +273,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "October 2019",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2019-10: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -285,9 +285,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "November 2019",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2019-11: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -297,9 +297,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "December 2019",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2019-12: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -309,9 +309,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "January 2020",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2020-01: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -321,9 +321,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "February 2020",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2020-02: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -333,9 +333,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "March 2020",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2020-03: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -345,9 +345,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "April 2020",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2020-04: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -357,9 +357,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "May 2020",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2020-05: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -369,9 +369,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "June 2020",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2020-06: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -381,9 +381,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "July 2020",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2020-07: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -393,9 +393,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "August 2020",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2020-08: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -405,9 +405,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "September 2020",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2020-09: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -417,9 +417,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "October 2020",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2020-10: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -429,9 +429,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "November 2020",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2020-11: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -441,9 +441,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "December 2020",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2020-12: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -453,9 +453,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "January 2021",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2021-01: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -465,9 +465,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "February 2021",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2021-02: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -477,9 +477,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "March 2021",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2021-03: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -489,9 +489,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "April 2021",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2021-04: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -501,9 +501,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "May 2021",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2021-05: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -513,9 +513,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "June 2021",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2021-06: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -525,9 +525,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "July 2021",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2021-07: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -537,9 +537,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "August 2021",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2021-08: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -549,9 +549,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "September 2021",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2021-09: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -561,9 +561,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "October 2021",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2021-10: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -573,9 +573,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "November 2021",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2021-11: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -585,9 +585,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "December 2021",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2021-12: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -597,9 +597,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "January 2022",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2022-01: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -609,9 +609,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "February 2022",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2022-02: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -621,9 +621,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "March 2022",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2022-03: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -633,9 +633,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "April 2022",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2022-04: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -645,9 +645,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "May 2022",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2022-05: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -657,9 +657,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "June 2022",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2022-06: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -669,9 +669,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "July 2022",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2022-07: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -681,9 +681,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "August 2022",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2022-08: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -693,9 +693,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "September 2022",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2022-09: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -705,9 +705,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "October 2022",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2022-10: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -717,9 +717,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "November 2022",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2022-11: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -729,9 +729,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "December 2022",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2022-12: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -741,9 +741,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "January 2023",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2023-01: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -753,9 +753,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "February 2023",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2023-02: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -765,9 +765,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "March 2023",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2023-03: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -777,9 +777,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "April 2023",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2023-04: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -789,9 +789,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "May 2023",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2023-05: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -801,9 +801,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "June 2023",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2023-06: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -813,9 +813,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "July 2023",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2023-07: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -825,9 +825,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "August 2023",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2023-08: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -837,9 +837,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "September 2023",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2023-09: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -849,9 +849,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "October 2023",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2023-10: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -861,9 +861,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "November 2023",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2023-11: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -873,9 +873,9 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "December 2023",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "2023-12: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
       "records": 0
     },
     {
@@ -885,10 +885,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "January 2024",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:43:37Z",
       "error": null,
-      "records": 0
+      "records": 25
     },
     {
       "url": "https://ens.dk/media/6335/download",
@@ -897,10 +897,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "February 2024",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:43:39Z",
       "error": null,
-      "records": 0
+      "records": 25
     },
     {
       "url": "https://ens.dk/media/6337/download",
@@ -909,10 +909,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "March 2024",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:43:40Z",
       "error": null,
-      "records": 0
+      "records": 25
     },
     {
       "url": "https://ens.dk/media/6339/download",
@@ -921,10 +921,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "April 2024",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:43:41Z",
       "error": null,
-      "records": 0
+      "records": 27
     },
     {
       "url": "https://ens.dk/media/6341/download",
@@ -933,10 +933,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "May 2024",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:43:43Z",
       "error": null,
-      "records": 0
+      "records": 27
     },
     {
       "url": "https://ens.dk/media/6343/download",
@@ -945,10 +945,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "June 2024",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:43:44Z",
       "error": null,
-      "records": 0
+      "records": 27
     },
     {
       "url": "https://ens.dk/media/6345/download",
@@ -957,10 +957,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "July 2024",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:43:46Z",
       "error": null,
-      "records": 0
+      "records": 25
     },
     {
       "url": "https://ens.dk/media/6347/download",
@@ -969,10 +969,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "August 2024",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:43:47Z",
       "error": null,
-      "records": 0
+      "records": 29
     },
     {
       "url": "https://ens.dk/media/6349/download",
@@ -981,10 +981,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "September 2024",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:43:49Z",
       "error": null,
-      "records": 0
+      "records": 29
     },
     {
       "url": "https://ens.dk/media/6351/download",
@@ -993,10 +993,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "October 2024",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:43:51Z",
       "error": null,
-      "records": 0
+      "records": 29
     },
     {
       "url": "https://ens.dk/media/6353/download",
@@ -1005,10 +1005,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "November 2024",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:43:52Z",
       "error": null,
-      "records": 0
+      "records": 29
     },
     {
       "url": "https://ens.dk/media/6355/download",
@@ -1017,10 +1017,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "December 2024",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:43:54Z",
       "error": null,
-      "records": 0
+      "records": 34
     },
     {
       "url": "https://ens.dk/media/7244/download ",
@@ -1029,9 +1029,9 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "January 2025",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "404 Client Error: Not Found for url: https://ens.dk/media/7244/download%20",
       "records": 0
     },
     {
@@ -1041,9 +1041,9 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "February 2025",
-      "status": "pending",
+      "status": "failed",
       "retrieved_at": null,
-      "error": null,
+      "error": "404 Client Error: Not Found for url: https://ens.dk/media/7245/download%20",
       "records": 0
     },
     {
@@ -1053,10 +1053,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "March 2025",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:44:57Z",
       "error": null,
-      "records": 0
+      "records": 38
     },
     {
       "url": "https://ens.dk/media/7247/download",
@@ -1065,10 +1065,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "April 2025",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:44:58Z",
       "error": null,
-      "records": 0
+      "records": 38
     },
     {
       "url": "https://ens.dk/media/7248/download",
@@ -1077,10 +1077,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "May 2025",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:00Z",
       "error": null,
-      "records": 0
+      "records": 23
     },
     {
       "url": "https://ens.dk/media/7249/download",
@@ -1089,10 +1089,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "June 2025",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:01Z",
       "error": null,
-      "records": 0
+      "records": 38
     },
     {
       "url": "https://ens.dk/media/7250/download",
@@ -1101,10 +1101,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "July 2025",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:03Z",
       "error": null,
-      "records": 0
+      "records": 23
     },
     {
       "url": "https://ens.dk/media/7311/download",
@@ -1113,10 +1113,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "August 2025",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:04Z",
       "error": null,
-      "records": 0
+      "records": 38
     },
     {
       "url": "https://ens.dk/media/7396/download",
@@ -1125,10 +1125,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "September 2025",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:06Z",
       "error": null,
-      "records": 0
+      "records": 38
     },
     {
       "url": "https://ens.dk/media/7486/download",
@@ -1137,10 +1137,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "October 2025",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:07Z",
       "error": null,
-      "records": 0
+      "records": 38
     },
     {
       "url": "https://ens.dk/media/7663/download",
@@ -1149,10 +1149,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "November 2025",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:09Z",
       "error": null,
-      "records": 0
+      "records": 38
     },
     {
       "url": "https://ens.dk/media/7707/download",
@@ -1161,10 +1161,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "December 2025",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:10Z",
       "error": null,
-      "records": 0
+      "records": 38
     },
     {
       "url": "https://ens.dk/media/7804/download",
@@ -1173,10 +1173,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "January 2026",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:12Z",
       "error": null,
-      "records": 0
+      "records": 38
     },
     {
       "url": "https://ens.dk/media/8434/download",
@@ -1185,10 +1185,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "February 2026",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:13Z",
       "error": null,
-      "records": 0
+      "records": 38
     },
     {
       "url": "https://ens.dk/media/8480/download",
@@ -1197,10 +1197,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "March 2026",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:15Z",
       "error": null,
-      "records": 0
+      "records": 33
     },
     {
       "url": "https://ens.dk/media/8566/download",
@@ -1209,10 +1209,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "April 2026",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:16Z",
       "error": null,
-      "records": 0
+      "records": 33
     },
     {
       "url": "https://ens.dk/media/8602/download",
@@ -1221,10 +1221,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "May 2026",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:18Z",
       "error": null,
-      "records": 0
+      "records": 33
     },
     {
       "url": "https://ens.dk/media/8675/download",
@@ -1233,10 +1233,10 @@
       "format": "pdf",
       "unit_system": "si",
       "link_text": "June 2026",
-      "status": "pending",
-      "retrieved_at": null,
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:45:20Z",
       "error": null,
-      "records": 0
+      "records": 33
     }
   ]
 }
