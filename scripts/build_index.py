@@ -169,7 +169,7 @@ def _extract_yearly_from_headings(soup, page: str) -> dict | None:
         ht = h.get_text(" ", strip=True).lower()
         if "yearly" in ht and "si" in ht and not _has_ofu(ht):
             for a in h.find_all_next("a", href=True)[:6]:
-                url = urljoin(page, a["href"])
+                url = urljoin(page, a["href"].strip())
                 if _is_file_link(url):
                     text = " ".join(a.get_text(" ", strip=True).split())
                     return {"url": url, "text": text or ht, "si": True}
@@ -222,7 +222,7 @@ def crawl(pages: list[str], fetcher: C.Fetcher, force: bool) -> dict:
         # Units table; the yearly Excel is linked from its own heading.
         for table in soup.find_all("table"):
             for a in _si_ofu_monthly_anchors(table):
-                url = urljoin(page, a["href"])
+                url = urljoin(page, a["href"].strip())   # ENS hrefs sometimes have trailing spaces
                 text = " ".join(a.get_text(" ", strip=True).split())
                 add_monthly(url, text, "si")
         heading_yearly = _extract_yearly_from_headings(soup, page)

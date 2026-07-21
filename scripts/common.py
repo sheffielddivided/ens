@@ -337,6 +337,7 @@ class Fetcher:
         miss (or ``force``) the URL is downloaded with exponential-backoff
         retries. Raises the last exception if every attempt fails.
         """
+        url = url.strip()  # guard against stray whitespace in source hrefs (-> %20 404s)
         cache_file = self.cache_path(filename)
         if cache_file.exists() and not force:
             return cache_file.read_bytes()
@@ -376,7 +377,7 @@ def safe_filename(url: str) -> str:
     ENS file URLs like ``/media/7167/download`` have a generic last segment, so
     the parent segment (the media id) is folded in to keep names unique.
     """
-    parts = [p for p in url.split("?")[0].rstrip("/").split("/") if p]
+    parts = [p for p in url.strip().split("?")[0].rstrip("/").split("/") if p]
     last = parts[-1] if parts else "index"
     if last.lower() in {"download", "file", "index"} and len(parts) >= 2:
         last = f"{parts[-2]}_{last}"
