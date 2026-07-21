@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dansk olje-, gass- og vannproduksjon</title>
   <meta name="description" content="Utforsk produksjon av olje, gass og vann fra danske felt i Nordsjøen (Energistyrelsen).">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <div class="wrap">
@@ -48,6 +48,10 @@
             <button data-view="stacked" aria-pressed="false">Etter felt</button>
             <button data-view="compare" aria-pressed="false">Sammenlign</button>
           </div>
+          <div class="seg" id="unit-seg" role="group" aria-label="Enhet">
+            <button data-unit="si"   aria-pressed="true">SI-enheter</button>
+            <button data-unit="boed" aria-pressed="false">1000 fat&nbsp;o.e./dag</button>
+          </div>
         </div>
       </div>
       <div class="picker hidden" id="field-picker"></div>
@@ -79,6 +83,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>

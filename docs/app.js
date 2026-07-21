@@ -17,14 +17,31 @@ let DATA = null, timeChart = null, rankChart = null;
 let TOP = [];                 // 8 biggest fields (slugs), fixed colour order
 let fieldSlot = {};           // slug -> CSS var name (or null => "other")
 let displayName = {};         // slug -> label
-const state = { measure: "oil", res: "yearly", view: "total", selected: new Set(), year: null };
+const state = { measure: "oil", res: "yearly", view: "total", unit: "si", selected: new Set(), year: null };
 
 const $ = (id) => document.getElementById(id);
 const css = (v) => getComputedStyle(document.body).getPropertyValue(v).trim();
 const toMap = (arr) => { const m = {}; (arr || []).forEach((p) => { m[p.t] = p.v; }); return m; };
-const fmt = (v, d = 0) => new Intl.NumberFormat("nb-NO", { maximumFractionDigits: d }).format(v);
 const prettyUnit = (u) => (u || "").replace(/Nm3/g, "Nm³").replace(/m3/g, "m³");
-const unitOf = (m) => prettyUnit((DATA.unit_definitions || {})[m] || "");
+
+// Optional display unit: 1000 barrels of oil equivalent per day.
+// value (in 1000 m³ / mio. Nm³ per period) × 6.29 ÷ days-in-period.
+const BOED = 6.29;
+const BOED_UNIT = "1000 fat o.e./dag";
+function daysInPeriod(t) {
+  const mm = /^(\d{4})-(\d{2})$/.exec(t);        // month: real days in that month
+  if (mm) return new Date(+mm[1], +mm[2], 0).getDate();
+  const y = +t;                                   // year: 365 or 366
+  if (!isNaN(y)) return ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) ? 366 : 365;
+  return 365;
+}
+const conv = (v, t) => (v == null ? v : (state.unit === "boed" ? v * BOED / daysInPeriod(t) : v));
+const unitOf = (m) => state.unit === "boed" ? BOED_UNIT : prettyUnit((DATA.unit_definitions || {})[m] || "");
+// Value formatter: more decimals for the smaller per-day numbers.
+function fmtVal(v) {
+  const a = Math.abs(v), d = a >= 100 ? 0 : a >= 10 ? 1 : 2;
+  return new Intl.NumberFormat("nb-NO", { maximumFractionDigits: d }).format(v);
+}
 const colorOf = (slug) => (fieldSlot[slug] ? css(fieldSlot[slug]) : css("--c-other"));
 const measureColor = () => css("--" + state.measure);
 
@@ -99,6 +116,7 @@ function buildControls() {
     $("field-picker").classList.toggle("hidden", v !== "compare");
     renderTime();
   });
+  segGroup("unit-seg", "unit", (v) => { state.unit = v; renderAll(); });
 
   // field picker (compare mode)
   const pick = $("field-picker");
@@ -162,7 +180,7 @@ function renderTiles() {
   for (const m of MEASURES) {
     const pt = (tot[m] || []).find((p) => p.t === yr);
     tiles.push(`<div class="tile"><div class="label"><span class="dot" style="background:${css("--" + m)}"></span>${MEASURE_LABEL[m]} ${yr}</div>
-      <div class="value">${pt ? fmt(pt.v, 0) : "–"} <span class="unit">${unitOf(m)}</span></div>
+      <div class="value">${pt ? fmtVal(conv(pt.v, yr)) : "–"} <span class="unit">${unitOf(m)}</span></div>
       <div class="foot">${pt && pt.p ? "foreløpig" : "endelige tall"}</div></div>`);
   }
   // producing fields that year
@@ -170,11 +188,11 @@ function renderTiles() {
     .filter((f) => (DATA.series[f.slug]?.yearly?.oil || []).some((p) => p.t === yr && p.v > 0)).length;
   tiles.push(`<div class="tile"><div class="label">Felt i produksjon ${yr}</div>
     <div class="value">${producing}</div><div class="foot">med oljeproduksjon</div></div>`);
-  // peak oil year
-  const oilSeries = tot.oil || [];
-  const peak = oilSeries.reduce((a, p) => (p.v > a.v ? p : a), { v: -1, t: "–" });
+  // peak oil year (computed in the displayed unit)
+  const peak = (tot.oil || []).map((p) => ({ t: p.t, v: conv(p.v, p.t) }))
+    .reduce((a, p) => (p.v > a.v ? p : a), { v: -1, t: "–" });
   tiles.push(`<div class="tile"><div class="label">Toppår olje</div>
-    <div class="value">${peak.t}</div><div class="foot">${fmt(peak.v, 0)} ${unitOf("oil")}</div></div>`);
+    <div class="value">${peak.t}</div><div class="foot">${fmtVal(peak.v)} ${unitOf("oil")}</div></div>`);
   $("tiles").innerHTML = tiles.join("");
 }
 
@@ -196,20 +214,21 @@ function renderTime() {
   let stacked = false;
 
   if (state.view === "total") {
-    datasets = [lineDS("Alle felt", master.map((p) => p.v), mc, prelimIdx)];
+    datasets = [lineDS("Alle felt", master.map((p) => conv(p.v, p.t)), mc, prelimIdx)];
   } else if (state.view === "compare") {
     const chosen = DATA.fields.map((f) => f.slug).filter((s) => state.selected.has(s));
     datasets = chosen.map((slug) => {
       const mp = toMap(DATA.series[slug]?.[state.res]?.[state.measure]);
-      return lineDS(displayName[slug], labels.map((t) => mp[t] ?? null), colorOf(slug), prelimIdx);
+      return lineDS(displayName[slug], labels.map((t) => (mp[t] == null ? null : conv(mp[t], t))), colorOf(slug), prelimIdx);
     });
   } else { // stacked area by field
     stacked = true;
     const maps = TOP.map((slug) => toMap(DATA.series[slug]?.[state.res]?.[state.measure]));
-    datasets = TOP.map((slug, i) => areaDS(displayName[slug], labels.map((t) => maps[i][t] ?? 0), colorOf(slug), i === 0, surface));
+    datasets = TOP.map((slug, i) =>
+      areaDS(displayName[slug], labels.map((t) => conv(maps[i][t] ?? 0, t)), colorOf(slug), i === 0, surface));
     const other = labels.map((t, li) => {
-      const s = maps.reduce((a, mp) => a + (mp[t] || 0), 0);
-      return Math.max(0, +((master[li]?.v || 0) - s).toFixed(3));
+      const s = maps.reduce((a, mp) => a + (mp[t] || 0), 0);        // native sum
+      return conv(Math.max(0, +((master[li]?.v || 0) - s).toFixed(3)), t);
     });
     datasets.push(areaDS("Andre felt", other, css("--c-other"), false, surface));
   }
@@ -226,7 +245,7 @@ function renderTime() {
         tooltip: {
           callbacks: {
             title: (it) => labelFmt(it[0].label),
-            label: (it) => `${it.dataset.label}: ${fmt(it.parsed.y, 1)} ${unitOf(state.measure)}`,
+            label: (it) => `${it.dataset.label}: ${fmtVal(it.parsed.y)} ${unitOf(state.measure)}`,
             footer: (it) => (prelimIdx >= 0 && it[0].dataIndex >= prelimIdx) ? "foreløpige tall" : "",
           },
         },
@@ -236,7 +255,7 @@ function renderTime() {
         x: { stacked, grid: { display: false }, ticks: { maxTicksLimit: 13, autoSkip: true, callback(v) { const l = this.getLabelForValue(v); return /^\d{4}-\d{2}$/.test(l) ? l.slice(0, 4) : l; } } },
         y: { stacked, beginAtZero: true, border: { display: false },
           title: { display: true, text: unitOf(state.measure), color: css("--muted") },
-          ticks: { callback: (v) => fmt(v, 0) } },
+          ticks: { callback: (v) => fmtVal(v) } },
       },
     },
   };
@@ -249,7 +268,8 @@ function renderTime() {
     compare: "Velg felt over grafen for å sammenligne.",
   };
   $("time-cap").innerHTML = capParts[state.view] +
-    (prelimIdx >= 0 ? ` <span class="prelim">Skravert område</span> er foreløpige år (overstyres av endelige årstall).` : "");
+    (prelimIdx >= 0 ? ` <span class="prelim">Skravert område</span> er foreløpige år (overstyres av endelige årstall).` : "") +
+    (state.unit === "boed" ? " Omregnet: verdi × 6,29 ÷ antall dager i perioden." : "");
   $("time-sub").textContent = `– ${MEASURE_LABEL[state.measure].toLowerCase()} (${unitOf(state.measure)})`;
 }
 
@@ -271,7 +291,7 @@ function areaDS(label, data, color, isBottom, surface) {
 function renderRank() {
   const yr = state.year, m = state.measure;
   const rows = DATA.fields.map((f) => f.slug).filter((s) => s !== "_total")
-    .map((slug) => ({ slug, v: (toMap(DATA.series[slug]?.yearly?.[m])[yr] || 0) }))
+    .map((slug) => ({ slug, v: conv(toMap(DATA.series[slug]?.yearly?.[m])[yr] || 0, yr) }))
     .filter((r) => r.v > 0).sort((a, b) => b.v - a.v);
   const prelim = (DATA.series._total.yearly[m] || []).find((p) => p.t === yr)?.p;
 
@@ -289,12 +309,12 @@ function renderRank() {
       indexAxis: "y", responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: (it) => `${fmt(it.parsed.x, 1)} ${unitOf(m)}${prelim ? " (foreløpig)" : ""}` } },
+        tooltip: { callbacks: { label: (it) => `${fmtVal(it.parsed.x)} ${unitOf(m)}${prelim ? " (foreløpig)" : ""}` } },
         prelim: { index: -1 },
       },
       scales: {
         x: { beginAtZero: true, border: { display: false }, grid: { color: css("--grid") },
-          title: { display: true, text: unitOf(m), color: css("--muted") }, ticks: { callback: (v) => fmt(v, 0) } },
+          title: { display: true, text: unitOf(m), color: css("--muted") }, ticks: { callback: (v) => fmtVal(v) } },
         y: { grid: { display: false }, border: { display: false }, ticks: { autoSkip: false, font: { size: 12 } } },
       },
     },
