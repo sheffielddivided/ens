@@ -4,61 +4,79 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dansk olje-, gass- og vannproduksjon</title>
+  <meta name="description" content="Utforsk produksjon av olje, gass og vann fra danske felt i Nordsjøen (Energistyrelsen).">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Dansk olje-, gass- og vannproduksjon</h1>
-    <p class="subtitle">
-      Produksjon fra danske olje- og gassfelt i Nordsjøen. Kilde:
-      <a href="https://ens.dk/en/energy-sources/monthly-and-yearly-production"
-         target="_blank" rel="noopener">Energistyrelsen (ENS)</a>.
-    </p>
-  </header>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Dansk olje-, gass- og vannproduksjon</h1>
+        <p class="sub">
+          Utforsk produksjonen fra danske felt i Nordsjøen, 1972&ndash;i dag. Kilde:
+          <a href="https://ens.dk/en/energy-sources/monthly-and-yearly-production" target="_blank" rel="noopener">Energistyrelsen&nbsp;(ENS)</a>.
+          <br><span id="updated"></span>
+        </p>
+      </div>
+      <button id="theme-toggle" title="Bytt lyst/mørkt tema" aria-label="Bytt tema">◐</button>
+    </header>
 
-  <div id="sample-banner" class="banner hidden">
-    Viser <strong>syntetiske demodata</strong> – reelle data lastes av
-    oppdateringsjobben. Se README for hvordan du kjører pipelinen.
+    <div id="sample-banner" class="banner hidden">
+      Viser <strong>syntetiske demodata</strong> &ndash; reelle data lastes av oppdateringsjobben.
+    </div>
+    <div id="error-banner" class="banner hidden"></div>
+
+    <!-- Hero stat tiles -->
+    <section class="tiles" id="tiles" aria-label="Nøkkeltall"></section>
+
+    <!-- Time series -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Produksjon over tid <small id="time-sub"></small></h2>
+        <div class="controls">
+          <div class="seg measure" id="measure-seg" role="group" aria-label="Velg serie">
+            <button data-measure="oil"   aria-pressed="true">Olje</button>
+            <button data-measure="gas"   aria-pressed="false">Gass</button>
+            <button data-measure="water" aria-pressed="false">Vann</button>
+          </div>
+          <div class="seg" id="res-seg" role="group" aria-label="Oppløsning">
+            <button data-res="yearly"  aria-pressed="true">År</button>
+            <button data-res="monthly" aria-pressed="false">Måned</button>
+          </div>
+          <div class="seg" id="view-seg" role="group" aria-label="Visning">
+            <button data-view="total"   aria-pressed="true">Totalt</button>
+            <button data-view="stacked" aria-pressed="false">Etter felt</button>
+            <button data-view="compare" aria-pressed="false">Sammenlign</button>
+          </div>
+        </div>
+      </div>
+      <div class="picker hidden" id="field-picker"></div>
+      <div class="chart-wrap"><canvas id="timeChart"></canvas></div>
+      <p class="cap" id="time-cap"></p>
+    </section>
+
+    <!-- Field ranking -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Felt-rangering <small id="rank-year-label"></small></h2>
+        <div class="controls">
+          <div class="year-row">
+            <span style="color:var(--muted);font-size:.85rem">År</span>
+            <input type="range" id="year-slider" min="0" max="0" step="1">
+            <output id="year-out">–</output>
+          </div>
+        </div>
+      </div>
+      <div class="chart-wrap tall"><canvas id="rankChart"></canvas></div>
+      <p class="cap" id="rank-cap"></p>
+    </section>
+
+    <footer>
+      <p>Månedstall er <span class="prelim">foreløpige</span> estimater og overstyres av de endelige
+         årstallene. Enheter: olje og vann i 1000&nbsp;m³, gass i mio.&nbsp;Nm³.</p>
+      <p>Åpen kildekode på <a href="https://github.com/sheffielddivided/ens" target="_blank" rel="noopener">GitHub</a>.</p>
+    </footer>
   </div>
-  <div id="error-banner" class="banner error hidden"></div>
-
-  <main>
-    <section class="controls">
-      <label>
-        Felt
-        <select id="field-select"></select>
-      </label>
-      <label>
-        Serie
-        <select id="series-select"></select>
-      </label>
-      <fieldset class="resolution">
-        <legend>Oppløsning</legend>
-        <label><input type="radio" name="res" value="yearly" checked> År</label>
-        <label><input type="radio" name="res" value="monthly"> Måned</label>
-      </fieldset>
-    </section>
-
-    <section class="chart-wrap">
-      <canvas id="chart" aria-label="Produksjonsgraf" role="img"></canvas>
-    </section>
-
-    <section class="legend-note">
-      <span class="swatch solid"></span> Endelige årstall
-      <span class="swatch dashed"></span> Foreløpige tall (måneds­estimater)
-    </section>
-
-    <section id="summary" class="summary"></section>
-  </main>
-
-  <footer>
-    <p id="last-updated"></p>
-    <p>
-      Månedstall er foreløpige estimater og overstyres av de endelige årstallene.
-      Åpen kildekode på
-      <a href="https://github.com/sheffielddivided/ens" target="_blank" rel="noopener">GitHub</a>.
-    </p>
-  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="app.js"></script>
