@@ -83,9 +83,21 @@ def _is_year(v) -> int | None:
 
 def _load_grids(path: Path) -> list[tuple[str, list[list]]]:
     """Return [(sheet_name, grid)] with merged cells forward-filled."""
+    import io
     import openpyxl
 
-    wb = openpyxl.load_workbook(path, data_only=True)
+    # ENS serves the workbook via an extension-less /media/<id>/download URL,
+    # so the cache file has no ".xlsx" suffix. Passing a file-like object makes
+    # openpyxl validate by content instead of by filename extension.
+    data = Path(path).read_bytes()
+    try:
+        wb = openpyxl.load_workbook(io.BytesIO(data), data_only=True)
+    except Exception as exc:  # noqa: BLE001 -- turn into a clear source error
+        head = data[:8]
+        raise C.SourceFormatError(
+            f"could not open yearly workbook as .xlsx (first bytes={head!r}); "
+            f"a legacy .xls or an error page would land here: {exc}"
+        ) from exc
     out = []
     for ws in wb.worksheets:
         grid = [[c.value for c in row] for row in ws.iter_rows()]

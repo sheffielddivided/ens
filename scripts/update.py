@@ -280,14 +280,17 @@ def run(*, offline: bool, crawl: bool, refresh_yearly: bool, force: bool) -> int
         C.error("no index.json -- run build_index.py first (or drop --no-crawl)")
         return 1
 
-    # 2) yearly
+    # 2) yearly -- a yearly failure is recorded but does not abort the run, so
+    # monthly data is still fetched and committed (and the failure surfaces at
+    # the end via a non-zero exit).
+    yearly_failed = False
     if refresh_yearly or not C.YEARLY_PATH.exists():
         C.info("ingesting yearly Excel ...")
         rc = ingest_yearly.ingest(source_url=None, offline=offline, force=force,
                                   xlsx_path=None, do_inspect=False)
         if rc != 0:
-            C.error("yearly ingestion failed")
-            return rc
+            C.error("yearly ingestion failed -- continuing with monthly data")
+            yearly_failed = True
 
     # 3) monthly
     C.info("processing monthly reports ...")
@@ -309,11 +312,14 @@ def run(*, offline: bool, crawl: bool, refresh_yearly: bool, force: bool) -> int
     C.info(f"combined.json {'updated' if wrote else 'unchanged'}: "
            f"{n_fields} fields, last_updated={combined['last_updated']}")
 
-    if failed:
+    if failed or yearly_failed:
         # Good data has already been written above and will still be committed;
-        # exit non-zero so CI surfaces the failed months (and opens an issue)
-        # instead of failing silently.
-        C.error(f"{failed} month(s) failed to parse -- see ERROR lines above")
+        # exit non-zero so CI surfaces the failures (and opens an issue) instead
+        # of failing silently.
+        if failed:
+            C.error(f"{failed} month(s) failed to parse -- see ERROR lines above")
+        if yearly_failed:
+            C.error("yearly ingestion failed -- see ERROR lines above")
         return 1
     return 0
 
