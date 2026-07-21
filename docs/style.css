@@ -105,7 +105,18 @@ h1 { margin: 0 0 6px; font-size: clamp(1.4rem, 3.4vw, 1.95rem); letter-spacing: 
 .chk { display: inline-flex; align-items: center; gap: 6px; font-size: .84rem; color: var(--ink-2); cursor: pointer; }
 .chk input { accent-color: var(--water); margin: 0; }
 
-.picker { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0 2px; }
+.chip { border: 1px solid var(--border); background: var(--page); color: var(--ink-2);
+  font: inherit; font-size: .86rem; padding: 5px 11px; border-radius: 9px; cursor: pointer; }
+.chip[aria-expanded="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px var(--shadow); }
+.chip:hover { color: var(--ink); }
+
+.picker { margin: 8px 0 2px; padding: 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--page); }
+.picker-actions { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
+.picker-actions button { border: 1px solid var(--border); background: var(--surface); color: var(--ink-2);
+  font: inherit; font-size: .8rem; padding: 3px 10px; border-radius: 7px; cursor: pointer; }
+.picker-actions button:hover { color: var(--ink); }
+.picker-hint { color: var(--muted); font-size: .8rem; }
+#field-checks { display: flex; flex-wrap: wrap; gap: 6px 8px; }
 .picker label { display: inline-flex; align-items: center; gap: 6px; font-size: .82rem;
   border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px 3px 8px; cursor: pointer; color: var(--ink-2); }
 .picker label .sw { width: 10px; height: 10px; border-radius: 3px; }

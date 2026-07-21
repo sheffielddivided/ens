@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dansk olje-, gass- og vannproduksjon</title>
   <meta name="description" content="Utforsk produksjon av olje, gass og vann fra danske felt i Nordsjøen (Energistyrelsen).">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <div class="wrap">
@@ -56,9 +56,17 @@
           <label class="chk" title="Regn inneværende, ufullstendige år om til et helårsestimat">
             <input type="checkbox" id="annualize"> Helårsestimat
           </label>
+          <button class="chip" id="fields-toggle" aria-expanded="false" aria-controls="field-picker">Felt: alle</button>
         </div>
       </div>
-      <div class="picker hidden" id="field-picker"></div>
+      <div class="picker hidden" id="field-picker">
+        <div class="picker-actions">
+          <button type="button" id="fields-all">Alle</button>
+          <button type="button" id="fields-none">Ingen</button>
+          <span class="picker-hint">Velg hvilke felt som skal studeres</span>
+        </div>
+        <div id="field-checks"></div>
+      </div>
       <div class="chart-wrap"><canvas id="timeChart"></canvas></div>
       <p class="cap" id="time-cap"></p>
     </section>
@@ -87,6 +95,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>
