@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Trimmed fixture mirroring the REAL ENS landing-page structure:
+     * a "Yearly ... in SI units" heading followed by a year-range download link
+       served via /media/<id>/download (no .xlsx extension),
+     * a single "Monthly Production" table whose header row is
+       "SI Units" | "Oil Field Units", with all months packed into each column,
+     * older months as .htm files and newer ones as /media/<id>/download PDFs,
+     * the SI and OFU variants sharing link text but different media ids.
+     Numbers/ids are illustrative. -->
+<html lang="en">
+<head><title>Monthly and yearly production</title></head>
+<body>
+  <main>
+    <h1>Monthly and yearly production</h1>
+
+    <h4>Yearly production, injection, flare, fuel and export in SI units</h4>
+    <p><a href="/media/7167/download">1972-2024</a></p>
+    <h4>Yearly production ... in Oil Field Units</h4>
+    <p><a href="/media/7168/download">1972-2024</a></p>
+
+    <h4>Monthly Production*</h4>
+    <table>
+      <tr><td>SI Units</td><td>Oil Field Units</td></tr>
+      <tr>
+        <td>
+          <a href="/media/8675/download">June 2026</a>
+          <a href="/media/6333/download">January 2024</a>
+          <a href="/sites/default/files/OlieGas/mp202312si.htm">December 2023</a>
+          <a href="/sites/default/files/OlieGas/HTM_GIF/mp201801si.htm">January 2018</a>
+        </td>
+        <td>
+          <a href="/media/8674/download">June 2026</a>
+          <a href="/media/6332/download">January 2024</a>
+          <a href="/sites/default/files/OlieGas/mp202312.htm">December 2023</a>
+        </td>
+      </tr>
+      <tr><td colspan="2">*The Monthly production data are preliminary.</td></tr>
+    </table>
+  </main>
+</body>
+</html>

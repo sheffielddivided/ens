@@ -132,6 +132,43 @@ class TestBuildIndex:
         urls = [m["url"] for m in out["monthly"]]
         assert not any("energy_statistics" in u for u in urls)
 
+    def _run_real(self, tmp_path):
+        import build_index as B
+
+        page = C.ENS_PRODUCTION_PAGE
+        cache = tmp_path / "raw"
+        cache.mkdir()
+        (cache / f"page_{C.safe_filename(page)}.html").write_text(
+            (FIXTURES / "landing_page_real.html").read_text(encoding="utf-8"),
+            encoding="utf-8",
+        )
+        fetcher = C.Fetcher(cache_dir=cache, offline=True)
+        return B.crawl([page], fetcher, force=False)
+
+    def test_real_layout_yearly_from_heading(self, tmp_path):
+        out = self._run_real(tmp_path)
+        # Yearly Excel is the SI one found via its heading (year-range link text,
+        # /media/<id>/download URL), not the Oil-Field-Units one.
+        assert out["yearly"] is not None
+        assert out["yearly"]["url"].endswith("/media/7167/download")
+
+    def test_real_layout_si_column_only(self, tmp_path):
+        out = self._run_real(tmp_path)
+        months = {(m["year"], m["month"]): m for m in out["monthly"]}
+        # Four SI months across both eras; OFU column ids excluded.
+        assert set(months) == {(2026, 6), (2024, 1), (2023, 12), (2018, 1)}
+        assert all("/media/8674/" not in m["url"] and "/media/6332/" not in m["url"]
+                   for m in out["monthly"])
+
+    def test_real_layout_format_detection(self, tmp_path):
+        out = self._run_real(tmp_path)
+        months = {(m["year"], m["month"]): m for m in out["monthly"]}
+        assert months[(2018, 1)]["format"] == "html"   # .htm
+        assert months[(2023, 12)]["format"] == "html"  # .htm
+        assert months[(2024, 1)]["format"] == "pdf"    # /media/download
+        assert months[(2026, 6)]["format"] == "pdf"
+        assert all(m["unit_system"] == "si" for m in out["monthly"])
+
 
 # --------------------------------------------------------------------------- #
 # ingest_yearly.py

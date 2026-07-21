@@ -41,6 +41,34 @@ def _monthly_key(r: dict):
     return (r["field"], r["year"], r["month"])
 
 
+def _sniff_kind(data: bytes, fallback: str) -> str:
+    """Return 'pdf' or 'html' from the file's own bytes.
+
+    ENS's extension-less /media/<id>/download links can be either, so we trust
+    the content over the index's guessed format; fall back to the index format
+    only when the bytes are inconclusive.
+    """
+    head = data[:1024].lstrip()
+    if head[:5] == b"%PDF-":
+        return "pdf"
+    low = head.lower()
+    if b"<html" in low or b"<!doctype" in low or b"<table" in low or b"<body" in low:
+        return "html"
+    return fallback if fallback in ("pdf", "html") else "html"
+
+
+def _fetch_and_parse(entry: dict, fetcher: C.Fetcher, *, force: bool) -> list[dict]:
+    """Fetch a monthly report, dispatch by sniffed content, and parse it."""
+    url = entry["url"]
+    fname = f"monthly_{entry['year']}_{entry['month']:02d}_{C.safe_filename(url)}"
+    data = fetcher.fetch(url, fname, force=force, binary=True)
+    kind = _sniff_kind(data, entry.get("format", "html"))
+    y, m = entry["year"], entry["month"]
+    if kind == "pdf":
+        return PP.parse_pdf(fetcher.cache_path(fname), y, m, url)
+    return PH.parse_html(data.decode("utf-8", errors="replace"), y, m, url)
+
+
 def process_months(index: dict, fetcher: C.Fetcher, *, force: bool) -> tuple[dict, bool, int]:
     """Fetch/parse due months, updating index entries.
 
@@ -64,10 +92,7 @@ def process_months(index: dict, fetcher: C.Fetcher, *, force: bool) -> tuple[dic
             continue
         y, m, fmt = entry["year"], entry["month"], entry["format"]
         try:
-            if fmt == "pdf":
-                recs = PP.parse_source(entry, fetcher, force=force)
-            else:
-                recs = PH.parse_source(entry, fetcher, force=force)
+            recs = _fetch_and_parse(entry, fetcher, force=force)
             if not recs:
                 raise C.SourceFormatError("parser returned zero records")
             retrieved = C.utc_now_iso()

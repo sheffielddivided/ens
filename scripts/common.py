@@ -371,7 +371,13 @@ class Fetcher:
 
 
 def safe_filename(url: str) -> str:
-    """Derive a filesystem-safe cache filename from a URL, preserving suffix."""
-    name = url.split("?")[0].rstrip("/").split("/")[-1] or "index"
-    name = re.sub(r"[^A-Za-z0-9._-]+", "_", name)
-    return name
+    """Derive a filesystem-safe cache filename from a URL, preserving suffix.
+
+    ENS file URLs like ``/media/7167/download`` have a generic last segment, so
+    the parent segment (the media id) is folded in to keep names unique.
+    """
+    parts = [p for p in url.split("?")[0].rstrip("/").split("/") if p]
+    last = parts[-1] if parts else "index"
+    if last.lower() in {"download", "file", "index"} and len(parts) >= 2:
+        last = f"{parts[-2]}_{last}"
+    return re.sub(r"[^A-Za-z0-9._-]+", "_", last)

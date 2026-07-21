@@ -68,6 +68,43 @@ def _classify_format(url: str) -> str:
     return "html"
 
 
+def _monthly_format(url: str) -> str:
+    """Classify a monthly report link.
+
+    ENS serves older reports as ``.htm`` pages and newer ones through
+    extension-less ``/media/<id>/download`` URLs (which are PDFs). The exact
+    HTML->PDF switch is thus read from the link, not assumed from a date.
+    The parser also sniffs the downloaded bytes, so a misclassification here
+    self-corrects at parse time.
+    """
+    path = urlparse(url).path.lower()
+    if path.endswith((".htm", ".html")):
+        return "html"
+    if path.endswith(".pdf"):
+        return "pdf"
+    if "/media/" in path or "download" in url.lower():
+        return "pdf"
+    return "html"
+
+
+def _is_file_link(url: str) -> bool:
+    path = urlparse(url).path.lower()
+    return (
+        path.endswith((".xlsx", ".xlsm", ".xls", ".pdf", ".htm", ".html"))
+        or ("/media/" in path and "download" in url.lower())
+    )
+
+
+def _has_si(text: str) -> bool:
+    t = f" {text.lower()} "
+    return "si unit" in t or " si " in t
+
+
+def _has_ofu(text: str) -> bool:
+    t = text.lower()
+    return "oil field" in t or "field unit" in t
+
+
 def _extract_month_year(*texts: str) -> tuple[int | None, int | None]:
     """Return (year, month) discovered across the given text fragments."""
     blob = " ".join(t for t in texts if t).lower()
@@ -84,13 +121,59 @@ def _extract_month_year(*texts: str) -> tuple[int | None, int | None]:
             if re.search(rf"\b{alt}\b", blob):
                 month = num
                 break
-    # Numeric YYYY-MM / YYYY_MM patterns as a fallback.
+    # Numeric patterns as fallback: "mp202312si" (ENS filenames), "YYYY-MM",
+    # and compact "YYYYMM".
     if month is None:
-        m = re.search(r"\b(20\d\d)[-_/.](0?[1-9]|1[0-2])\b", blob)
+        m = (re.search(r"mp\s*(20\d\d)(0[1-9]|1[0-2])", blob)
+             or re.search(r"\b(20\d\d)[-_/.](0?[1-9]|1[0-2])\b", blob)
+             or re.search(r"\b(20\d\d)(0[1-9]|1[0-2])\b", blob))
         if m:
             year = int(m.group(1))
             month = int(m.group(2))
     return year, month
+
+
+def _si_ofu_monthly_anchors(table):
+    """Anchors in the SI column of a monthly SI/Oil-Field-Units table.
+
+    Returns [] unless the table has a header row containing *both* an SI and an
+    Oil-Field-Units cell (so we do not misfire on unrelated tables). The SI
+    column is located by header text and its anchors returned; the OFU column
+    is excluded.
+    """
+    rows = table.find_all("tr")
+    for hi, tr in enumerate(rows):
+        cells = tr.find_all(["td", "th"], recursive=False)
+        texts = [c.get_text(" ", strip=True) for c in cells]
+        si_cols = [i for i, t in enumerate(texts) if _has_si(t) and not _has_ofu(t)]
+        ofu_cols = [i for i, t in enumerate(texts) if _has_ofu(t)]
+        if not (si_cols and ofu_cols):
+            continue
+        si_col = si_cols[0]
+        anchors = []
+        for tr2 in rows[hi + 1:]:
+            cs = tr2.find_all(["td", "th"], recursive=False)
+            if si_col < len(cs):
+                anchors.extend(cs[si_col].find_all("a", href=True))
+        return anchors
+    return []
+
+
+def _extract_yearly_from_headings(soup, page: str) -> dict | None:
+    """Find the yearly Excel via its heading ("Yearly ... in SI units").
+
+    The download link text is a year range (e.g. "1972-2024"), not "yearly",
+    so we anchor on the heading and take the first file link after it.
+    """
+    for h in soup.find_all(re.compile(r"h[1-6]")):
+        ht = h.get_text(" ", strip=True).lower()
+        if "yearly" in ht and "si" in ht and not _has_ofu(ht):
+            for a in h.find_all_next("a", href=True)[:6]:
+                url = urljoin(page, a["href"])
+                if _is_file_link(url):
+                    text = " ".join(a.get_text(" ", strip=True).split())
+                    return {"url": url, "text": text or ht, "si": True}
+    return None
 
 
 def _is_si(text: str, url: str) -> bool:
@@ -113,12 +196,40 @@ def crawl(pages: list[str], fetcher: C.Fetcher, force: bool) -> dict:
     monthly_by_key: dict[tuple[int, int], dict] = {}
     seen_urls: set[str] = set()
 
+    def add_monthly(url, text, unit_system):
+        year, month = _extract_month_year(text, url)
+        if year is None or month is None:
+            return
+        key = (year, month)
+        entry = {
+            "url": url, "year": year, "month": month,
+            "format": _monthly_format(url), "unit_system": unit_system,
+            "link_text": text,
+        }
+        existing = monthly_by_key.get(key)
+        if existing is None or (existing["unit_system"] != "si" and unit_system == "si"):
+            monthly_by_key[key] = entry
+        seen_urls.add(url)
+
     for page in pages:
         fname = f"page_{C.safe_filename(page)}.html"
         html = fetcher.fetch_text(page, fname, force=force)
         soup = bs4.BeautifulSoup(html, "lxml")
         anchors = soup.find_all("a", href=True)
         C.info(f"scanned {page}: {len(anchors)} links")
+
+        # (A) Real ENS layout: months live in the SI column of an SI/Oil-Field
+        # Units table; the yearly Excel is linked from its own heading.
+        for table in soup.find_all("table"):
+            for a in _si_ofu_monthly_anchors(table):
+                url = urljoin(page, a["href"])
+                text = " ".join(a.get_text(" ", strip=True).split())
+                add_monthly(url, text, "si")
+        heading_yearly = _extract_yearly_from_headings(soup, page)
+        if heading_yearly:
+            yearly_candidates.append(heading_yearly)
+
+        # (B) Generic anchor scan (handles simpler layouts / other pages).
         for a in anchors:
             href = a["href"].strip()
             if not href or href.startswith(("#", "mailto:", "javascript:")):
