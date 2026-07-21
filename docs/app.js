@@ -32,10 +32,16 @@ const measureColor = () => css("--" + state.measure);
 async function boot() {
   DATA = await load();
   if (!DATA) return;
-  prepare();
-  buildControls();
-  applyChartDefaults();
-  renderAll();
+  try {
+    prepare();
+    buildControls();
+    applyChartDefaults();
+    renderAll();
+  } catch (e) {
+    const eb = $("error-banner");
+    if (eb) { eb.textContent = "Kunne ikke bygge visningen: " + e.message; eb.classList.remove("hidden"); }
+    throw e;
+  }
 }
 
 async function load() {
