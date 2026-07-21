@@ -45,14 +45,30 @@ def _clean(cell) -> str:
 
 
 def extract_all_tables(path: Path) -> list[list[list[str]]]:
-    """Return every candidate table (cleaned) found under any strategy."""
+    """Return candidate tables (cleaned) found under any strategy.
+
+    The stacked oil/gas/water blocks of a real report are often split by
+    pdfplumber into several tables (and across pages), so for each strategy we
+    also add a *merged* candidate that concatenates all its tables in reading
+    order -- that reconstructs the full stacked table for the parser.
+    """
     import pdfplumber
 
-    tables: list[list[list[str]]] = []
+    candidates: list[list[list[str]]] = []
     seen: set[str] = set()
+
+    def add(grid):
+        if len(grid) < 2:
+            return
+        key = repr(grid)
+        if key not in seen:
+            seen.add(key)
+            candidates.append(grid)
+
     with pdfplumber.open(str(path)) as pdf:
-        for page in pdf.pages:
-            for settings in _STRATEGIES:
+        for settings in _STRATEGIES:
+            merged: list[list[str]] = []
+            for page in pdf.pages:
                 try:
                     raw = page.extract_tables(table_settings=settings) if settings \
                         else page.extract_tables()
@@ -64,11 +80,10 @@ def extract_all_tables(path: Path) -> list[list[list[str]]]:
                     grid = [r for r in grid if any(c for c in r)]
                     if len(grid) < 2:
                         continue
-                    key = repr(grid)
-                    if key not in seen:
-                        seen.add(key)
-                        tables.append(grid)
-    return tables
+                    add(grid)
+                    merged.extend(grid)
+            add(merged)
+    return candidates
 
 
 def parse_pdf(path: Path, year: int, month: int, source_url: str) -> list[dict]:
@@ -83,14 +98,11 @@ def parse_pdf(path: Path, year: int, month: int, source_url: str) -> list[dict]:
     errors = []
     for grid in candidates:
         try:
-            header_rows, data_rows = M.split_by_scoring(grid)
-            records, units = M.records_from_table(
-                header_rows, data_rows, year=year, month=month, source_url=source_url
-            )
+            records, units = M.parse_monthly_rows(grid, year, month, source_url)
         except C.SourceFormatError as exc:
             errors.append(str(exc))
             continue
-        if len(records) > len(best):
+        if M.record_richness(records) > M.record_richness(best):
             best, best_units = records, units
     if not best:
         raise C.SourceFormatError(

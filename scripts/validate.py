@@ -62,7 +62,13 @@ def _check_records(recs: list[dict], rep: Report, *, monthly: bool) -> None:
             if v is None:
                 continue
             if v < 0:
-                rep.error(f"{label}: {key} has negative {meas}={v}")
+                if meas in C.CORE_MEASURES:
+                    # Negative oil/gas/water is physically impossible -> error.
+                    rep.error(f"{label}: {key} has negative {meas}={v}")
+                else:
+                    # Injection/flare/fuel/export can be a net/corrected figure
+                    # in the source; surface it but do not fail the run.
+                    rep.warn(f"{label}: {key} has negative {meas}={v} (net/correction?)")
             if monthly and meas in _MONTHLY_CAP and v > _MONTHLY_CAP[meas]:
                 rep.warn(f"{label}: {key} {meas}={v} exceeds plausibility cap "
                          f"{_MONTHLY_CAP[meas]} ({C.UNIT_DEFINITIONS.get(meas)})")

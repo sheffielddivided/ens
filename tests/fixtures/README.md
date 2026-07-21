@@ -24,13 +24,21 @@ numbers and commit both together.
 
 ## Files
 
-| File | Purpose |
-|------|---------|
-| `landing_page.html` | Landing-page structure for `build_index.py` |
-| `monthly_v1.html` | HTML monthly report, early layout |
-| `monthly_v2.html` | HTML monthly report, later layout (reordered columns) |
-| `monthly.pdf` | PDF monthly report (generated from `make_pdf_fixture.py`) |
-| `yearly.xlsx` | Yearly Excel workbook (generated from `make_xlsx_fixture.py`) |
+| File | Real? | Purpose |
+|------|-------|---------|
+| `landing_page.html` | synthetic | Simple landing-page structure for `build_index.py` |
+| `landing_page_real.html` | real-shaped | ENS SI/Oil-Field-Units table + `/media/<id>/download` links |
+| `monthly_v1.html` | synthetic | Simple measure-as-columns HTML report |
+| `monthly_v2.html` | synthetic | Reordered-columns / colspan HTML report |
+| `monthly_real_2018_01.htm` | **real** | Real ENS HTML report (stacked blocks, cp1252) |
+| `monthly_real_2024_01.pdf` | **real** | Real ENS PDF report (stacked blocks, split tables) |
+| `monthly.pdf` | synthetic | Simple PDF report (`make_pdf_fixture.py`) |
+| `yearly.xlsx` | synthetic | Simple per-measure-sheet workbook (`make_xlsx_fixture.py`) |
+
+The `monthly_real_*` files are genuine ENS documents captured by the pipeline
+(under `data/sources/raw/`) and used to test the real stacked-block layout with
+spot-checked values. The synthetic fixtures additionally exercise the simpler
+fallback layouts.
 
 The `.pdf` and `.xlsx` binaries are produced by the small generator scripts in
 this directory so the repository stays text-diffable and the exact fixture

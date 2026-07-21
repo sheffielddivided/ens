@@ -242,6 +242,106 @@ def records_from_table(
     return records, units
 
 
+# --------------------------------------------------------------------------- #
+# Stacked monthly layout (the real ENS monthly reports, HTML and PDF)
+# --------------------------------------------------------------------------- #
+# Real reports are one table of stacked measure blocks: a header row
+# ("Oil, M m3" / "Gas, MM Nm3" / "Water, M m3"), a sub-header
+# ("Field | Monthly | Daily Avg. | ..."), then one row per field. We take the
+# "Monthly" column of each oil/gas/water block. (Fuel/Flare/Injection in these
+# reports are national aggregates, not per-field, so they are skipped.)
+_MONTHLY_MEASURE_FIRST = {"oil": "oil", "gas": "gas", "water": "water",
+                          "olie": "oil", "vand": "water"}
+
+
+def _monthly_measure(cell: str) -> str | None:
+    if not cell:
+        return None
+    first = C.normalize_field(cell.split(",")[0]).replace("_", " ").strip()
+    return _MONTHLY_MEASURE_FIRST.get(first)
+
+
+def _is_block_boundary(cell: str) -> bool:
+    if _monthly_measure(cell):
+        return True
+    cl = (cell or "").strip().lower()
+    return cl.startswith(("use of", "note", "anvendelse", "noter"))
+
+
+def parse_stacked_monthly(rows: list[list[str]], year: int, month: int,
+                          source_url: str) -> list[dict]:
+    """Parse stacked oil/gas/water blocks, taking each block's Monthly column."""
+    headers = [(i, m) for i, row in enumerate(rows)
+               if row and (m := _monthly_measure(row[0]))]
+    if not headers:
+        return []
+    by_field: dict[str, dict] = {}
+    for idx, (hi, measure) in enumerate(headers):
+        end = headers[idx + 1][0] if idx + 1 < len(headers) else len(rows)
+        # Locate the sub-header row carrying "Monthly" (and maybe "Field").
+        monthly_col = field_col = None
+        sub_i = None
+        for j in range(hi + 1, min(hi + 4, end)):
+            for ci, cell in enumerate(rows[j]):
+                cl = str(cell).strip().lower()
+                if cl == "monthly":
+                    monthly_col = ci
+                if cl in ("field", "felt"):
+                    field_col = ci
+            if monthly_col is not None:
+                sub_i = j
+                break
+        if monthly_col is None:
+            continue
+        if field_col is None:
+            field_col = 0
+        for k in range(sub_i + 1, end):
+            row = rows[k]
+            c0 = row[field_col] if field_col < len(row) else ""
+            if _is_block_boundary(c0):
+                break
+            slug = C.normalize_field(c0)
+            if not slug or C.is_total_label(c0):
+                continue
+            val = C.parse_number(row[monthly_col] if monthly_col < len(row) else None)
+            if val is not None:
+                by_field.setdefault(
+                    slug, {"field": slug, "year": year, "month": month}
+                )[measure] = val
+    records = []
+    for slug, rec in by_field.items():
+        if any(m in rec for m in C.CORE_MEASURES):
+            rec["preliminary"] = True
+            rec["source_url"] = source_url
+            records.append(rec)
+    return records
+
+
+def parse_monthly_rows(rows: list[list[str]], year: int, month: int,
+                       source_url: str):
+    """Parse one table's rows into (records, units).
+
+    Tries the real stacked-block layout first, then the simpler
+    measure-as-columns layout. Raises SourceFormatError if neither yields rows.
+    """
+    stacked = parse_stacked_monthly(rows, year, month, source_url)
+    if stacked:
+        return stacked, {}
+    header_rows, data_rows = split_by_scoring(rows)
+    return records_from_table(header_rows, data_rows,
+                              year=year, month=month, source_url=source_url)
+
+
+def record_richness(records: list[dict]) -> tuple[int, int]:
+    """Rank a candidate parse: (number of fields, number of filled measures).
+
+    Used to pick the most complete table when several candidates parse (e.g. a
+    merged PDF grid with all blocks beats a partial one).
+    """
+    filled = sum(1 for r in records for m in C.CORE_MEASURES if m in r)
+    return (len(records), filled)
+
+
 def check_units(units: dict[str, str], year: int, month: int) -> None:
     """WARN if a source's own unit string diverges from the documented SI unit."""
     canon = {

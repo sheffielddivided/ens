@@ -306,6 +306,23 @@ class TestMonthlyHTML:
             H.parse_html("<html><body><p>no tables here</p></body></html>",
                          2020, 1, "x")
 
+    def test_real_stacked_html_report(self):
+        """A real ENS .htm report: stacked Oil/Gas/Water blocks, take each
+        block's 'Monthly' column. Values spot-checked against the source."""
+        import parse_monthly_html as H
+
+        raw = (FIXTURES / "monthly_real_2018_01.htm").read_bytes()
+        recs = H.parse_html(raw.decode("cp1252"), 2018, 1, "file://real.htm")
+        by = {r["field"]: r for r in recs}
+        assert by["dan"]["oil"] == 95.0
+        assert by["dan"]["gas"] == 26.4
+        assert by["dan"]["water"] == 809.6
+        assert by["halfdan"]["oil"] == 234.5
+        # No aggregate rows (Fuel/Flare/Injection/Sales/Total) leak in as fields.
+        for junk in ("fuel", "flare", "injection", "sales", "total"):
+            assert junk not in by
+        assert len(recs) >= 15
+
 
 # --------------------------------------------------------------------------- #
 # monthly_common.py column mapping
@@ -378,6 +395,22 @@ class TestMonthlyPDF:
             for m in C.CORE_MEASURES:
                 if m in r:
                     assert 0 <= r[m] < 100000
+
+    def test_real_stacked_pdf_report(self):
+        """A real ENS PDF report: pdfplumber splits the stacked blocks across
+        several tables, so the merged grid must reconstruct them. Spot-checked."""
+        import parse_monthly_pdf as P
+
+        recs = P.parse_pdf(FIXTURES / "monthly_real_2024_01.pdf", 2024, 1, "file://real.pdf")
+        by = {r["field"]: r for r in recs}
+        assert by["dan"]["oil"] == 76.6
+        assert by["dan"]["gas"] == 26.9
+        assert by["dan"]["water"] == 863.7
+        # Halfdan's water is in a block pdfplumber puts in a separate table;
+        # the merged grid + richness selection must still capture it.
+        assert by["halfdan"]["water"] == 623.6
+        for junk in ("fuel", "flare", "injection", "sales", "total"):
+            assert junk not in by
 
 
 # --------------------------------------------------------------------------- #

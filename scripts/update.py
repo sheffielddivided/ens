@@ -66,7 +66,17 @@ def _fetch_and_parse(entry: dict, fetcher: C.Fetcher, *, force: bool) -> list[di
     y, m = entry["year"], entry["month"]
     if kind == "pdf":
         return PP.parse_pdf(fetcher.cache_path(fname), y, m, url)
-    return PH.parse_html(data.decode("utf-8", errors="replace"), y, m, url)
+    return PH.parse_html(_decode_html(data), y, m, url)
+
+
+def _decode_html(data: bytes) -> str:
+    """Decode HTML bytes; ENS .htm files are Windows-1252, not UTF-8."""
+    for enc in ("utf-8", "cp1252", "latin-1"):
+        try:
+            return data.decode(enc)
+        except UnicodeDecodeError:
+            continue
+    return data.decode("utf-8", errors="replace")
 
 
 def process_months(index: dict, fetcher: C.Fetcher, *, force: bool) -> tuple[dict, bool, int]:

@@ -98,22 +98,15 @@ def _table_to_grid(table):
     return grid, (header_count if header_count else None)
 
 
-def extract_candidate_tables(html: str):
-    """Yield (header_rows, data_rows) for each table in the document."""
+def extract_candidate_grids(html: str):
+    """Yield the full rectangular row grid of each table in the document."""
     import bs4
 
     soup = bs4.BeautifulSoup(html, "lxml")
     for table in soup.find_all("table"):
-        grid, n_header = _table_to_grid(table)
-        if not grid or len(grid) < 2:
-            continue
-        if n_header:
-            yield grid[:n_header], grid[n_header:]
-        else:
-            try:
-                yield M.split_by_scoring(grid)
-            except C.SourceFormatError:
-                continue
+        grid, _ = _table_to_grid(table)
+        if grid and len(grid) >= 2:
+            yield grid
 
 
 def parse_html(html: str, year: int, month: int, source_url: str) -> list[dict]:
@@ -121,15 +114,13 @@ def parse_html(html: str, year: int, month: int, source_url: str) -> list[dict]:
     best: list[dict] = []
     best_units: dict = {}
     errors = []
-    for header_rows, data_rows in extract_candidate_tables(html):
+    for grid in extract_candidate_grids(html):
         try:
-            records, units = M.records_from_table(
-                header_rows, data_rows, year=year, month=month, source_url=source_url
-            )
+            records, units = M.parse_monthly_rows(grid, year, month, source_url)
         except C.SourceFormatError as exc:
             errors.append(str(exc))
             continue
-        if len(records) > len(best):
+        if M.record_richness(records) > M.record_richness(best):
             best, best_units = records, units
     if not best:
         raise C.SourceFormatError(
