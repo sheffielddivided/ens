@@ -41,8 +41,13 @@ def _monthly_key(r: dict):
     return (r["field"], r["year"], r["month"])
 
 
-def process_months(index: dict, fetcher: C.Fetcher, *, force: bool) -> tuple[dict, bool]:
-    """Fetch/parse due months, updating index entries. Returns (monthly, changed)."""
+def process_months(index: dict, fetcher: C.Fetcher, *, force: bool) -> tuple[dict, bool, int]:
+    """Fetch/parse due months, updating index entries.
+
+    Returns (monthly, changed, failed_count). Per-month failures never abort the
+    loop -- they are recorded in the index and counted so the caller can exit
+    non-zero *after* the good data has been written and committed.
+    """
     monthly = C.read_json(C.MONTHLY_PATH) or {
         "schema_version": C.SCHEMA_VERSION,
         "unit_definitions": C.UNIT_DEFINITIONS,
@@ -87,7 +92,7 @@ def process_months(index: dict, fetcher: C.Fetcher, *, force: bool) -> tuple[dic
     monthly["records"] = C.sort_records(list(records_by_key.values()), monthly=True)
     monthly["last_updated"] = _max_retrieved(monthly["records"])
     C.info(f"monthly: {ok} parsed, {failed} failed, {skipped} already ok")
-    return monthly, changed
+    return monthly, changed, failed
 
 
 def _max_retrieved(records: list[dict]) -> str | None:
@@ -261,7 +266,7 @@ def run(*, offline: bool, crawl: bool, refresh_yearly: bool, force: bool) -> int
 
     # 3) monthly
     C.info("processing monthly reports ...")
-    monthly, _ = process_months(index, fetcher, force=force)
+    monthly, _, failed = process_months(index, fetcher, force=force)
 
     # 4) persist monthly + index (idempotent)
     C.write_json_stable(C.MONTHLY_PATH, monthly, volatile_keys=("last_updated",))
@@ -278,6 +283,13 @@ def run(*, offline: bool, crawl: bool, refresh_yearly: bool, force: bool) -> int
     n_fields = len(combined["fields"]) - 1
     C.info(f"combined.json {'updated' if wrote else 'unchanged'}: "
            f"{n_fields} fields, last_updated={combined['last_updated']}")
+
+    if failed:
+        # Good data has already been written above and will still be committed;
+        # exit non-zero so CI surfaces the failed months (and opens an issue)
+        # instead of failing silently.
+        C.error(f"{failed} month(s) failed to parse -- see ERROR lines above")
+        return 1
     return 0
 
 
