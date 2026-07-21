@@ -102,6 +102,9 @@ h1 { margin: 0 0 6px; font-size: clamp(1.4rem, 3.4vw, 1.95rem); letter-spacing: 
 .seg.measure button[aria-pressed="true"][data-measure="gas"] { color: var(--gas); }
 .seg.measure button[aria-pressed="true"][data-measure="water"] { color: var(--water); }
 
+.chk { display: inline-flex; align-items: center; gap: 6px; font-size: .84rem; color: var(--ink-2); cursor: pointer; }
+.chk input { accent-color: var(--water); margin: 0; }
+
 .picker { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0 2px; }
 .picker label { display: inline-flex; align-items: center; gap: 6px; font-size: .82rem;
   border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px 3px 8px; cursor: pointer; color: var(--ink-2); }
