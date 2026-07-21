@@ -224,6 +224,47 @@ class TestYearly:
         records, _ = parsed_yearly
         assert all(not C.is_total_label(r["field"]) for r in records)
 
+    def test_stacked_single_sheet(self):
+        """The real ENS yearly file is one sheet of stacked measure blocks;
+        Export/Injection belong to the current oil/gas/water section."""
+        import ingest_yearly as Y
+
+        yrs = [1972, 1973, 1974, 1975, 1976]
+
+        def block(title, sub, rows):
+            out = [[title]]
+            if sub:
+                out.append([sub])
+            out.append([None] + yrs)
+            out.extend(rows)
+            out.append([])
+            return out
+
+        grid = (
+            block("Oil, thousand cubic meters", "Production",
+                  [["Dan", 106.9, 153.9, 104.5, 189.8, 225.5],
+                   ["Gorm", 0, 10.0, 12.0, 14.0, 16.0],
+                   ["Total", 106.9, 163.9, 116.5, 203.8, 241.5]])
+            + block("Gas, million normal cubic meters", "Production",
+                    [["Dan", 5.0, 6.0, 7.0, 8.0, 9.0],
+                     ["Total", 5.0, 6.0, 7.0, 8.0, 9.0]])
+            + block("Injection", None,          # gas section -> gas_injection
+                    [["Gorm", 1.1, 1.2, 1.3, 1.4, 1.5]])
+            + block("Water, thousand cubic meters", "Production",
+                    [["Dan", 900.0, 950.0, 960.0, 970.0, 980.0]])
+            + block("Injection", None,          # water section -> water_injection
+                    [["Dan", 40.0, 42.0, 43.0, 44.0, 45.0]])
+        )
+        recs = Y.try_parse_stacked_sheet(grid)
+        by = {(r["field"], r["year"]): r for r in recs}
+        assert by[("dan", 1972)]["oil"] == 106.9
+        assert by[("dan", 1972)]["gas"] == 5.0
+        assert by[("dan", 1972)]["water"] == 900.0
+        assert by[("dan", 1972)]["water_injection"] == 40.0
+        assert by[("gorm", 1972)]["gas_injection"] == 1.1
+        # Totals excluded; no bogus fields from title rows.
+        assert "total" not in {r["field"] for r in recs}
+
 
 # --------------------------------------------------------------------------- #
 # parse_monthly_html.py

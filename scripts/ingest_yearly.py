@@ -328,6 +328,95 @@ def _label_of_row(row, ci) -> str:
 
 
 # --------------------------------------------------------------------------- #
+# Stacked single-sheet layout (the real ENS yearly file)
+# --------------------------------------------------------------------------- #
+# The published yearly workbook is one sheet with measure blocks stacked
+# vertically: a title row ("Oil, thousand cubic meters" / "Gas, million normal
+# cubic meters" / "Water, ...") or a sub-label ("Export", "Fuel", "Flare",
+# "Injection"), then a horizontal year header (1972 ...), then one row per field
+# ending in "Total". Export/Injection belong to whichever section (oil/gas/
+# water) is currently in effect.
+def _count_year_cells(row) -> int:
+    return sum(1 for v in row if _is_year(v) is not None)
+
+
+def _first_text(row) -> str:
+    for v in row:
+        if isinstance(v, str) and v.strip():
+            return v.strip()
+    return ""
+
+
+def _classify_block(titles: list[str], section: str | None):
+    """Return (measure, new_section) for a block given its title rows."""
+    j = " ".join(t.lower() for t in titles)
+    if "inject" in j:
+        return ("water_injection" if section == "water" else "gas_injection"), section
+    if "export" in j:
+        return ("oil_export" if section == "oil" else "gas_export"), section
+    if "fuel" in j:
+        return "fuel", section
+    if "flar" in j:
+        return "flare", section
+    if "oil" in j:
+        return "oil", "oil"
+    if "gas" in j:
+        return "gas", "gas"
+    if "water" in j:
+        return "water", "water"
+    return None, section
+
+
+def try_parse_stacked_sheet(grid: list[list], raw_labels: dict | None = None):
+    """Parse a single sheet of vertically-stacked measure blocks.
+
+    Returns a list of {field, year, <measures>} records, or None if the sheet
+    is not this shape (needs at least two year-header rows so the simpler
+    one-measure-per-sheet layout is left to the matrix parser).
+    """
+    year_headers = [ri for ri, row in enumerate(grid) if _count_year_cells(row) >= 5]
+    if len(year_headers) < 2:
+        return None
+
+    section = None
+    agg: dict[tuple[str, int], dict] = {}
+    for idx, h in enumerate(year_headers):
+        prev = year_headers[idx - 1] if idx > 0 else -1
+        # Gather the title rows directly above this year header (stop at a blank
+        # row or the previous block).
+        titles: list[str] = []
+        r = h - 1
+        while r > prev:
+            txt = _first_text(grid[r])
+            if not txt:
+                break
+            titles.insert(0, txt)
+            r -= 1
+        measure, section = _classify_block(titles, section)
+        if measure is None:
+            continue
+        years = {ci: _is_year(v) for ci, v in enumerate(grid[h]) if _is_year(v) is not None}
+        nxt = year_headers[idx + 1] if idx + 1 < len(year_headers) else len(grid)
+        for ri in range(h + 1, nxt):
+            row = grid[ri]
+            label = row[0] if row else None
+            slug = C.normalize_field(label)
+            if not slug or C.is_total_label(label):
+                continue
+            got = False
+            for ci, yr in years.items():
+                val = C.parse_number(row[ci] if ci < len(row) else None)
+                if val is not None:
+                    agg.setdefault((slug, yr), {"field": slug, "year": yr})[measure] = val
+                    got = True
+            if got and raw_labels is not None:
+                raw_labels[slug][str(label).strip()] += 1
+    if not agg:
+        return None
+    return [agg[k] for k in sorted(agg)]
+
+
+# --------------------------------------------------------------------------- #
 # Workbook dispatcher
 # --------------------------------------------------------------------------- #
 def parse_workbook(path: Path) -> tuple[list[dict], dict]:
@@ -359,7 +448,23 @@ def parse_workbook(path: Path) -> tuple[list[dict], dict]:
             )
             continue
 
-        # 2) Otherwise treat as a single-measure matrix.
+        # 2) Stacked single-sheet layout (the real ENS yearly workbook).
+        stacked = try_parse_stacked_sheet(grid, report["raw_labels"])
+        if stacked:
+            for rec in stacked:
+                key = (rec["field"], rec["year"])
+                by_key.setdefault(key, {"field": rec["field"], "year": rec["year"]})
+                for m, v in rec.items():
+                    if m in ("field", "year"):
+                        continue
+                    by_key[key][m] = v
+                    report["measures_found"][m] += 1
+            report["sheets"].append(
+                {"sheet": name, "result": "stacked", "records": len(stacked)}
+            )
+            continue
+
+        # 3) Otherwise treat as a single-measure matrix.
         measure = classify_measure(name)
         if measure is None:
             report["sheets"].append({"sheet": name, "result": "skipped-unknown-measure"})
