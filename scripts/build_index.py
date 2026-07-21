@@ -268,7 +268,11 @@ def build_index(
         "yearly": yearly_entry,
         "monthly": monthly_entries,
     }
-    C.write_json(output, index)
+    # Idempotent: if only the timestamp would change, leave the file alone so a
+    # re-crawl with no new sources produces no git diff.
+    written = C.write_json_stable(output, index, volatile_keys=("generated_at",))
+    if not written:
+        index = C.read_json(output)  # keep the on-disk timestamps
     _print_summary(index)
     return index
 

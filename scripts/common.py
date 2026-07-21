@@ -151,6 +151,29 @@ def write_json(path: Path | str, data: Any) -> None:
             os.unlink(tmp)
 
 
+def _strip_volatile(obj: Any, keys: tuple[str, ...]) -> Any:
+    if isinstance(obj, dict):
+        return {k: v for k, v in obj.items() if k not in keys}
+    return obj
+
+
+def write_json_stable(path: Path | str, data: Any, volatile_keys: tuple[str, ...] = ()) -> bool:
+    """Write ``data`` only if it differs from the file already on disk.
+
+    This is what makes the pipeline idempotent: when a re-run produces the same
+    data, the file is left byte-for-byte untouched so git sees no change and no
+    commit is made. ``volatile_keys`` names top-level keys (e.g. a run
+    timestamp) that must be ignored when deciding whether anything really
+    changed. Returns True if the file was written, False if left unchanged.
+    """
+    path = Path(path)
+    old = read_json(path)
+    if old is not None and _strip_volatile(old, volatile_keys) == _strip_volatile(data, volatile_keys):
+        return False
+    write_json(path, data)
+    return True
+
+
 # --------------------------------------------------------------------------- #
 # Field-name normalisation
 # --------------------------------------------------------------------------- #
@@ -219,6 +242,10 @@ def parse_number(value: Any) -> float | None:
         return f
     s = str(value).strip()
     if s == "" or s in {"-", "–", "—", "n/a", "N/A", "na", "NA", "."}:
+        return None
+    # A numeric data cell never contains letters. Rejecting them stops unit
+    # suffixes and titles (e.g. "Nm3", "mio.") from being mined for stray digits.
+    if re.search(r"[A-Za-z]", s):
         return None
     # Strip anything that is not a digit, separator or sign.
     s = re.sub(r"[^0-9.,\-+]", "", s)
