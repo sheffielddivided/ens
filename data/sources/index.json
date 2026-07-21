@@ -21,10 +21,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "January 2018",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2018-01: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:13Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201802si.htm",
@@ -33,10 +33,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "February 2018",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2018-02: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:13Z",
+      "error": null,
+      "records": 16
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201803si.htm",
@@ -45,10 +45,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "March 2018",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2018-03: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:14Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201804si.htm",
@@ -57,10 +57,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "April 2018",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2018-04: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:15Z",
+      "error": null,
+      "records": 16
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201805si.htm",
@@ -69,10 +69,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "May 2018",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2018-05: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:16Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201806si.htm",
@@ -81,10 +81,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "June 2018",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2018-06: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:17Z",
+      "error": null,
+      "records": 16
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201807si.htm",
@@ -93,10 +93,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "July 2018",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2018-07: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:18Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201808si.htm",
@@ -105,10 +105,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "August 2018",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2018-08: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:19Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201809si.htm",
@@ -117,10 +117,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "September 2018",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2018-09: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:20Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201810si.htm",
@@ -129,10 +129,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "October 2018",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2018-10: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:21Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201811si.htm",
@@ -141,10 +141,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "November 2018",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2018-11: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:22Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201812si.htm",
@@ -153,10 +153,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "December 2018",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2018-12: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:23Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201901si.htm",
@@ -165,10 +165,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "January 2019",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2019-01: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:24Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201902si.htm",
@@ -177,10 +177,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "February 2019",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2019-02: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:25Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201903si.htm",
@@ -189,10 +189,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "March 2019",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2019-03: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:26Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201904si.htm",
@@ -201,10 +201,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "April 2019",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2019-04: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:27Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201905si.htm",
@@ -213,10 +213,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "May 2019",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2019-05: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:28Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201906si.htm",
@@ -225,10 +225,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "June 2019",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2019-06: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:29Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201907si.htm",
@@ -237,10 +237,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "July 2019",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2019-07: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:30Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201908si.htm",
@@ -249,10 +249,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "August 2019",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2019-08: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:31Z",
+      "error": null,
+      "records": 17
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201909si.htm",
@@ -261,10 +261,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "September 2019",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2019-09: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:32Z",
+      "error": null,
+      "records": 14
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201910si.htm",
@@ -273,10 +273,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "October 2019",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2019-10: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:33Z",
+      "error": null,
+      "records": 11
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201911si.htm",
@@ -285,10 +285,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "November 2019",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2019-11: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:34Z",
+      "error": null,
+      "records": 11
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp201912si.htm",
@@ -297,10 +297,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "December 2019",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2019-12: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:35Z",
+      "error": null,
+      "records": 11
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202001si.htm",
@@ -309,10 +309,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "January 2020",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2020-01: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:36Z",
+      "error": null,
+      "records": 11
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202002si.htm",
@@ -321,10 +321,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "February 2020",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2020-02: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:37Z",
+      "error": null,
+      "records": 11
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202003si.htm",
@@ -333,10 +333,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "March 2020",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2020-03: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:38Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202004si.htm",
@@ -345,10 +345,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "April 2020",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2020-04: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:39Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202005si.htm",
@@ -357,10 +357,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "May 2020",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2020-05: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:40Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202006si.htm",
@@ -369,10 +369,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "June 2020",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2020-06: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:41Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202007si.htm",
@@ -381,10 +381,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "July 2020",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2020-07: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:42Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202008si.htm",
@@ -393,10 +393,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "August 2020",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2020-08: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:43Z",
+      "error": null,
+      "records": 11
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202009si.htm",
@@ -405,10 +405,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "September 2020",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2020-09: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:44Z",
+      "error": null,
+      "records": 11
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202010si.htm",
@@ -417,10 +417,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "October 2020",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2020-10: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:45Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202011si.htm",
@@ -429,10 +429,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "November 2020",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2020-11: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:46Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202012si.htm",
@@ -441,10 +441,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "December 2020",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2020-12: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:47Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202101si_0.htm",
@@ -453,10 +453,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "January 2021",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2021-01: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:48Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202102si.htm",
@@ -465,10 +465,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "February 2021",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2021-02: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:49Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202103si.htm",
@@ -477,10 +477,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "March 2021",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2021-03: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:50Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202104si.htm",
@@ -489,10 +489,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "April 2021",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2021-04: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:51Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202105si.htm",
@@ -501,10 +501,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "May 2021",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2021-05: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:52Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202106si.htm",
@@ -513,10 +513,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "June 2021",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2021-06: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:53Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202107si_0.htm",
@@ -525,10 +525,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "July 2021",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2021-07: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:54Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202108si_0.htm",
@@ -537,10 +537,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "August 2021",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2021-08: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:55Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202109si_0.htm",
@@ -549,10 +549,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "September 2021",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2021-09: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:56Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202110si_0.htm",
@@ -561,10 +561,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "October 2021",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2021-10: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:57Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202111si_0.htm",
@@ -573,10 +573,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "November 2021",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2021-11: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:58Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202112si_0.htm",
@@ -585,10 +585,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "December 2021",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2021-12: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T21:59:59Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202201si_0.htm",
@@ -597,10 +597,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "January 2022",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2022-01: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:00Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202202si_0.htm",
@@ -609,10 +609,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "February 2022",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2022-02: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:01Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202203si.htm",
@@ -621,10 +621,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "March 2022",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2022-03: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:02Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp202204si.htm",
@@ -633,10 +633,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "April 2022",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2022-04: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:03Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202205si.htm",
@@ -645,10 +645,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "May 2022",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2022-05: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:04Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp202206si.htm",
@@ -657,10 +657,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "June 2022",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2022-06: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:05Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202207si.htm",
@@ -669,10 +669,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "July 2022",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2022-07: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:06Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202208si.htm",
@@ -681,10 +681,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "August 2022",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2022-08: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:07Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202209si.htm",
@@ -693,10 +693,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "September 2022",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2022-09: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:08Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202210si.htm",
@@ -705,10 +705,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "October 2022",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2022-10: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:09Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202211si.htm",
@@ -717,10 +717,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "November 2022",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2022-11: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:10Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp202212si.htm",
@@ -729,10 +729,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "December 2022",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2022-12: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:11Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202301si.htm",
@@ -741,10 +741,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "January 2023",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2023-01: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:12Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202302si.htm",
@@ -753,10 +753,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "February 2023",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2023-02: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:13Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202303si.htm",
@@ -765,10 +765,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "March 2023",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2023-03: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:14Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202304si.htm",
@@ -777,10 +777,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "April 2023",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2023-04: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:15Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202305si.htm",
@@ -789,10 +789,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "May 2023",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2023-05: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:16Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202306si.htm",
@@ -801,10 +801,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "June 2023",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2023-06: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:17Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202307si.htm",
@@ -813,10 +813,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "July 2023",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2023-07: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:18Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202308si.htm",
@@ -825,10 +825,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "August 2023",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2023-08: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:19Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202309si.htm",
@@ -837,10 +837,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "September 2023",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2023-09: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:20Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp202310si.htm",
@@ -849,10 +849,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "October 2023",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2023-10: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:21Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/HTM_GIF/mp202311si.htm",
@@ -861,10 +861,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "November 2023",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2023-11: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:22Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/sites/default/files/OlieGas/mp202312si.htm",
@@ -873,10 +873,10 @@
       "format": "html",
       "unit_system": "si",
       "link_text": "December 2023",
-      "status": "failed",
-      "retrieved_at": null,
-      "error": "2023-12: no table yielded oil/gas/water records. Tried 1 table(s). Last issues: ['header recognised but no data rows parsed -- check table body']",
-      "records": 0
+      "status": "ok",
+      "retrieved_at": "2026-07-21T22:00:23Z",
+      "error": null,
+      "records": 10
     },
     {
       "url": "https://ens.dk/media/6333/download",
@@ -886,9 +886,9 @@
       "unit_system": "si",
       "link_text": "January 2024",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:43:37Z",
+      "retrieved_at": "2026-07-21T22:00:25Z",
       "error": null,
-      "records": 25
+      "records": 10
     },
     {
       "url": "https://ens.dk/media/6335/download",
@@ -898,9 +898,9 @@
       "unit_system": "si",
       "link_text": "February 2024",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:43:39Z",
+      "retrieved_at": "2026-07-21T22:00:26Z",
       "error": null,
-      "records": 25
+      "records": 10
     },
     {
       "url": "https://ens.dk/media/6337/download",
@@ -910,9 +910,9 @@
       "unit_system": "si",
       "link_text": "March 2024",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:43:40Z",
+      "retrieved_at": "2026-07-21T22:00:28Z",
       "error": null,
-      "records": 25
+      "records": 11
     },
     {
       "url": "https://ens.dk/media/6339/download",
@@ -922,9 +922,9 @@
       "unit_system": "si",
       "link_text": "April 2024",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:43:41Z",
+      "retrieved_at": "2026-07-21T22:00:29Z",
       "error": null,
-      "records": 27
+      "records": 11
     },
     {
       "url": "https://ens.dk/media/6341/download",
@@ -934,9 +934,9 @@
       "unit_system": "si",
       "link_text": "May 2024",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:43:43Z",
+      "retrieved_at": "2026-07-21T22:00:30Z",
       "error": null,
-      "records": 27
+      "records": 11
     },
     {
       "url": "https://ens.dk/media/6343/download",
@@ -946,9 +946,9 @@
       "unit_system": "si",
       "link_text": "June 2024",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:43:44Z",
+      "retrieved_at": "2026-07-21T22:00:31Z",
       "error": null,
-      "records": 27
+      "records": 11
     },
     {
       "url": "https://ens.dk/media/6345/download",
@@ -958,9 +958,9 @@
       "unit_system": "si",
       "link_text": "July 2024",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:43:46Z",
+      "retrieved_at": "2026-07-21T22:00:32Z",
       "error": null,
-      "records": 25
+      "records": 11
     },
     {
       "url": "https://ens.dk/media/6347/download",
@@ -970,9 +970,9 @@
       "unit_system": "si",
       "link_text": "August 2024",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:43:47Z",
+      "retrieved_at": "2026-07-21T22:00:33Z",
       "error": null,
-      "records": 29
+      "records": 12
     },
     {
       "url": "https://ens.dk/media/6349/download",
@@ -982,9 +982,9 @@
       "unit_system": "si",
       "link_text": "September 2024",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:43:49Z",
+      "retrieved_at": "2026-07-21T22:00:35Z",
       "error": null,
-      "records": 29
+      "records": 11
     },
     {
       "url": "https://ens.dk/media/6351/download",
@@ -994,9 +994,9 @@
       "unit_system": "si",
       "link_text": "October 2024",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:43:51Z",
+      "retrieved_at": "2026-07-21T22:00:36Z",
       "error": null,
-      "records": 29
+      "records": 12
     },
     {
       "url": "https://ens.dk/media/6353/download",
@@ -1006,9 +1006,9 @@
       "unit_system": "si",
       "link_text": "November 2024",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:43:52Z",
+      "retrieved_at": "2026-07-21T22:00:37Z",
       "error": null,
-      "records": 29
+      "records": 13
     },
     {
       "url": "https://ens.dk/media/6355/download",
@@ -1018,9 +1018,9 @@
       "unit_system": "si",
       "link_text": "December 2024",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:43:54Z",
+      "retrieved_at": "2026-07-21T22:00:38Z",
       "error": null,
-      "records": 34
+      "records": 14
     },
     {
       "url": "https://ens.dk/media/7244/download ",
@@ -1054,9 +1054,9 @@
       "unit_system": "si",
       "link_text": "March 2025",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:44:57Z",
+      "retrieved_at": "2026-07-21T22:01:41Z",
       "error": null,
-      "records": 38
+      "records": 13
     },
     {
       "url": "https://ens.dk/media/7247/download",
@@ -1066,9 +1066,9 @@
       "unit_system": "si",
       "link_text": "April 2025",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:44:58Z",
+      "retrieved_at": "2026-07-21T22:01:42Z",
       "error": null,
-      "records": 38
+      "records": 13
     },
     {
       "url": "https://ens.dk/media/7248/download",
@@ -1078,9 +1078,9 @@
       "unit_system": "si",
       "link_text": "May 2025",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:00Z",
+      "retrieved_at": "2026-07-21T22:01:44Z",
       "error": null,
-      "records": 23
+      "records": 13
     },
     {
       "url": "https://ens.dk/media/7249/download",
@@ -1090,9 +1090,9 @@
       "unit_system": "si",
       "link_text": "June 2025",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:01Z",
+      "retrieved_at": "2026-07-21T22:01:45Z",
       "error": null,
-      "records": 38
+      "records": 13
     },
     {
       "url": "https://ens.dk/media/7250/download",
@@ -1102,9 +1102,9 @@
       "unit_system": "si",
       "link_text": "July 2025",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:03Z",
+      "retrieved_at": "2026-07-21T22:01:46Z",
       "error": null,
-      "records": 23
+      "records": 13
     },
     {
       "url": "https://ens.dk/media/7311/download",
@@ -1114,9 +1114,9 @@
       "unit_system": "si",
       "link_text": "August 2025",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:04Z",
+      "retrieved_at": "2026-07-21T22:01:47Z",
       "error": null,
-      "records": 38
+      "records": 13
     },
     {
       "url": "https://ens.dk/media/7396/download",
@@ -1126,9 +1126,9 @@
       "unit_system": "si",
       "link_text": "September 2025",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:06Z",
+      "retrieved_at": "2026-07-21T22:01:49Z",
       "error": null,
-      "records": 38
+      "records": 16
     },
     {
       "url": "https://ens.dk/media/7486/download",
@@ -1138,9 +1138,9 @@
       "unit_system": "si",
       "link_text": "October 2025",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:07Z",
+      "retrieved_at": "2026-07-21T22:01:50Z",
       "error": null,
-      "records": 38
+      "records": 16
     },
     {
       "url": "https://ens.dk/media/7663/download",
@@ -1150,9 +1150,9 @@
       "unit_system": "si",
       "link_text": "November 2025",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:09Z",
+      "retrieved_at": "2026-07-21T22:01:51Z",
       "error": null,
-      "records": 38
+      "records": 16
     },
     {
       "url": "https://ens.dk/media/7707/download",
@@ -1162,9 +1162,9 @@
       "unit_system": "si",
       "link_text": "December 2025",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:10Z",
+      "retrieved_at": "2026-07-21T22:01:52Z",
       "error": null,
-      "records": 38
+      "records": 16
     },
     {
       "url": "https://ens.dk/media/7804/download",
@@ -1174,9 +1174,9 @@
       "unit_system": "si",
       "link_text": "January 2026",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:12Z",
+      "retrieved_at": "2026-07-21T22:01:54Z",
       "error": null,
-      "records": 38
+      "records": 16
     },
     {
       "url": "https://ens.dk/media/8434/download",
@@ -1186,9 +1186,9 @@
       "unit_system": "si",
       "link_text": "February 2026",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:13Z",
+      "retrieved_at": "2026-07-21T22:01:55Z",
       "error": null,
-      "records": 38
+      "records": 16
     },
     {
       "url": "https://ens.dk/media/8480/download",
@@ -1198,9 +1198,9 @@
       "unit_system": "si",
       "link_text": "March 2026",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:15Z",
+      "retrieved_at": "2026-07-21T22:01:56Z",
       "error": null,
-      "records": 33
+      "records": 16
     },
     {
       "url": "https://ens.dk/media/8566/download",
@@ -1210,9 +1210,9 @@
       "unit_system": "si",
       "link_text": "April 2026",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:16Z",
+      "retrieved_at": "2026-07-21T22:01:58Z",
       "error": null,
-      "records": 33
+      "records": 16
     },
     {
       "url": "https://ens.dk/media/8602/download",
@@ -1222,9 +1222,9 @@
       "unit_system": "si",
       "link_text": "May 2026",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:18Z",
+      "retrieved_at": "2026-07-21T22:01:59Z",
       "error": null,
-      "records": 33
+      "records": 16
     },
     {
       "url": "https://ens.dk/media/8675/download",
@@ -1234,9 +1234,9 @@
       "unit_system": "si",
       "link_text": "June 2026",
       "status": "ok",
-      "retrieved_at": "2026-07-21T21:45:20Z",
+      "retrieved_at": "2026-07-21T22:02:00Z",
       "error": null,
-      "records": 33
+      "records": 16
     }
   ]
 }
