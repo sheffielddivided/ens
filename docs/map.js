@@ -259,9 +259,23 @@ function blocksLayer(data) {
 // base grid beneath the fields, see main); licences are omitted because they
 // coincide with the field delineations.
 const OVERLAYS = [
-  ["⬤&nbsp; Installasjoner", "data/gis/installations.geojson", installationsLayer, true],
+  ["⬤&nbsp; Installasjoner", "data/gis/installations.geojson", installationsLayer, false],
   ["•&nbsp; Letebrønner", "data/gis/wells.geojson", wellsLayer, false],
 ];
+
+function fieldLabelsLayer(geoData) {
+  const group = L.layerGroup();
+  (geoData.features || []).forEach((f) => {
+    const slug = f.properties.slug;
+    const name = (PROD[slug] && PROD[slug].name) || f.properties.name || slug;
+    const center = L.geoJSON(f).getBounds().getCenter();
+    group.addLayer(L.marker(center, {
+      icon: L.divIcon({ className: "field-label", html: esc(name) }),
+      interactive: false, keyboard: false,
+    }));
+  });
+  return group;
+}
 
 // --------------------------------------------------------------------------- //
 // Boot
@@ -306,8 +320,13 @@ async function main() {
     blocksLayer(blocksData).addTo(map).bringToBack();
   }
 
-  // Optional overlays, each loaded only if its file exists.
+  // Field name labels: own toggle, on by default.
   const control = {};
+  const labelsLayer = fieldLabelsLayer(geo.data);
+  labelsLayer.addTo(map);
+  control["🏷&nbsp; Feltnavn"] = labelsLayer;
+
+  // Optional overlays, each loaded only if its file exists.
   for (const [name, file, build, on] of OVERLAYS) {
     const data = await loadJson(file);
     if (!data || !(data.features || []).length) continue;
@@ -315,9 +334,7 @@ async function main() {
     control[name] = layer;
     if (on) layer.addTo(map);
   }
-  if (Object.keys(control).length) {
-    L.control.layers(null, control, { collapsed: false, position: "topright" }).addTo(map);
-  }
+  L.control.layers(null, control, { collapsed: false, position: "topright" }).addTo(map);
 
   const n = geo.data.features.length;
   const upd = geo.data.generated_at ? ` · geometri oppdatert ${geo.data.generated_at.slice(0, 10)}` : "";

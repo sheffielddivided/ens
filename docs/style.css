@@ -158,6 +158,11 @@ footer a { color: var(--water); }
   background: var(--surface) !important; color: var(--muted) !important;
 }
 .leaflet-control-attribution a { color: var(--water) !important; }
+.field-label {
+  color: var(--ink); font-size: .74rem; font-weight: 600; white-space: nowrap;
+  text-shadow: 0 1px 2px var(--page), 0 -1px 2px var(--page), 1px 0 2px var(--page), -1px 0 2px var(--page);
+  transform: translate(-50%, -50%); pointer-events: none;
+}
 
 .mp h3 { margin: 0 0 4px; font-size: 1rem; }
 .mp-op { margin: 0 0 8px; color: var(--muted); font-size: .8rem; }
