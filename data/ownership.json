@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "source": "https://ens.dk/en/energy-sources/danish-licences-and-licensees",
+  "note": "Manually curated from an ENS licensee export; see scripts/ingest_ownership.py.",
+  "companies": [
+    "BlueNord",
+    "Danoil",
+    "Harbour",
+    "INEOS",
+    "Nordsøfonden",
+    "TotalEnergies"
+  ],
+  "fields": {
+    "cecilie": {
+      "INEOS": 0.5641,
+      "Harbour": 0.4359
+    },
+    "dagmar": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "dan": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "gorm": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "halfdan": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "harald": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "kraka": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "lulita": {
+      "INEOS": 0.8,
+      "BlueNord": 0.2
+    },
+    "nini": {
+      "INEOS": 0.57143,
+      "Harbour": 0.42857
+    },
+    "ravn": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "regnar": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "roar": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "rolf": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "siri": {
+      "INEOS": 1.0
+    },
+    "skjold": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "solsort": {
+      "INEOS": 0.65,
+      "Danoil": 0.15,
+      "Nordsøfonden": 0.2
+    },
+    "svend": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "syd_arne": {
+      "INEOS": 0.98305,
+      "Danoil": 0.01695
+    },
+    "tyra": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "tyra_se": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    },
+    "valdemar": {
+      "BlueNord": 0.368,
+      "TotalEnergies": 0.432,
+      "Nordsøfonden": 0.2
+    }
+  }
+}

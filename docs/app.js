@@ -1,33 +1,41 @@
 "use strict";
 
 /* ENS production explorer.
- * Loads data/combined.json (built by scripts/update.py); falls back to a
- * labelled synthetic sample. Colours come from CSS custom properties (the
- * validated dataviz reference palette) for the 8 biggest fields; the remaining
- * fields get stable generated hues so any selected subset is distinguishable.
- * Field selection is global and scopes every chart and the tiles. */
+ * Loads data/combined.json (built by scripts/update.py) and data/ownership.json
+ * (built by scripts/ingest_ownership.py); falls back to labelled synthetic
+ * samples. Colours come from CSS custom properties (the validated dataviz
+ * reference palette) for the 8 biggest fields/companies; the remaining ones
+ * get stable generated hues so any selected subset is distinguishable.
+ * Field selection is global and scopes every chart and the tiles.
+ *
+ * Everything is always expressed as oil+gas combined, in oil-equivalent
+ * barrels per day (1000 fat o.e./dag) -- there is no SI-units mode and no
+ * single-measure toggle. Water, when shown at all, is an optional extra line
+ * in its own native unit (1000 m³/dag) on a secondary axis, since converting
+ * produced water to an oil-equivalent has no physical meaning. */
 
-const MEASURES = ["oil", "gas", "water"];
-const MEASURE_LABEL = { oil: "Olje", gas: "Gass", water: "Vann" };
+const MEASURE_LABEL = { oil: "Olje", gas: "Gass" };
+const OE_UNIT = "1000 fat o.e./dag";
+const WATER_UNIT = "1000 m³/dag";
 const SLOTS = ["--c1", "--c2", "--c3", "--c4", "--c5", "--c6", "--c7", "--c8"];
 const MONTHS_NB = ["jan", "feb", "mar", "apr", "mai", "jun", "jul", "aug", "sep", "okt", "nov", "des"];
 const STACK_CAP = 8;             // max individual bands before folding to "Andre valgte"
+const UNKNOWN_COMPANY = "Ukjent";
 
-let DATA = null, timeChart = null, rankChart = null;
+let DATA = null, OWN = null, timeChart = null, rankChart = null;
 let RANKED = [];                 // all field slugs, biggest first
-let fieldColor = {};             // slug -> { v: cssVarName } or { h: hex/hsl }
+let COMPANIES = [];               // all company names, biggest first
+let fieldColor = {};              // slug -> { v: cssVarName } or { h: hex/hsl }
+let companyColor = {};
 let displayName = {};
 const state = {
-  measure: "oil", res: "yearly", view: "total", unit: "si", annualize: true,
-  selected: new Set(), sumMeasures: new Set(["oil", "gas"]), year: null,
+  res: "yearly", view: "total", annualize: true, showWater: false,
+  selected: new Set(), year: null,
 };
 
 const $ = (id) => document.getElementById(id);
 const css = (v) => getComputedStyle(document.body).getPropertyValue(v).trim();
 const toMap = (arr) => { const m = {}; (arr || []).forEach((p) => { m[p.t] = p.v; }); return m; };
-const prettyUnit = (u) => (u || "").replace(/Nm3/g, "Nm³").replace(/m3/g, "m³");
-const colorOf = (slug) => { const c = fieldColor[slug]; return c ? (c.v ? css(c.v) : c.h) : css("--c-other"); };
-const measureColor = () => css("--" + state.measure);
 
 // -- oil-equivalent + annualization -----------------------------------------
 const BOE = 6.29;                                  // barrels per m³ of oil
@@ -52,18 +60,17 @@ function annualFactor(t) {                          // gross an incomplete year 
 }
 const isAnnualized = (t) => annualFactor(t) !== 1;
 
-function mVal(v, t) {                                // single-measure display value
-  if (v == null) return v;
-  const b = v * annualFactor(t);
-  return state.unit === "boed" ? b * BOE / daysInPeriod(t) : b;
+// Oil/gas volume (in its native SI unit) -> oil-equivalent barrels per day.
+function oeRate(v, t) {
+  if (v == null) return null;
+  return (v * annualFactor(t) * BOE) / daysInPeriod(t);
 }
-const mUnit = (m) => state.unit === "boed" ? "1000 fat o.e./dag" : prettyUnit((DATA.unit_definitions || {})[m] || "");
-function oeVal(v, t) {                               // oil-equivalent value
-  if (v == null) return v;
-  const b = v * annualFactor(t) * BOE;
-  return state.unit === "boed" ? b / daysInPeriod(t) : b;
+// Water volume (1000 m³) -> 1000 m³ per day. Not oil-equivalent: water has no
+// meaningful barrel-of-oil conversion, so it keeps its native unit.
+function waterRate(v, t) {
+  if (v == null) return null;
+  return (v * annualFactor(t)) / daysInPeriod(t);
 }
-const oeUnit = () => state.unit === "boed" ? "1000 fat o.e./dag" : "1000 fat o.e.";
 
 function fmtVal(v) {
   const a = Math.abs(v), d = a >= 100 ? 0 : a >= 10 ? 1 : 2;
@@ -82,6 +89,13 @@ function selTotal(res, m) {
   const maps = selectedSlugs().map((s) => fieldMap(s, res, m));
   return base.map((pt) => ({ t: pt.t, p: pt.p, v: maps.reduce((a, mp) => a + (mp[pt.t] || 0), 0) }));
 }
+// Combined oil+gas oe-rate for one field at one period; null only if both
+// measures are missing (no data), never if only one of them is.
+function fieldOeAt(t, mpOil, mpGas) {
+  const o = mpOil[t], g = mpGas[t];
+  if (o == null && g == null) return null;
+  return oeRate(o || 0, t) + oeRate(g || 0, t);
+}
 
 // --------------------------------------------------------------------------- boot
 async function boot() {
@@ -98,10 +112,15 @@ async function boot() {
 
 async function load() {
   const real = await tryFetch("data/combined.json");
-  if (real && real.series && Object.keys(real.series).length) return real;
+  const own = await tryFetch("data/ownership.json");
+  if (real && real.series && Object.keys(real.series).length) {
+    OWN = (own && own.fields) ? own : await tryFetch("data/ownership.sample.json");
+    return real;
+  }
   const sample = await tryFetch("data/combined.sample.json");
   if (sample && sample.series && Object.keys(sample.series).length) {
     $("sample-banner").classList.remove("hidden");
+    OWN = await tryFetch("data/ownership.sample.json");
     return sample;
   }
   const eb = $("error-banner");
@@ -119,7 +138,7 @@ function prepare() {
   DATA.fields.forEach((f) => { displayName[f.slug] = f.display_name; });
 
   const fields = DATA.fields.map((f) => f.slug).filter((s) => s !== "_total");
-  const allTime = (slug) => MEASURES.reduce((a, m) =>
+  const allTime = (slug) => ["oil", "gas"].reduce((a, m) =>
     a + (DATA.series[slug]?.yearly?.[m] || []).reduce((b, p) => b + p.v, 0), 0);
   RANKED = fields.slice().sort((a, b) => allTime(b) - allTime(a));
   // Colour: 8 biggest use the validated palette slots; the rest get stable hues.
@@ -132,9 +151,27 @@ function prepare() {
   });
   state.selected = new Set(RANKED);                 // all fields selected by default
 
+  // Company ownership matrix (scripts/ingest_ownership.py); missing entries
+  // (should not happen for real data) fall back to a single "Ukjent" bucket.
+  const own = (OWN && OWN.fields) || {};
+  const companyTotal = {};
+  fields.forEach((slug) => {
+    const shares = own[slug] || { [UNKNOWN_COMPANY]: 1 };
+    const at = allTime(slug);
+    Object.entries(shares).forEach(([c, s]) => { companyTotal[c] = (companyTotal[c] || 0) + at * s; });
+  });
+  COMPANIES = Object.keys(companyTotal).sort((a, b) => companyTotal[b] - companyTotal[a]);
+  companyColor = {};
+  const extraC = Math.max(1, COMPANIES.length - SLOTS.length);
+  COMPANIES.forEach((c, i) => {
+    companyColor[c] = i < SLOTS.length
+      ? { v: SLOTS[i] }
+      : { h: `hsl(${Math.round((360 / extraC) * (i - SLOTS.length) + 20) % 360} 55% 52%)` };
+  });
+
   const yearsOil = DATA.series._total?.yearly?.oil || [];
   const finals = yearsOil.filter((p) => !p.p).map((p) => p.t);
-  state.year = finals.length ? finals[finals.length - 1] : (yearsOil.slice(-1)[0]?.t || null);
+  state.year = yearsOil.slice(-1)[0]?.t || (finals.length ? finals[finals.length - 1] : null);
 
   const el = $("updated");
   if (DATA.last_updated) {
@@ -144,33 +181,25 @@ function prepare() {
   }
 }
 
+function shareOf(slug, company) {
+  const shares = (OWN && OWN.fields && OWN.fields[slug]) || { [UNKNOWN_COMPANY]: 1 };
+  return shares[company] || 0;
+}
+function ownerOf(slug) {
+  return (OWN && OWN.fields && OWN.fields[slug]) || { [UNKNOWN_COMPANY]: 1 };
+}
+
 // --------------------------------------------------------------------------- controls
 function buildControls() {
-  // measure seg: single-select normally; include/exclude toggles in "sum" view.
-  $("measure-seg").querySelectorAll("button").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const m = btn.dataset.measure;
-      if (state.view === "sum") {
-        if (state.sumMeasures.has(m)) { if (state.sumMeasures.size > 1) state.sumMeasures.delete(m); }
-        else state.sumMeasures.add(m);
-        syncMeasureSeg(); renderTime();
-      } else {
-        state.measure = m; syncMeasureSeg(); renderAll();
-      }
-    });
-  });
-
   segGroup("res-seg", "res", (v) => { state.res = v; renderTime(); });
-  segGroup("view-seg", "view", (v) => {
-    state.view = v; syncMeasureSeg(); renderTime();
-  });
-  segGroup("unit-seg", "unit", (v) => { state.unit = v; renderAll(); });
+  segGroup("view-seg", "view", (v) => { state.view = v; renderTime(); });
 
   const ann = $("annualize");
   if (ann) { ann.checked = state.annualize; ann.addEventListener("change", () => { state.annualize = ann.checked; renderAll(); }); }
+  const water = $("show-water");
+  if (water) { water.checked = state.showWater; water.addEventListener("change", () => { state.showWater = water.checked; renderTime(); }); }
 
   buildFieldPicker();
-  syncMeasureSeg();
 
   // year slider (ranking chart)
   const yrs = (DATA.series._total?.yearly?.oil || []).map((p) => p.t);
@@ -197,15 +226,6 @@ function segGroup(id, key, onPick) {
       onPick(btn.dataset[key]);
     });
   });
-}
-
-function syncMeasureSeg() {
-  const sum = state.view === "sum";
-  $("measure-seg").querySelectorAll("button").forEach((b) => {
-    const on = sum ? state.sumMeasures.has(b.dataset.measure) : b.dataset.measure === state.measure;
-    b.setAttribute("aria-pressed", on ? "true" : "false");
-  });
-  $("measure-seg").title = sum ? "Velg hvilke serier som inngår i summen" : "";
 }
 
 function buildFieldPicker() {
@@ -239,10 +259,6 @@ function setAllFields(on) {
 }
 function updateFieldUI() {
   $("fields-toggle").textContent = "Felt: " + (allSelected() ? `alle (${RANKED.length})` : `${state.selected.size} valgt`);
-  $("field-checks").querySelectorAll("label .sw").forEach((sw, i) => {
-    const slug = $("field-checks").querySelectorAll("input")[i].value;
-    sw.style.background = colorOf(slug);
-  });
 }
 
 // --------------------------------------------------------------------------- rendering
@@ -260,66 +276,87 @@ function renderTiles() {
   const finals = yearsOil.filter((p) => !p.p);
   const yr = finals.length ? finals[finals.length - 1].t : (yearsOil.slice(-1)[0]?.t || "–");
   const tiles = [];
-  for (const m of MEASURES) {
+  for (const m of ["oil", "gas"]) {
     const pt = selTotal("yearly", m).find((p) => p.t === yr);
     tiles.push(`<div class="tile"><div class="label"><span class="dot" style="background:${css("--" + m)}"></span>${MEASURE_LABEL[m]} ${yr}</div>
-      <div class="value">${pt ? fmtVal(mVal(pt.v, yr)) : "–"} <span class="unit">${mUnit(m)}</span></div>
+      <div class="value">${pt ? fmtVal(oeRate(pt.v, yr)) : "–"} <span class="unit">${OE_UNIT}</span></div>
       <div class="foot">${pt && pt.p ? "foreløpig" : "endelige tall"}</div></div>`);
   }
   const producing = selectedSlugs()
     .filter((s) => (DATA.series[s]?.yearly?.oil || []).some((p) => p.t === yr && p.v > 0)).length;
   tiles.push(`<div class="tile"><div class="label">Felt i produksjon ${yr}</div>
     <div class="value">${producing}</div><div class="foot">${allSelected() ? "med oljeproduksjon" : "av valgte felt"}</div></div>`);
-  const peak = selTotal("yearly", "oil").map((p) => ({ t: p.t, v: mVal(p.v, p.t) }))
+  const peak = selTotal("yearly", "oil").map((p) => ({ t: p.t, v: oeRate(p.v, p.t) }))
     .reduce((a, p) => (p.v > a.v ? p : a), { v: -1, t: "–" });
   tiles.push(`<div class="tile"><div class="label">Toppår olje</div>
-    <div class="value">${peak.t}</div><div class="foot">${fmtVal(peak.v)} ${mUnit("oil")}</div></div>`);
+    <div class="value">${peak.t}</div><div class="foot">${fmtVal(peak.v)} ${OE_UNIT}</div></div>`);
   $("tiles").innerHTML = tiles.join("");
 }
 
 const labelFmt = (t) => { const m = /^(\d{4})-(\d{2})$/.exec(t); return m ? `${MONTHS_NB[+m[2] - 1]} ${m[1]}` : t; };
 
+function waterDataset(labels) {
+  const tot = selTotal(state.res, "water");
+  const map = toMap(tot);
+  return {
+    label: "Vann", data: labels.map((t) => waterRate(map[t], t)),
+    borderColor: css("--water"), backgroundColor: css("--water") + "22", borderDash: [4, 3],
+    borderWidth: 2, tension: 0.15, spanGaps: true, pointRadius: 0, pointHoverRadius: 3,
+    yAxisID: "y1",
+  };
+}
+
 function renderTime() {
-  const isSum = state.view === "sum";
-  const base = DATA.series._total[state.res][isSum ? "oil" : state.measure] || [];
+  const base = DATA.series._total[state.res].oil || [];
   const labels = base.map((p) => p.t);
   const prelimIdx = base.findIndex((p) => p.p);
   const surface = css("--surface");
-  const curUnit = isSum ? oeUnit() : mUnit(state.measure);
   const sel = selectedSlugs();
-  let datasets = [], stacked = false;
+  let datasets = [], stacked = true;
 
-  if (isSum) {                                         // stack the chosen measures in o.e.
-    stacked = true;
-    const incl = MEASURES.filter((m) => state.sumMeasures.has(m));
-    datasets = incl.map((m, i) => {
+  if (state.view === "total") {                       // oil vs gas, oe/day
+    datasets = ["oil", "gas"].map((m, i) => {
       const tot = selTotal(state.res, m);
-      return areaDS(MEASURE_LABEL[m], tot.map((p) => oeVal(p.v, p.t)), css("--" + m), i === 0, surface);
+      return areaDS(MEASURE_LABEL[m], tot.map((p) => oeRate(p.v, p.t)), css("--" + m), i === 0, surface);
     });
-  } else if (state.view === "total") {
-    const tot = selTotal(state.res, state.measure);
-    datasets = [lineDS(allSelected() ? "Alle felt" : "Valgte felt",
-      tot.map((p) => mVal(p.v, p.t)), measureColor(), prelimIdx)];
-  } else if (state.view === "compare") {
-    datasets = sel.map((slug) => {
-      const mp = fieldMap(slug, state.res, state.measure);
-      return lineDS(displayName[slug], labels.map((t) => (mp[t] == null ? null : mVal(mp[t], t))), colorOf(slug), prelimIdx);
-    });
-  } else {                                             // stacked area by field
-    stacked = true;
+  } else if (state.view === "field") {                 // per-field oe/day, stacked
     const shown = sel.length <= STACK_CAP ? sel : sel.slice(0, STACK_CAP);
-    const maps = shown.map((s) => fieldMap(s, state.res, state.measure));
-    datasets = shown.map((slug, i) =>
-      areaDS(displayName[slug], labels.map((t) => mVal(maps[i][t] ?? 0, t)), colorOf(slug), i === 0, surface));
+    const maps = shown.map((s) => [fieldMap(s, state.res, "oil"), fieldMap(s, state.res, "gas")]);
+    datasets = shown.map((slug, i) => areaDS(
+      displayName[slug],
+      labels.map((t) => fieldOeAt(t, maps[i][0], maps[i][1]) ?? 0),
+      colorOf(slug), i === 0, surface,
+    ));
     if (sel.length > STACK_CAP) {
-      const totMap = toMap(selTotal(state.res, state.measure));
-      const other = labels.map((t) => {
-        const s = maps.reduce((a, mp) => a + (mp[t] || 0), 0);
-        return mVal(Math.max(0, +((totMap[t] || 0) - s).toFixed(3)), t);
+      const totMap = toMap(selTotal(state.res, "oil"));
+      const totGasMap = toMap(selTotal(state.res, "gas"));
+      const shownTotals = labels.map((t) =>
+        maps.reduce((a, [mo, mg]) => a + (fieldOeAt(t, mo, mg) ?? 0), 0));
+      const other = labels.map((t, i2) => {
+        const all = oeRate(totMap[t] || 0, t) + oeRate(totGasMap[t] || 0, t);
+        return Math.max(0, all - shownTotals[i2]);
       });
       datasets.push(areaDS("Andre valgte", other, css("--c-other"), false, surface));
     }
+  } else {                                             // per-company oe/day, stacked
+    const companyOf = {};
+    sel.forEach((slug) => {
+      const mo = fieldMap(slug, state.res, "oil"), mg = fieldMap(slug, state.res, "gas");
+      const shares = ownerOf(slug);
+      labels.forEach((t) => {
+        const v = fieldOeAt(t, mo, mg);
+        if (v == null) return;
+        Object.entries(shares).forEach(([c, s]) => {
+          companyOf[c] = companyOf[c] || {};
+          companyOf[c][t] = (companyOf[c][t] || 0) + v * s;
+        });
+      });
+    });
+    const shown = COMPANIES.filter((c) => companyOf[c]);
+    datasets = shown.map((c, i) => areaDS(c, labels.map((t) => companyOf[c][t] || 0), colorOfCompany(c), i === 0, surface));
   }
+
+  if (state.showWater) datasets.push(waterDataset(labels));
 
   const cfg = {
     type: "line", data: { labels, datasets },
@@ -327,12 +364,12 @@ function renderTime() {
       responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
       interaction: { mode: "index", intersect: false },
       plugins: {
-        legend: { display: datasets.length > 1, position: "bottom",
+        legend: { display: true, position: "bottom",
           labels: { boxWidth: 10, boxHeight: 10, usePointStyle: true, pointStyle: "rectRounded", padding: 10 } },
         tooltip: {
           callbacks: {
             title: (it) => labelFmt(it[0].label),
-            label: (it) => `${it.dataset.label}: ${fmtVal(it.parsed.y)} ${curUnit}`,
+            label: (it) => `${it.dataset.label}: ${fmtVal(it.parsed.y)} ${it.dataset.yAxisID === "y1" ? WATER_UNIT : OE_UNIT}`,
             footer: (it) => {
               const t = labels[it[0].dataIndex], parts = [];
               if (prelimIdx >= 0 && it[0].dataIndex >= prelimIdx) parts.push("foreløpige tall");
@@ -346,7 +383,9 @@ function renderTime() {
       scales: {
         x: { stacked, grid: { display: false }, ticks: { maxTicksLimit: 13, autoSkip: true, callback(v) { const l = this.getLabelForValue(v); return /^\d{4}-\d{2}$/.test(l) ? l.slice(0, 4) : l; } } },
         y: { stacked, beginAtZero: true, border: { display: false },
-          title: { display: true, text: curUnit, color: css("--muted") }, ticks: { callback: (v) => fmtVal(v) } },
+          title: { display: true, text: OE_UNIT, color: css("--muted") }, ticks: { callback: (v) => fmtVal(v) } },
+        y1: { display: state.showWater, position: "right", beginAtZero: true, grid: { display: false }, border: { display: false },
+          title: { display: true, text: WATER_UNIT, color: css("--muted") }, ticks: { callback: (v) => fmtVal(v) } },
       },
     },
   };
@@ -354,30 +393,22 @@ function renderTime() {
   timeChart = new Chart($("timeChart"), cfg);
 
   const capParts = {
-    total: allSelected() ? "Sum for alle felt." : `Sum for ${sel.length} valgte felt.`,
-    stacked: sel.length > STACK_CAP ? `De ${STACK_CAP} største av ${sel.length} valgte felt; resten er «Andre valgte».` : `Bidrag per felt (${sel.length}).`,
-    compare: "Hvert valgt felt som egen linje.",
-    sum: "Olje, gass og vann stablet i oljeekvivalenter (× 6,29). Bruk serieknappene til å ta med/utelate.",
+    total: "Totalproduksjon for valgte felt, splittet i olje og gass.",
+    field: sel.length > STACK_CAP ? `De ${STACK_CAP} største av ${sel.length} valgte felt; resten er «Andre valgte».` : `Olje + gass per felt (${sel.length}).`,
+    company: "Olje + gass fordelt på eierselskap etter lisensandel (scripts/ingest_ownership.py).",
   };
   let cap = capParts[state.view];
   if (prelimIdx >= 0) cap += ` <span class="prelim">Skravert område</span> er foreløpige år (overstyres av endelige årstall).`;
   if (state.res === "yearly" && state.annualize && labels.some(isAnnualized))
     cap += " Siste år er oppjustert til helårsestimat (× 365 ÷ dager med data).";
-  if (state.unit === "boed" && !isSum) cap += " Verdier i oljeekvivalenter per dag (× 6,29 ÷ dager).";
   $("time-cap").innerHTML = cap;
-  $("time-sub").textContent = isSum
-    ? `– ${MEASURES.filter((m) => state.sumMeasures.has(m)).map((m) => MEASURE_LABEL[m].toLowerCase()).join(" + ")} (${curUnit})`
-    : `– ${MEASURE_LABEL[state.measure].toLowerCase()} (${curUnit})`;
+  const viewLabel = { total: "totalt", field: "per felt", company: "per selskap" }[state.view];
+  $("time-sub").textContent = `– ${viewLabel} (${OE_UNIT})`;
 }
 
-function lineDS(label, data, color, prelimIdx) {
-  return {
-    label, data, borderColor: color, backgroundColor: color + "22",
-    borderWidth: 2, tension: 0.15, spanGaps: true,
-    pointRadius: 0, pointHoverRadius: 4, pointBackgroundColor: color,
-    segment: { borderDash: (ctx) => (prelimIdx >= 0 && ctx.p1DataIndex >= prelimIdx ? [6, 4] : undefined) },
-  };
-}
+function colorOf(slug) { const c = fieldColor[slug]; return c ? (c.v ? css(c.v) : c.h) : css("--c-other"); }
+function colorOfCompany(c) { const k = companyColor[c]; return k ? (k.v ? css(k.v) : k.h) : css("--c-other"); }
+
 function areaDS(label, data, color, isBottom, surface) {
   return {
     label, data, backgroundColor: color, borderColor: surface, borderWidth: 1.2,
@@ -387,20 +418,20 @@ function areaDS(label, data, color, isBottom, surface) {
 
 function renderRank() {
   const yr = state.year;
-  const meas = state.view === "sum"                            // rank a concrete measure
-    ? (MEASURES.filter((m) => state.sumMeasures.has(m))[0] || "oil")
-    : state.measure;
   const rows = selectedSlugs()
-    .map((slug) => ({ slug, v: mVal(fieldMap(slug, "yearly", meas)[yr] || 0, yr) }))
+    .map((slug) => ({
+      slug,
+      v: oeRate(fieldMap(slug, "yearly", "oil")[yr] || 0, yr) + oeRate(fieldMap(slug, "yearly", "gas")[yr] || 0, yr),
+    }))
     .filter((r) => r.v > 0).sort((a, b) => b.v - a.v);
-  const prelim = (DATA.series._total.yearly[meas] || []).find((p) => p.t === yr)?.p;
+  const prelim = (DATA.series._total.yearly.oil || []).find((p) => p.t === yr)?.p;
 
   const cfg = {
     type: "bar",
     data: {
       labels: rows.map((r) => displayName[r.slug]),
       datasets: [{
-        label: MEASURE_LABEL[meas], data: rows.map((r) => r.v),
+        label: "Olje + gass", data: rows.map((r) => r.v),
         backgroundColor: rows.map((r) => colorOf(r.slug)),
         borderRadius: 4, borderSkipped: false, barThickness: "flex", maxBarThickness: 26,
       }],
@@ -409,12 +440,12 @@ function renderRank() {
       indexAxis: "y", responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: (it) => `${fmtVal(it.parsed.x)} ${mUnit(meas)}${prelim ? " (foreløpig)" : ""}` } },
+        tooltip: { callbacks: { label: (it) => `${fmtVal(it.parsed.x)} ${OE_UNIT}${prelim ? " (foreløpig)" : ""}` } },
         prelim: { index: -1 },
       },
       scales: {
         x: { beginAtZero: true, border: { display: false }, grid: { color: css("--grid") },
-          title: { display: true, text: mUnit(meas), color: css("--muted") }, ticks: { callback: (v) => fmtVal(v) } },
+          title: { display: true, text: OE_UNIT, color: css("--muted") }, ticks: { callback: (v) => fmtVal(v) } },
         y: { grid: { display: false }, border: { display: false }, ticks: { autoSkip: false, font: { size: 12 } } },
       },
     },
@@ -422,8 +453,8 @@ function renderRank() {
   if (rankChart) rankChart.destroy();
   rankChart = new Chart($("rankChart"), cfg);
   $("year-out").textContent = yr;
-  $("rank-year-label").textContent = `– ${MEASURE_LABEL[meas].toLowerCase()}, ${yr}`;
-  $("rank-cap").innerHTML = `${rows.length} felt i produksjon (${MEASURE_LABEL[meas].toLowerCase()}) i ${yr}` +
+  $("rank-year-label").textContent = `– olje + gass, ${yr}`;
+  $("rank-cap").innerHTML = `${rows.length} felt i produksjon i ${yr}` +
     (prelim ? ' — <span class="prelim">foreløpige tall</span>' : "") +
     (isAnnualized(yr) ? " — oppjustert til helårsestimat" : "") + ".";
 }
