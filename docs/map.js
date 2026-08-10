@@ -261,15 +261,27 @@ function blocksLayer(data) {
 }
 
 // Rebuilt (not just re-styled) on every highlight change, since a highlight
-// also changes *which* fields get a label, not just their look.
+// also changes *which* fields get a label, not just their look. A field can
+// be split across several polygon parts (e.g. straddling more than one
+// licence) that all share the same slug -- group by slug first so each field
+// gets exactly one label, placed at the centre of its combined extent.
 function rebuildFieldLabels() {
   labelsLayer.clearLayers();
+  const bySlug = new Map();
   (fieldsGeoData.features || []).forEach((f) => {
     const slug = f.properties.slug;
     if (highlightSet && !highlightSet.has(slug)) return;
-    const name = (PROD[slug] && PROD[slug].name) || f.properties.name || slug;
-    const center = L.geoJSON(f).getBounds().getCenter();
-    labelsLayer.addLayer(L.marker(center, {
+    if (!bySlug.has(slug)) bySlug.set(slug, []);
+    bySlug.get(slug).push(f);
+  });
+  bySlug.forEach((feats, slug) => {
+    const name = (PROD[slug] && PROD[slug].name) || feats[0].properties.name || slug;
+    let bounds = null;
+    feats.forEach((f) => {
+      const b = L.geoJSON(f).getBounds();
+      bounds = bounds ? bounds.extend(b) : b;
+    });
+    labelsLayer.addLayer(L.marker(bounds.getCenter(), {
       icon: L.divIcon({ className: "field-label", html: esc(name) }),
       interactive: false, keyboard: false,
     }));
