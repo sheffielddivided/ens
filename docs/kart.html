@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kart – Dansk olje- og gassfelt</title>
-  <meta name="description" content="Kart over danske olje- og gassfelt i Nordsjøen, fargelagt etter produksjon (Energistyrelsen).">
+  <meta name="description" content="Kart over danske olje- og gassfelt i Nordsjøen, fargelagt etter akkumulerte oljeekvivalenter (Energistyrelsen).">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="style.css?v=6">
 </head>
@@ -14,7 +14,7 @@
       <div>
         <h1>Kart over danske olje- og gassfelt</h1>
         <p class="sub">
-          Feltavgrensninger fargelagt etter produksjon. Geometri:
+          Feltavgrensninger fargelagt etter akkumulerte oljeekvivalenter. Geometri:
           <a href="https://ens.dk/en/energy-sources/oil-and-gas-related-data/shape-files-oil-and-gas-maps" target="_blank" rel="noopener">Energistyrelsen&nbsp;(ENS)</a>,
           reprojisert til WGS84.
           <br><nav class="nav"><a href="index.html">← Datautforsker</a></nav>
@@ -28,13 +28,6 @@
     <section class="panel">
       <div class="panel-head">
         <h2>Felt i Nordsjøen</h2>
-        <div class="controls">
-          <div class="seg measure" id="measure-seg" role="group" aria-label="Fargelegg etter">
-            <button data-measure="oil"   aria-pressed="true">Olje</button>
-            <button data-measure="gas"   aria-pressed="false">Gass</button>
-            <button data-measure="water" aria-pressed="false">Vann</button>
-          </div>
-        </div>
       </div>
       <div id="map"></div>
       <div id="legend" class="legend"></div>
@@ -42,14 +35,14 @@
     </section>
 
     <footer>
-      <p>Fargen viser <strong>akkumulert</strong> produksjon per felt (sum over alle år). Klikk et felt for
-         siste år og totaler. Blokkrutenettet vises alltid; slå på installasjoner og letebrønner øverst til høyre.
-         Månedstall er foreløpige; årstall er endelige.</p>
+      <p>Fargen viser <strong>akkumulert olje- og gassproduksjon i oljeekvivalenter</strong> per felt (vann holdes
+         utenfor). Klikk et felt for produksjonsrate og totalt. Blokkrutenettet vises alltid; slå på
+         installasjoner og letebrønner øverst til høyre.</p>
       <p>Åpen kildekode på <a href="https://github.com/sheffielddivided/ens" target="_blank" rel="noopener">GitHub</a>.</p>
     </footer>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="map.js?v=3"></script>
+  <script src="map.js?v=4"></script>
 </body>
 </html>

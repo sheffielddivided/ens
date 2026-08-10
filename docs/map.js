@@ -3,23 +3,31 @@
 /* ENS field map.
  * Draws the Danish oil & gas layers built by scripts/build_gis.py on a Leaflet
  * map: field outlines (docs/data/gis/fields.geojson) coloured by cumulative
- * production from the same data/combined.json the explorer uses, an always-on
- * block grid beneath, and toggleable overlays (installations, exploration
- * wells). Falls back to the checked-in *.sample.* files when the real data has
- * not been built yet, and mirrors the explorer's light/dark theme. */
+ * oil+gas production (oil-equivalent barrels) from the same data/combined.json
+ * the explorer uses, an always-on block grid beneath, and toggleable overlays
+ * (installations, exploration wells). Falls back to the checked-in *.sample.*
+ * files when the real data has not been built yet, and mirrors the explorer's
+ * light/dark theme. */
 
-const MEASURES = ["oil", "gas", "water"];
-const MEASURE_LABEL = { oil: "Olje", gas: "Gass", water: "Vann" };
+// Barrels per m³ oil-equivalent. Per the ENS SI-unit convention, gas expressed
+// in mio. Nm³ is numerically on the same oil-equivalent (1000 Sm³) scale as
+// oil in 1000 m³, so both are summed directly before this factor is applied --
+// the same convention docs/app.js uses for its "o.e." series.
+const BOE = 6.29;
 
 const $ = (id) => document.getElementById(id);
 const css = (v) => getComputedStyle(document.body).getPropertyValue(v).trim();
-const prettyUnit = (u) => (u || "").replace(/Nm3/g, "Nm³").replace(/m3/g, "m³");
 const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 const fmt = (v) => {
   if (v == null) return "–";
   const a = Math.abs(v), d = a >= 100 ? 0 : a >= 10 ? 1 : 2;
   return new Intl.NumberFormat("nb-NO", { maximumFractionDigits: d }).format(v);
 };
+function daysInYear(t) {
+  const y = +t;
+  if (isNaN(y)) return 365;
+  return ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) ? 366 : 365;
+}
 
 const HOME = { center: [55.9, 4.9], zoom: 7 };
 const CARTO = {
@@ -30,9 +38,8 @@ const TILE_ATTR =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> ' +
   '&copy; <a href="https://carto.com/attributions">CARTO</a>';
 
-const state = { measure: "oil" };
 let map = null, tileLayer = null, fieldLayer = null;
-let PROD = {}, UNITS = {}, maxCum = { oil: 0, gas: 0, water: 0 };
+let PROD = {}, maxCumOe = 0;
 const restylers = [];   // [() => void] re-applied on theme change
 
 // --------------------------------------------------------------------------- //
@@ -83,36 +90,47 @@ async function loadFirst(urls) {
 }
 
 function indexProduction(combined) {
-  UNITS = combined.unit_definitions || {};
   const names = {};
   (combined.fields || []).forEach((f) => { names[f.slug] = f.display_name; });
   const series = combined.series || {};
-  maxCum = { oil: 0, gas: 0, water: 0 };
+  maxCumOe = 0;
   const out = {};
   for (const slug of Object.keys(series)) {
     if (slug === "_total") continue;
-    const rec = { cum: {}, latest: {}, name: names[slug] || slug };
-    for (const m of MEASURES) {
-      const arr = (series[slug].yearly && series[slug].yearly[m]) || [];
-      let cum = 0, last = null;
-      for (const p of arr) if (p.v != null) { cum += p.v; last = p; }
-      rec.cum[m] = cum;
-      rec.latest[m] = last;
-      if (cum > maxCum[m]) maxCum[m] = cum;
+    const oilArr = (series[slug].yearly && series[slug].yearly.oil) || [];
+    const gasArr = (series[slug].yearly && series[slug].yearly.gas) || [];
+    const byYear = {};   // t -> { oil, gas }
+    oilArr.forEach((p) => { if (p.v != null) (byYear[p.t] || (byYear[p.t] = {})).oil = p.v; });
+    gasArr.forEach((p) => { if (p.v != null) (byYear[p.t] || (byYear[p.t] = {})).gas = p.v; });
+    const years = Object.keys(byYear).sort();
+
+    let cumOe = 0, lastYear = null, lastOe = null;
+    for (const y of years) {
+      const oe = (byYear[y].oil || 0) + (byYear[y].gas || 0);
+      cumOe += oe;
+      lastYear = y;
+      lastOe = oe;
     }
-    out[slug] = rec;
+
+    out[slug] = {
+      name: names[slug] || slug,
+      oeCumMBbl: cumOe > 0 ? (cumOe * BOE) / 1000 : 0,          // million barrels
+      oeRateKbblPerDay: lastOe != null ? (lastOe * BOE) / daysInYear(lastYear) : null,
+      oeRateYear: lastYear,
+    };
+    if (out[slug].oeCumMBbl > maxCumOe) maxCumOe = out[slug].oeCumMBbl;
   }
   return out;
 }
 
 // --------------------------------------------------------------------------- //
-// Fields choropleth
+// Fields choropleth (coloured by cumulative oil+gas, in oil-equivalent barrels)
 // --------------------------------------------------------------------------- //
 function intensity(slug) {
-  const rec = PROD[slug], max = maxCum[state.measure];
-  if (!rec || !max) return null;
-  const v = rec.cum[state.measure] || 0;
-  return v > 0 ? Math.sqrt(v / max) : 0;
+  const rec = PROD[slug];
+  if (!rec || !maxCumOe) return null;
+  const v = rec.oeCumMBbl || 0;
+  return v > 0 ? Math.sqrt(v / maxCumOe) : 0;
 }
 function fieldStyle(feature) {
   const t = intensity(feature.properties.slug);
@@ -124,38 +142,36 @@ function fieldStyle(feature) {
   };
 }
 function fieldPopup(p) {
-  const rec = PROD[p.slug] || {};
-  const name = rec.name || p.name || p.slug;
-  const rows = MEASURES.map((m) => {
-    const last = rec.latest && rec.latest[m], cum = rec.cum && rec.cum[m];
-    const u = prettyUnit(UNITS[m] || "");
-    const lv = last ? `${fmt(last.v)} <span class="pu">${u}</span> <span class="py">(${last.t})</span>` : "–";
-    const cv = cum ? `${fmt(cum)} <span class="pu">${u}</span>` : "–";
-    return `<tr><th style="color:var(--${m})">${MEASURE_LABEL[m]}</th><td>${lv}</td><td>${cv}</td></tr>`;
-  }).join("");
-  const op = p.OPERATOR || rec.operator;
-  const prod = PROD[p.slug];
+  const rec = PROD[p.slug];
+  const name = (rec && rec.name) || p.name || p.slug;
+  const op = p.OPERATOR || (rec && rec.operator);
+  const opLine = op ? `<p class="mp-op">Operatør: ${esc(op)}</p>` : "";
+  if (!rec || !rec.oeCumMBbl) {
+    return `<div class="mp"><h3>${esc(name)}</h3>${opLine}` +
+      `<p class="mp-op">Ingen produksjonsdata (funn / ikke i produksjon).</p></div>`;
+  }
+  const rateStr = rec.oeRateKbblPerDay != null
+    ? `${fmt(rec.oeRateKbblPerDay)} 1000 fat/dag (${rec.oeRateYear})`
+    : "–";
+  const cumStr = `${fmt(rec.oeCumMBbl)} mill. fat`;
   return (
-    `<div class="mp"><h3>${esc(name)}</h3>` +
-    (op ? `<p class="mp-op">Operatør: ${esc(op)}</p>` : "") +
-    (prod
-      ? `<table><thead><tr><th></th><th>Siste år</th><th>Akkumulert</th></tr></thead>` +
-        `<tbody>${rows}</tbody></table>` +
-        `<p class="mp-foot"><a href="index.html">Åpne i datautforskeren →</a></p>`
-      : `<p class="mp-op">Ingen produksjonsdata (funn / ikke i produksjon).</p>`) +
-    `</div>`
+    `<div class="mp"><h3>${esc(name)}</h3>${opLine}` +
+    `<table class="kv">` +
+    `<tr><th>Produksjon (o.e.)</th><td>${esc(rateStr)}</td></tr>` +
+    `<tr><th>Akkumulert (o.e.)</th><td>${esc(cumStr)}</td></tr>` +
+    `</table>` +
+    `<p class="mp-foot"><a href="index.html">Åpne i datautforskeren →</a></p></div>`
   );
 }
 
 function renderLegend() {
   const seq = css("--seq"), none = css("--c-other");
-  const max = maxCum[state.measure], u = prettyUnit(UNITS[state.measure] || "");
   $("legend").innerHTML =
-    `<div class="lg-title">Akkumulert ${MEASURE_LABEL[state.measure].toLowerCase()} ` +
-    `<span class="lg-u">${u}</span></div>` +
+    `<div class="lg-title">Akkumulert oljeekvivalenter (olje + gass) ` +
+    `<span class="lg-u">mill. fat</span></div>` +
     `<div class="lg-gradient">` +
     `<div class="lg-bar" style="background:linear-gradient(90deg, ${withAlpha(seq, 0.2)}, ${seq})"></div>` +
-    `<div class="lg-scale"><span>0</span><span>${fmt(max)}</span></div></div>` +
+    `<div class="lg-scale"><span>0</span><span>${fmt(maxCumOe)}</span></div></div>` +
     `<div class="lg-none"><span class="lg-sw" style="background:${none};opacity:.4"></span>Ingen data</div>`;
 }
 function withAlpha(color, a) {
@@ -166,17 +182,6 @@ function withAlpha(color, a) {
     return `rgba(${r},${g},${b},${a})`;
   }
   return color;
-}
-function initMeasureToggle() {
-  $("measure-seg").addEventListener("click", (e) => {
-    const btn = e.target.closest("button[data-measure]");
-    if (!btn) return;
-    state.measure = btn.dataset.measure;
-    [...e.currentTarget.querySelectorAll("button")].forEach((b) =>
-      b.setAttribute("aria-pressed", String(b === btn)));
-    if (fieldLayer) fieldLayer.setStyle(fieldStyle);
-    renderLegend();
-  });
 }
 
 // --------------------------------------------------------------------------- //
@@ -263,7 +268,6 @@ const OVERLAYS = [
 // --------------------------------------------------------------------------- //
 async function main() {
   initTheme();
-  initMeasureToggle();
 
   map = L.map("map", { scrollWheelZoom: true, minZoom: 5 }).setView(HOME.center, HOME.zoom);
   applyTiles();
