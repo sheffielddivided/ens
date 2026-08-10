@@ -23,10 +23,13 @@ const fmt = (v) => {
   const a = Math.abs(v), d = a >= 100 ? 0 : a >= 10 ? 1 : 2;
   return new Intl.NumberFormat("nb-NO", { maximumFractionDigits: d }).format(v);
 };
-function daysInYear(t) {
-  const y = +t;
-  if (isNaN(y)) return 365;
-  return ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) ? 366 : 365;
+function daysInMonth(t) {
+  const [y, m] = t.split("-").map(Number);
+  return new Date(y, m, 0).getDate();
+}
+function monthLabel(t) {
+  const [y, m] = t.split("-").map(Number);
+  return new Intl.DateTimeFormat("nb-NO", { month: "short", year: "numeric" }).format(new Date(y, m - 1, 1));
 }
 
 const HOME = { center: [55.9, 4.9], zoom: 7 };
@@ -104,19 +107,35 @@ function indexProduction(combined) {
     gasArr.forEach((p) => { if (p.v != null) (byYear[p.t] || (byYear[p.t] = {})).gas = p.v; });
     const years = Object.keys(byYear).sort();
 
-    let cumOe = 0, lastYear = null, lastOe = null;
-    for (const y of years) {
-      const oe = (byYear[y].oil || 0) + (byYear[y].gas || 0);
-      cumOe += oe;
-      lastYear = y;
-      lastOe = oe;
+    let cumOe = 0;
+    for (const y of years) cumOe += (byYear[y].oil || 0) + (byYear[y].gas || 0);
+
+    const monthlyOilArr = (series[slug].monthly && series[slug].monthly.oil) || [];
+    const monthlyGasArr = (series[slug].monthly && series[slug].monthly.gas) || [];
+    const byMonth = {};   // t -> { oil, gas }
+    monthlyOilArr.forEach((p) => { if (p.v != null) (byMonth[p.t] || (byMonth[p.t] = {})).oil = p.v; });
+    monthlyGasArr.forEach((p) => { if (p.v != null) (byMonth[p.t] || (byMonth[p.t] = {})).gas = p.v; });
+    const months = Object.keys(byMonth).sort();
+
+    let lastMonth = null, oeRateBblPerDay = null, oeAvg12BblPerDay = null;
+    if (months.length) {
+      lastMonth = months[months.length - 1];
+      const lastOe = (byMonth[lastMonth].oil || 0) + (byMonth[lastMonth].gas || 0);
+      oeRateBblPerDay = (lastOe * BOE * 1000) / daysInMonth(lastMonth);
+
+      const last12 = months.slice(-12);
+      let sumOe = 0, sumDays = 0;
+      last12.forEach((t) => {
+        sumOe += (byMonth[t].oil || 0) + (byMonth[t].gas || 0);
+        sumDays += daysInMonth(t);
+      });
+      oeAvg12BblPerDay = (sumOe * BOE * 1000) / sumDays;
     }
 
     out[slug] = {
       name: names[slug] || slug,
       oeCumMBbl: cumOe > 0 ? (cumOe * BOE) / 1000 : 0,          // million barrels
-      oeRateKbblPerDay: lastOe != null ? (lastOe * BOE) / daysInYear(lastYear) : null,
-      oeRateYear: lastYear,
+      oeRateBblPerDay, oeRateMonth: lastMonth, oeAvg12BblPerDay,
     };
     if (out[slug].oeCumMBbl > maxCumOe) maxCumOe = out[slug].oeCumMBbl;
   }
@@ -150,14 +169,16 @@ function fieldPopup(p) {
     return `<div class="mp"><h3>${esc(name)}</h3>${opLine}` +
       `<p class="mp-op">Ingen produksjonsdata (funn / ikke i produksjon).</p></div>`;
   }
-  const rateStr = rec.oeRateKbblPerDay != null
-    ? `${fmt(rec.oeRateKbblPerDay)} 1000 fat/dag (${rec.oeRateYear})`
+  const lastStr = rec.oeRateBblPerDay != null
+    ? `${fmt(rec.oeRateBblPerDay)} fat/dag (${monthLabel(rec.oeRateMonth)})`
     : "–";
+  const avgStr = rec.oeAvg12BblPerDay != null ? `${fmt(rec.oeAvg12BblPerDay)} fat/dag` : "–";
   const cumStr = `${fmt(rec.oeCumMBbl)} mill. fat`;
   return (
     `<div class="mp"><h3>${esc(name)}</h3>${opLine}` +
     `<table class="kv">` +
-    `<tr><th>Produksjon (o.e.)</th><td>${esc(rateStr)}</td></tr>` +
+    `<tr><th>Siste måned (o.e.)</th><td>${esc(lastStr)}</td></tr>` +
+    `<tr><th>Snitt siste 12 mnd (o.e.)</th><td>${esc(avgStr)}</td></tr>` +
     `<tr><th>Akkumulert (o.e.)</th><td>${esc(cumStr)}</td></tr>` +
     `</table>` +
     `<p class="mp-foot"><a href="index.html">Åpne i datautforskeren →</a></p></div>`
