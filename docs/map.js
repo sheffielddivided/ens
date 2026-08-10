@@ -1,13 +1,21 @@
 "use strict";
 
 /* ENS field map.
- * Draws the Danish oil & gas layers built by scripts/build_gis.py on a Leaflet
- * map: field outlines (docs/data/gis/fields.geojson) coloured by cumulative
+ * Embedded in docs/index.html (between the two production charts): draws the
+ * Danish oil & gas layers built by scripts/build_gis.py on a Leaflet map --
+ * field outlines (docs/data/gis/fields.geojson) coloured by cumulative
  * oil+gas production (oil-equivalent barrels) from the same data/combined.json
- * the explorer uses, an always-on block grid beneath, and toggleable overlays
+ * app.js uses, an always-on block grid beneath, and toggleable overlays
  * (installations, exploration wells). Falls back to the checked-in *.sample.*
- * files when the real data has not been built yet, and mirrors the explorer's
- * light/dark theme. */
+ * files when the real data has not been built yet.
+ *
+ * Theme (light/dark) is a single shared toggle owned by app.js: this module
+ * never binds its own click handler, it just exposes refreshMapTheme() on
+ * `window` for app.js to call after it flips the data-theme attribute.
+ *
+ * Wrapped in an IIFE because it now shares a page (and global script scope)
+ * with app.js, which declares its own top-level BOE/$/css/fmt-style helpers. */
+(function () {
 
 // Barrels per m³ oil-equivalent. Per the ENS SI-unit convention, gas expressed
 // in mio. Nm³ is numerically on the same oil-equivalent (1000 Sm³) scale as
@@ -61,18 +69,13 @@ function applyTiles() {
   tileLayer.addTo(map);
   tileLayer.bringToBack();
 }
-function initTheme() {
-  const saved = localStorage.getItem("ens-theme");
-  if (saved) document.documentElement.setAttribute("data-theme", saved);
-  $("theme-toggle").addEventListener("click", () => {
-    const next = currentTheme() === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("ens-theme", next);
-    applyTiles();
-    restylers.forEach((fn) => fn());
-    renderLegend();
-  });
-}
+// Called by app.js's own theme-toggle handler after it flips data-theme.
+window.refreshMapTheme = () => {
+  if (!map) return;
+  applyTiles();
+  restylers.forEach((fn) => fn());
+  renderLegend();
+};
 
 // --------------------------------------------------------------------------- //
 // Data loading (real -> sample fallback)
@@ -180,8 +183,7 @@ function fieldPopup(p) {
     `<tr><th>Siste måned (o.e.)</th><td>${esc(lastStr)}</td></tr>` +
     `<tr><th>Snitt siste 12 mnd (o.e.)</th><td>${esc(avgStr)}</td></tr>` +
     `<tr><th>Akkumulert (o.e.)</th><td>${esc(cumStr)}</td></tr>` +
-    `</table>` +
-    `<p class="mp-foot"><a href="index.html">Åpne i datautforskeren →</a></p></div>`
+    `</table></div>`
   );
 }
 
@@ -302,7 +304,7 @@ function fieldLabelsLayer(geoData) {
 // Boot
 // --------------------------------------------------------------------------- //
 async function main() {
-  initTheme();
+  if (!$("map")) return;   // map section not present on this page
 
   map = L.map("map", { scrollWheelZoom: true, minZoom: 5 }).setView(HOME.center, HOME.zoom);
   applyTiles();
@@ -370,3 +372,5 @@ function showBanner() {
 }
 
 main();
+
+})();

@@ -84,7 +84,7 @@ data/
   ownership.json        # eierskapsandel per felt/selskap (manuelt vedlikeholdt kilde)
 docs/                   # GitHub Pages-rot
   index.html app.js     # datautforsker (Chart.js) – alltid olje+gass i 1000 fat o.e./dag
-  kart.html map.js      # kart over feltene (Leaflet)
+  map.js                # feltkart (Leaflet), innbakt i index.html mellom diagrammene
   data/gis/*.geojson    # avledede kartlag (WGS84), inkl. *.sample.geojson
 tests/                  # pytest mot fixtures i tests/fixtures/
 .github/workflows/monthly-update.yml   # daglig dataoppdatering
@@ -260,20 +260,22 @@ Aktiver Pages fra `docs/`-mappen:
 2. `Source: Deploy from a branch`
 3. Velg branch (f.eks. `main`) og mappe `/docs`.
 
-Websiden laster `data/combined.json` med `fetch`. Funksjoner: velg felt (eller
-«Alle felt»), velg serie (olje/gass/vann), veksle måned/år-oppløsning,
+Websiden laster `data/combined.json` og `data/ownership.json` med `fetch`.
+Funksjoner: velg felt (eller «Alle felt»), veksle mellom Totalt/Per
+felt/Per selskap, veksle måned/år-oppløsning, en valgfri vannproduksjonslinje,
 linjediagram med Chart.js der foreløpige tall tegnes stiplet, og «sist
 oppdatert» hentet fra dataene. Ren HTML/CSS/JS, ingen byggesteg, norsk UI.
 
-I tillegg finnes `kart.html` (lenket fra utforskeren): et Leaflet-kart over
-feltene, fargelagt etter akkumulert produksjon, med lag for lisenser, blokker,
-installasjoner og letebrønner som kan slås av/på øverst til høyre.
+Mellom de to diagrammene ligger et Leaflet-kart over feltene (bygget av
+`map.js`), fargelagt etter akkumulert produksjon, med lag for blokker,
+installasjoner og letebrønner som kan slås av/på øverst til høyre. Kartet
+deler tema (lyst/mørkt) og databehov med resten av siden.
 
 ## Kart (GIS)
 
 Et kart over feltene, bygget etter samme mønster som resten: et Python-skript
-gjør om ENS sine shapefiler til GeoJSON som committes, og en statisk Leaflet-side
-tegner lagene. Ingen server, ingen byggesteg.
+gjør om ENS sine shapefiler til GeoJSON som committes, og Leaflet tegner
+lagene direkte i datautforskeren (`docs/map.js`). Ingen server, ingen byggesteg.
 
 **Datakilde og projeksjon.** ENS publiserer kartdata som shapefiler:
 <https://ens.dk/en/energy-sources/oil-and-gas-related-data/shape-files-oil-and-gas-maps>.

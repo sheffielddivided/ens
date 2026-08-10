@@ -12,7 +12,12 @@
  * barrels per day (1000 fat o.e./dag) -- there is no SI-units mode and no
  * single-measure toggle. Water, when shown at all, is an optional extra line
  * in its own native unit (1000 m³/dag) on a secondary axis, since converting
- * produced water to an oil-equivalent has no physical meaning. */
+ * produced water to an oil-equivalent has no physical meaning.
+ *
+ * A still-open year (fewer than 12 months of monthly data) is never grossed
+ * up to a full-year estimate -- since every value is a per-day rate already,
+ * an incomplete year just averages over the months actually reported
+ * (see daysForRate). */
 
 const MEASURE_LABEL = { oil: "Olje", gas: "Gass" };
 const OE_UNIT = "1000 fat o.e./dag";
@@ -29,7 +34,7 @@ let fieldColor = {};              // slug -> { v: cssVarName } or { h: hex/hsl }
 let companyColor = {};
 let displayName = {};
 const state = {
-  res: "yearly", view: "total", annualize: true, showWater: false,
+  res: "yearly", view: "total", showWater: false,
   selected: new Set(), year: null,
 };
 
@@ -37,39 +42,42 @@ const $ = (id) => document.getElementById(id);
 const css = (v) => getComputedStyle(document.body).getPropertyValue(v).trim();
 const toMap = (arr) => { const m = {}; (arr || []).forEach((p) => { m[p.t] = p.v; }); return m; };
 
-// -- oil-equivalent + annualization -----------------------------------------
+// -- oil-equivalent, expressed as a per-day rate -----------------------------
 const BOE = 6.29;                                  // barrels per m³ of oil
-function daysInPeriod(t) {
-  const mm = /^(\d{4})-(\d{2})$/.exec(t);
-  if (mm) return new Date(+mm[1], +mm[2], 0).getDate();
-  const y = +t;
-  if (!isNaN(y)) return ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) ? 366 : 365;
-  return 365;
-}
 function monthsPresent(year) {
   return (DATA.series._total?.monthly?.oil || []).filter((p) => p.t.startsWith(year + "-"));
 }
-function annualFactor(t) {                          // gross an incomplete year up to a full year
-  if (!state.annualize || state.res !== "yearly" || !/^\d{4}$/.test(t)) return 1;
-  const yp = (DATA.series._total?.yearly?.oil || []).find((p) => p.t === t);
-  if (!yp || !yp.p) return 1;
-  const months = monthsPresent(t);
-  if (months.length === 0 || months.length >= 12) return 1;
-  const days = months.reduce((a, p) => a + new Date(+t, +p.t.slice(5, 7), 0).getDate(), 0);
-  return days > 0 ? 365 / days : 1;
+// Days to divide a period's total by. For a still-open year (preliminary, with
+// fewer than 12 months of monthly data yet) this is the days actually covered
+// by those months, not the full calendar year -- so the rate shown is the
+// average over the months we have data for, never a full-year projection.
+function daysForRate(t) {
+  const mm = /^(\d{4})-(\d{2})$/.exec(t);
+  if (mm) return new Date(+mm[1], +mm[2], 0).getDate();
+  const y = +t;
+  if (isNaN(y)) return 365;
+  if (state.res === "yearly") {
+    const yp = (DATA.series._total?.yearly?.oil || []).find((p) => p.t === t);
+    if (yp && yp.p) {
+      const months = monthsPresent(t);
+      if (months.length > 0 && months.length < 12) {
+        return months.reduce((a, p) => a + new Date(y, +p.t.slice(5, 7), 0).getDate(), 0);
+      }
+    }
+  }
+  return ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) ? 366 : 365;
 }
-const isAnnualized = (t) => annualFactor(t) !== 1;
 
 // Oil/gas volume (in its native SI unit) -> oil-equivalent barrels per day.
 function oeRate(v, t) {
   if (v == null) return null;
-  return (v * annualFactor(t) * BOE) / daysInPeriod(t);
+  return (v * BOE) / daysForRate(t);
 }
 // Water volume (1000 m³) -> 1000 m³ per day. Not oil-equivalent: water has no
 // meaningful barrel-of-oil conversion, so it keeps its native unit.
 function waterRate(v, t) {
   if (v == null) return null;
-  return (v * annualFactor(t)) / daysInPeriod(t);
+  return v / daysForRate(t);
 }
 
 function fmtVal(v) {
@@ -194,8 +202,6 @@ function buildControls() {
   segGroup("res-seg", "res", (v) => { state.res = v; renderTime(); });
   segGroup("view-seg", "view", (v) => { state.view = v; renderTime(); });
 
-  const ann = $("annualize");
-  if (ann) { ann.checked = state.annualize; ann.addEventListener("change", () => { state.annualize = ann.checked; renderAll(); }); }
   const water = $("show-water");
   if (water) { water.checked = state.showWater; water.addEventListener("change", () => { state.showWater = water.checked; renderTime(); }); }
 
@@ -215,6 +221,7 @@ function buildControls() {
     document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("ens-theme", next);
     applyChartDefaults(); renderAll();
+    if (window.refreshMapTheme) window.refreshMapTheme();
   });
 }
 
@@ -373,7 +380,6 @@ function renderTime() {
             footer: (it) => {
               const t = labels[it[0].dataIndex], parts = [];
               if (prelimIdx >= 0 && it[0].dataIndex >= prelimIdx) parts.push("foreløpige tall");
-              if (isAnnualized(t)) parts.push("estimert helår");
               return parts.join(" · ");
             },
           },
@@ -398,9 +404,7 @@ function renderTime() {
     company: "Olje + gass fordelt på eierselskap etter lisensandel (scripts/ingest_ownership.py).",
   };
   let cap = capParts[state.view];
-  if (prelimIdx >= 0) cap += ` <span class="prelim">Skravert område</span> er foreløpige år (overstyres av endelige årstall).`;
-  if (state.res === "yearly" && state.annualize && labels.some(isAnnualized))
-    cap += " Siste år er oppjustert til helårsestimat (× 365 ÷ dager med data).";
+  if (prelimIdx >= 0) cap += ` <span class="prelim">Skravert område</span> er foreløpige år (overstyres av endelige årstall); et ufullstendig år vises som snittproduksjon for månedene med data.`;
   $("time-cap").innerHTML = cap;
   const viewLabel = { total: "totalt", field: "per felt", company: "per selskap" }[state.view];
   $("time-sub").textContent = `– ${viewLabel} (${OE_UNIT})`;
@@ -455,8 +459,7 @@ function renderRank() {
   $("year-out").textContent = yr;
   $("rank-year-label").textContent = `– olje + gass, ${yr}`;
   $("rank-cap").innerHTML = `${rows.length} felt i produksjon i ${yr}` +
-    (prelim ? ' — <span class="prelim">foreløpige tall</span>' : "") +
-    (isAnnualized(yr) ? " — oppjustert til helårsestimat" : "") + ".";
+    (prelim ? ' — <span class="prelim">foreløpige tall</span> (snitt for månedene med data hvis året ikke er fullført)' : "") + ".";
 }
 
 // Preliminary-region shading plugin (shared by the time chart).
