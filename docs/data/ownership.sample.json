@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "source": "https://ens.dk/en/energy-sources/danish-licences-and-licensees",
+  "note": "Synthetic demo data mirroring combined.sample.json -- not real ownership shares.",
+  "companies": ["BlueNord", "TotalEnergies", "Nordsøfonden"],
+  "fields": {
+    "dan": { "BlueNord": 0.368, "TotalEnergies": 0.432, "Nordsøfonden": 0.2 },
+    "gorm": { "BlueNord": 0.368, "TotalEnergies": 0.432, "Nordsøfonden": 0.2 },
+    "halfdan": { "BlueNord": 0.368, "TotalEnergies": 0.432, "Nordsøfonden": 0.2 },
+    "tyra": { "BlueNord": 0.368, "TotalEnergies": 0.432, "Nordsøfonden": 0.2 }
+  }
+}
