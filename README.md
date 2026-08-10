@@ -266,10 +266,10 @@ felt/Per selskap, veksle måned/år-oppløsning, en valgfri vannproduksjonslinje
 linjediagram med Chart.js der foreløpige tall tegnes stiplet, og «sist
 oppdatert» hentet fra dataene. Ren HTML/CSS/JS, ingen byggesteg, norsk UI.
 
-Mellom de to diagrammene ligger et Leaflet-kart over feltene (bygget av
-`map.js`), fargelagt etter akkumulert produksjon, med lag for blokker,
-installasjoner og letebrønner som kan slås av/på øverst til høyre. Kartet
-deler tema (lyst/mørkt) og databehov med resten av siden.
+Ved siden av produksjonsgrafen ligger et Leaflet-kart over feltene (bygget av
+`map.js`), fargelagt etter akkumulert produksjon, med en alltid synlig
+blokkrutenett-bakgrunn og en «Feltnavn»-av/på-knapp i kartpanelets hode.
+Kartet deler tema (lyst/mørkt) og databehov med resten av siden.
 
 ## Kart (GIS)
 
