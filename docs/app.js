@@ -27,7 +27,7 @@ const MONTHS_NB = ["jan", "feb", "mar", "apr", "mai", "jun", "jul", "aug", "sep"
 const STACK_CAP = 8;             // max individual bands before folding to "Andre valgte"
 const UNKNOWN_COMPANY = "Ukjent";
 
-let DATA = null, OWN = null, timeChart = null, rankChart = null;
+let DATA = null, OWN = null, timeChart = null, rankChart = null, lastExport = null;
 let RANKED = [];                 // all field slugs, biggest first
 let COMPANIES = [];               // all company names, biggest first
 let fieldColor = {};              // slug -> { v: cssVarName } or { h: hex/hsl }
@@ -207,6 +207,9 @@ function buildControls() {
   const water = $("show-water");
   if (water) { water.checked = state.showWater; water.addEventListener("change", () => { state.showWater = water.checked; renderTime(); }); }
 
+  const exportBtn = $("export-btn");
+  if (exportBtn) exportBtn.addEventListener("click", exportExcel);
+
   buildFieldPicker();
   buildCompanyPicker();
   updateViewControls();
@@ -261,7 +264,7 @@ function buildFieldPicker() {
   const options = DATA.fields.filter((f) => f.slug !== "_total").map((f) => [f.slug, f.display_name]);
   buildRadioPicker($("field-checks"), "field-radio", state.field, options, colorOf, (value) => {
     state.field = value;
-    renderAll(); updateFieldUI(); updateWaterVisibility();
+    renderAll(); updateFieldUI(); updateWaterVisibility(); updateMapHighlight();
   });
   $("fields-toggle").addEventListener("click", () => {
     const pk = $("field-picker"), open = pk.classList.toggle("hidden");
@@ -277,7 +280,7 @@ function buildCompanyPicker() {
   const options = COMPANIES.map((c) => [c, c]);
   buildRadioPicker($("company-checks"), "company-radio", state.company, options, colorOfCompany, (value) => {
     state.company = value;
-    renderTime(); updateCompanyUI();
+    renderTime(); updateCompanyUI(); updateMapHighlight();
   });
   $("companies-toggle").addEventListener("click", () => {
     const pk = $("company-picker"), open = pk.classList.toggle("hidden");
@@ -300,10 +303,23 @@ function updateViewControls() {
   if (!isField) { $("field-picker").classList.add("hidden"); $("fields-toggle").setAttribute("aria-expanded", "false"); }
   if (!isCompany) { $("company-picker").classList.add("hidden"); $("companies-toggle").setAttribute("aria-expanded", "false"); }
   updateWaterVisibility();
+  updateMapHighlight();
 }
 function waterRelevant() { return state.view === "field" && state.field !== null; }
 function updateWaterVisibility() {
   $("water-label").classList.toggle("hidden", !waterRelevant());
+}
+
+// Tell the map (docs/map.js) which fields to highlight: the one field being
+// looked at in "Per felt", or the field portfolio of the one company being
+// looked at in "Per selskap". Null (both "Alle" and "Totalt") clears the
+// highlight back to the default production choropleth.
+function updateMapHighlight() {
+  if (!window.refreshMapHighlight) return;
+  let slugs = null;
+  if (state.view === "field" && state.field) slugs = [state.field];
+  else if (state.view === "company" && state.company) slugs = RANKED.filter((s) => shareOf(s, state.company) > 0);
+  window.refreshMapHighlight(slugs);
 }
 
 // --------------------------------------------------------------------------- rendering
@@ -433,6 +449,10 @@ function renderTime() {
   const showWaterNow = state.showWater && waterRelevant();
   if (showWaterNow) datasets.push(waterDataset(labels));
 
+  // Snapshot of exactly what is charted, for the Excel export -- kept in sync
+  // with the chart on every render rather than recomputed independently.
+  lastExport = { labels: labels.slice(), datasets: datasets.map((d) => ({ label: d.label, data: d.data.slice(), yAxisID: d.yAxisID })) };
+
   const cfg = {
     type: "line", data: { labels, datasets },
     options: {
@@ -513,6 +533,26 @@ function areaDS(label, data, color, isBottom, surface) {
     label, data, backgroundColor: color, borderColor: surface, borderWidth: 1.2,
     fill: isBottom ? "origin" : "-1", tension: 0.15, pointRadius: 0, pointHoverRadius: 0,
   };
+}
+
+// Exports exactly what renderTime() last drew on the chart (see lastExport),
+// one row per period, one column per series, plus a Sum column when there is
+// more than one oil/gas series (water excluded from the sum: different unit).
+function exportExcel() {
+  if (!lastExport || !window.XLSX) return;
+  const { labels, datasets } = lastExport;
+  const oeCols = datasets.filter((d) => d.yAxisID !== "y1");
+  const header = ["Periode", ...datasets.map((d) => `${d.label} (${d.yAxisID === "y1" ? WATER_UNIT : OE_UNIT})`)];
+  if (oeCols.length > 1) header.push(`Sum (${OE_UNIT})`);
+  const rows = labels.map((t, i) => {
+    const row = [labelFmt(t), ...datasets.map((d) => (d.data[i] == null ? null : Math.round(d.data[i] * 1000) / 1000))];
+    if (oeCols.length > 1) row.push(Math.round(oeCols.reduce((a, d) => a + (d.data[i] || 0), 0) * 1000) / 1000);
+    return row;
+  });
+  const ws = XLSX.utils.aoa_to_sheet([header, ...rows]);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Produksjon");
+  XLSX.writeFile(wb, `produksjon_${state.view}_${state.res}.xlsx`);
 }
 
 function renderRank() {

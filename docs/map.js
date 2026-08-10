@@ -49,8 +49,9 @@ const TILE_ATTR =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> ' +
   '&copy; <a href="https://carto.com/attributions">CARTO</a>';
 
-let map = null, tileLayer = null, fieldLayer = null;
+let map = null, tileLayer = null, fieldLayer = null, labelsLayer = null, fieldsGeoData = null;
 let PROD = {}, maxCumOe = 0;
+let highlightSet = null;   // Set of slugs to emphasise, or null for the default choropleth
 const restylers = [];   // [() => void] re-applied on theme change
 
 // --------------------------------------------------------------------------- //
@@ -75,6 +76,17 @@ window.refreshMapTheme = () => {
   applyTiles();
   restylers.forEach((fn) => fn());
   renderLegend();
+};
+
+// Called by app.js whenever its field/company selection changes. `slugs` is
+// the list of fields to emphasise (the one field picked, or the field
+// portfolio of the one company picked), or null/empty to go back to the
+// default production choropleth over every field.
+window.refreshMapHighlight = (slugs) => {
+  highlightSet = slugs && slugs.length ? new Set(slugs) : null;
+  if (fieldLayer) fieldLayer.setStyle(fieldStyle);
+  if (labelsLayer) rebuildFieldLabels();
+  if (maxCumOe) renderLegend();
 };
 
 // --------------------------------------------------------------------------- //
@@ -155,7 +167,16 @@ function intensity(slug) {
   return v > 0 ? Math.sqrt(v / maxCumOe) : 0;
 }
 function fieldStyle(feature) {
-  const t = intensity(feature.properties.slug);
+  const slug = feature.properties.slug;
+  if (highlightSet) {
+    const on = highlightSet.has(slug);
+    return {
+      color: on ? css("--ink-2") : css("--baseline"), weight: on ? 2 : 1,
+      fillColor: on ? css("--seq") : css("--c-other"),
+      fillOpacity: on ? 0.75 : 0.22,
+    };
+  }
+  const t = intensity(slug);
   const hasData = t != null && t > 0;
   return {
     color: css("--baseline"), weight: 1,
@@ -189,6 +210,13 @@ function fieldPopup(p) {
 
 function renderLegend() {
   const seq = css("--seq"), none = css("--c-other");
+  if (highlightSet) {
+    $("legend").innerHTML =
+      `<div class="lg-title">Utvalgte felt</div>` +
+      `<div class="lg-none"><span class="lg-sw" style="background:${seq}"></span>Uthevet</div>` +
+      `<div class="lg-none"><span class="lg-sw" style="background:${none};opacity:.4"></span>Andre felt</div>`;
+    return;
+  }
   $("legend").innerHTML =
     `<div class="lg-title">Akkumulert oljeekvivalenter (olje + gass) ` +
     `<span class="lg-u">mill. fat</span></div>` +
@@ -286,18 +314,20 @@ const OVERLAYS = [
   ["•&nbsp; Letebrønner", "data/gis/wells.geojson", wellsLayer, false],
 ];
 
-function fieldLabelsLayer(geoData) {
-  const group = L.layerGroup();
-  (geoData.features || []).forEach((f) => {
+// Rebuilt (not just re-styled) on every highlight change, since a highlight
+// also changes *which* fields get a label, not just their look.
+function rebuildFieldLabels() {
+  labelsLayer.clearLayers();
+  (fieldsGeoData.features || []).forEach((f) => {
     const slug = f.properties.slug;
+    if (highlightSet && !highlightSet.has(slug)) return;
     const name = (PROD[slug] && PROD[slug].name) || f.properties.name || slug;
     const center = L.geoJSON(f).getBounds().getCenter();
-    group.addLayer(L.marker(center, {
+    labelsLayer.addLayer(L.marker(center, {
       icon: L.divIcon({ className: "field-label", html: esc(name) }),
       interactive: false, keyboard: false,
     }));
   });
-  return group;
 }
 
 // --------------------------------------------------------------------------- //
@@ -345,7 +375,9 @@ async function main() {
 
   // Field name labels: own toggle, on by default.
   const control = {};
-  const labelsLayer = fieldLabelsLayer(geo.data);
+  fieldsGeoData = geo.data;
+  labelsLayer = L.layerGroup();
+  rebuildFieldLabels();
   labelsLayer.addTo(map);
   control["🏷&nbsp; Feltnavn"] = labelsLayer;
 
