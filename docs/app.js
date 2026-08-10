@@ -8,8 +8,8 @@
  * get stable generated hues so any selected subset is distinguishable.
  * Field selection is global and scopes every chart and the tiles.
  *
- * Everything is always expressed as oil+gas combined, in oil-equivalent
- * barrels per day (1000 fat o.e./dag) -- there is no SI-units mode and no
+ * Everything is always expressed as oil+gas combined, in mboepd (thousand
+ * barrels of oil equivalent per day) -- there is no SI-units mode and no
  * single-measure toggle. Water, when shown at all, is an optional extra line
  * in its own native unit (1000 m³/dag) on a secondary axis, since converting
  * produced water to an oil-equivalent has no physical meaning.
@@ -20,7 +20,7 @@
  * (see daysForRate). */
 
 const MEASURE_LABEL = { oil: "Olje", gas: "Gass" };
-const OE_UNIT = "1000 fat o.e./dag";
+const OE_UNIT = "mboepd";
 const WATER_UNIT = "1000 m³/dag";
 const SLOTS = ["--c1", "--c2", "--c3", "--c4", "--c5", "--c6", "--c7", "--c8"];
 const MONTHS_NB = ["jan", "feb", "mar", "apr", "mai", "jun", "jul", "aug", "sep", "okt", "nov", "des"];
@@ -35,7 +35,7 @@ let companyColor = {};
 let displayName = {};
 const state = {
   res: "yearly", view: "total", showWater: false,
-  selected: new Set(), year: null,
+  selected: new Set(), selectedCompanies: new Set(), year: null,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -169,6 +169,7 @@ function prepare() {
     Object.entries(shares).forEach(([c, s]) => { companyTotal[c] = (companyTotal[c] || 0) + at * s; });
   });
   COMPANIES = Object.keys(companyTotal).sort((a, b) => companyTotal[b] - companyTotal[a]);
+  state.selectedCompanies = new Set(COMPANIES);      // all companies selected by default
   companyColor = {};
   const extraC = Math.max(1, COMPANIES.length - SLOTS.length);
   COMPANIES.forEach((c, i) => {
@@ -200,12 +201,14 @@ function ownerOf(slug) {
 // --------------------------------------------------------------------------- controls
 function buildControls() {
   segGroup("res-seg", "res", (v) => { state.res = v; renderTime(); });
-  segGroup("view-seg", "view", (v) => { state.view = v; renderTime(); });
+  segGroup("view-seg", "view", (v) => { state.view = v; updateViewControls(); renderTime(); });
 
   const water = $("show-water");
   if (water) { water.checked = state.showWater; water.addEventListener("change", () => { state.showWater = water.checked; renderTime(); }); }
 
   buildFieldPicker();
+  buildCompanyPicker();
+  updateViewControls();
 
   // year slider (ranking chart)
   const yrs = (DATA.series._total?.yearly?.oil || []).map((p) => p.t);
@@ -268,6 +271,51 @@ function updateFieldUI() {
   $("fields-toggle").textContent = "Felt: " + (allSelected() ? `alle (${RANKED.length})` : `${state.selected.size} valgt`);
 }
 
+// The field picker only makes sense for "Per felt"; "Per selskap" gets its own
+// company picker instead, and "Totalt" shows neither (it is always the sum
+// over every field).
+function updateViewControls() {
+  const isField = state.view === "field", isCompany = state.view === "company";
+  $("fields-toggle").classList.toggle("hidden", !isField);
+  $("companies-toggle").classList.toggle("hidden", !isCompany);
+  if (!isField) { $("field-picker").classList.add("hidden"); $("fields-toggle").setAttribute("aria-expanded", "false"); }
+  if (!isCompany) { $("company-picker").classList.add("hidden"); $("companies-toggle").setAttribute("aria-expanded", "false"); }
+}
+
+const allCompaniesSelected = () => state.selectedCompanies.size >= COMPANIES.length;
+function buildCompanyPicker() {
+  const checks = $("company-checks");
+  COMPANIES.forEach((c) => {
+    const lab = document.createElement("label");
+    const cb = document.createElement("input");
+    cb.type = "checkbox"; cb.value = c; cb.checked = state.selectedCompanies.has(c);
+    cb.addEventListener("change", () => {
+      cb.checked ? state.selectedCompanies.add(c) : state.selectedCompanies.delete(c);
+      if (state.selectedCompanies.size === 0) { state.selectedCompanies.add(c); cb.checked = true; }  // keep ≥1
+      renderTime(); updateCompanyUI();
+    });
+    const sw = document.createElement("span");
+    sw.className = "sw"; sw.style.background = colorOfCompany(c);
+    lab.append(cb, sw, document.createTextNode(c));
+    checks.appendChild(lab);
+  });
+  $("companies-toggle").addEventListener("click", () => {
+    const pk = $("company-picker"), open = pk.classList.toggle("hidden");
+    $("companies-toggle").setAttribute("aria-expanded", open ? "false" : "true");
+  });
+  $("companies-all").addEventListener("click", () => setAllCompanies(true));
+  $("companies-none").addEventListener("click", () => setAllCompanies(false));
+  updateCompanyUI();
+}
+function setAllCompanies(on) {
+  state.selectedCompanies = new Set(on ? COMPANIES : [COMPANIES[0]]);   // never empty
+  $("company-checks").querySelectorAll("input").forEach((cb) => { cb.checked = state.selectedCompanies.has(cb.value); });
+  renderTime(); updateCompanyUI();
+}
+function updateCompanyUI() {
+  $("companies-toggle").textContent = "Selskap: " + (allCompaniesSelected() ? `alle (${COMPANIES.length})` : `${state.selectedCompanies.size} valgt`);
+}
+
 // --------------------------------------------------------------------------- rendering
 function applyChartDefaults() {
   if (!window.Chart) return;
@@ -321,9 +369,9 @@ function renderTime() {
   const sel = selectedSlugs();
   let datasets = [], stacked = true;
 
-  if (state.view === "total") {                       // oil vs gas, oe/day
+  if (state.view === "total") {                       // oil vs gas, oe/day, always all fields
     datasets = ["oil", "gas"].map((m, i) => {
-      const tot = selTotal(state.res, m);
+      const tot = DATA.series._total[state.res][m] || [];
       return areaDS(MEASURE_LABEL[m], tot.map((p) => oeRate(p.v, p.t)), css("--" + m), i === 0, surface);
     });
   } else if (state.view === "field") {                 // per-field oe/day, stacked
@@ -345,22 +393,44 @@ function renderTime() {
       });
       datasets.push(areaDS("Andre valgte", other, css("--c-other"), false, surface));
     }
-  } else {                                             // per-company oe/day, stacked
-    const companyOf = {};
-    sel.forEach((slug) => {
-      const mo = fieldMap(slug, state.res, "oil"), mg = fieldMap(slug, state.res, "gas");
-      const shares = ownerOf(slug);
-      labels.forEach((t) => {
-        const v = fieldOeAt(t, mo, mg);
-        if (v == null) return;
-        Object.entries(shares).forEach(([c, s]) => {
-          companyOf[c] = companyOf[c] || {};
-          companyOf[c][t] = (companyOf[c][t] || 0) + v * s;
+  } else {                                             // per company, or (single company picked) per field
+    // Always all fields: the field picker is hidden in this view (see updateViewControls).
+    const selComps = COMPANIES.filter((c) => state.selectedCompanies.has(c));
+    if (selComps.length === 1) {
+      const company = selComps[0];
+      const fieldsWithShare = RANKED.filter((slug) => shareOf(slug, company) > 0);
+      const maps = fieldsWithShare.map((s) => [fieldMap(s, state.res, "oil"), fieldMap(s, state.res, "gas")]);
+      const valueOf = (i, t) => (fieldOeAt(t, maps[i][0], maps[i][1]) ?? 0) * shareOf(fieldsWithShare[i], company);
+      const shown = fieldsWithShare.slice(0, STACK_CAP);
+      datasets = shown.map((slug, i) => areaDS(
+        displayName[slug], labels.map((t) => valueOf(i, t)), colorOf(slug), i === 0, surface,
+      ));
+      if (fieldsWithShare.length > STACK_CAP) {
+        const other = labels.map((t) => {
+          const all = fieldsWithShare.reduce((a, _s, i) => a + valueOf(i, t), 0);
+          const shownSum = shown.reduce((a, _s, i) => a + valueOf(i, t), 0);
+          return Math.max(0, all - shownSum);
+        });
+        datasets.push(areaDS("Andre valgte", other, css("--c-other"), false, surface));
+      }
+    } else {
+      const companyOf = {};
+      RANKED.forEach((slug) => {
+        const mo = fieldMap(slug, state.res, "oil"), mg = fieldMap(slug, state.res, "gas");
+        const shares = ownerOf(slug);
+        labels.forEach((t) => {
+          const v = fieldOeAt(t, mo, mg);
+          if (v == null) return;
+          Object.entries(shares).forEach(([c, s]) => {
+            if (!state.selectedCompanies.has(c)) return;
+            companyOf[c] = companyOf[c] || {};
+            companyOf[c][t] = (companyOf[c][t] || 0) + v * s;
+          });
         });
       });
-    });
-    const shown = COMPANIES.filter((c) => companyOf[c]);
-    datasets = shown.map((c, i) => areaDS(c, labels.map((t) => companyOf[c][t] || 0), colorOfCompany(c), i === 0, surface));
+      const shown = selComps.filter((c) => companyOf[c]);
+      datasets = shown.map((c, i) => areaDS(c, labels.map((t) => companyOf[c][t] || 0), colorOfCompany(c), i === 0, surface));
+    }
   }
 
   if (state.showWater) datasets.push(waterDataset(labels));
@@ -398,15 +468,20 @@ function renderTime() {
   if (timeChart) timeChart.destroy();
   timeChart = new Chart($("timeChart"), cfg);
 
+  const selComps = COMPANIES.filter((c) => state.selectedCompanies.has(c));
   const capParts = {
-    total: "Totalproduksjon for valgte felt, splittet i olje og gass.",
+    total: "Totalproduksjon for alle felt, splittet i olje og gass.",
     field: sel.length > STACK_CAP ? `De ${STACK_CAP} største av ${sel.length} valgte felt; resten er «Andre valgte».` : `Olje + gass per felt (${sel.length}).`,
-    company: "Olje + gass fordelt på eierselskap etter lisensandel (scripts/ingest_ownership.py).",
+    company: selComps.length === 1
+      ? `${selComps[0]}s andel av produksjonen (olje + gass), per felt.`
+      : "Olje + gass fordelt på eierselskap etter lisensandel (scripts/ingest_ownership.py).",
   };
   let cap = capParts[state.view];
   if (prelimIdx >= 0) cap += ` <span class="prelim">Skravert område</span> er foreløpige år (overstyres av endelige årstall); et ufullstendig år vises som snittproduksjon for månedene med data.`;
   $("time-cap").innerHTML = cap;
-  const viewLabel = { total: "totalt", field: "per felt", company: "per selskap" }[state.view];
+  const viewLabel = state.view === "company" && selComps.length === 1
+    ? `${selComps[0]}, per felt`
+    : { total: "totalt", field: "per felt", company: "per selskap" }[state.view];
   $("time-sub").textContent = `– ${viewLabel} (${OE_UNIT})`;
 }
 

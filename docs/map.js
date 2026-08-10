@@ -120,11 +120,11 @@ function indexProduction(combined) {
     monthlyGasArr.forEach((p) => { if (p.v != null) (byMonth[p.t] || (byMonth[p.t] = {})).gas = p.v; });
     const months = Object.keys(byMonth).sort();
 
-    let lastMonth = null, oeRateBblPerDay = null, oeAvg12BblPerDay = null;
+    let lastMonth = null, oeRateMboepd = null, oeAvg12Mboepd = null;
     if (months.length) {
       lastMonth = months[months.length - 1];
       const lastOe = (byMonth[lastMonth].oil || 0) + (byMonth[lastMonth].gas || 0);
-      oeRateBblPerDay = (lastOe * BOE * 1000) / daysInMonth(lastMonth);
+      oeRateMboepd = (lastOe * BOE) / daysInMonth(lastMonth);
 
       const last12 = months.slice(-12);
       let sumOe = 0, sumDays = 0;
@@ -132,13 +132,13 @@ function indexProduction(combined) {
         sumOe += (byMonth[t].oil || 0) + (byMonth[t].gas || 0);
         sumDays += daysInMonth(t);
       });
-      oeAvg12BblPerDay = (sumOe * BOE * 1000) / sumDays;
+      oeAvg12Mboepd = (sumOe * BOE) / sumDays;
     }
 
     out[slug] = {
       name: names[slug] || slug,
       oeCumMBbl: cumOe > 0 ? (cumOe * BOE) / 1000 : 0,          // million barrels
-      oeRateBblPerDay, oeRateMonth: lastMonth, oeAvg12BblPerDay,
+      oeRateMboepd, oeRateMonth: lastMonth, oeAvg12Mboepd,
     };
     if (out[slug].oeCumMBbl > maxCumOe) maxCumOe = out[slug].oeCumMBbl;
   }
@@ -172,10 +172,10 @@ function fieldPopup(p) {
     return `<div class="mp"><h3>${esc(name)}</h3>${opLine}` +
       `<p class="mp-op">Ingen produksjonsdata (funn / ikke i produksjon).</p></div>`;
   }
-  const lastStr = rec.oeRateBblPerDay != null
-    ? `${fmt(rec.oeRateBblPerDay)} fat/dag (${monthLabel(rec.oeRateMonth)})`
+  const lastStr = rec.oeRateMboepd != null
+    ? `${fmt(rec.oeRateMboepd)} mboepd (${monthLabel(rec.oeRateMonth)})`
     : "–";
-  const avgStr = rec.oeAvg12BblPerDay != null ? `${fmt(rec.oeAvg12BblPerDay)} fat/dag` : "–";
+  const avgStr = rec.oeAvg12Mboepd != null ? `${fmt(rec.oeAvg12Mboepd)} mboepd` : "–";
   const cumStr = `${fmt(rec.oeCumMBbl)} mill. fat`;
   return (
     `<div class="mp"><h3>${esc(name)}</h3>${opLine}` +
