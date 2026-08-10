@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import argparse
 import io
+import re
 import sys
 import zipfile
 from datetime import date, datetime
@@ -64,11 +65,34 @@ NAME_CANDIDATES = (
     "facility", "installati", "installation", "platform", "platform_n",
 )
 
+# Attribute columns dropped from every layer: geometry-derived measures ESRI
+# writes back into the table, internal ids, and coordinate columns that merely
+# duplicate the geometry. Removing them shrinks the point layers and keeps the
+# popups readable. Matched case-insensitively.
+DROP_FIELDS = {
+    "shape_leng", "shape_le_1", "shape_len", "shape_area",
+    "fid", "fid_", "objectid", "oid", "f15", "f16",
+    "n_degrees", "e_degrees", "n_latitude", "e_longitud", "latitude", "longitude",
+}
+
+# Reconciling the field-delineation labels with the production data slugs.
+# The delineation layer uses English names and splits some fields across licence
+# blocks ("Lulita - 1/90 part"); the production tables use the Danish names. We
+# strip the "- ... part" qualifier and alias the few names that genuinely
+# differ, so a delineated polygon lines up with the field's production series.
+_PART_SUFFIX_RE = re.compile(r"\s*-\s*[^-]*\bpart\b\s*$", re.IGNORECASE)
+FIELD_SLUG_ALIASES = {
+    "south_arne": "syd_arne",       # South Arne == Syd Arne
+    "tyra_southeast": "tyra_se",    # Tyra Southeast == Tyra SE
+    "tyra_south_east": "tyra_se",
+}
+
 # Map a source-file stem to a logical layer (its output filename). Substring
 # match, first hit wins; anything unmatched falls back to its geometry type.
 ROLE_RULES = (
-    ("field", "fields"), ("felt", "fields"),
-    ("licen", "licences"), ("licens", "licences"), ("block", "licences"),
+    ("field", "fields"), ("felt", "fields"), ("delinea", "fields"),
+    ("block", "blocks"),
+    ("licen", "licences"), ("licens", "licences"),
     ("well", "wells"), ("brond", "wells"), ("boring", "wells"),
     ("install", "installations"), ("platform", "installations"),
     ("facil", "installations"),
@@ -211,6 +235,13 @@ def _pick_name(props: dict[str, Any]) -> str:
     return ""
 
 
+def reconcile_field_slug(label: str) -> str:
+    """Normalise a delineation label to the same slug as the production data."""
+    cleaned = _PART_SUFFIX_RE.sub("", label)
+    slug = C.normalize_field(cleaned)
+    return FIELD_SLUG_ALIASES.get(slug, slug)
+
+
 def _round_coords(obj: Any, ndigits: int) -> Any:
     if isinstance(obj, float):
         return round(obj, ndigits)
@@ -270,13 +301,15 @@ def convert_layer(
 
         props = {}
         for k, v in zip(fields, sr.record):
+            if k.lower() in DROP_FIELDS:
+                continue
             cv = _clean_value(v)
             if cv not in (None, ""):
                 props[k] = cv
 
         if role == "fields":
             label = _pick_name(props)
-            slug = C.normalize_field(label) if label else ""
+            slug = reconcile_field_slug(label) if label else ""
             props["name"] = label or slug
             props["slug"] = slug
             if slug and fields_slugs is not None and slug not in fields_slugs:

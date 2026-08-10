@@ -81,6 +81,29 @@ def test_original_attributes_preserved(built):
     assert dan["OPERATOR"] == "TotalEnergies"
 
 
+def test_noise_columns_dropped(built):
+    _, fc = built
+    # Shape_Area / FID are written into the fixture but must not survive.
+    for f in fc["features"]:
+        keys = {k.lower() for k in f["properties"]}
+        assert "shape_area" not in keys
+        assert "fid" not in keys
+
+
+@pytest.mark.parametrize("label,slug", [
+    ("Dan", "dan"),
+    ("Halfdan (Igor area)", "halfdan"),          # parenthetical area dropped
+    ("South Arne - eastern part", "syd_arne"),   # English->Danish alias + "part"
+    ("South Arne - western part", "syd_arne"),
+    ("Tyra Southeast", "tyra_se"),               # alias
+    ("Lulita - 1/90 part", "lulita"),            # licence-part qualifier stripped
+    ("Solsort - 4/98 part", "solsort"),
+    ("Broder Tuck - 12/06 part", "broder_tuck"), # unmatched but parts collapse
+])
+def test_reconcile_field_slug(label, slug):
+    assert G.reconcile_field_slug(label) == slug
+
+
 # --------------------------------------------------------------------------- #
 # Reprojection: EPSG:23032 -> WGS84 must land in the Danish North Sea.
 # --------------------------------------------------------------------------- #
@@ -138,11 +161,14 @@ def test_empty_raw_dir_returns_nothing(tmp_path):
 # Role inference from filename / geometry.
 # --------------------------------------------------------------------------- #
 @pytest.mark.parametrize("stem,geom,role", [
-    ("DK_Fields", "POLYGON", "fields"),
+    # the real ENS filenames
+    ("FieldDelination_12_12_2025", "POLYGON", "fields"),
+    ("Licenses_12_12_2025", "POLYGON", "licences"),
+    ("Blocks", "POLYGON", "blocks"),
+    ("ExpAppWells_20190821", "POINT", "wells"),
+    ("OffshoreInstallations_12_02_2025", "POINT", "installations"),
+    # a few generic ones
     ("olie_felter", "POLYGON", "fields"),
-    ("Licence_blocks", "POLYGON", "licences"),
-    ("wells_all", "POINT", "wells"),
-    ("Installations", "POINT", "installations"),
     ("pipelines", "POLYLINE", "pipelines"),
     ("mystery", "POLYGON", "areas"),
     ("mystery", "POINT", "points"),

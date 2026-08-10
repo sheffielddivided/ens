@@ -16,11 +16,7 @@ venv/
 # The pipeline commits fetched raw sources and derived JSON so parsing is
 # reproducible and the history is auditable.
 
-# GIS raw shapefiles (ENS map geodata). Unlike the production reports, the
-# redistribution terms for the ENS shape files have not been confirmed, so the
-# raw .zip/.shp inputs are NOT committed yet: they are fetched on demand (the
-# build-gis workflow) or dropped in locally, and only the derived, simplified,
-# reprojected GeoJSON under docs/data/gis/ is tracked. Once the ENS licence is
-# confirmed, delete the two lines below to start tracking the raw inputs too.
-/data/sources/gis/raw/*
-!/data/sources/gis/raw/.gitkeep
+# NOTE: the ENS map shape files carry no redistribution restrictions, so the
+# raw .zip inputs under data/sources/gis/raw/ ARE tracked too (like the
+# production sources) -- the reprojected GeoJSON under docs/data/gis/ is derived
+# from them and both are committed for reproducibility.

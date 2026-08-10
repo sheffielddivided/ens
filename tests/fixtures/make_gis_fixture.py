@@ -70,10 +70,13 @@ def main() -> None:
     w = shapefile.Writer(str(stem), shapeType=shapefile.POLYGON)
     w.field("FIELD_NAME", "C", 40)
     w.field("OPERATOR", "C", 40)
-    for label, operator, lon, lat in FIELDS:
+    # Noise columns ESRI often writes back; build_gis must drop these.
+    w.field("Shape_Area", "N", 20, 3)
+    w.field("FID", "N", 10)
+    for i, (label, operator, lon, lat) in enumerate(FIELDS):
         cx, cy = to_src.transform(lon, lat)
         w.poly([_square(cx, cy)])
-        w.record(label, operator)
+        w.record(label, operator, 123456.0, i)
     w.close()
 
     # Sidecar projection file (pyshp does not write .prj).

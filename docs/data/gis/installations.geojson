@@ -1,0 +1,1723 @@
+{
+  "type": "FeatureCollection",
+  "generated_at": "2026-08-10T12:09:48Z",
+  "source": "Energistyrelsen (ENS) shape files, reprojected to WGS84",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK44",
+        "Country": "Denmark",
+        "Name": "Cecilie",
+        "Location__": "5604/20",
+        "Water_dept": 60.0,
+        "Operator": "INEOS E&P A/S",
+        "Production": 2003.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 2000.0,
+        "Weight_top": 700.0,
+        "Remarks": "Wellhead, satellite to Siri/removable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.75819,
+          56.40147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK01",
+        "Country": "Denmark",
+        "Name": "Dagmar",
+        "Location__": "5504/15",
+        "Water_dept": 40.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1991.0,
+        "Current_St": "Closed down",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 500.0,
+        "Weight_top": 532.0,
+        "Remarks": "Wellhead, production closed p.t."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.61684,
+          55.5758
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK02",
+        "Country": "Denmark",
+        "Name": "Dan A",
+        "Location__": "5505/17",
+        "Water_dept": 42.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1972.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 870.0,
+        "Weight_top": 100.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.13122,
+          55.46806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK03",
+        "Country": "Denmark",
+        "Name": "Dan B",
+        "Location__": "5505/17",
+        "Water_dept": 42.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1972.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1045.0,
+        "Weight_top": 1700.0,
+        "Remarks": "Separation, accomodation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.13172,
+          55.46837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK04",
+        "Country": "Denmark",
+        "Name": "Dan C",
+        "Location__": "5505/17",
+        "Water_dept": 42.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1972.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 385.0,
+        "Weight_top": 100.0,
+        "Remarks": "Flare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.13293,
+          55.46897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK05",
+        "Country": "Denmark",
+        "Name": "Dan D",
+        "Location__": "5505/17",
+        "Water_dept": 42.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1972.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1050.0,
+        "Weight_top": 100.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.13223,
+          55.46806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK06",
+        "Country": "Denmark",
+        "Name": "Dan E",
+        "Location__": "5505/17",
+        "Water_dept": 42.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1977.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1100.0,
+        "Weight_top": 600.0,
+        "Remarks": "Water Injection, no production"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.11486,
+          55.48
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK07",
+        "Country": "Denmark",
+        "Name": "Dan FA",
+        "Location__": "5505/17",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1987.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1690.0,
+        "Weight_top": 1970.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.10701,
+          55.4791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK08",
+        "Country": "Denmark",
+        "Name": "Dan FB",
+        "Location__": "5505/17",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1987.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1705.0,
+        "Weight_top": 2100.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.10592,
+          55.47822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK09",
+        "Country": "Denmark",
+        "Name": "Dan FC",
+        "Location__": "5505/17",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1987.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1700.0,
+        "Weight_top": 8700.0,
+        "Remarks": "Process/accommodation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.10438,
+          55.47754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK10",
+        "Country": "Denmark",
+        "Name": "Dan FD",
+        "Location__": "5505/17",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1987.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 491.0,
+        "Weight_top": 250.0,
+        "Remarks": "Flare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.10469,
+          55.47861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK11",
+        "Country": "Denmark",
+        "Name": "Dan FE",
+        "Location__": "5505/17",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1992.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 550.0,
+        "Weight_top": 1270.0,
+        "Remarks": "Wellhead, bridge module"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.10781,
+          55.47966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK12",
+        "Country": "Denmark",
+        "Name": "Dan FF",
+        "Location__": "5505/17",
+        "Water_dept": 65.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1997.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 3300.0,
+        "Weight_top": 14300.0,
+        "Remarks": "Wellhead, processing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.10605,
+          55.4766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK52",
+        "Country": "Denmark",
+        "Name": "Dan FG",
+        "Location__": "5505/17",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2005.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 2900.0,
+        "Weight_top": 11000.0,
+        "Remarks": "Process"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.10731,
+          55.47571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK13",
+        "Country": "Denmark",
+        "Name": "Gorm A",
+        "Location__": "5504/16",
+        "Water_dept": 38.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1981.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1080.0,
+        "Weight_top": 1100.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.75645,
+          55.57843
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK14",
+        "Country": "Denmark",
+        "Name": "Gorm B",
+        "Location__": "5504/16",
+        "Water_dept": 38.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1981.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1080.0,
+        "Weight_top": 945.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.75622,
+          55.57786
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK15",
+        "Country": "Denmark",
+        "Name": "Gorm C",
+        "Location__": "5504/16",
+        "Water_dept": 38.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1981.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 3500.0,
+        "Weight_top": 10200.0,
+        "Remarks": "Process/accommodation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.75729,
+          55.57897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK16",
+        "Country": "Denmark",
+        "Name": "Gorm D",
+        "Location__": "5504/16",
+        "Water_dept": 38.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1981.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 750.0,
+        "Weight_top": 220.0,
+        "Remarks": "Flare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.75865,
+          55.57837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK17",
+        "Country": "Denmark",
+        "Name": "Gorm E",
+        "Location__": "5504/16",
+        "Water_dept": 38.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1981.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1634.0,
+        "Weight_top": 3900.0,
+        "Remarks": "Riser, Owner: DONG OIL PIPE AS"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.75845,
+          55.58007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK18",
+        "Country": "Denmark",
+        "Name": "Gorm F",
+        "Location__": "5504/16",
+        "Water_dept": 38.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1991.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 2000.0,
+        "Weight_top": 11000.0,
+        "Remarks": "Wellhead, processing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.75565,
+          55.57772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK49",
+        "Country": "Denmark",
+        "Name": "Halfdan BA",
+        "Location__": "5505/13",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2002.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 3050.0,
+        "Weight_top": 2500.0,
+        "Remarks": "Wellhead, separation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.02949,
+          55.53732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK55",
+        "Country": "Denmark",
+        "Name": "Halfdan BB",
+        "Location__": "5505/13",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2008.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1800.0,
+        "Weight_top": 1380.0,
+        "Remarks": "Riser, wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.03022,
+          55.53764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK56",
+        "Country": "Denmark",
+        "Name": "Halfdan BC",
+        "Location__": "5505/13",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2007.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 2000.0,
+        "Weight_top": 3000.0,
+        "Remarks": "Accommodation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.03189,
+          55.53801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK58",
+        "Country": "Denmark",
+        "Name": "Halfdan BD",
+        "Location__": "5505/13",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2011.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 3500.0,
+        "Weight_top": 9300.0,
+        "Remarks": "s,/p, = 3500/2600"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.02834,
+          55.53634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK57",
+        "Country": "Denmark",
+        "Name": "Halfdan CA",
+        "Location__": "5505/13",
+        "Water_dept": 45.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2008.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1100.0,
+        "Weight_top": 630.0,
+        "Remarks": "Wellhead, separation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.13311,
+          55.55655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK41",
+        "Country": "Denmark",
+        "Name": "Halfdan DA",
+        "Location__": "5505/13",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2000.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 2800.0,
+        "Weight_top": 800.0,
+        "Remarks": "Wellhead, processing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.00436,
+          55.52944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK50",
+        "Country": "Denmark",
+        "Name": "Halfdan DB",
+        "Location__": "5505/13",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2003.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1000.0,
+        "Weight_top": 2200.0,
+        "Remarks": "Accommodation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.00293,
+          55.53033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK51",
+        "Country": "Denmark",
+        "Name": "Halfdan DC",
+        "Location__": "5505/13",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2003.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1150.0,
+        "Weight_top": 500.0,
+        "Remarks": "Flare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.00486,
+          55.53053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK19",
+        "Country": "Denmark",
+        "Name": "Harald A",
+        "Location__": "5604/22",
+        "Water_dept": 64.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1997.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 3800.0,
+        "Weight_top": 6000.0,
+        "Remarks": "Wellhead, processing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.27058,
+          56.34459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK20",
+        "Country": "Denmark",
+        "Name": "Harald B",
+        "Location__": "5604/22",
+        "Water_dept": 64.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1997.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1700.0,
+        "Weight_top": 1300.0,
+        "Remarks": "Accommodation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.27048,
+          56.34349
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK66",
+        "Country": "Denmark",
+        "Name": "Hejre A",
+        "Location__": "5603/28",
+        "Water_dept": 68.0,
+        "Operator": "INEOS Oil & Denmark",
+        "Production": 2017.0,
+        "Current_St": "U. construction",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 8400.0,
+        "Weight_top": 0.0,
+        "Remarks": "HPHT. Weights are approximate, excluding 8 piles."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.95741,
+          56.24612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK21",
+        "Country": "Denmark",
+        "Name": "Kraka",
+        "Location__": "5505/17",
+        "Water_dept": 45.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1991.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 550.0,
+        "Weight_top": 400.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.07699,
+          55.40137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK43",
+        "Country": "Denmark",
+        "Name": "Nini A",
+        "Location__": "5605/10",
+        "Water_dept": 60.0,
+        "Operator": "INEOS Oil & Denmark",
+        "Production": 2003.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 2000.0,
+        "Weight_top": 700.0,
+        "Remarks": "Wellhead, satellite to Siri/removable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.3197,
+          56.64017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK46",
+        "Country": "Denmark",
+        "Name": "Nini B",
+        "Location__": "5605/10",
+        "Water_dept": 60.0,
+        "Operator": "INEOS Oil & Denmark",
+        "Production": 2010.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 2000.0,
+        "Weight_top": 700.0,
+        "Remarks": "Wellhead, satellite to Siri/removable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.411,
+          56.67414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK40",
+        "Country": "Denmark",
+        "Name": "Regnar",
+        "Location__": "5505/17",
+        "Water_dept": 45.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1993.0,
+        "Current_St": "Closed down",
+        "Primary_pr": "Oil",
+        "Category": "Subsea steel",
+        "Function": "Subsea",
+        "Weight_sub": 55.0,
+        "Weight_top": 0.0,
+        "Remarks": "P,C, Subsea wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.22708,
+          55.38465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK59",
+        "Country": "Denmark",
+        "Name": "Regnar - utility buoy",
+        "Location__": "5505/17",
+        "Water_dept": 45.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1993.0,
+        "Current_St": "Closed down",
+        "Primary_pr": "Oil",
+        "Category": "Floating steel",
+        "Function": "Subsea",
+        "Weight_sub": 0.0,
+        "Weight_top": 440.0,
+        "Remarks": "Buoy, production closed p.t."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.229,
+          55.38469
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK22",
+        "Country": "Denmark",
+        "Name": "Roar",
+        "Location__": "5504/7",
+        "Water_dept": 46.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1996.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 950.0,
+        "Weight_top": 550.0,
+        "Remarks": "Wellhead, separation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.64692,
+          55.76682
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK23",
+        "Country": "Denmark",
+        "Name": "Rolf",
+        "Location__": "5504/14",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1986.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1400.0,
+        "Weight_top": 1900.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.49007,
+          55.60531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK42",
+        "Country": "Denmark",
+        "Name": "Siri",
+        "Location__": "5604/20",
+        "Water_dept": 60.0,
+        "Operator": "INEOS E&P A/S",
+        "Production": 1999.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Others",
+        "Function": "Above water production",
+        "Weight_sub": 0.0,
+        "Weight_top": 8000.0,
+        "Remarks": "Steeltank on seabottom/removable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.90971,
+          56.48204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK60",
+        "Country": "Denmark",
+        "Name": "Siri - offloading facility",
+        "Location__": "5604/20",
+        "Water_dept": 60.0,
+        "Operator": "INEOS E&P A/S",
+        "Production": 1999.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Subsea steel",
+        "Function": "Above water production",
+        "Weight_sub": 110.0,
+        "Weight_top": 0.0,
+        "Remarks": "SAL system for Siri"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.93773,
+          56.49033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK24",
+        "Country": "Denmark",
+        "Name": "Skjold A",
+        "Location__": "5504/16",
+        "Water_dept": 40.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1982.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1408.0,
+        "Weight_top": 2400.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.90695,
+          55.53006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK25",
+        "Country": "Denmark",
+        "Name": "Skjold B",
+        "Location__": "5504/16",
+        "Water_dept": 40.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1994.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 545.0,
+        "Weight_top": 1100.0,
+        "Remarks": "Wellhead, bridge module"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.90762,
+          55.53034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK26",
+        "Country": "Denmark",
+        "Name": "Skjold C",
+        "Location__": "5504/16",
+        "Water_dept": 40.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1994.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 830.0,
+        "Weight_top": 1200.0,
+        "Remarks": "Accommodation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.90539,
+          55.53087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK45",
+        "Country": "Denmark",
+        "Name": "Stine SCB-1",
+        "Location__": "5604/20",
+        "Water_dept": 60.0,
+        "Operator": "INEOS E&P A/S",
+        "Production": 2004.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Subsea steel",
+        "Function": "Subsea",
+        "Weight_sub": 160.0,
+        "Weight_top": 0.0,
+        "Remarks": "Wellhead, satellite to Siri/removable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.03951,
+          56.50531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK61",
+        "Country": "Denmark",
+        "Name": "Stine SCB-2",
+        "Location__": "5604/20",
+        "Water_dept": 60.0,
+        "Operator": "INEOS E&P A/S",
+        "Production": 2004.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Subsea steel",
+        "Function": "Subsea",
+        "Weight_sub": 150.0,
+        "Weight_top": 0.0,
+        "Remarks": "Wellhead, satellite to Siri/removable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.05781,
+          56.5152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK27",
+        "Country": "Denmark",
+        "Name": "Svend",
+        "Location__": "5504/25",
+        "Water_dept": 65.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1996.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1150.0,
+        "Weight_top": 575.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.17788,
+          56.17771
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK47",
+        "Country": "Denmark",
+        "Name": "Syd Arne",
+        "Location__": "5604/29",
+        "Water_dept": 60.0,
+        "Operator": "INEOS E&P A/S",
+        "Production": 1999.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Gravity-based concrete",
+        "Function": "Above water production",
+        "Weight_sub": 112800.0,
+        "Weight_top": 8955.0,
+        "Remarks": "Substructure weigth includes sub sea tank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.22743,
+          56.07769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK62",
+        "Country": "Denmark",
+        "Name": "Syd Arne - offloading facility",
+        "Location__": "5604/30",
+        "Water_dept": 60.0,
+        "Operator": "INEOS E&P A/S",
+        "Production": 1999.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Subsea steel",
+        "Function": "Above water production",
+        "Weight_sub": 110.0,
+        "Weight_top": 0.0,
+        "Remarks": "SAL system for Syd Arne"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.25472,
+          56.0918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK64",
+        "Country": "Denmark",
+        "Name": "Syd Arne - wellhead platform E",
+        "Location__": "5604/29",
+        "Water_dept": 60.0,
+        "Operator": "INEOS E&P A/S",
+        "Production": 2013.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 2224.0,
+        "Weight_top": 1932.0,
+        "Remarks": "Wellhead platform. Bridge connected to Syd Arne. S./P. = 2224 t /2014 t"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.22944,
+          56.07756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK63",
+        "Country": "Denmark",
+        "Name": "Syd Arne - wellhead platform N",
+        "Location__": "5604/29",
+        "Water_dept": 60.0,
+        "Operator": "INEOS E&P A/S",
+        "Production": 2013.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 2333.0,
+        "Weight_top": 1762.0,
+        "Remarks": "Wellhead platform. Satellite to Syd Arne. S./P. = 2333 t /2122 t"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.21782,
+          56.09508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK39",
+        "Country": "Denmark",
+        "Name": "Tyra EA",
+        "Location__": "5504/12",
+        "Water_dept": 37.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1984.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 4120.0,
+        "Weight_top": 18000.0,
+        "Remarks": "Process/accommodation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.80027,
+          55.72062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK28",
+        "Country": "Denmark",
+        "Name": "Tyra EB",
+        "Location__": "5504/12",
+        "Water_dept": 37.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1984.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1417.0,
+        "Weight_top": 838.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.79764,
+          55.7194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK29",
+        "Country": "Denmark",
+        "Name": "Tyra EC",
+        "Location__": "5504/12",
+        "Water_dept": 37.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1984.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1419.0,
+        "Weight_top": 1375.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.79654,
+          55.71852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK30",
+        "Country": "Denmark",
+        "Name": "Tyra ED",
+        "Location__": "5504/12",
+        "Water_dept": 37.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1984.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 579.0,
+        "Weight_top": 220.0,
+        "Remarks": "Flare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.80138,
+          55.71979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK31",
+        "Country": "Denmark",
+        "Name": "Tyra EE",
+        "Location__": "5504/12",
+        "Water_dept": 37.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1984.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1628.0,
+        "Weight_top": 1415.0,
+        "Remarks": "Riser"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.79918,
+          55.72007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK32",
+        "Country": "Denmark",
+        "Name": "Tyra EF",
+        "Location__": "5504/12",
+        "Water_dept": 37.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1995.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 700.0,
+        "Weight_top": 3100.0,
+        "Remarks": "Bridge module, processing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.79868,
+          55.72053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK48",
+        "Country": "Denmark",
+        "Name": "Tyra SEA",
+        "Location__": "5504/12",
+        "Water_dept": 38.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2002.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 880.0,
+        "Weight_top": 550.0,
+        "Remarks": "Wellhead, separation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.88124,
+          55.63895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK65",
+        "Country": "Denmark",
+        "Name": "Tyra SEB",
+        "Location__": "5504/12",
+        "Water_dept": 38.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2014.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 2092.0,
+        "Weight_top": 1170.0,
+        "Remarks": "Wellhead, separation. Weight of 12 piles 1700 tonnes."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.88226,
+          55.63913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK33",
+        "Country": "Denmark",
+        "Name": "Tyra WA",
+        "Location__": "5504/12",
+        "Water_dept": 41.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1984.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1813.0,
+        "Weight_top": 9500.0,
+        "Remarks": "Process/accommodation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.74868,
+          55.71571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK34",
+        "Country": "Denmark",
+        "Name": "Tyra WB",
+        "Location__": "5504/11",
+        "Water_dept": 41.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1984.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1399.0,
+        "Weight_top": 1300.0,
+        "Remarks": "Subsea wellhead, production closed p.t."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.74711,
+          55.71501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK35",
+        "Country": "Denmark",
+        "Name": "Tyra WC",
+        "Location__": "5504/11",
+        "Water_dept": 41.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1984.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1499.0,
+        "Weight_top": 815.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.74601,
+          55.71412
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK36",
+        "Country": "Denmark",
+        "Name": "Tyra WD",
+        "Location__": "5504/12",
+        "Water_dept": 41.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1984.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 673.0,
+        "Weight_top": 200.0,
+        "Remarks": "Flare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.75004,
+          55.71496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK37",
+        "Country": "Denmark",
+        "Name": "Tyra WE",
+        "Location__": "5504/12",
+        "Water_dept": 41.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1984.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Gas",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1000.0,
+        "Weight_top": 4000.0,
+        "Remarks": "Bridge module, processing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.74764,
+          55.7147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK53",
+        "Country": "Denmark",
+        "Name": "Valdemar AB",
+        "Location__": "5504/7",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2006.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1400.0,
+        "Weight_top": 480.0,
+        "Remarks": "Wellhead, separation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.56053,
+          55.8331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK54",
+        "Country": "Denmark",
+        "Name": "Valdemar BA",
+        "Location__": "5504/7",
+        "Water_dept": 42.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 2007.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 1400.0,
+        "Weight_top": 460.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.56286,
+          55.80339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": "DK38",
+        "Country": "Denmark",
+        "Name": "Valdemar AA",
+        "Location__": "5504/7",
+        "Water_dept": 43.0,
+        "Operator": "TotalEnergies EP Danmark A/S",
+        "Production": 1993.0,
+        "Current_St": "Operational",
+        "Primary_pr": "Oil",
+        "Category": "Fixed steel",
+        "Function": "Above water production",
+        "Weight_sub": 650.0,
+        "Weight_top": 450.0,
+        "Remarks": "Wellhead"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.56005,
+          55.83364
+        ]
+      }
+    }
+  ]
+}
