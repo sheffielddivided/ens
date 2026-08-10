@@ -319,17 +319,18 @@ function renderAll() { renderTiles(); renderTime(); renderRank(); }
 function renderTiles() {
   const yearsOil = DATA.series._total.yearly.oil || [];
   const finals = yearsOil.filter((p) => !p.p);
-  const yr = finals.length ? finals[finals.length - 1].t : (yearsOil.slice(-1)[0]?.t || "–");
+  const yrFinal = finals.length ? finals[finals.length - 1].t : (yearsOil.slice(-1)[0]?.t || "–");
+  const yrCurrent = yearsOil.slice(-1)[0]?.t || yrFinal;    // Olje/Gass-tiles: snitt for inneværende år
   const tiles = [];
   for (const m of ["oil", "gas"]) {
-    const pt = selTotal("yearly", m).find((p) => p.t === yr);
-    tiles.push(`<div class="tile"><div class="label"><span class="dot" style="background:${css("--" + m)}"></span>${MEASURE_LABEL[m]} ${yr}</div>
-      <div class="value">${pt ? fmtVal(oeRate(pt.v, yr)) : "–"} <span class="unit">${OE_UNIT}</span></div>
-      <div class="foot">${pt && pt.p ? "foreløpig" : "endelige tall"}</div></div>`);
+    const pt = selTotal("yearly", m).find((p) => p.t === yrCurrent);
+    tiles.push(`<div class="tile"><div class="label"><span class="dot" style="background:${css("--" + m)}"></span>${MEASURE_LABEL[m]} ${yrCurrent}</div>
+      <div class="value">${pt ? fmtVal(oeRate(pt.v, yrCurrent)) : "–"} <span class="unit">${OE_UNIT}</span></div>
+      <div class="foot">${pt && pt.p ? "foreløpig snitt" : "endelige tall"}</div></div>`);
   }
   const producing = selectedSlugs()
-    .filter((s) => (DATA.series[s]?.yearly?.oil || []).some((p) => p.t === yr && p.v > 0)).length;
-  tiles.push(`<div class="tile"><div class="label">Felt i produksjon ${yr}</div>
+    .filter((s) => (DATA.series[s]?.yearly?.oil || []).some((p) => p.t === yrFinal && p.v > 0)).length;
+  tiles.push(`<div class="tile"><div class="label">Felt i produksjon ${yrFinal}</div>
     <div class="value">${producing}</div><div class="foot">${allSelected() ? "med oljeproduksjon" : "av valgte felt"}</div></div>`);
   const peak = selTotal("yearly", "oil").map((p) => ({ t: p.t, v: oeRate(p.v, p.t) }))
     .reduce((a, p) => (p.v > a.v ? p : a), { v: -1, t: "–" });
@@ -364,24 +365,32 @@ function renderTime() {
       const tot = DATA.series._total[state.res][m] || [];
       return areaDS(MEASURE_LABEL[m], tot.map((p) => oeRate(p.v, p.t)), css("--" + m), i === 0, surface);
     });
-  } else if (state.view === "field") {                 // per-field oe/day, stacked
-    const shown = sel.length <= STACK_CAP ? sel : sel.slice(0, STACK_CAP);
-    const maps = shown.map((s) => [fieldMap(s, state.res, "oil"), fieldMap(s, state.res, "gas")]);
-    datasets = shown.map((slug, i) => areaDS(
-      displayName[slug],
-      labels.map((t) => fieldOeAt(t, maps[i][0], maps[i][1]) ?? 0),
-      colorOf(slug), i === 0, surface,
-    ));
-    if (sel.length > STACK_CAP) {
-      const totMap = toMap(selTotal(state.res, "oil"));
-      const totGasMap = toMap(selTotal(state.res, "gas"));
-      const shownTotals = labels.map((t) =>
-        maps.reduce((a, [mo, mg]) => a + (fieldOeAt(t, mo, mg) ?? 0), 0));
-      const other = labels.map((t, i2) => {
-        const all = oeRate(totMap[t] || 0, t) + oeRate(totGasMap[t] || 0, t);
-        return Math.max(0, all - shownTotals[i2]);
+  } else if (state.view === "field") {
+    if (state.field) {                                 // one field: oil vs gas, like Totalt
+      const slug = state.field;
+      datasets = ["oil", "gas"].map((m, i) => {
+        const map = fieldMap(slug, state.res, m);
+        return areaDS(MEASURE_LABEL[m], labels.map((t) => oeRate(map[t], t)), css("--" + m), i === 0, surface);
       });
-      datasets.push(areaDS("Andre valgte", other, css("--c-other"), false, surface));
+    } else {                                           // Alle: per-field oe/day, stacked
+      const shown = sel.length <= STACK_CAP ? sel : sel.slice(0, STACK_CAP);
+      const maps = shown.map((s) => [fieldMap(s, state.res, "oil"), fieldMap(s, state.res, "gas")]);
+      datasets = shown.map((slug, i) => areaDS(
+        displayName[slug],
+        labels.map((t) => fieldOeAt(t, maps[i][0], maps[i][1]) ?? 0),
+        colorOf(slug), i === 0, surface,
+      ));
+      if (sel.length > STACK_CAP) {
+        const totMap = toMap(selTotal(state.res, "oil"));
+        const totGasMap = toMap(selTotal(state.res, "gas"));
+        const shownTotals = labels.map((t) =>
+          maps.reduce((a, [mo, mg]) => a + (fieldOeAt(t, mo, mg) ?? 0), 0));
+        const other = labels.map((t, i2) => {
+          const all = oeRate(totMap[t] || 0, t) + oeRate(totGasMap[t] || 0, t);
+          return Math.max(0, all - shownTotals[i2]);
+        });
+        datasets.push(areaDS("Andre valgte", other, css("--c-other"), false, surface));
+      }
     }
   } else {                                             // per company, or (single company picked) per field
     // Always all fields: the field picker is hidden in this view (see updateViewControls).
@@ -438,6 +447,8 @@ function renderTime() {
             label: (it) => `${it.dataset.label}: ${fmtVal(it.parsed.y)} ${it.dataset.yAxisID === "y1" ? WATER_UNIT : OE_UNIT}`,
             footer: (it) => {
               const t = labels[it[0].dataIndex], parts = [];
+              const sum = it.filter((i2) => i2.dataset.yAxisID !== "y1").reduce((a, i2) => a + i2.parsed.y, 0);
+              parts.push(`Sum: ${fmtVal(sum)} ${OE_UNIT}`);
               if (prelimIdx >= 0 && it[0].dataIndex >= prelimIdx) parts.push("foreløpige tall");
               return parts.join(" · ");
             },
@@ -483,7 +494,7 @@ function renderTime() {
     field: sel.length > STACK_CAP ? `De ${STACK_CAP} største av ${sel.length} valgte felt; resten er «Andre valgte».` : `Olje + gass per felt (${sel.length}).`,
     company: state.company
       ? `${state.company}s andel av produksjonen (olje + gass), per felt.`
-      : "Olje + gass fordelt på eierselskap etter lisensandel (scripts/ingest_ownership.py).",
+      : "Olje + gass fordelt på eierselskap etter lisensandel.",
   };
   let cap = capParts[state.view];
   if (prelimIdx >= 0) cap += ` <span class="prelim">Skravert område</span> er foreløpige år (overstyres av endelige årstall); et ufullstendig år vises som snittproduksjon for månedene med data.`;
