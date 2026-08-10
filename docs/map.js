@@ -1,13 +1,16 @@
 "use strict";
 
 /* ENS field map.
- * Embedded in docs/index.html (between the two production charts): draws the
- * Danish oil & gas layers built by scripts/build_gis.py on a Leaflet map --
- * field outlines (docs/data/gis/fields.geojson) coloured by cumulative
- * oil+gas production (oil-equivalent barrels) from the same data/combined.json
- * app.js uses, an always-on block grid beneath, and toggleable overlays
- * (installations, exploration wells). Falls back to the checked-in *.sample.*
- * files when the real data has not been built yet.
+ * Embedded in docs/index.html (next to the production chart): draws the
+ * Danish oil & gas field layer built by scripts/build_gis.py on a Leaflet
+ * map, coloured by cumulative oil+gas production (oil-equivalent barrels)
+ * from the same data/combined.json app.js uses, with an always-on block grid
+ * beneath. Falls back to the checked-in *.sample.* files when the real data
+ * has not been built yet.
+ *
+ * The field-name-label toggle lives in the "Kart" panel head (outside the
+ * map itself, see index.html's #show-labels checkbox) rather than as an
+ * overlaid Leaflet control.
  *
  * Theme (light/dark) is a single shared toggle owned by app.js: this module
  * never binds its own click handler, it just exposes refreshMapTheme() on
@@ -236,7 +239,7 @@ function withAlpha(color, a) {
 }
 
 // --------------------------------------------------------------------------- //
-// Overlays (installations, wells) + the always-on block grid
+// Block grid (always on) + field-name labels
 // --------------------------------------------------------------------------- //
 function kv(title, sub, rows) {
   const body = rows
@@ -245,55 +248,6 @@ function kv(title, sub, rows) {
   return `<div class="mp"><h3>${esc(title)}</h3>` +
     (sub ? `<p class="mp-op">${esc(sub)}</p>` : "") +
     (body ? `<table class="kv">${body}</table>` : "") + `</div>`;
-}
-
-const PROD_COLOR = { Oil: "--oil", Gas: "--gas", Condensate: "--oil", Water: "--water" };
-
-function installationsLayer(data) {
-  const style = (f) => {
-    const p = f.properties;
-    const hue = PROD_COLOR[p.Primary_pr] || "--c3";
-    const closed = /clos|abandon|removed/i.test(p.Current_St || "");
-    return {
-      radius: 5, weight: 1.2, color: css("--page"),
-      fillColor: css(hue), fillOpacity: closed ? 0.4 : 0.95,
-    };
-  };
-  const layer = L.geoJSON(data, {
-    pointToLayer: (f, ll) => L.circleMarker(ll, style(f)),
-    onEachFeature: (f, l) => {
-      const p = f.properties;
-      l.bindPopup(kv(p.Name || p.ID, [p.Function, p.Category].filter(Boolean).join(" · "), [
-        ["Operatør", p.Operator], ["Status", p.Current_St],
-        ["Primærprodukt", p.Primary_pr], ["I drift fra", p.Production],
-        ["Vanndybde", p.Water_dept != null ? `${p.Water_dept} m` : ""],
-        ["Merknad", p.Remarks],
-      ]), { maxWidth: 300 });
-    },
-  });
-  restylers.push(() => layer.setStyle(style));
-  return layer;
-}
-
-function wellsLayer(data) {
-  const style = () => ({
-    radius: 3, weight: 0.6, color: css("--muted"),
-    fillColor: css("--c-other"), fillOpacity: 0.75,
-  });
-  const layer = L.geoJSON(data, {
-    pointToLayer: (f, ll) => L.circleMarker(ll, style()),
-    onEachFeature: (f, l) => {
-      const p = f.properties;
-      const title = [p.Well_Name, p.Well_Numb].filter(Boolean).join(" · ") || "Brønn";
-      l.bindPopup(kv(title, p.Classifica, [
-        ["Operatør", p.Operator], ["Lisens", p.Licence],
-        ["Boret", p.Spud_Date], ["Fullført", p.Comp_Date],
-        ["Plassering", p.Location], ["Frigitt", p.Released],
-      ]), { maxWidth: 300 });
-    },
-  });
-  restylers.push(() => layer.setStyle(style()));
-  return layer;
 }
 
 function blocksLayer(data) {
@@ -305,42 +259,6 @@ function blocksLayer(data) {
   restylers.push(() => layer.setStyle(style()));
   return layer;
 }
-
-// Layer toggle overlaid on the map itself (instead of Leaflet's default
-// checkbox control), styled like the .seg segmented controls above the
-// production chart. `control` is {label: layer}; each button independently
-// toggles its own layer on/off.
-function buildLayerToggle(control) {
-  const LayerToggle = L.Control.extend({
-    options: { position: "topright" },
-    onAdd() {
-      const div = L.DomUtil.create("div", "map-layer-seg");
-      Object.entries(control).forEach(([label, layer]) => {
-        const btn = L.DomUtil.create("button", "", div);
-        btn.type = "button";
-        btn.innerHTML = label;
-        btn.setAttribute("aria-pressed", map.hasLayer(layer) ? "true" : "false");
-        L.DomEvent.on(btn, "click", (e) => {
-          L.DomEvent.stop(e);
-          const on = map.hasLayer(layer);
-          if (on) map.removeLayer(layer); else map.addLayer(layer);
-          btn.setAttribute("aria-pressed", on ? "false" : "true");
-        });
-      });
-      L.DomEvent.disableClickPropagation(div);
-      return div;
-    },
-  });
-  return new LayerToggle();
-}
-
-// Toggleable overlays; "on" = shown by default. Blocks are drawn always (as a
-// base grid beneath the fields, see main); licences are omitted because they
-// coincide with the field delineations.
-const OVERLAYS = [
-  ["⬤&nbsp; Installasjoner", "data/gis/installations.geojson", installationsLayer, false],
-  ["•&nbsp; Letebrønner", "data/gis/wells.geojson", wellsLayer, false],
-];
 
 // Rebuilt (not just re-styled) on every highlight change, since a highlight
 // also changes *which* fields get a label, not just their look.
@@ -401,27 +319,22 @@ async function main() {
     blocksLayer(blocksData).addTo(map).bringToBack();
   }
 
-  // Field name labels: own toggle, on by default.
-  const control = {};
+  // Field name labels: toggled by the "Feltnavn" checkbox in the panel head
+  // (outside the map itself), on by default.
   fieldsGeoData = geo.data;
   labelsLayer = L.layerGroup();
   rebuildFieldLabels();
-  labelsLayer.addTo(map);
-  control["🏷&nbsp; Feltnavn"] = labelsLayer;
-
-  // Optional overlays, each loaded only if its file exists.
-  for (const [name, file, build, on] of OVERLAYS) {
-    const data = await loadJson(file);
-    if (!data || !(data.features || []).length) continue;
-    const layer = build(data);
-    control[name] = layer;
-    if (on) layer.addTo(map);
+  const labelsToggle = $("show-labels");
+  if (!labelsToggle || labelsToggle.checked) labelsLayer.addTo(map);
+  if (labelsToggle) {
+    labelsToggle.addEventListener("change", () => {
+      if (labelsToggle.checked) labelsLayer.addTo(map); else map.removeLayer(labelsLayer);
+    });
   }
-  buildLayerToggle(control).addTo(map);
 
   const n = geo.data.features.length;
   const upd = geo.data.generated_at ? ` · geometri oppdatert ${geo.data.generated_at.slice(0, 10)}` : "";
-  $("map-note").textContent = `${n} felt vist${upd}. Slå lag av/på øverst til høyre.`;
+  $("map-note").textContent = `${n} felt vist${upd}.`;
   renderLegend();
 }
 
