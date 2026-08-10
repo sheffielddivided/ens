@@ -3,9 +3,9 @@
 /* ENS field map.
  * Draws the Danish oil & gas layers built by scripts/build_gis.py on a Leaflet
  * map: field outlines (docs/data/gis/fields.geojson) coloured by cumulative
- * production from the same data/combined.json the explorer uses, plus optional
- * overlays (installations, licences, blocks, exploration wells) toggled top
- * right. Falls back to the checked-in *.sample.* files when the real data has
+ * production from the same data/combined.json the explorer uses, an always-on
+ * block grid beneath, and toggleable overlays (installations, exploration
+ * wells). Falls back to the checked-in *.sample.* files when the real data has
  * not been built yet, and mirrors the explorer's light/dark theme. */
 
 const MEASURES = ["oil", "gas", "water"];
@@ -180,7 +180,7 @@ function initMeasureToggle() {
 }
 
 // --------------------------------------------------------------------------- //
-// Overlays (installations, licences, blocks, wells)
+// Overlays (installations, wells) + the always-on block grid
 // --------------------------------------------------------------------------- //
 function kv(title, sub, rows) {
   const body = rows
@@ -240,23 +240,6 @@ function wellsLayer(data) {
   return layer;
 }
 
-function licencesLayer(data) {
-  const style = () => ({ color: css("--c7"), weight: 1.2, fillColor: css("--c7"), fillOpacity: 0.06 });
-  const layer = L.geoJSON(data, {
-    style,
-    onEachFeature: (f, l) => {
-      const p = f.properties;
-      l.bindPopup(kv(p.POLYGON_NA || p.LICENCE || "Lisens",
-        p.LICENCE && p.POLYGON_NA ? `Lisens ${p.LICENCE}` : "", [
-          ["Operatør", p.Operator_1 || p.OPERATOR],
-          ["Areal", p.Area != null ? `${fmt(p.Area)} km²` : ""], ["Type", p.SIG],
-        ]), { maxWidth: 300 });
-    },
-  });
-  restylers.push(() => layer.setStyle(style()));
-  return layer;
-}
-
 function blocksLayer(data) {
   const style = () => ({ color: css("--baseline"), weight: 0.6, opacity: 0.6, fill: false });
   const layer = L.geoJSON(data, {
@@ -267,11 +250,11 @@ function blocksLayer(data) {
   return layer;
 }
 
-// name -> { file, build, on } ; "on" = shown by default
+// Toggleable overlays; "on" = shown by default. Blocks are drawn always (as a
+// base grid beneath the fields, see main); licences are omitted because they
+// coincide with the field delineations.
 const OVERLAYS = [
   ["⬤&nbsp; Installasjoner", "data/gis/installations.geojson", installationsLayer, true],
-  ["▢&nbsp; Lisenser", "data/gis/licences.geojson", licencesLayer, false],
-  ["▦&nbsp; Blokker", "data/gis/blocks.geojson", blocksLayer, false],
   ["•&nbsp; Letebrønner", "data/gis/wells.geojson", wellsLayer, false],
 ];
 
@@ -312,6 +295,12 @@ async function main() {
 
   const b = fieldLayer.getBounds();
   if (b.isValid()) map.fitBounds(b, { padding: [30, 30], maxZoom: 9 });
+
+  // Block grid: always shown, drawn beneath the fields as a base reference.
+  const blocksData = await loadJson("data/gis/blocks.geojson");
+  if (blocksData && (blocksData.features || []).length) {
+    blocksLayer(blocksData).addTo(map).bringToBack();
+  }
 
   // Optional overlays, each loaded only if its file exists.
   const control = {};
