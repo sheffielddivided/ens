@@ -27,7 +27,7 @@ const MONTHS_NB = ["jan", "feb", "mar", "apr", "mai", "jun", "jul", "aug", "sep"
 const STACK_CAP = 8;             // max individual bands before folding to "Andre valgte"
 const UNKNOWN_COMPANY = "Ukjent";
 
-let DATA = null, OWN = null, timeChart = null, rankChart = null, lastExport = null;
+let DATA = null, OWN = null, timeChart = null, lastExport = null;
 let RANKED = [];                 // all field slugs, biggest first
 let COMPANIES = [];               // all company names, biggest first
 let fieldColor = {};              // slug -> { v: cssVarName } or { h: hex/hsl }
@@ -35,7 +35,7 @@ let companyColor = {};
 let displayName = {};
 const state = {
   res: "yearly", view: "total", showWater: false,
-  field: null, company: null, year: null,        // field/company: null = "Alle", else one slug/name
+  field: null, company: null,        // null = "Alle", else one slug/name
 };
 
 const $ = (id) => document.getElementById(id);
@@ -179,10 +179,6 @@ function prepare() {
       : { h: `hsl(${Math.round((360 / extraC) * (i - SLOTS.length) + 20) % 360} 55% 52%)` };
   });
 
-  const yearsOil = DATA.series._total?.yearly?.oil || [];
-  const finals = yearsOil.filter((p) => !p.p).map((p) => p.t);
-  state.year = yearsOil.slice(-1)[0]?.t || (finals.length ? finals[finals.length - 1] : null);
-
   const el = $("updated");
   if (DATA.last_updated) {
     const d = new Date(DATA.last_updated);
@@ -213,13 +209,6 @@ function buildControls() {
   buildFieldPicker();
   buildCompanyPicker();
   updateViewControls();
-
-  // year slider (ranking chart)
-  const yrs = (DATA.series._total?.yearly?.oil || []).map((p) => p.t);
-  const sl = $("year-slider");
-  sl.min = 0; sl.max = Math.max(0, yrs.length - 1);
-  sl.value = Math.max(0, yrs.indexOf(state.year));
-  sl.addEventListener("input", () => { state.year = yrs[+sl.value]; renderRank(); });
 
   const saved = localStorage.getItem("ens-theme");
   if (saved) document.documentElement.setAttribute("data-theme", saved);
@@ -330,7 +319,7 @@ function applyChartDefaults() {
   Chart.defaults.borderColor = css("--grid");
 }
 
-function renderAll() { renderTiles(); renderTime(); renderRank(); }
+function renderAll() { renderTiles(); renderTime(); }
 
 function renderTiles() {
   const yearsOil = DATA.series._total.yearly.oil || [];
@@ -553,48 +542,6 @@ function exportExcel() {
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Produksjon");
   XLSX.writeFile(wb, `produksjon_${state.view}_${state.res}.xlsx`);
-}
-
-function renderRank() {
-  const yr = state.year;
-  const rows = selectedSlugs()
-    .map((slug) => ({
-      slug,
-      v: oeRate(fieldMap(slug, "yearly", "oil")[yr] || 0, yr) + oeRate(fieldMap(slug, "yearly", "gas")[yr] || 0, yr),
-    }))
-    .filter((r) => r.v > 0).sort((a, b) => b.v - a.v);
-  const prelim = (DATA.series._total.yearly.oil || []).find((p) => p.t === yr)?.p;
-
-  const cfg = {
-    type: "bar",
-    data: {
-      labels: rows.map((r) => displayName[r.slug]),
-      datasets: [{
-        label: "Olje + gass", data: rows.map((r) => r.v),
-        backgroundColor: rows.map((r) => colorOf(r.slug)),
-        borderRadius: 4, borderSkipped: false, barThickness: "flex", maxBarThickness: 26,
-      }],
-    },
-    options: {
-      indexAxis: "y", responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
-      plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: (it) => `${fmtVal(it.parsed.x)} ${OE_UNIT}${prelim ? " (foreløpig)" : ""}` } },
-        prelim: { index: -1 },
-      },
-      scales: {
-        x: { beginAtZero: true, border: { display: false }, grid: { color: css("--grid") },
-          title: { display: true, text: OE_UNIT, color: css("--muted") }, ticks: { callback: (v) => fmtVal(v) } },
-        y: { grid: { display: false }, border: { display: false }, ticks: { autoSkip: false, font: { size: 12 } } },
-      },
-    },
-  };
-  if (rankChart) rankChart.destroy();
-  rankChart = new Chart($("rankChart"), cfg);
-  $("year-out").textContent = yr;
-  $("rank-year-label").textContent = `– olje + gass, ${yr}`;
-  $("rank-cap").innerHTML = `${rows.length} felt i produksjon i ${yr}` +
-    (prelim ? ' — <span class="prelim">foreløpige tall</span> (snitt for månedene med data hvis året ikke er fullført)' : "") + ".";
 }
 
 // Preliminary-region shading plugin (shared by the time chart).

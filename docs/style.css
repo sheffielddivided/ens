@@ -120,14 +120,9 @@ h1 { margin: 0 0 6px; font-size: clamp(1.4rem, 3.4vw, 1.95rem); letter-spacing: 
 .picker input { accent-color: var(--water); margin: 0; }
 
 .chart-wrap { position: relative; height: 400px; margin-top: 10px; }
-.chart-wrap.tall { height: 460px; }
 canvas { width: 100% !important; height: 100% !important; }
 .cap { color: var(--muted); font-size: .82rem; margin: 12px 2px 2px; }
 .cap .prelim { border-bottom: 2px dashed var(--muted); }
-
-.year-row { display: flex; align-items: center; gap: 12px; min-width: 240px; }
-.year-row input[type=range] { flex: 1; accent-color: var(--seq); }
-.year-row output { font-variant-numeric: tabular-nums; font-weight: 650; min-width: 3ch; }
 
 footer { color: var(--muted); font-size: .84rem; margin-top: 26px; border-top: 1px solid var(--border); padding-top: 16px; }
 footer a { color: var(--water); }
@@ -186,7 +181,7 @@ footer a { color: var(--water); }
 .legend .lg-sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
 
 @media (max-width: 620px) {
-  .chart-wrap { height: 320px; } .chart-wrap.tall { height: 380px; }
+  .chart-wrap { height: 320px; }
   header { flex-direction: row; }
   h1 { font-size: 1.25rem; }
   #map { height: 420px; }
