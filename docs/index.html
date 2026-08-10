@@ -6,7 +6,7 @@
   <title>Dansk olje- og gassproduksjon</title>
   <meta name="description" content="Utforsk produksjon av olje, gass og vann fra danske felt i Nordsjøen (Energistyrelsen).">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
   <div class="wrap">
@@ -30,53 +30,59 @@
     <!-- Hero stat tiles -->
     <section class="tiles" id="tiles" aria-label="Nøkkeltall"></section>
 
-    <!-- Time series -->
-    <section class="panel">
-      <div class="panel-head">
-        <h2>Produksjon <small id="time-sub"></small></h2>
-        <div class="controls">
-          <div class="seg" id="res-seg" role="group" aria-label="Oppløsning">
-            <button data-res="yearly"  aria-pressed="true">År</button>
-            <button data-res="monthly" aria-pressed="false">Måned</button>
+    <!-- Time series + field map, side by side -->
+    <div class="chart-map-row">
+      <section class="panel chart-panel">
+        <div class="panel-head">
+          <h2>Produksjon <small id="time-sub"></small></h2>
+          <div class="controls">
+            <div class="seg" id="res-seg" role="group" aria-label="Oppløsning">
+              <button data-res="yearly"  aria-pressed="true">År</button>
+              <button data-res="monthly" aria-pressed="false">Måned</button>
+            </div>
+            <div class="seg" id="view-seg" role="group" aria-label="Visning">
+              <button data-view="total"   aria-pressed="true">Totalt</button>
+              <button data-view="field"   aria-pressed="false">Per felt</button>
+              <button data-view="company" aria-pressed="false">Per selskap</button>
+            </div>
+            <label class="chk hidden" id="water-label" title="Legg vannproduksjon til som egen linje (skala til høyre)">
+              <input type="checkbox" id="show-water"> Vis vann
+            </label>
+            <button class="chip hidden" id="fields-toggle" aria-expanded="false" aria-controls="field-picker">Felt: alle</button>
+            <button class="chip hidden" id="companies-toggle" aria-expanded="false" aria-controls="company-picker">Selskap: alle</button>
           </div>
-          <div class="seg" id="view-seg" role="group" aria-label="Visning">
-            <button data-view="total"   aria-pressed="true">Totalt</button>
-            <button data-view="field"   aria-pressed="false">Per felt</button>
-            <button data-view="company" aria-pressed="false">Per selskap</button>
+        </div>
+        <div class="picker hidden" id="field-picker">
+          <div class="picker-actions">
+            <span class="picker-hint">Velg ett felt, eller alle</span>
           </div>
-          <label class="chk hidden" id="water-label" title="Legg vannproduksjon til som egen linje (skala til høyre)">
-            <input type="checkbox" id="show-water"> Vis vann
-          </label>
-          <button class="chip hidden" id="fields-toggle" aria-expanded="false" aria-controls="field-picker">Felt: alle</button>
-          <button class="chip hidden" id="companies-toggle" aria-expanded="false" aria-controls="company-picker">Selskap: alle</button>
-          <button class="chip" id="export-btn" title="Eksporter tallene som vises i grafen til Excel">Eksporter til Excel</button>
+          <div id="field-checks"></div>
         </div>
-      </div>
-      <div class="picker hidden" id="field-picker">
-        <div class="picker-actions">
-          <span class="picker-hint">Velg ett felt, eller alle</span>
+        <div class="picker hidden" id="company-picker">
+          <div class="picker-actions">
+            <span class="picker-hint">Velg ett selskap for å se dets andel per felt, eller alle</span>
+          </div>
+          <div id="company-checks"></div>
         </div>
-        <div id="field-checks"></div>
-      </div>
-      <div class="picker hidden" id="company-picker">
-        <div class="picker-actions">
-          <span class="picker-hint">Velg ett selskap for å se dets andel per felt, eller alle</span>
+        <div class="chart-wrap"><canvas id="timeChart"></canvas></div>
+        <div class="export-row">
+          <button class="chip icon-btn" id="export-btn" title="Eksporter tallene som vises i grafen til Excel">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="4" fill="#1D6F42"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="system-ui,sans-serif">X</text></svg>
+            Eksporter til Excel
+          </button>
         </div>
-        <div id="company-checks"></div>
-      </div>
-      <div class="chart-wrap"><canvas id="timeChart"></canvas></div>
-      <p class="cap" id="time-cap"></p>
-    </section>
+        <p class="cap" id="time-cap"></p>
+      </section>
 
-    <!-- Field map -->
-    <section class="panel">
-      <div class="panel-head">
-        <h2>Felt i Nordsjøen</h2>
-      </div>
-      <div id="map"></div>
-      <div id="legend" class="legend"></div>
-      <p class="cap" id="map-note">Laster kart…</p>
-    </section>
+      <section class="panel map-panel">
+        <div class="panel-head">
+          <h2>Felt i Nordsjøen</h2>
+        </div>
+        <div id="map"></div>
+        <div id="legend" class="legend"></div>
+        <p class="cap" id="map-note">Laster kart…</p>
+      </section>
+    </div>
 
     <footer>
       <p>Månedstall er <span class="prelim">foreløpige</span> estimater og overstyres av de endelige
@@ -89,6 +95,6 @@
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <script src="app.js?v=9"></script>
-  <script src="map.js?v=8"></script>
+  <script src="map.js?v=9"></script>
 </body>
 </html>
