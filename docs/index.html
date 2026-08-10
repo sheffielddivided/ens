@@ -44,7 +44,7 @@
             <button data-view="field"   aria-pressed="false">Per felt</button>
             <button data-view="company" aria-pressed="false">Per selskap</button>
           </div>
-          <label class="chk" title="Legg vannproduksjon til som egen linje (skala til høyre)">
+          <label class="chk hidden" id="water-label" title="Legg vannproduksjon til som egen linje (skala til høyre)">
             <input type="checkbox" id="show-water"> Vis vann
           </label>
           <button class="chip hidden" id="fields-toggle" aria-expanded="false" aria-controls="field-picker">Felt: alle</button>
@@ -53,17 +53,13 @@
       </div>
       <div class="picker hidden" id="field-picker">
         <div class="picker-actions">
-          <button type="button" id="fields-all">Alle</button>
-          <button type="button" id="fields-none">Ingen</button>
-          <span class="picker-hint">Velg hvilke felt som skal studeres</span>
+          <span class="picker-hint">Velg ett felt, eller alle</span>
         </div>
         <div id="field-checks"></div>
       </div>
       <div class="picker hidden" id="company-picker">
         <div class="picker-actions">
-          <button type="button" id="companies-all">Alle</button>
-          <button type="button" id="companies-none">Ingen</button>
-          <span class="picker-hint">Velg ett selskap for å se dets andel per felt</span>
+          <span class="picker-hint">Velg ett selskap for å se dets andel per felt, eller alle</span>
         </div>
         <div id="company-checks"></div>
       </div>
