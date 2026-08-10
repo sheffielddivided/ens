@@ -306,6 +306,34 @@ function blocksLayer(data) {
   return layer;
 }
 
+// Layer toggle overlaid on the map itself (instead of Leaflet's default
+// checkbox control), styled like the .seg segmented controls above the
+// production chart. `control` is {label: layer}; each button independently
+// toggles its own layer on/off.
+function buildLayerToggle(control) {
+  const LayerToggle = L.Control.extend({
+    options: { position: "topright" },
+    onAdd() {
+      const div = L.DomUtil.create("div", "map-layer-seg");
+      Object.entries(control).forEach(([label, layer]) => {
+        const btn = L.DomUtil.create("button", "", div);
+        btn.type = "button";
+        btn.innerHTML = label;
+        btn.setAttribute("aria-pressed", map.hasLayer(layer) ? "true" : "false");
+        L.DomEvent.on(btn, "click", (e) => {
+          L.DomEvent.stop(e);
+          const on = map.hasLayer(layer);
+          if (on) map.removeLayer(layer); else map.addLayer(layer);
+          btn.setAttribute("aria-pressed", on ? "false" : "true");
+        });
+      });
+      L.DomEvent.disableClickPropagation(div);
+      return div;
+    },
+  });
+  return new LayerToggle();
+}
+
 // Toggleable overlays; "on" = shown by default. Blocks are drawn always (as a
 // base grid beneath the fields, see main); licences are omitted because they
 // coincide with the field delineations.
@@ -389,7 +417,7 @@ async function main() {
     control[name] = layer;
     if (on) layer.addTo(map);
   }
-  L.control.layers(null, control, { collapsed: false, position: "topright" }).addTo(map);
+  buildLayerToggle(control).addTo(map);
 
   const n = geo.data.features.length;
   const upd = geo.data.generated_at ? ` · geometri oppdatert ${geo.data.generated_at.slice(0, 10)}` : "";

@@ -54,7 +54,7 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.5;
 }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 56px; }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 20px 56px; }
 
 header { padding: 30px 0 8px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
 h1 { margin: 0 0 6px; font-size: clamp(1.4rem, 3.4vw, 1.95rem); letter-spacing: -0.02em; }
@@ -87,6 +87,12 @@ h1 { margin: 0 0 6px; font-size: clamp(1.4rem, 3.4vw, 1.95rem); letter-spacing: 
 /* panels */
 .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
   padding: 18px 18px 14px; margin-top: 20px; box-shadow: 0 1px 2px var(--shadow); }
+
+/* chart + map, side by side */
+.chart-map-row { display: flex; gap: 20px; align-items: flex-start; margin-top: 20px; }
+.chart-map-row .panel { margin-top: 0; }
+.chart-panel { flex: 1 1 auto; min-width: 0; }
+.map-panel { flex: 0 0 400px; }
 .panel-head { display: flex; flex-wrap: wrap; gap: 12px 18px; justify-content: space-between; align-items: center; margin-bottom: 6px; }
 .panel-head h2 { margin: 0; font-size: 1.08rem; }
 .panel-head h2 small { color: var(--muted); font-weight: 500; font-size: .85rem; }
@@ -124,6 +130,10 @@ canvas { width: 100% !important; height: 100% !important; }
 .cap { color: var(--muted); font-size: .82rem; margin: 12px 2px 2px; }
 .cap .prelim { border-bottom: 2px dashed var(--muted); }
 
+.export-row { display: flex; justify-content: flex-end; margin-top: 10px; }
+.icon-btn { display: inline-flex; align-items: center; gap: 6px; }
+.icon-btn svg { width: 15px; height: 15px; flex: none; }
+
 footer { color: var(--muted); font-size: .84rem; margin-top: 26px; border-top: 1px solid var(--border); padding-top: 16px; }
 footer a { color: var(--water); }
 
@@ -132,10 +142,25 @@ footer a { color: var(--water); }
 .nav a { color: var(--water); font-size: .9rem; text-decoration: none; }
 .nav a:hover { text-decoration: underline; }
 
-/* map (kart.html) */
+/* field map */
 #map {
-  height: 560px; margin-top: 10px; border-radius: 12px; overflow: hidden;
+  aspect-ratio: 1 / 1; width: 100%; margin-top: 10px; border-radius: 12px; overflow: hidden;
   border: 1px solid var(--border); background: var(--page);
+}
+/* layer toggle, overlaid on the map itself (see map.js buildLayerToggle) --
+   same look as the .seg segmented controls above the production chart. */
+.map-layer-seg {
+  display: flex; flex-direction: column; gap: 2px; background: var(--page);
+  border: 1px solid var(--border); border-radius: 9px; padding: 2px;
+  box-shadow: 0 1px 4px var(--shadow);
+}
+.map-layer-seg button {
+  border: 0; background: transparent; color: var(--ink-2); font: inherit;
+  font-size: .8rem; padding: 5px 10px; border-radius: 7px; cursor: pointer;
+  text-align: left; white-space: nowrap;
+}
+.map-layer-seg button[aria-pressed="true"] {
+  background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px var(--shadow); font-weight: 600;
 }
 .leaflet-container { background: var(--page); font: inherit; }
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
@@ -180,9 +205,13 @@ footer a { color: var(--water); }
 .legend .lg-none { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
 .legend .lg-sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
 
+@media (max-width: 900px) {
+  .chart-map-row { flex-direction: column; }
+  .map-panel { flex-basis: auto; width: 100%; }
+}
+
 @media (max-width: 620px) {
   .chart-wrap { height: 320px; }
   header { flex-direction: row; }
   h1 { font-size: 1.25rem; }
-  #map { height: 420px; }
 }
