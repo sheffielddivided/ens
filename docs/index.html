@@ -14,7 +14,7 @@
       <div>
         <h1>Dansk olje- og gassproduksjon</h1>
         <p class="sub">
-          Utforsk produksjonen fra danske felt i Nordsjøen, 1972&ndash;i dag. Kilde:
+          1972&ndash;i dag. Kilde:
           <a href="https://ens.dk/en/energy-sources/monthly-and-yearly-production" target="_blank" rel="noopener">Energistyrelsen&nbsp;(ENS)</a>.
           <span id="updated"></span>
         </p>
@@ -44,7 +44,7 @@
             <button data-view="field"   aria-pressed="false">Per felt</button>
             <button data-view="company" aria-pressed="false">Per selskap</button>
           </div>
-          <label class="chk" title="Legg vannproduksjon til som egen linje (skala til høyre)">
+          <label class="chk hidden" id="water-label" title="Legg vannproduksjon til som egen linje (skala til høyre)">
             <input type="checkbox" id="show-water"> Vis vann
           </label>
           <button class="chip hidden" id="fields-toggle" aria-expanded="false" aria-controls="field-picker">Felt: alle</button>
@@ -53,17 +53,13 @@
       </div>
       <div class="picker hidden" id="field-picker">
         <div class="picker-actions">
-          <button type="button" id="fields-all">Alle</button>
-          <button type="button" id="fields-none">Ingen</button>
-          <span class="picker-hint">Velg hvilke felt som skal studeres</span>
+          <span class="picker-hint">Velg ett felt, eller alle</span>
         </div>
         <div id="field-checks"></div>
       </div>
       <div class="picker hidden" id="company-picker">
         <div class="picker-actions">
-          <button type="button" id="companies-all">Alle</button>
-          <button type="button" id="companies-none">Ingen</button>
-          <span class="picker-hint">Velg ett selskap for å se dets andel per felt</span>
+          <span class="picker-hint">Velg ett selskap for å se dets andel per felt, eller alle</span>
         </div>
         <div id="company-checks"></div>
       </div>
@@ -99,15 +95,14 @@
 
     <footer>
       <p>Månedstall er <span class="prelim">foreløpige</span> estimater og overstyres av de endelige
-         årstallene. Olje- og gassproduksjon vises i mboepd (tusen fat oljeekvivalenter per dag);
-         vann (valgfritt) i 1000&nbsp;m³ per dag.</p>
+         årstallene.</p>
       <p>Åpen kildekode på <a href="https://github.com/sheffielddivided/ens" target="_blank" rel="noopener">GitHub</a>.</p>
     </footer>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="app.js?v=7"></script>
+  <script src="app.js?v=8"></script>
   <script src="map.js?v=7"></script>
 </body>
 </html>
