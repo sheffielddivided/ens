@@ -17,6 +17,7 @@ automatisk, og en statisk webside på GitHub Pages visualiserer dataene.
 - [Tester](#tester)
 - [GitHub Actions](#github-actions)
 - [GitHub Pages](#github-pages)
+- [Kart (GIS)](#kart-gis)
 
 ## Status og datainnhenting
 
@@ -68,16 +69,22 @@ scripts/
   parse_monthly_pdf.py  # én PDF-månedsrapport → records
   update.py             # orkestrator: hent manglende måneder, bygg combined.json
   validate.py           # kvalitetskontroll av hele datasettet
+  build_gis.py          # ENS-shapefiler → reprojisert, forenklet GeoJSON (kart)
 data/
   sources/index.json    # alle kjente kilde-URLer + status (pending/ok/failed)
   sources/raw/          # rå nedlastede filer (xlsx/html/pdf), committes for reproduserbarhet
+  sources/gis/raw/      # rå ENS-shapefiler (.zip) – se .gitignore/lisens-forbehold
   yearly.json           # alle årsdata (endelige)
   monthly.json          # alle månedsdata (foreløpige)
   fields.json           # metadata per felt (navn, aliaser, operatør, år-spenn)
   combined.json         # sammenslått tidsserie klar for frontend
-docs/                   # GitHub Pages-rot (index.html, app.js, style.css, data/)
+docs/                   # GitHub Pages-rot
+  index.html app.js     # datautforsker (Chart.js)
+  kart.html map.js      # kart over feltene (Leaflet)
+  data/gis/*.geojson    # avledede kartlag (WGS84), inkl. *.sample.geojson
 tests/                  # pytest mot fixtures i tests/fixtures/
-.github/workflows/monthly-update.yml
+.github/workflows/monthly-update.yml   # daglig dataoppdatering
+.github/workflows/build-gis.yml        # kartlag på forespørsel (workflow_dispatch)
 ```
 
 Alle skript kjøres fra repo-rot og har `--help`.
@@ -253,3 +260,63 @@ Websiden laster `data/combined.json` med `fetch`. Funksjoner: velg felt (eller
 «Alle felt»), velg serie (olje/gass/vann), veksle måned/år-oppløsning,
 linjediagram med Chart.js der foreløpige tall tegnes stiplet, og «sist
 oppdatert» hentet fra dataene. Ren HTML/CSS/JS, ingen byggesteg, norsk UI.
+
+I tillegg finnes `kart.html` (lenket fra utforskeren): et Leaflet-kart over
+feltene, fargelagt etter akkumulert produksjon, med popup per felt som kobler
+tilbake til utforskeren.
+
+## Kart (GIS)
+
+Et enkelt kart over feltene, bygget etter samme mønster som resten: et Python-
+skript gjør om ENS sine shapefiler til GeoJSON som committes, og en statisk
+Leaflet-side tegner lagene. Ingen server, ingen byggesteg.
+
+**Datakilde og projeksjon.** ENS publiserer kartdata som shapefiler:
+<https://ens.dk/en/energy-sources/oil-and-gas-related-data/shape-files-oil-and-gas-maps>.
+De er i **UTM sone 32 N på ED50-datum** (`EPSG:23032`). Webkart krever
+lengde/breddegrad på WGS84 (`EPSG:4326`, det eneste GeoJSON tillater, RFC 7946),
+så hvert lag **reprojiseres** – en reell datumtransformasjon (ED50→WGS84
+forskyver geometrien ~100 m), ikke bare en enhetsendring. `pyproj` gjør jobben;
+kildens egen `.prj` er fasit når den finnes, ellers antas `EPSG:23032`.
+
+**Pipeline.** `scripts/build_gis.py`:
+
+- leser shapefiler (`.zip`/`.shp`) fra `data/sources/gis/raw/` (via `pyshp`),
+- forenkler geometrien (Douglas–Peucker, standard 50 m i kildens meter, via
+  `shapely`) og reprojiserer til WGS84,
+- normaliserer feltnavn til **samme slug** som produksjonsdataene
+  (`normalize_field`), slik at kartet kan kobles til `combined.json`,
+- runder koordinater og skriver `docs/data/gis/<lag>.geojson` **idempotent**
+  (uendret geometri ⇒ ingen diff).
+
+Layer-rollen (fields/licences/wells/installations/…) utledes fra filnavnet;
+ukjente feltnavn og felt uten polygon logges som `WARN` i stedet for å gjettes.
+
+```bash
+pip install -r requirements-gis.txt          # pyshp + pyproj + shapely (ingen GDAL)
+
+# Bygg fra shapefiler du har lagt i data/sources/gis/raw/:
+python scripts/build_gis.py
+
+# …eller last ned først (lim inn URL-ene fra ENS-siden):
+python scripts/build_gis.py --url https://ens.dk/.../fields.zip --simplify 50
+python scripts/build_gis.py --help
+```
+
+**Kjøres på forespørsel, ikke månedlig.** Kartgeometri endres sjelden og drar
+inn tyngre avhengigheter, så dette ligger i en egen `workflow_dispatch`-jobb
+(`Actions → Build GIS layers → Run workflow`) med egen `requirements-gis.txt` –
+den daglige dataoppdateringen er urørt. Jobben kan enten laste ned URL-er du
+oppgir, eller bygge fra committede filer, og committer resultatet under
+`docs/data/gis/`.
+
+**Demodata.** Til utvikling finnes `docs/data/gis/fields.sample.geojson`
+(generert fra fixture-en `tests/fixtures/gis/fields.zip`). Har ikke de ekte
+lagene blitt bygget ennå, faller kartet tilbake til denne og viser et tydelig
+«syntetiske demodata»-banner – akkurat som utforskeren.
+
+**Lisens-forbehold.** I motsetning til produksjonsrapportene er
+redistribusjonsvilkårene for ENS-shapefilene ikke bekreftet ennå. Derfor
+committes **ikke** de rå `.zip`/`.shp`-filene (se `.gitignore`); bare det
+avledede, forenklede GeoJSON-et lagres. Bekreft vilkårene på ENS-siden, legg på
+kildehenvisning, og fjern eventuelt ignore-linjene for å spore rådataene også.

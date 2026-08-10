@@ -1,0 +1,10 @@
+# Extra dependencies for the GIS/map pipeline (scripts/build_gis.py).
+#
+# Kept separate from requirements.txt on purpose: the monthly data update does
+# NOT need these, and the map layers (field outlines, licences, installations)
+# change rarely, so this heavier stack is only installed for the occasional
+# `build-gis` run -- not on every scheduled update. No GDAL/geopandas: pyshp
+# reads the shapefiles, pyproj reprojects, shapely simplifies.
+pyshp>=2.3,<3      # pure-Python shapefile reader (imports as ``shapefile``)
+pyproj>=3.6,<4     # coordinate transforms; wheels bundle PROJ (no system dep)
+shapely>=2.0,<3    # geometry simplification; wheels bundle GEOS

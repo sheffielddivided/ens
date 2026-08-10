@@ -15,3 +15,12 @@ venv/
 # NOTE: data/*.json and data/sources/raw/* ARE tracked on purpose.
 # The pipeline commits fetched raw sources and derived JSON so parsing is
 # reproducible and the history is auditable.
+
+# GIS raw shapefiles (ENS map geodata). Unlike the production reports, the
+# redistribution terms for the ENS shape files have not been confirmed, so the
+# raw .zip/.shp inputs are NOT committed yet: they are fetched on demand (the
+# build-gis workflow) or dropped in locally, and only the derived, simplified,
+# reprojected GeoJSON under docs/data/gis/ is tracked. Once the ENS licence is
+# confirmed, delete the two lines below to start tracking the raw inputs too.
+/data/sources/gis/raw/*
+!/data/sources/gis/raw/.gitkeep

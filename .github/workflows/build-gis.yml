@@ -1,0 +1,70 @@
+name: Build GIS layers
+
+# Runs on demand only. Map geometry (field outlines, licences, installations)
+# changes rarely, so this is intentionally NOT part of the monthly data update
+# and uses its own heavier dependency set (requirements-gis.txt).
+#
+# Two ways to use it:
+#   * paste one or more ENS shapefile .zip URLs into "urls" and they are
+#     downloaded, reprojected and converted; or
+#   * leave "urls" blank to (re)build from whatever is already committed under
+#     data/sources/gis/raw/.
+# The derived GeoJSON under docs/data/gis/ is committed back to the branch.
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Space-separated ENS shapefile .zip URLs (blank = build from committed inputs)"
+        type: string
+        default: ""
+      simplify:
+        description: "Douglas-Peucker tolerance in metres (0 disables simplification)"
+        type: string
+        default: "50"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-gis
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt -r requirements-gis.txt
+
+      - name: Run tests
+        run: python -m pytest -q
+
+      - name: Build GeoJSON layers
+        run: |
+          set -o pipefail
+          args=""
+          for u in ${{ inputs.urls }}; do args="$args --url $u"; done
+          python scripts/build_gis.py $args --simplify "${{ inputs.simplify }}" \
+            2>&1 | tee -a gis.log
+
+      - name: Commit derived layers
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain docs/data/gis)" ]]; then
+            git add docs/data/gis
+            git commit -m "gis: rebuild map layers $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+            echo "Committed GeoJSON changes."
+          else
+            echo "No GeoJSON changes -- nothing to commit."
+          fi

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kart – Dansk olje- og gassfelt</title>
+  <meta name="description" content="Kart over danske olje- og gassfelt i Nordsjøen, fargelagt etter produksjon (Energistyrelsen).">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Kart over danske olje- og gassfelt</h1>
+        <p class="sub">
+          Feltavgrensninger fargelagt etter produksjon. Geometri:
+          <a href="https://ens.dk/en/energy-sources/oil-and-gas-related-data/shape-files-oil-and-gas-maps" target="_blank" rel="noopener">Energistyrelsen&nbsp;(ENS)</a>,
+          reprojisert til WGS84.
+          <br><nav class="nav"><a href="index.html">← Datautforsker</a></nav>
+        </p>
+      </div>
+      <button id="theme-toggle" title="Bytt lyst/mørkt tema" aria-label="Bytt tema">◐</button>
+    </header>
+
+    <div id="sample-banner" class="banner hidden"></div>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Felt i Nordsjøen</h2>
+        <div class="controls">
+          <div class="seg measure" id="measure-seg" role="group" aria-label="Fargelegg etter">
+            <button data-measure="oil"   aria-pressed="true">Olje</button>
+            <button data-measure="gas"   aria-pressed="false">Gass</button>
+            <button data-measure="water" aria-pressed="false">Vann</button>
+          </div>
+        </div>
+      </div>
+      <div id="map"></div>
+      <div id="legend" class="legend"></div>
+      <p class="cap" id="map-note">Laster kart…</p>
+    </section>
+
+    <footer>
+      <p>Fargen viser <strong>akkumulert</strong> produksjon per felt (sum over alle år). Klikk et felt for
+         siste år og totaler. Månedstall er foreløpige; årstall er endelige.</p>
+      <p>Åpen kildekode på <a href="https://github.com/sheffielddivided/ens" target="_blank" rel="noopener">GitHub</a>.</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="map.js?v=1"></script>
+</body>
+</html>

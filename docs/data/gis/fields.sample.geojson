@@ -1,0 +1,187 @@
+{
+  "type": "FeatureCollection",
+  "generated_at": "2026-08-10T11:34:29Z",
+  "source": "Energistyrelsen (ENS) shape files, reprojected to WGS84",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "FIELD_NAME": "Dan",
+        "OPERATOR": "TotalEnergies",
+        "name": "Dan",
+        "slug": "dan"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.11529,
+              55.45161
+            ],
+            [
+              5.10999,
+              55.5054
+            ],
+            [
+              5.20477,
+              55.50838
+            ],
+            [
+              5.20995,
+              55.45458
+            ],
+            [
+              5.11529,
+              55.45161
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FIELD_NAME": "Gorm",
+        "OPERATOR": "TotalEnergies",
+        "name": "Gorm",
+        "slug": "gorm"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.05523,
+              55.55159
+            ],
+            [
+              5.04982,
+              55.60537
+            ],
+            [
+              5.14484,
+              55.6084
+            ],
+            [
+              5.15011,
+              55.55461
+            ],
+            [
+              5.05523,
+              55.55159
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FIELD_NAME": "Halfdan Field",
+        "OPERATOR": "TotalEnergies",
+        "name": "Halfdan Field",
+        "slug": "halfdan"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5.25513,
+              55.50166
+            ],
+            [
+              5.25001,
+              55.55546
+            ],
+            [
+              5.34493,
+              55.55833
+            ],
+            [
+              5.34992,
+              55.50452
+            ],
+            [
+              5.25513,
+              55.50166
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FIELD_NAME": "Nonesuch",
+        "OPERATOR": "N/A",
+        "name": "Nonesuch",
+        "slug": "nonesuch"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.50511,
+              56.02138
+            ],
+            [
+              4.49885,
+              56.07513
+            ],
+            [
+              4.59495,
+              56.0786
+            ],
+            [
+              4.60109,
+              56.02485
+            ],
+            [
+              4.50511,
+              56.02138
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FIELD_NAME": "Tyra",
+        "OPERATOR": "TotalEnergies",
+        "name": "Tyra",
+        "slug": "tyra"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.75529,
+              55.69148
+            ],
+            [
+              4.74945,
+              55.74524
+            ],
+            [
+              4.84477,
+              55.74851
+            ],
+            [
+              4.85049,
+              55.69474
+            ],
+            [
+              4.75529,
+              55.69148
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
