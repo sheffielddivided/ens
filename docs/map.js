@@ -45,7 +45,7 @@ function monthLabel(t) {
 
 const HOME = { center: [55.9, 4.9], zoom: 7 };
 const CARTO = {
-  light: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+  light: "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
   dark: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
 };
 const TILE_ATTR =
