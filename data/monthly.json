@@ -1008,6 +1008,17 @@
       "retrieved_at": "2026-07-21T22:02:00Z"
     },
     {
+      "field": "cecilie",
+      "year": 2026,
+      "month": 7,
+      "oil": 1.2,
+      "gas": 0.3,
+      "water": 24.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
+    },
+    {
       "field": "dan",
       "year": 2018,
       "month": 1,
@@ -2128,6 +2139,17 @@
       "preliminary": true,
       "source_url": "https://ens.dk/media/8675/download",
       "retrieved_at": "2026-07-21T22:02:00Z"
+    },
+    {
+      "field": "dan",
+      "year": 2026,
+      "month": 7,
+      "oil": 64.2,
+      "gas": 15.3,
+      "water": 793.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
     },
     {
       "field": "gorm",
@@ -3252,6 +3274,17 @@
       "retrieved_at": "2026-07-21T22:02:00Z"
     },
     {
+      "field": "gorm",
+      "year": 2026,
+      "month": 7,
+      "oil": 15.6,
+      "gas": 4.3,
+      "water": 198.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
+    },
+    {
       "field": "halfdan",
       "year": 2018,
       "month": 1,
@@ -4374,6 +4407,17 @@
       "retrieved_at": "2026-07-21T22:02:00Z"
     },
     {
+      "field": "halfdan",
+      "year": 2026,
+      "month": 7,
+      "oil": 69.3,
+      "gas": 47.9,
+      "water": 538.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
+    },
+    {
       "field": "harald",
       "year": 2018,
       "month": 1,
@@ -4846,6 +4890,17 @@
       "preliminary": true,
       "source_url": "https://ens.dk/media/8675/download",
       "retrieved_at": "2026-07-21T22:02:00Z"
+    },
+    {
+      "field": "harald",
+      "year": 2026,
+      "month": 7,
+      "oil": 24.6,
+      "gas": 91.4,
+      "water": 0.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
     },
     {
       "field": "kraka",
@@ -5957,6 +6012,17 @@
       "preliminary": true,
       "source_url": "https://ens.dk/media/8675/download",
       "retrieved_at": "2026-07-21T22:02:00Z"
+    },
+    {
+      "field": "kraka",
+      "year": 2026,
+      "month": 7,
+      "oil": 0.2,
+      "gas": 0.4,
+      "water": 10.8,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
     },
     {
       "field": "lulita",
@@ -7191,6 +7257,17 @@
       "retrieved_at": "2026-07-21T22:02:00Z"
     },
     {
+      "field": "nini",
+      "year": 2026,
+      "month": 7,
+      "oil": 6.4,
+      "gas": 0.9,
+      "water": 122.7,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
+    },
+    {
       "field": "ravn",
       "year": 2018,
       "month": 1,
@@ -7907,6 +7984,17 @@
       "preliminary": true,
       "source_url": "https://ens.dk/media/8675/download",
       "retrieved_at": "2026-07-21T22:02:00Z"
+    },
+    {
+      "field": "roar",
+      "year": 2026,
+      "month": 7,
+      "oil": 5.7,
+      "gas": 14.3,
+      "water": 123.5,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
     },
     {
       "field": "rolf",
@@ -9020,6 +9108,17 @@
       "retrieved_at": "2026-07-21T22:02:00Z"
     },
     {
+      "field": "rolf",
+      "year": 2026,
+      "month": 7,
+      "oil": 0.9,
+      "gas": 0.2,
+      "water": 13.9,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
+    },
+    {
       "field": "siri",
       "year": 2018,
       "month": 1,
@@ -10052,6 +10151,17 @@
       "preliminary": true,
       "source_url": "https://ens.dk/media/8675/download",
       "retrieved_at": "2026-07-21T22:02:00Z"
+    },
+    {
+      "field": "siri",
+      "year": 2026,
+      "month": 7,
+      "oil": 7.0,
+      "gas": 1.4,
+      "water": 194.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
     },
     {
       "field": "skjold",
@@ -11176,6 +11286,17 @@
       "retrieved_at": "2026-07-21T22:02:00Z"
     },
     {
+      "field": "skjold",
+      "year": 2026,
+      "month": 7,
+      "oil": 25.1,
+      "gas": 3.8,
+      "water": 287.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
+    },
+    {
       "field": "solsort",
       "year": 2024,
       "month": 3,
@@ -11464,6 +11585,17 @@
       "preliminary": true,
       "source_url": "https://ens.dk/media/8675/download",
       "retrieved_at": "2026-07-21T22:02:00Z"
+    },
+    {
+      "field": "solsort",
+      "year": 2026,
+      "month": 7,
+      "oil": 9.5,
+      "gas": 1.7,
+      "water": 71.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
     },
     {
       "field": "syd_arne",
@@ -12588,6 +12720,17 @@
       "retrieved_at": "2026-07-21T22:02:00Z"
     },
     {
+      "field": "syd_arne",
+      "year": 2026,
+      "month": 7,
+      "oil": 16.7,
+      "gas": 4.7,
+      "water": 79.6,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
+    },
+    {
       "field": "tyra",
       "year": 2018,
       "month": 1,
@@ -13039,6 +13182,17 @@
       "retrieved_at": "2026-07-21T22:02:00Z"
     },
     {
+      "field": "tyra",
+      "year": 2026,
+      "month": 7,
+      "oil": 40.3,
+      "gas": 45.0,
+      "water": 103.3,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
+    },
+    {
       "field": "tyra_se",
       "year": 2018,
       "month": 1,
@@ -13479,6 +13633,17 @@
       "retrieved_at": "2026-07-21T22:02:00Z"
     },
     {
+      "field": "tyra_se",
+      "year": 2026,
+      "month": 7,
+      "oil": 19.9,
+      "gas": 37.4,
+      "water": 60.1,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
+    },
+    {
       "field": "valdemar",
       "year": 2018,
       "month": 1,
@@ -13906,7 +14071,18 @@
       "preliminary": true,
       "source_url": "https://ens.dk/media/8675/download",
       "retrieved_at": "2026-07-21T22:02:00Z"
+    },
+    {
+      "field": "valdemar",
+      "year": 2026,
+      "month": 7,
+      "oil": 32.9,
+      "gas": 13.4,
+      "water": 49.2,
+      "preliminary": true,
+      "source_url": "https://ens.dk/media/8696/download",
+      "retrieved_at": "2026-08-26T05:50:05Z"
     }
   ],
-  "last_updated": "2026-07-21T22:06:45Z"
+  "last_updated": "2026-08-26T05:50:05Z"
 }

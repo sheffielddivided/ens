@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-21T22:06:40Z",
+  "generated_at": "2026-08-26T05:50:02Z",
   "source_pages": [
     "https://ens.dk/en/energy-sources/monthly-and-yearly-production"
   ],
@@ -1235,6 +1235,18 @@
       "link_text": "June 2026",
       "status": "ok",
       "retrieved_at": "2026-07-21T22:02:00Z",
+      "error": null,
+      "records": 16
+    },
+    {
+      "url": "https://ens.dk/media/8696/download",
+      "year": 2026,
+      "month": 7,
+      "format": "pdf",
+      "unit_system": "si",
+      "link_text": "July 2026",
+      "status": "ok",
+      "retrieved_at": "2026-08-26T05:50:05Z",
       "error": null,
       "records": 16
     }
