@@ -237,7 +237,7 @@ Testene kjører **kun mot fixtures**, aldri mot nettet. De binære fixturene
 
 `.github/workflows/monthly-update.yml`:
 
-- **Trigger:** den 5., 15. og 25. hver måned (publiseringsdato varierer) samt
+- **Trigger:** den 18., 23. og 28. hver måned (publiseringsdato varierer) samt
   `workflow_dispatch` for manuell kjøring (med valg for `refresh_yearly` og
   `force`).
 - **Steg:** checkout → installer avhengigheter → `pytest` → `update.py` →

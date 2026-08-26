@@ -5,7 +5,7 @@ name: Monthly production update
 # and no commit.
 on:
   schedule:
-    - cron: "0 6 5,15,25 * *"   # 06:00 UTC on the 5th, 15th and 25th
+    - cron: "0 6 18,23,28 * *"  # 06:00 UTC on the 18th, 23rd and 28th
   workflow_dispatch:
     inputs:
       refresh_yearly:
