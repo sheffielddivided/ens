@@ -36,7 +36,10 @@ let displayName = {};
 const state = {
   res: "yearly", view: "total", showWater: false,
   field: null, company: null,        // null = "Alle", else one slug/name
-  startYear: null,                   // earliest year shown in the chart; set in prepare()
+  // First year shown in the chart, kept separately per resolution: yearly
+  // defaults to the earliest year with data, monthly to last year (a full
+  // multi-decade run of monthly bars is unreadable). Set in prepare().
+  startYearByRes: { yearly: null, monthly: null },
 };
 let YEARS = [];                      // every year with data, ascending
 
@@ -165,7 +168,14 @@ function prepare() {
 
   const yearsOil = DATA.series._total.yearly.oil || [];
   YEARS = yearsOil.map((p) => +p.t).sort((a, b) => a - b);
-  state.startYear = YEARS[0] ?? state.startYear;
+  const firstYear = YEARS[0], lastYear = YEARS[YEARS.length - 1];
+  if (firstYear != null) {
+    state.startYearByRes.yearly = firstYear;
+    // "Last year" relative to the dataset's own timeline (not the wall clock),
+    // so it stays sensible for the sample/demo data too. Clamped in case the
+    // data ever spans less than two years.
+    state.startYearByRes.monthly = Math.max(firstYear, Math.min(lastYear, lastYear - 1));
+  }
 
   // Company ownership matrix (scripts/ingest_ownership.py); missing entries
   // (should not happen for real data) fall back to a single "Ukjent" bucket.
@@ -204,14 +214,21 @@ function ownerOf(slug) {
 
 // --------------------------------------------------------------------------- controls
 function buildControls() {
-  segGroup("res-seg", "res", (v) => { state.res = v; renderTime(); });
+  const startYearSel = $("start-year");
+  segGroup("res-seg", "res", (v) => {
+    state.res = v;
+    if (startYearSel) startYearSel.value = String(state.startYearByRes[v]);
+    renderTime();
+  });
   segGroup("view-seg", "view", (v) => { state.view = v; updateViewControls(); renderTime(); });
 
-  const startYearSel = $("start-year");
   if (startYearSel) {
     startYearSel.innerHTML = YEARS.map((y) => `<option value="${y}">${y}</option>`).join("");
-    startYearSel.value = String(state.startYear);
-    startYearSel.addEventListener("change", () => { state.startYear = +startYearSel.value; renderTime(); });
+    startYearSel.value = String(state.startYearByRes[state.res]);
+    startYearSel.addEventListener("change", () => {
+      state.startYearByRes[state.res] = +startYearSel.value;
+      renderTime();
+    });
   }
 
   const water = $("show-water");
@@ -374,7 +391,7 @@ function waterDataset(labels) {
 
 function renderTime() {
   const allBase = DATA.series._total[state.res].oil || [];
-  const base = allBase.filter((p) => periodYear(p.t) >= state.startYear);
+  const base = allBase.filter((p) => periodYear(p.t) >= state.startYearByRes[state.res]);
   const labels = base.map((p) => p.t);
   const prelimIdx = base.findIndex((p) => p.p);
   const surface = css("--surface");
