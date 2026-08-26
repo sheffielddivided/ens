@@ -284,7 +284,12 @@ def run(*, offline: bool, crawl: bool, refresh_yearly: bool, force: bool) -> int
     # 1) index
     if crawl and not offline:
         C.info("crawling landing page for the source index ...")
-        BI.build_index([C.ENS_PRODUCTION_PAGE], offline=offline)
+        # Always bypass the on-disk cache for the landing page itself: it is the
+        # "did anything change" checkpoint, so reusing a stale committed copy
+        # would mean the pipeline can never discover a new month after its very
+        # first crawl. Downloaded reports/the yearly file stay cached as normal
+        # (they don't change once published) via the separate --force flag.
+        BI.build_index([C.ENS_PRODUCTION_PAGE], offline=offline, force=True)
     index = C.read_json(C.INDEX_PATH)
     if not index:
         C.error("no index.json -- run build_index.py first (or drop --no-crawl)")
