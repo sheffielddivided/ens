@@ -108,6 +108,11 @@ h1 { margin: 0 0 6px; font-size: clamp(1.4rem, 3.4vw, 1.95rem); letter-spacing: 
 .chk { display: inline-flex; align-items: center; gap: 6px; font-size: .84rem; color: var(--ink-2); cursor: pointer; }
 .chk input { accent-color: var(--water); margin: 0; }
 
+.year-field { display: inline-flex; align-items: center; gap: 6px; font-size: .84rem; color: var(--ink-2); }
+.year-field select { border: 1px solid var(--border); background: var(--page); color: var(--ink-2);
+  font: inherit; font-size: .86rem; padding: 4px 8px; border-radius: 9px; cursor: pointer; }
+.year-field select:hover { color: var(--ink); }
+
 .chip { border: 1px solid var(--border); background: var(--page); color: var(--ink-2);
   font: inherit; font-size: .86rem; padding: 5px 11px; border-radius: 9px; cursor: pointer; }
 .chip[aria-expanded="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px var(--shadow); }

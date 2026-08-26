@@ -36,11 +36,14 @@ let displayName = {};
 const state = {
   res: "yearly", view: "total", showWater: false,
   field: null, company: null,        // null = "Alle", else one slug/name
+  startYear: null,                   // earliest year shown in the chart; set in prepare()
 };
+let YEARS = [];                      // every year with data, ascending
 
 const $ = (id) => document.getElementById(id);
 const css = (v) => getComputedStyle(document.body).getPropertyValue(v).trim();
 const toMap = (arr) => { const m = {}; (arr || []).forEach((p) => { m[p.t] = p.v; }); return m; };
+const periodYear = (t) => +String(t).slice(0, 4);   // "2024" or "2024-07" -> 2024
 
 // -- oil-equivalent, expressed as a per-day rate -----------------------------
 const BOE = 6.29;                                  // barrels per m³ of oil
@@ -160,6 +163,10 @@ function prepare() {
   });
   state.field = null;                               // "Alle" by default
 
+  const yearsOil = DATA.series._total.yearly.oil || [];
+  YEARS = yearsOil.map((p) => +p.t).sort((a, b) => a - b);
+  state.startYear = YEARS[0] ?? state.startYear;
+
   // Company ownership matrix (scripts/ingest_ownership.py); missing entries
   // (should not happen for real data) fall back to a single "Ukjent" bucket.
   const own = (OWN && OWN.fields) || {};
@@ -199,6 +206,13 @@ function ownerOf(slug) {
 function buildControls() {
   segGroup("res-seg", "res", (v) => { state.res = v; renderTime(); });
   segGroup("view-seg", "view", (v) => { state.view = v; updateViewControls(); renderTime(); });
+
+  const startYearSel = $("start-year");
+  if (startYearSel) {
+    startYearSel.innerHTML = YEARS.map((y) => `<option value="${y}">${y}</option>`).join("");
+    startYearSel.value = String(state.startYear);
+    startYearSel.addEventListener("change", () => { state.startYear = +startYearSel.value; renderTime(); });
+  }
 
   const water = $("show-water");
   if (water) { water.checked = state.showWater; water.addEventListener("change", () => { state.showWater = water.checked; renderTime(); }); }
@@ -350,6 +364,7 @@ function waterDataset(labels) {
   const tot = selTotal(state.res, "water");
   const map = toMap(tot);
   return {
+    type: "line",   // overlaid on the bar chart (Chart.js mixed chart types)
     label: "Vann", data: labels.map((t) => waterRate(map[t], t)),
     borderColor: css("--water"), backgroundColor: css("--water") + "22", borderDash: [4, 3],
     borderWidth: 2, tension: 0.15, spanGaps: true, pointRadius: 0, pointHoverRadius: 3,
@@ -358,7 +373,8 @@ function waterDataset(labels) {
 }
 
 function renderTime() {
-  const base = DATA.series._total[state.res].oil || [];
+  const allBase = DATA.series._total[state.res].oil || [];
+  const base = allBase.filter((p) => periodYear(p.t) >= state.startYear);
   const labels = base.map((p) => p.t);
   const prelimIdx = base.findIndex((p) => p.p);
   const surface = css("--surface");
@@ -367,20 +383,20 @@ function renderTime() {
 
   if (state.view === "total") {                       // oil vs gas, oe/day, always all fields
     datasets = ["oil", "gas"].map((m, i) => {
-      const tot = DATA.series._total[state.res][m] || [];
-      return areaDS(MEASURE_LABEL[m], tot.map((p) => oeRate(p.v, p.t)), css("--" + m), i === 0, surface);
+      const map = toMap(DATA.series._total[state.res][m]);
+      return barDS(MEASURE_LABEL[m], labels.map((t) => oeRate(map[t], t)), css("--" + m), i === 0, surface);
     });
   } else if (state.view === "field") {
     if (state.field) {                                 // one field: oil vs gas, like Totalt
       const slug = state.field;
       datasets = ["oil", "gas"].map((m, i) => {
         const map = fieldMap(slug, state.res, m);
-        return areaDS(MEASURE_LABEL[m], labels.map((t) => oeRate(map[t], t)), css("--" + m), i === 0, surface);
+        return barDS(MEASURE_LABEL[m], labels.map((t) => oeRate(map[t], t)), css("--" + m), i === 0, surface);
       });
     } else {                                           // Alle: per-field oe/day, stacked
       const shown = sel.length <= STACK_CAP ? sel : sel.slice(0, STACK_CAP);
       const maps = shown.map((s) => [fieldMap(s, state.res, "oil"), fieldMap(s, state.res, "gas")]);
-      datasets = shown.map((slug, i) => areaDS(
+      datasets = shown.map((slug, i) => barDS(
         displayName[slug],
         labels.map((t) => fieldOeAt(t, maps[i][0], maps[i][1]) ?? 0),
         colorOf(slug), i === 0, surface,
@@ -394,7 +410,7 @@ function renderTime() {
           const all = oeRate(totMap[t] || 0, t) + oeRate(totGasMap[t] || 0, t);
           return Math.max(0, all - shownTotals[i2]);
         });
-        datasets.push(areaDS("Andre valgte", other, css("--c-other"), false, surface));
+        datasets.push(barDS("Andre valgte", other, css("--c-other"), false, surface));
       }
     }
   } else {                                             // per company, or (single company picked) per field
@@ -405,7 +421,7 @@ function renderTime() {
       const maps = fieldsWithShare.map((s) => [fieldMap(s, state.res, "oil"), fieldMap(s, state.res, "gas")]);
       const valueOf = (i, t) => (fieldOeAt(t, maps[i][0], maps[i][1]) ?? 0) * shareOf(fieldsWithShare[i], company);
       const shown = fieldsWithShare.slice(0, STACK_CAP);
-      datasets = shown.map((slug, i) => areaDS(
+      datasets = shown.map((slug, i) => barDS(
         displayName[slug], labels.map((t) => valueOf(i, t)), colorOf(slug), i === 0, surface,
       ));
       if (fieldsWithShare.length > STACK_CAP) {
@@ -414,7 +430,7 @@ function renderTime() {
           const shownSum = shown.reduce((a, _s, i) => a + valueOf(i, t), 0);
           return Math.max(0, all - shownSum);
         });
-        datasets.push(areaDS("Andre valgte", other, css("--c-other"), false, surface));
+        datasets.push(barDS("Andre valgte", other, css("--c-other"), false, surface));
       }
     } else {
       const companyOf = {};
@@ -431,7 +447,7 @@ function renderTime() {
         });
       });
       const shown = COMPANIES.filter((c) => companyOf[c]);
-      datasets = shown.map((c, i) => areaDS(c, labels.map((t) => companyOf[c][t] || 0), colorOfCompany(c), i === 0, surface));
+      datasets = shown.map((c, i) => barDS(c, labels.map((t) => companyOf[c][t] || 0), colorOfCompany(c), i === 0, surface));
     }
   }
 
@@ -443,7 +459,7 @@ function renderTime() {
   lastExport = { labels: labels.slice(), datasets: datasets.map((d) => ({ label: d.label, data: d.data.slice(), yAxisID: d.yAxisID })) };
 
   const cfg = {
-    type: "line", data: { labels, datasets },
+    type: "bar", data: { labels, datasets },
     options: {
       responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
       interaction: { mode: "index", intersect: false },
@@ -517,11 +533,8 @@ function renderTime() {
 function colorOf(slug) { const c = fieldColor[slug]; return c ? (c.v ? css(c.v) : c.h) : css("--c-other"); }
 function colorOfCompany(c) { const k = companyColor[c]; return k ? (k.v ? css(k.v) : k.h) : css("--c-other"); }
 
-function areaDS(label, data, color, isBottom, surface) {
-  return {
-    label, data, backgroundColor: color, borderColor: surface, borderWidth: 1.2,
-    fill: isBottom ? "origin" : "-1", tension: 0.15, pointRadius: 0, pointHoverRadius: 0,
-  };
+function barDS(label, data, color, isBottom, surface) {
+  return { label, data, backgroundColor: color, borderColor: surface, borderWidth: 1 };
 }
 
 // Exports exactly what renderTime() last drew on the chart (see lastExport),

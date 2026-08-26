@@ -6,7 +6,7 @@
   <title>Dansk olje- og gassproduksjon</title>
   <meta name="description" content="Utforsk produksjon av olje, gass og vann fra danske felt i Nordsjøen (Energistyrelsen).">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
   <div class="wrap">
@@ -45,6 +45,9 @@
               <button data-view="field"   aria-pressed="false">Per felt</button>
               <button data-view="company" aria-pressed="false">Per selskap</button>
             </div>
+            <label class="year-field" for="start-year">Fra år
+              <select id="start-year" title="Første år som vises i grafen"></select>
+            </label>
             <label class="chk hidden" id="water-label" title="Legg vannproduksjon til som egen linje (skala til høyre)">
               <input type="checkbox" id="show-water"> Vis vann
             </label>
@@ -99,7 +102,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=10"></script>
   <script src="map.js?v=12"></script>
 </body>
 </html>
