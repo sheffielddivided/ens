@@ -238,7 +238,7 @@ function buildControls() {
   if (exportBtn) exportBtn.addEventListener("click", exportExcel);
 
   buildFieldPicker();
-  buildCompanyPicker();
+  buildCompanySelect();
   updateViewControls();
 
   const saved = localStorage.getItem("ens-theme");
@@ -296,32 +296,32 @@ function updateFieldUI() {
   $("fields-toggle").textContent = "Felt: " + (state.field ? displayName[state.field] : "alle");
 }
 
-function buildCompanyPicker() {
-  const options = COMPANIES.map((c) => [c, c]);
-  buildRadioPicker($("company-checks"), "company-radio", state.company, options, colorOfCompany, (value) => {
-    state.company = value;
-    renderTime(); updateCompanyUI(); updateMapHighlight();
+function buildCompanySelect() {
+  const sel = $("company-select");
+  sel.innerHTML = "";
+  const addOpt = (value, label) => {
+    const opt = document.createElement("option");
+    opt.value = value; opt.textContent = label;
+    sel.appendChild(opt);
+  };
+  addOpt("", "Alle");
+  COMPANIES.forEach((c) => addOpt(c, c));
+  sel.value = state.company || "";
+  sel.addEventListener("change", () => {
+    state.company = sel.value || null;
+    renderTime(); updateMapHighlight();
   });
-  $("companies-toggle").addEventListener("click", () => {
-    const pk = $("company-picker"), open = pk.classList.toggle("hidden");
-    $("companies-toggle").setAttribute("aria-expanded", open ? "false" : "true");
-  });
-  updateCompanyUI();
-}
-function updateCompanyUI() {
-  $("companies-toggle").textContent = "Selskap: " + (state.company || "alle");
 }
 
 // The field picker only makes sense for "Per felt"; "Per selskap" gets its own
-// company picker instead, and "Totalt" shows neither (it is always the sum
+// company dropdown instead, and "Totalt" shows neither (it is always the sum
 // over every field). The water toggle is only meaningful when looking at one
 // specific field.
 function updateViewControls() {
   const isField = state.view === "field", isCompany = state.view === "company";
   $("fields-toggle").classList.toggle("hidden", !isField);
-  $("companies-toggle").classList.toggle("hidden", !isCompany);
+  $("company-label").classList.toggle("hidden", !isCompany);
   if (!isField) { $("field-picker").classList.add("hidden"); $("fields-toggle").setAttribute("aria-expanded", "false"); }
-  if (!isCompany) { $("company-picker").classList.add("hidden"); $("companies-toggle").setAttribute("aria-expanded", "false"); }
   updateWaterVisibility();
   updateMapHighlight();
 }
