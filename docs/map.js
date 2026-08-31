@@ -3,10 +3,10 @@
 /* ENS field map.
  * Embedded in docs/index.html (next to the production chart): draws the
  * Danish oil & gas field layer built by scripts/build_gis.py on a Leaflet
- * map, coloured by each field's cumulative oil/gas mix (green = oil, red =
- * gas) from the same data/combined.json app.js uses, with an always-on block
- * grid beneath. Falls back to the checked-in *.sample.* files when the real
- * data has not been built yet.
+ * map, one fixed colour for every producing field (from the same
+ * data/combined.json app.js uses), with an always-on block grid beneath.
+ * Falls back to the checked-in *.sample.* files when the real data has not
+ * been built yet.
  *
  * The field-name-label toggle lives in the "Kart" panel head (outside the
  * map itself, see index.html's #show-labels checkbox) rather than as an
@@ -168,27 +168,25 @@ function indexProduction(combined) {
 }
 
 // --------------------------------------------------------------------------- //
-// Fields choropleth (coloured by cumulative oil/gas mix: green = oil, red = gas)
+// Fields choropleth (one fixed colour for every producing field -- high
+// contrast against the basemap's blue water; borders always pure white)
 // --------------------------------------------------------------------------- //
-function oilGasColor(oilShare) {
-  const hue = 130 * oilShare;   // 0 = gas (red), 130 = oil (green)
-  return `hsl(${hue.toFixed(0)}, 62%, 45%)`;
-}
+const FIELD_BORDER = "#fff";
 function fieldStyle(feature) {
   const slug = feature.properties.slug;
   if (highlightSet) {
     const on = highlightSet.has(slug);
     return {
-      color: on ? css("--ink-2") : css("--baseline"), weight: on ? 2 : 1,
+      color: FIELD_BORDER, weight: on ? 2 : 1,
       fillColor: on ? css("--seq") : css("--c-other"),
       fillOpacity: on ? 0.75 : 0.22,
     };
   }
   const rec = PROD[slug];
-  const hasData = rec && rec.oilShare != null;
+  const hasData = rec && rec.oeCumMBbl > 0;
   return {
-    color: css("--baseline"), weight: 1,
-    fillColor: hasData ? oilGasColor(rec.oilShare) : css("--c-other"),
+    color: FIELD_BORDER, weight: 1,
+    fillColor: hasData ? css("--oil") : css("--c-other"),
     fillOpacity: hasData ? 0.68 : 0.12,
   };
 }
@@ -228,10 +226,7 @@ function renderLegend() {
     return;
   }
   $("legend").innerHTML =
-    `<div class="lg-title">Olje/gass-miks (akkumulert)</div>` +
-    `<div class="lg-gradient">` +
-    `<div class="lg-bar" style="background:linear-gradient(90deg, ${oilGasColor(0)}, ${oilGasColor(1)})"></div>` +
-    `<div class="lg-scale"><span>Gass</span><span>Olje</span></div></div>` +
+    `<div class="lg-none"><span class="lg-sw" style="background:${css("--oil")}"></span>Felt med produksjon</div>` +
     `<div class="lg-none"><span class="lg-sw" style="background:${none};opacity:.4"></span>Ingen data</div>`;
 }
 
