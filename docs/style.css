@@ -88,11 +88,13 @@ h1 { margin: 0 0 6px; font-size: clamp(1.4rem, 3.4vw, 1.95rem); letter-spacing: 
 .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
   padding: 18px 18px 14px; margin-top: 20px; box-shadow: 0 1px 2px var(--shadow); }
 
-/* chart + map, side by side */
-.chart-map-row { display: flex; gap: 20px; align-items: flex-start; margin-top: 20px; }
+/* chart + map, side by side. align-items: stretch (the default) makes both
+   panels match the row's height -- whichever is naturally taller -- instead
+   of each sizing to its own content. */
+.chart-map-row { display: flex; gap: 20px; align-items: stretch; margin-top: 20px; }
 .chart-map-row .panel { margin-top: 0; }
 .chart-panel { flex: 1 1 auto; min-width: 0; }
-.map-panel { flex: 0 0 400px; }
+.map-panel { flex: 0 0 400px; display: flex; flex-direction: column; }
 .panel-head { display: flex; flex-wrap: wrap; gap: 12px 18px; justify-content: space-between; align-items: center; margin-bottom: 6px; }
 .panel-head h2 { margin: 0; font-size: 1.08rem; }
 .panel-head h2 small { color: var(--muted); font-weight: 500; font-size: .85rem; }
@@ -136,9 +138,11 @@ footer a { color: var(--water); }
 .nav a { color: var(--water); font-size: .9rem; text-decoration: none; }
 .nav a:hover { text-decoration: underline; }
 
-/* field map */
+/* field map: grows to fill the panel's stretched height (see .chart-map-row)
+   instead of staying a fixed square; min-height keeps it usable on narrow
+   viewports where the panel isn't height-stretched against the chart. */
 #map {
-  aspect-ratio: 1 / 1; width: 100%; margin-top: 10px; border-radius: 12px; overflow: hidden;
+  flex: 1 1 auto; min-height: 400px; width: 100%; margin-top: 10px; border-radius: 12px; overflow: hidden;
   border: 1px solid var(--border); background: var(--page);
 }
 .leaflet-container { background: var(--page); font: inherit; }

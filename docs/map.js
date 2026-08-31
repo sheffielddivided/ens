@@ -296,6 +296,11 @@ async function main() {
 
   map = L.map("map", { scrollWheelZoom: true, minZoom: 5 }).setView(HOME.center, HOME.zoom);
   applyTiles();
+  // The map's height now comes from flexbox (matching the chart panel's
+  // height, see .chart-map-row), not a fixed aspect-ratio, so its container
+  // can resize after Leaflet has already measured it (e.g. the chart panel's
+  // caption changing line count). Keep Leaflet's own size in sync.
+  if (window.ResizeObserver) new ResizeObserver(() => map.invalidateSize()).observe($("map"));
 
   const combined = await loadFirst(["data/combined.json", "data/combined.sample.json"]);
   if (combined) {
