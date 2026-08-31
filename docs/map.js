@@ -3,10 +3,10 @@
 /* ENS field map.
  * Embedded in docs/index.html (next to the production chart): draws the
  * Danish oil & gas field layer built by scripts/build_gis.py on a Leaflet
- * map, coloured by cumulative oil+gas production (oil-equivalent barrels)
- * from the same data/combined.json app.js uses, with an always-on block grid
- * beneath. Falls back to the checked-in *.sample.* files when the real data
- * has not been built yet.
+ * map, coloured by each field's cumulative oil/gas mix (green = oil, red =
+ * gas) from the same data/combined.json app.js uses, with an always-on block
+ * grid beneath. Falls back to the checked-in *.sample.* files when the real
+ * data has not been built yet.
  *
  * The field-name-label toggle lives in the "Kart" panel head (outside the
  * map itself, see index.html's #show-labels checkbox) rather than as an
@@ -52,7 +52,7 @@ const OSM_TILE_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 const TILE_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 let map = null, tileLayer = null, fieldLayer = null, labelsLayer = null, fieldsGeoData = null;
-let PROD = {}, maxCumOe = 0;
+let PROD = {};
 let highlightSet = null;   // Set of slugs to emphasise, or null for the default choropleth
 const restylers = [];   // [() => void] re-applied on theme change
 
@@ -89,7 +89,7 @@ window.refreshMapHighlight = (slugs) => {
   highlightSet = slugs && slugs.length ? new Set(slugs) : null;
   if (fieldLayer) fieldLayer.setStyle(fieldStyle);
   if (labelsLayer) rebuildFieldLabels();
-  if (maxCumOe) renderLegend();
+  if (Object.keys(PROD).length) renderLegend();
 };
 
 // --------------------------------------------------------------------------- //
@@ -114,7 +114,6 @@ function indexProduction(combined) {
   const names = {};
   (combined.fields || []).forEach((f) => { names[f.slug] = f.display_name; });
   const series = combined.series || {};
-  maxCumOe = 0;
   const out = {};
   for (const slug of Object.keys(series)) {
     if (slug === "_total") continue;
@@ -125,8 +124,16 @@ function indexProduction(combined) {
     gasArr.forEach((p) => { if (p.v != null) (byYear[p.t] || (byYear[p.t] = {})).gas = p.v; });
     const years = Object.keys(byYear).sort();
 
-    let cumOe = 0;
-    for (const y of years) cumOe += (byYear[y].oil || 0) + (byYear[y].gas || 0);
+    // Oil and gas are already on the same oil-equivalent scale before the BOE
+    // factor is applied (see the module comment), so their raw sums give the
+    // mix directly -- no need to convert to barrels just for a ratio.
+    let cumOe = 0, cumOilRaw = 0;
+    for (const y of years) {
+      const o = byYear[y].oil || 0, g = byYear[y].gas || 0;
+      cumOilRaw += o;
+      cumOe += o + g;
+    }
+    const oilShare = cumOe > 0 ? cumOilRaw / cumOe : null;   // 1 = all oil, 0 = all gas
 
     const monthlyOilArr = (series[slug].monthly && series[slug].monthly.oil) || [];
     const monthlyGasArr = (series[slug].monthly && series[slug].monthly.gas) || [];
@@ -154,20 +161,18 @@ function indexProduction(combined) {
       name: names[slug] || slug,
       oeCumMBbl: cumOe > 0 ? (cumOe * BOE) / 1000 : 0,          // million barrels
       oeRateMboepd, oeRateMonth: lastMonth, oeAvg12Mboepd,
+      oilShare,
     };
-    if (out[slug].oeCumMBbl > maxCumOe) maxCumOe = out[slug].oeCumMBbl;
   }
   return out;
 }
 
 // --------------------------------------------------------------------------- //
-// Fields choropleth (coloured by cumulative oil+gas, in oil-equivalent barrels)
+// Fields choropleth (coloured by cumulative oil/gas mix: green = oil, red = gas)
 // --------------------------------------------------------------------------- //
-function intensity(slug) {
-  const rec = PROD[slug];
-  if (!rec || !maxCumOe) return null;
-  const v = rec.oeCumMBbl || 0;
-  return v > 0 ? Math.sqrt(v / maxCumOe) : 0;
+function oilGasColor(oilShare) {
+  const hue = 130 * oilShare;   // 0 = gas (red), 130 = oil (green)
+  return `hsl(${hue.toFixed(0)}, 62%, 45%)`;
 }
 function fieldStyle(feature) {
   const slug = feature.properties.slug;
@@ -179,12 +184,12 @@ function fieldStyle(feature) {
       fillOpacity: on ? 0.75 : 0.22,
     };
   }
-  const t = intensity(slug);
-  const hasData = t != null && t > 0;
+  const rec = PROD[slug];
+  const hasData = rec && rec.oilShare != null;
   return {
     color: css("--baseline"), weight: 1,
-    fillColor: hasData ? css("--seq") : css("--c-other"),
-    fillOpacity: hasData ? 0.2 + 0.65 * t : 0.12,
+    fillColor: hasData ? oilGasColor(rec.oilShare) : css("--c-other"),
+    fillOpacity: hasData ? 0.68 : 0.12,
   };
 }
 function fieldPopup(p) {
@@ -201,12 +206,14 @@ function fieldPopup(p) {
     : "–";
   const avgStr = rec.oeAvg12Mboepd != null ? `${fmt(rec.oeAvg12Mboepd)} mboepd` : "–";
   const cumStr = `${fmt(rec.oeCumMBbl)} mill. fat`;
+  const mixStr = rec.oilShare != null ? `${fmt(rec.oilShare * 100)} % olje / ${fmt((1 - rec.oilShare) * 100)} % gass` : "–";
   return (
     `<div class="mp"><h3>${esc(name)}</h3>${opLine}` +
     `<table class="kv">` +
     `<tr><th>Siste måned (o.e.)</th><td>${esc(lastStr)}</td></tr>` +
     `<tr><th>Snitt siste 12 mnd (o.e.)</th><td>${esc(avgStr)}</td></tr>` +
     `<tr><th>Akkumulert (o.e.)</th><td>${esc(cumStr)}</td></tr>` +
+    `<tr><th>Olje/gass-miks (akk.)</th><td>${esc(mixStr)}</td></tr>` +
     `</table></div>`
   );
 }
@@ -221,21 +228,11 @@ function renderLegend() {
     return;
   }
   $("legend").innerHTML =
-    `<div class="lg-title">Akkumulert oljeekvivalenter (olje + gass) ` +
-    `<span class="lg-u">mill. fat</span></div>` +
+    `<div class="lg-title">Olje/gass-miks (akkumulert)</div>` +
     `<div class="lg-gradient">` +
-    `<div class="lg-bar" style="background:linear-gradient(90deg, ${withAlpha(seq, 0.2)}, ${seq})"></div>` +
-    `<div class="lg-scale"><span>0</span><span>${fmt(maxCumOe)}</span></div></div>` +
+    `<div class="lg-bar" style="background:linear-gradient(90deg, ${oilGasColor(0)}, ${oilGasColor(1)})"></div>` +
+    `<div class="lg-scale"><span>Gass</span><span>Olje</span></div></div>` +
     `<div class="lg-none"><span class="lg-sw" style="background:${none};opacity:.4"></span>Ingen data</div>`;
-}
-function withAlpha(color, a) {
-  if (color.startsWith("#")) {
-    const n = color.slice(1);
-    const h = n.length === 3 ? n.split("").map((c) => c + c).join("") : n;
-    const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
-    return `rgba(${r},${g},${b},${a})`;
-  }
-  return color;
 }
 
 // --------------------------------------------------------------------------- //
