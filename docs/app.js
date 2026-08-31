@@ -237,7 +237,7 @@ function buildControls() {
   const exportBtn = $("export-btn");
   if (exportBtn) exportBtn.addEventListener("click", exportExcel);
 
-  buildFieldPicker();
+  buildFieldSelect();
   buildCompanySelect();
   updateViewControls();
 
@@ -262,38 +262,21 @@ function segGroup(id, key, onPick) {
   });
 }
 
-// Single-choice radio list: "Alle" plus one row per option. `onPick` gets the
-// chosen value, or null for "Alle".
-function buildRadioPicker(checksEl, radioName, current, options, colorFn, onPick) {
-  const addOption = (value, label, color) => {
-    const lab = document.createElement("label");
-    const rb = document.createElement("input");
-    rb.type = "radio"; rb.name = radioName; rb.value = value ?? "";
-    rb.checked = current === value;
-    rb.addEventListener("change", () => onPick(value));
-    lab.appendChild(rb);
-    if (color) { const sw = document.createElement("span"); sw.className = "sw"; sw.style.background = color; lab.appendChild(sw); }
-    lab.appendChild(document.createTextNode(label));
-    checksEl.appendChild(lab);
+function buildFieldSelect() {
+  const sel = $("field-select");
+  sel.innerHTML = "";
+  const addOpt = (value, label) => {
+    const opt = document.createElement("option");
+    opt.value = value; opt.textContent = label;
+    sel.appendChild(opt);
   };
-  addOption(null, "Alle", null);
-  options.forEach(([value, label]) => addOption(value, label, colorFn(value)));
-}
-
-function buildFieldPicker() {
-  const options = DATA.fields.filter((f) => f.slug !== "_total").map((f) => [f.slug, f.display_name]);
-  buildRadioPicker($("field-checks"), "field-radio", state.field, options, colorOf, (value) => {
-    state.field = value;
-    renderAll(); updateFieldUI(); updateWaterVisibility(); updateMapHighlight();
+  addOpt("", "Alle");
+  DATA.fields.filter((f) => f.slug !== "_total").forEach((f) => addOpt(f.slug, f.display_name));
+  sel.value = state.field || "";
+  sel.addEventListener("change", () => {
+    state.field = sel.value || null;
+    renderAll(); updateWaterVisibility(); updateMapHighlight();
   });
-  $("fields-toggle").addEventListener("click", () => {
-    const pk = $("field-picker"), open = pk.classList.toggle("hidden");
-    $("fields-toggle").setAttribute("aria-expanded", open ? "false" : "true");
-  });
-  updateFieldUI();
-}
-function updateFieldUI() {
-  $("fields-toggle").textContent = "Felt: " + (state.field ? displayName[state.field] : "alle");
 }
 
 function buildCompanySelect() {
@@ -313,15 +296,14 @@ function buildCompanySelect() {
   });
 }
 
-// The field picker only makes sense for "Per felt"; "Per selskap" gets its own
-// company dropdown instead, and "Totalt" shows neither (it is always the sum
-// over every field). The water toggle is only meaningful when looking at one
-// specific field.
+// The field dropdown only makes sense for "Per felt"; "Per selskap" gets its
+// own company dropdown instead, and "Totalt" shows neither (it is always the
+// sum over every field). The water toggle is only meaningful when looking at
+// one specific field.
 function updateViewControls() {
   const isField = state.view === "field", isCompany = state.view === "company";
-  $("fields-toggle").classList.toggle("hidden", !isField);
+  $("field-label").classList.toggle("hidden", !isField);
   $("company-label").classList.toggle("hidden", !isCompany);
-  if (!isField) { $("field-picker").classList.add("hidden"); $("fields-toggle").setAttribute("aria-expanded", "false"); }
   updateWaterVisibility();
   updateMapHighlight();
 }
