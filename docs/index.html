@@ -6,7 +6,7 @@
   <title>Dansk olje- og gassproduksjon</title>
   <meta name="description" content="Utforsk produksjon av olje, gass og vann fra danske felt i Nordsjøen (Energistyrelsen).">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=14">
 </head>
 <body>
   <div class="wrap">
@@ -33,9 +33,6 @@
     <!-- Time series + field map, side by side -->
     <div class="chart-map-row">
       <section class="panel chart-panel">
-        <div class="panel-head">
-          <h2>Produksjon <small id="time-sub"></small></h2>
-        </div>
         <div class="controls">
           <div class="seg" id="res-seg" role="group" aria-label="Oppløsning">
             <button data-res="yearly"  aria-pressed="true">År</button>
@@ -56,6 +53,9 @@
           <label class="year-field hidden" id="company-label" for="company-select">Selskap
             <select id="company-select" title="Velg ett selskap for å se dets andel per felt, eller la stå på Alle"></select>
           </label>
+        </div>
+        <div class="panel-head">
+          <h2>Produksjon <small id="time-sub"></small></h2>
         </div>
         <div class="picker hidden" id="field-picker">
           <div class="picker-actions">
@@ -98,7 +98,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-  <script src="app.js?v=11"></script>
+  <script src="app.js?v=12"></script>
   <script src="map.js?v=12"></script>
 </body>
 </html>

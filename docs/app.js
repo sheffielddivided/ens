@@ -496,7 +496,6 @@ function renderTime() {
             },
           },
         },
-        prelim: { index: prelimIdx, fill: css("--grid") + "66", text: css("--muted") },
       },
       scales: {
         x: {
@@ -539,7 +538,7 @@ function renderTime() {
       : "Olje + gass fordelt på eierselskap etter lisensandel.",
   };
   let cap = capParts[state.view];
-  if (prelimIdx >= 0) cap += ` <span class="prelim">Skravert område</span> er foreløpige år (overstyres av endelige årstall); et ufullstendig år vises som snittproduksjon for månedene med data.`;
+  if (prelimIdx >= 0) cap += ` Foreløpige år (se tooltip) overstyres av endelige årstall når de kommer; et ufullstendig år vises som snittproduksjon for månedene med data.`;
   $("time-cap").innerHTML = cap;
   const viewLabel = state.view === "company" && state.company
     ? `${state.company}, per felt`
@@ -573,24 +572,5 @@ function exportExcel() {
   XLSX.utils.book_append_sheet(wb, ws, "Produksjon");
   XLSX.writeFile(wb, `produksjon_${state.view}_${state.res}.xlsx`);
 }
-
-// Preliminary-region shading plugin (shared by the time chart).
-const prelimPlugin = {
-  id: "prelim",
-  beforeDatasetsDraw(chart, args, opts) {
-    if (!opts || opts.index == null || opts.index < 0) return;
-    const { ctx, chartArea, scales: { x } } = chart;
-    const step = x.getPixelForValue(1) - x.getPixelForValue(0);
-    const x0 = Math.max(chartArea.left, x.getPixelForValue(opts.index) - step / 2);
-    ctx.save();
-    ctx.fillStyle = opts.fill || "rgba(137,135,129,0.12)";
-    ctx.fillRect(x0, chartArea.top, chartArea.right - x0, chartArea.bottom - chartArea.top);
-    ctx.fillStyle = opts.text || "#898781";
-    ctx.font = "11px system-ui, sans-serif";
-    ctx.fillText("Foreløpig", x0 + 6, chartArea.top + 13);
-    ctx.restore();
-  },
-};
-if (window.Chart) Chart.register(prelimPlugin);
 
 boot();

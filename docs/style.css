@@ -98,9 +98,9 @@ h1 { margin: 0 0 6px; font-size: clamp(1.4rem, 3.4vw, 1.95rem); letter-spacing: 
 .panel-head h2 small { color: var(--muted); font-weight: 500; font-size: .85rem; }
 
 .controls { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
-/* Chart panel's controls sit in their own row above the chart, not inline
-   with the heading (unlike the map panel's, which stay in .panel-head). */
-.panel > .controls { margin: 6px 0 10px; }
+/* Chart panel's controls sit in their own row above the heading, not inline
+   with it (unlike the map panel's, which stay in .panel-head). */
+.panel > .controls { margin: 0 0 12px; }
 .seg { display: inline-flex; background: var(--page); border: 1px solid var(--border);
   border-radius: 9px; padding: 2px; }
 .seg button { border: 0; background: transparent; color: var(--ink-2); font: inherit;
@@ -136,7 +136,6 @@ h1 { margin: 0 0 6px; font-size: clamp(1.4rem, 3.4vw, 1.95rem); letter-spacing: 
 .chart-wrap { position: relative; height: 400px; margin-top: 10px; }
 canvas { width: 100% !important; height: 100% !important; }
 .cap { color: var(--muted); font-size: .82rem; margin: 12px 2px 2px; }
-.cap .prelim { border-bottom: 2px dashed var(--muted); }
 
 .export-row { display: flex; justify-content: flex-end; margin-top: 10px; }
 .icon-btn { display: inline-flex; align-items: center; gap: 6px; }
