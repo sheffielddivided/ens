@@ -52,7 +52,7 @@ const OSM_TILE_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 const TILE_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 let map = null, tileLayer = null, fieldLayer = null, labelsLayer = null, fieldsGeoData = null;
-let PROD = {};
+let PROD = {}, OWN = null;
 let highlightSet = null;   // Set of slugs to emphasise, or null for the default choropleth
 const restylers = [];   // [() => void] re-applied on theme change
 
@@ -190,14 +190,29 @@ function fieldStyle(feature) {
     fillOpacity: hasData ? 0.68 : 0.12,
   };
 }
+// Licence ownership only covers producing fields (see scripts/ingest_ownership.py),
+// so a field absent from OWN.fields genuinely has no known split -- the row is
+// omitted rather than guessed at.
+function ownershipRow(slug) {
+  const shares = OWN && OWN.fields && OWN.fields[slug];
+  if (!shares) return "";
+  const parts = Object.entries(shares)
+    .sort((a, b) => b[1] - a[1])
+    .map(([company, share]) => `${esc(company)} ${fmt(share * 100)} %`);
+  return `<tr><th>Eierskap</th><td>${parts.join(", ")}</td></tr>`;
+}
+
 function fieldPopup(p) {
   const rec = PROD[p.slug];
   const name = (rec && rec.name) || p.name || p.slug;
   const op = p.OPERATOR || (rec && rec.operator);
   const opLine = op ? `<p class="mp-op">Operatør: ${esc(op)}</p>` : "";
+  const ownRow = ownershipRow(p.slug);
   if (!rec || !rec.oeCumMBbl) {
     return `<div class="mp"><h3>${esc(name)}</h3>${opLine}` +
-      `<p class="mp-op">Ingen produksjonsdata (funn / ikke i produksjon).</p></div>`;
+      `<p class="mp-op">Ingen produksjonsdata (funn / ikke i produksjon).</p>` +
+      (ownRow ? `<table class="kv">${ownRow}</table>` : "") +
+      `</div>`;
   }
   const lastStr = rec.oeRateMboepd != null
     ? `${fmt(rec.oeRateMboepd)} mboepd (${monthLabel(rec.oeRateMonth)})`
@@ -212,6 +227,7 @@ function fieldPopup(p) {
     `<tr><th>Snitt siste 12 mnd (o.e.)</th><td>${esc(avgStr)}</td></tr>` +
     `<tr><th>Akkumulert (o.e.)</th><td>${esc(cumStr)}</td></tr>` +
     `<tr><th>Olje/gass-miks (akk.)</th><td>${esc(mixStr)}</td></tr>` +
+    ownRow +
     `</table></div>`
   );
 }
@@ -299,6 +315,12 @@ async function main() {
     PROD = indexProduction(combined.data);
     if (/sample/.test(combined.url)) showBanner();
   }
+
+  // Fetched before the field layer is built (bindPopup below renders each
+  // popup's HTML once, up front, not lazily on click), so ownership must be
+  // in hand by then.
+  const ownership = await loadFirst(["data/ownership.json", "data/ownership.sample.json"]);
+  if (ownership) OWN = ownership.data;
 
   const geo = await loadFirst(["data/gis/fields.geojson", "data/gis/fields.sample.geojson"]);
   if (!geo) {
