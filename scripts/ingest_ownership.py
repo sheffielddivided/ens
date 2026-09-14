@@ -127,6 +127,11 @@ def build_ownership(fields: dict, area_shares: dict[str, dict[str, float]]) -> d
         "schema_version": C.SCHEMA_VERSION,
         "source": SOURCE_URL,
         "note": "Manually curated from an ENS licensee export; see scripts/ingest_ownership.py.",
+        # Volatile: this script is run by hand whenever the source workbook is
+        # replaced (see module docstring), not on a schedule, so there is no
+        # other signal for how stale the shares are. Excluded from the
+        # idempotency comparison in write_json_stable below.
+        "generated_at": C.utc_now_iso(),
         "companies": sorted({g for shares in ownership.values() for g in shares}),
         "fields": ownership,
     }
@@ -145,7 +150,7 @@ def main(argv: list[str] | None = None) -> int:
     rows = load_rows(LICENCES_XLSX)
     area_shares = build_area_shares(rows)
     ownership = build_ownership(fields, area_shares)
-    wrote = C.write_json_stable(OWNERSHIP_PATH, ownership)
+    wrote = C.write_json_stable(OWNERSHIP_PATH, ownership, volatile_keys=("generated_at",))
     C.info(f"ownership.json {'updated' if wrote else 'unchanged'}: "
            f"{len(ownership['fields'])} fields, {len(ownership['companies'])} companies")
     return 0

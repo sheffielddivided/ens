@@ -505,7 +505,7 @@ _KNOWN_OPERATORS = {
     "tyra": "TotalEnergies", "skjold": "TotalEnergies", "valdemar": "TotalEnergies",
     "roar": "TotalEnergies", "svend": "TotalEnergies", "harald": "TotalEnergies",
     "siri": "INEOS", "nini": "INEOS", "cecilie": "INEOS",
-    "south_arne": "Hess", "syd_arne": "Hess",
+    "syd_arne": "Hess",
 }
 
 

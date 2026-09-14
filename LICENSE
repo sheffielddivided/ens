@@ -1,0 +1,54 @@
+Kildedata: Energistyrelsen (ENS)
+=================================
+
+Produksjonstallene, feltmetadataene, kart-shapefilene og
+lisensiar-/eierskapsopplysningene dette repoet henter, cacher og publiserer
+(alt under `data/`, `docs/data/`, herunder `data/sources/raw/`,
+`data/sources/gis/raw/` og `docs/data/gis/*.geojson`) stammer fra
+Energistyrelsen (ENS), det danske energidirektoratet, hovedsakelig via
+<https://ens.dk/en/energy-sources/monthly-and-yearly-production> og
+<https://ens.dk/en/energy-sources/oil-and-gas-related-data/shape-files-oil-and-gas-maps>.
+
+Under overskriften «Ophavsret» på siden «Om ens.dk»
+(<https://ens.dk/om-os/om-ensdk>) oppgir Energistyrelsen følgende vilkår for
+hjemmesiden og dens innhold, gjengitt her uendret på originalspråket (dansk),
+slik vilkårene selv krever at innholdet ikke endres:
+
+    Ophavsretten til hjemmesiden og rettighederne til dets indhold og
+    design tilhører Energistyrelsen.
+
+    Det er tilladt vederlagsfrit at kopiere materiale – undtagen billeder -
+    fra hjemmeside - såvel elektronisk som i papirform - forudsat, at
+    Energistyrelsen anføres som kilde.
+
+    Det er ikke tilladt at ændre eller forvanske materialets indhold.
+
+    Mht. billeder, figurer, illustrationer, herunder logo, skal der
+    indhentes tilladelse fra Energistyrelsen før evt. brug.
+
+Praktisk oppsummert, for dette repoet:
+
+- **Attribusjon påkrevd.** Bruk av dataene skal oppgi Energistyrelsen som
+  kilde (gjort på nettsiden i `docs/index.html` og i `README.md`).
+- **Innholdet skal ikke endres eller forvanskes.** Tallene og
+  kart-geometrien i `data/`/`docs/data/` skal representere kilden
+  uendret bortsett fra dokumenterte, strukturelle transformasjoner
+  (enhetsnormalisering, reprojisering, formatkonvertering til JSON/GeoJSON
+  – se `SOLUTION-CONTEXT.md` for hva som faktisk gjøres og hvorfor).
+- **Bilder, figurer, illustrasjoner og logo er unntatt** og krever egen
+  tillatelse fra Energistyrelsen før bruk. Dette repoet inneholder ingen
+  slike elementer hentet fra ens.dk.
+- ENS publiserer ingen egne, separate vilkår for shape-fil-nedlastingene
+  spesifikt; vilkårene over legges derfor til grunn også for
+  `data/sources/gis/raw/*.zip` og det avledede GeoJSON-et under
+  `docs/data/gis/`.
+- Eierskapstallene i `data/ownership.json` er avledet fra en manuelt
+  vedlikeholdt eksport av ENS' offentlige oppslagsverktøy
+  <https://ens.dk/en/energy-sources/danish-licences-and-licensees> og
+  omfattes av de samme vilkårene.
+
+Dette dekker kun **kildedataene fra Energistyrelsen**. Det avklarer ikke i
+seg selv en lisens for prosjektets egen kildekode (skriptene under
+`scripts/`, frontend-koden under `docs/*.html`, `docs/*.js`, `docs/*.css`,
+og testene under `tests/`) – det er et separat spørsmål denne filen ikke tar
+stilling til.

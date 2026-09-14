@@ -2,6 +2,7 @@
   "schema_version": 1,
   "source": "https://ens.dk/en/energy-sources/danish-licences-and-licensees",
   "note": "Manually curated from an ENS licensee export; see scripts/ingest_ownership.py.",
+  "generated_at": "2026-09-14T06:21:03Z",
   "companies": [
     "BlueNord",
     "Danoil",

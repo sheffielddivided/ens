@@ -520,6 +520,9 @@ function renderTime() {
       : "Olje + gass fordelt på eierselskap etter lisensandel.",
   };
   let cap = capParts[state.view];
+  if (state.view === "company" && OWN && OWN.generated_at) {
+    cap += ` Eierskapsdata sist oppdatert ${OWN.generated_at.slice(0, 10)} (vedlikeholdes manuelt, ikke del av den automatiske dataoppdateringen).`;
+  }
   if (prelimIdx >= 0) cap += ` Foreløpige år (se tooltip) overstyres av endelige årstall når de kommer; et ufullstendig år vises som snittproduksjon for månedene med data.`;
   $("time-cap").innerHTML = cap;
   const viewLabel = state.view === "company" && state.company

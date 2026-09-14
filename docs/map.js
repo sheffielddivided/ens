@@ -365,7 +365,8 @@ async function main() {
 
   const n = geo.data.features.length;
   const upd = geo.data.generated_at ? ` · geometri oppdatert ${geo.data.generated_at.slice(0, 10)}` : "";
-  $("map-note").textContent = `${n} felt vist${upd}.`;
+  const ownUpd = OWN && OWN.generated_at ? ` · eierskap oppdatert ${OWN.generated_at.slice(0, 10)}` : "";
+  $("map-note").textContent = `${n} felt vist${upd}${ownUpd}.`;
   renderLegend();
 }
 
