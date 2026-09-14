@@ -887,10 +887,10 @@ typen README/kode-avvik denne dokumentasjonen er skrevet for å unngå å
 videreføre. Ved samme anledning ble det oppdaget at `p`
 (foreløpig-flagget)/"stiplet"-beskrivelsen i §5.1 hadde samme feilkilde — den
 er også rettet der, med korrekt referanse til hvordan `p` faktisk brukes
-(kun tooltip + bildetekst, ikke en egen stolpestil). **Fortsatt ikke rettet
-i README:** kartets fargeforklaring («fargelagt etter akkumulert
-produksjon», `README.md:270`) er teknisk sett fortsatt unøyaktig av samme
-grunn — stol på §9.2, ikke på det README-sitatet, inntil det også oppdateres.
+(kun tooltip + bildetekst, ikke en egen stolpestil). **[FIKSET]** kartets
+fargeforklaring i README («fargelagt etter akkumulert produksjon») hadde
+samme feilkilde og er nå også rettet til å beskrive den faktiske, faste
+to-fargestilen (§9.2).
 
 **12. Ingen ekte maskinlesbar kilde-API finnes.** Alt er HTML-scraping av en
 side laget for mennesker (se §3). Enhver strukturendring på ENS' side kan i

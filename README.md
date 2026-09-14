@@ -268,7 +268,8 @@ teksten under grafen (ikke en egen visuell stil på selve stolpene), og «sist
 oppdatert» hentet fra dataene. Ren HTML/CSS/JS, ingen byggesteg, norsk UI.
 
 Ved siden av produksjonsgrafen ligger et Leaflet-kart over feltene (bygget av
-`map.js`), fargelagt etter akkumulert produksjon, med en alltid synlig
+`map.js`), der felt med produksjon og felt uten skilles med hver sin faste
+farge (ikke gradert etter produksjonsvolum), med en alltid synlig
 blokkrutenett-bakgrunn og en «Feltnavn»-av/på-knapp i kartpanelets hode.
 Kartet deler tema (lyst/mørkt) og databehov med resten av siden.
 
