@@ -263,7 +263,8 @@ Aktiver Pages fra `docs/`-mappen:
 Websiden laster `data/combined.json` og `data/ownership.json` med `fetch`.
 Funksjoner: velg felt (eller «Alle felt»), veksle mellom Totalt/Per
 felt/Per selskap, veksle måned/år-oppløsning, en valgfri vannproduksjonslinje,
-linjediagram med Chart.js der foreløpige tall tegnes stiplet, og «sist
+stolpediagram med Chart.js der foreløpige tall er markert i verktøytips og i
+teksten under grafen (ikke en egen visuell stil på selve stolpene), og «sist
 oppdatert» hentet fra dataene. Ren HTML/CSS/JS, ingen byggesteg, norsk UI.
 
 Ved siden av produksjonsgrafen ligger et Leaflet-kart over feltene (bygget av
@@ -355,10 +356,13 @@ den daglige dataoppdateringen er urørt. Jobben kan enten laste ned URL-er du
 oppgir, eller bygge fra committede filer, og committer resultatet under
 `docs/data/gis/`.
 
-**Lisens.** ENS-shapefilene har ingen redistribusjonsvilkår, så både rådataene
+**Lisens.** ENS publiserer ingen egne, separate vilkår for shape-fil-siden,
+så de generelle opphavsrettsvilkårene for ens.dk (attribusjon påkrevd,
+innholdet må ikke endres; bilder/figurer/logo krever egen tillatelse – se
+[`LICENSE`](LICENSE)) legges til grunn også her. Både rådataene
 (`data/sources/gis/raw/*.zip`) og det avledede GeoJSON-et committes –
-reproduserbart på linje med produksjonskildene. Kartet krediterer ENS og
-bakgrunnskartets kilder (OpenStreetMap/CARTO).
+reproduserbart på linje med produksjonskildene, med Energistyrelsen oppgitt
+som kilde. Kartet krediterer ENS og bakgrunnskartets kilde (OpenStreetMap).
 
 **Demodata.** Til utvikling finnes `docs/data/gis/fields.sample.geojson`
 (generert fra fixture-en `tests/fixtures/gis/fields.zip`). Skulle de ekte lagene

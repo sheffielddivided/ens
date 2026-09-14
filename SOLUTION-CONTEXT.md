@@ -412,7 +412,15 @@ manuell redigering:
 ```
 
 - Hvert datapunkt: `t` (`"YYYY"` for år, `"YYYY-MM"` for måned), `v` (verdi),
-  `p` (`true` = foreløpig, tegnes stiplet i UI).
+  `p` (`true` = foreløpig). I dagens `docs/app.js` gir dette **ingen egen
+  visuell stil på stolpene selv** (`barDS()`, `docs/app.js:534-536`, har fast
+  stil uansett `p`) — foreløpige perioder markeres kun i verktøytipset
+  (`docs/app.js:476`) og i en forklarende setning under grafen
+  (`docs/app.js:523`). Kun vannlinjen (et overlagt Chart.js `"line"`-datasett,
+  `docs/app.js:362-372`) har en stiplet kantlinje, og det er en fast stil for
+  hele linjen, ikke betinget av `p`. En reimplementasjon står fritt til å
+  bruke `p` til en tydeligere visuell markering (f.eks. stiplet stolpekant)
+  enn det denne referanseimplementasjonen faktisk gjør i dag.
 - `_total`-serien er summen over alle felt; den plasseres **først** i
   `fields`-listen (`combined["fields"][0]["slug"] == "_total"`, testet i
   `tests/test_parsers.py:462-463`) slik at UI-en kan bruke den som
@@ -820,27 +828,34 @@ reimplementasjon som bruker disse feltene til å f.eks. filtrere en tidslinje
 til "år med faktisk produksjon" vil få feil resultat uten en egen sjekk mot
 faktiske verdier > 0.
 
-**6. `south_arne` som operatør-nøkkel er trolig død kode.**
-`_KNOWN_OPERATORS` i `scripts/ingest_yearly.py:508` inneholder både
+**6. [FIKSET] `south_arne` var en død operatør-nøkkel.**
+`_KNOWN_OPERATORS` i `scripts/ingest_yearly.py` inneholdt tidligere både
 `"south_arne": "Hess"` og `"syd_arne": "Hess"`. Verifisert: den reelle
 årsfilen bruker konsekvent det danske navnet "Syd Arne", som
 `normalize_field()` alltid slugger til `syd_arne` — aldri `south_arne`
 (bekreftet: `data/fields.json` inneholder `syd_arne` med eneste alias
-`"Syd Arne"`; `south_arne` finnes ikke som nøkkel i det hele tatt). Nøkkelen
-`"south_arne"` her ser derfor ut til å aldri kunne treffes fra den ekte
-årsfilen — i motsetning til den analoge `FIELD_SLUG_ALIASES`-oppføringen i
+`"Syd Arne"`; `south_arne` fantes ikke som nøkkel i produksjonsdataene i det
+hele tatt). Nøkkelen kunne derfor aldri treffes fra den ekte årsfilen — i
+motsetning til den analoge `FIELD_SLUG_ALIASES`-oppføringen i
 `scripts/build_gis.py:85`, som **er** aktivt i bruk, fordi ENS' *kart*-lag
 faktisk bruker det engelske navnet "South Arne" i sine feltetiketter (i
-motsetning til årsfilen). Konsekvensen av dette er ufarlig (samme
-operatør-verdi ville blitt satt uansett via `syd_arne`-nøkkelen), men det er
-et tegn på at disse to separate normaliserings-/alias-tabellene (én for
-årsfil-operatører, én for kart-feltnavn) ikke er utledet fra samme kilde og
-kan divergere over tid.
+motsetning til årsfilen). Konsekvensen var ufarlig (samme operatør-verdi
+ville blitt satt uansett via `syd_arne`-nøkkelen), men den døde nøkkelen er
+nå fjernet fra `_KNOWN_OPERATORS`. De to separate normaliserings-/
+alias-tabellene (én for årsfil-operatører, én for kart-feltnavn) er
+fortsatt ikke utledet fra samme kilde og kan divergere igjen over tid — det
+opprinnelige poenget står ved lag som en generell fallgruve, selv om dette
+konkrete symptomet er ryddet opp.
 
-**7. Eierskap er ikke del av den automatiske pipelinen og kan bli
-utdatert stille.** Se §4.5. Det finnes ingen validering eller varsel som sier
-"dette eierskapsdatasettet er X måneder gammelt" — det oppdateres kun når
-noen manuelt bytter ut xlsx-filen og kjører skriptet på nytt.
+**7. [FIKSET] Eierskap manglet et friskhets-signal.** Se §4.5. Skriptet
+kjøres fortsatt manuelt, ikke på cron, men `ingest_ownership.py` skriver nå
+et `generated_at`-tidsstempel (UTC, samme mønster som `build_gis.py` bruker
+for kartgeometri) inn i `data/ownership.json`, deklarert som en `volatile_key`
+i `write_json_stable()`-kallet slik at det ikke i seg selv trigger en commit
+når de underliggende andelene er uendret. Frontend viser nå denne datoen:
+`docs/app.js` (i "Per selskap"-visningens bildetekst) og `docs/map.js` (i
+kartpanelets `#map-note`, sammen med geometri-datoen). Et utdatert
+eierskapsdatasett er dermed synlig i UI-en i stedet for stille.
 
 **8. Måneds- vs. årstall kan avvike opptil 10 % uten at pipelinen stopper.**
 Dette er en bevisst designbeslutning (`scripts/validate.py`, WARN ikke
@@ -862,12 +877,20 @@ alltid "stacked block" (§4.2, §4.3). En reimplementasjon bør prioritere å
 støtte stacked-block-layouten korrekt over de andre, siden det er det eneste
 formatet som faktisk observeres i produksjon.
 
-**11. `docs/app.js` viser alltid stolpediagram ("bar"), aldri linje** —
-eldre beskrivelser (inkl. i `README.md:266`, som sier "linjediagram med
-Chart.js") stemmer **ikke lenger** overens med koden
-(`docs/app.js:461`, `type: "bar"`). Dette er et konkret eksempel på nettopp
-den typen README/kode-avvik denne dokumentasjonen er skrevet for å unngå å
-videreføre — stol på §9, ikke på README-sitatet.
+**11. [FIKSET] `docs/app.js` viser alltid stolpediagram ("bar"), aldri
+linje** — `README.md` beskrev det tidligere som et "linjediagram med
+Chart.js" og som "fargelagt etter akkumulert produksjon" for kartet; begge
+formuleringene var **ikke lenger** i tråd med koden
+(`docs/app.js:461`, `type: "bar"`; `docs/map.js:174-192`, fast fyllfarge, se
+§9.2) og er nå rettet i README. Dette var et konkret eksempel på nettopp den
+typen README/kode-avvik denne dokumentasjonen er skrevet for å unngå å
+videreføre. Ved samme anledning ble det oppdaget at `p`
+(foreløpig-flagget)/"stiplet"-beskrivelsen i §5.1 hadde samme feilkilde — den
+er også rettet der, med korrekt referanse til hvordan `p` faktisk brukes
+(kun tooltip + bildetekst, ikke en egen stolpestil). **Fortsatt ikke rettet
+i README:** kartets fargeforklaring («fargelagt etter akkumulert
+produksjon», `README.md:270`) er teknisk sett fortsatt unøyaktig av samme
+grunn — stol på §9.2, ikke på det README-sitatet, inntil det også oppdateres.
 
 **12. Ingen ekte maskinlesbar kilde-API finnes.** Alt er HTML-scraping av en
 side laget for mennesker (se §3). Enhver strukturendring på ENS' side kan i
@@ -887,29 +910,37 @@ oppførsel.
 - **Kildedata:** Energistyrelsen (ENS), offentlige danske data. Nettstedet
   krediterer ENS eksplisitt i footer (`docs/index.html:90`) og i
   sideoverskriften (`docs/index.html:16-18`).
-- **Ingen eksplisitt lisensfil (`LICENSE`) ble funnet i repoet** ved
-  gjennomgang av rot-katalogen. **USIKKER:** prosjektets egen kildekode-lisens
-  er dermed ikke eksplisitt fastsatt i dette repoet — noe en sammenslåing med
-  søsterløsninger bør avklare eksplisitt (særlig hvis søsterløsningene har
-  ulike lisenser).
-  Merk at dette er uavhengig av rettighetene til selve
-  **produksjons**dataene, som er offentlige ENS-data.
-- **GIS-shapefiler:** README (`README.md:358-359`) hevder ENS-shapefilene
-  «ingen redistribusjonsvilkår har», og at både rå `.zip`-filer og avledet
-  GeoJSON derfor committes i repoet. Dette er **ikke selvstendig verifisert**
-  mot en offisiell ENS-lisenstekst i denne gjennomgangen —
-  **USIKKER:** bekreft ENS' faktiske vilkår for shapefil-redistribusjon før
-  en sammenslått løsning viderefører denne antakelsen ukritisk for flere
-  lands kilder.
-- **Kartbakgrunn:** OpenStreetMap-fliser, kreditert i kartets
-  attribution-kontroll (Leaflet standard) og i README
-  (`README.md:361`, nevner også CARTO — **USIKKER:** CARTO ble erstattet av
-  OpenStreetMap tidligere i dette prosjektets historie per commit-loggen,
-  README-teksten her kan være utdatert; §9.2 beskriver den faktiske,
-  gjeldende implementasjonen).
+- **[FIKSET] `LICENSE`-fil finnes nå i repo-roten.** Den gjengir ENS' egne
+  opphavsrettsvilkår for ens.dk verbatim (hentet fra siden «Om ens.dk»,
+  seksjonen «Ophavsret», <https://ens.dk/om-os/om-ensdk>, bekreftet direkte
+  mot den live siden i denne gjennomgangen): materiale kan kopieres
+  vederlagsfritt med kildehenvisning til Energistyrelsen, innholdet må ikke
+  endres/forvanskes, og bilder/figurer/illustrasjoner/logo er unntatt og
+  krever egen tillatelse. `LICENSE`-filen presiserer eksplisitt at dette
+  dekker **kildedataene** (`data/`, `docs/data/`, inkl. shapefil-rådata og
+  eierskapstall), ikke prosjektets egen kildekode — kildekodens lisens er
+  fortsatt et **åpent, uavklart spørsmål** som bør besluttes eksplisitt før
+  sammenslåing med søsterløsningene (spesielt hvis de har ulike
+  kodelisenser).
+- **[FIKSET] GIS-shapefiler:** README hevdet tidligere at ENS-shapefilene
+  «ingen redistribusjonsvilkår har» — dette var en uverifisert påstand.
+  README (`README.md:358-361`) og `LICENSE` sier nå i stedet at ENS ikke
+  publiserer egne, separate vilkår for shape-fil-siden spesifikt, og at de
+  generelle ens.dk-vilkårene (attribusjon + uendret innhold, se over) derfor
+  legges til grunn også for `data/sources/gis/raw/*.zip` og det avledede
+  GeoJSON-et. Dette er fortsatt en **tolkning** (ENS har ikke eksplisitt
+  bekreftet at shape-fil-siden er dekket av nøyaktig den samme teksten), men
+  er nå basert på en faktisk, bekreftet kildetekst i stedet for en
+  ubegrunnet påstand.
+- **[FIKSET] Kartbakgrunn:** README nevnte tidligere CARTO ved siden av
+  OpenStreetMap i denne "Lisens"-paragrafen; CARTO ble erstattet av
+  OpenStreetMap tidligere i prosjektets historie (§9.2 beskriver den
+  faktiske, gjeldende implementasjonen), og README er nå rettet til å bare
+  nevne OpenStreetMap.
 - **Eierskapsdata:** avledet fra en manuelt vedlikeholdt eksport av ENS'
   offentlige "Danish Licences and Licensees"-oppslagsverktøy
   (`https://ens.dk/en/energy-sources/danish-licences-and-licensees`) — samme
-  offentlige-data-status som produksjonstallene, men ikke maskinelt
-  sporbar til en spesifikk nedlastingsdato slik de andre kildene er (ingen
-  `retrieved_at`-tidsstempel for denne filen, se §4.5 og §11 punkt 7).
+  offentlige-data-status som produksjonstallene, og dekket av samme
+  `LICENSE`-vilkår. **[FIKSET, se §11 punkt 7]** filen har nå et
+  `generated_at`-tidsstempel og vises i UI, så alderen på eierskapsdataene
+  ikke lenger er usporbar slik den var da dette dokumentet først ble skrevet.
