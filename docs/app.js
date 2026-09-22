@@ -36,6 +36,7 @@ let displayName = {};
 const state = {
   res: "yearly", view: "total", showWater: false,
   field: null, company: null,        // null = "Alle", else one slug/name
+  companyBreakdown: "field",         // "Per selskap" sub-view: "field" or "measure" (olje/gass)
   // First year shown in the chart, kept separately per resolution: yearly
   // defaults to the earliest year with data, monthly to last year (a full
   // multi-decade run of monthly bars is unreadable). Set in prepare().
@@ -221,6 +222,7 @@ function buildControls() {
     renderTime();
   });
   segGroup("view-seg", "view", (v) => { state.view = v; updateViewControls(); renderTime(); });
+  segGroup("company-breakdown-seg", "breakdown", (v) => { state.companyBreakdown = v; renderTime(); });
 
   if (startYearSel) {
     startYearSel.innerHTML = YEARS.map((y) => `<option value="${y}">${y}</option>`).join("");
@@ -304,6 +306,7 @@ function updateViewControls() {
   const isField = state.view === "field", isCompany = state.view === "company";
   $("field-label").classList.toggle("hidden", !isField);
   $("company-label").classList.toggle("hidden", !isCompany);
+  $("company-breakdown-seg").classList.toggle("hidden", !isCompany);
   updateWaterVisibility();
   updateMapHighlight();
 }
@@ -412,9 +415,26 @@ function renderTime() {
         datasets.push(barDS("Andre valgte", other, css("--c-other"), false, surface));
       }
     }
-  } else {                                             // per company, or (single company picked) per field
+  } else {                                             // per company
     // Always all fields: the field picker is hidden in this view (see updateViewControls).
-    if (state.company) {
+    if (state.companyBreakdown === "measure") {        // olje vs gass, scoped to the selection (like Totalt)
+      const oilMap = {}, gasMap = {};
+      RANKED.forEach((slug) => {
+        const shares = ownerOf(slug);
+        const share = state.company ? (shares[state.company] || 0)
+          : Object.values(shares).reduce((a, s) => a + s, 0);
+        if (share <= 0) return;
+        const mo = fieldMap(slug, state.res, "oil"), mg = fieldMap(slug, state.res, "gas");
+        labels.forEach((t) => {
+          if (mo[t] != null) oilMap[t] = (oilMap[t] || 0) + mo[t] * share;
+          if (mg[t] != null) gasMap[t] = (gasMap[t] || 0) + mg[t] * share;
+        });
+      });
+      datasets = ["oil", "gas"].map((m, i) => {
+        const map = m === "oil" ? oilMap : gasMap;
+        return barDS(MEASURE_LABEL[m], labels.map((t) => oeRate(map[t], t)), css("--" + m), i === 0, surface);
+      });
+    } else if (state.company) {
       const company = state.company;
       const fieldsWithShare = RANKED.filter((slug) => shareOf(slug, company) > 0);
       const maps = fieldsWithShare.map((s) => [fieldMap(s, state.res, "oil"), fieldMap(s, state.res, "gas")]);
@@ -515,9 +535,13 @@ function renderTime() {
   const capParts = {
     total: "Totalproduksjon for alle felt, splittet i olje og gass.",
     field: sel.length > STACK_CAP ? `De ${STACK_CAP} største av ${sel.length} valgte felt; resten er «Andre valgte».` : `Olje + gass per felt (${sel.length}).`,
-    company: state.company
-      ? `${state.company}s andel av produksjonen (olje + gass), per felt.`
-      : "Olje + gass fordelt på eierselskap etter lisensandel.",
+    company: state.companyBreakdown === "measure"
+      ? (state.company
+          ? `${state.company}s andel av produksjonen, splittet i olje og gass.`
+          : "All produksjon fordelt på eierandeler, splittet i olje og gass.")
+      : (state.company
+          ? `${state.company}s andel av produksjonen (olje + gass), per felt.`
+          : "Olje + gass fordelt på eierselskap etter lisensandel."),
   };
   let cap = capParts[state.view];
   if (state.view === "company" && OWN && OWN.generated_at) {
@@ -525,9 +549,10 @@ function renderTime() {
   }
   if (prelimIdx >= 0) cap += ` Foreløpige år (se tooltip) overstyres av endelige årstall når de kommer; et ufullstendig år vises som snittproduksjon for månedene med data.`;
   $("time-cap").innerHTML = cap;
-  const viewLabel = state.view === "company" && state.company
-    ? `${state.company}, per felt`
-    : { total: "totalt", field: "per felt", company: "per selskap" }[state.view];
+  const breakdownLabel = state.companyBreakdown === "measure" ? "olje/gass" : "per felt";
+  const viewLabel = state.view === "company"
+    ? (state.company ? `${state.company}, ${breakdownLabel}` : `per selskap, ${breakdownLabel}`)
+    : { total: "totalt", field: "per felt" }[state.view];
   $("time-sub").textContent = `– ${viewLabel} (${OE_UNIT})`;
 }
 
