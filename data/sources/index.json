@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-22T16:18:15Z",
+  "generated_at": "2026-09-28T12:59:36Z",
   "source_pages": [
     "https://ens.dk/en/energy-sources/monthly-and-yearly-production"
   ],
   "yearly": {
     "url": "https://ens.dk/media/7167/download",
-    "link_text": "1972-2024",
+    "link_text": "1972-2025",
     "format": "xlsx",
     "status": "pending",
     "retrieved_at": null,
