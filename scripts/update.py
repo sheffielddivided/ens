@@ -321,9 +321,10 @@ def run(*, offline: bool, crawl: bool, refresh_yearly: bool, force: bool) -> int
     fields = C.read_json(C.FIELDS_PATH) or {"fields": {}}
     combined = build_combined(yearly, monthly, fields)
     wrote = C.write_json_stable(C.COMBINED_PATH, combined, volatile_keys=("last_updated",))
-    # ownership.json is not derived from this pipeline (see ingest_ownership.py
-    # docstring) -- just carry the existing file over to docs/ if present.
-    _copy_to_docs([C.COMBINED_PATH, C.MONTHLY_PATH, C.YEARLY_PATH, C.FIELDS_PATH, C.DATA_DIR / "ownership.json"])
+    # ownership.json and reserves.json are not derived from this pipeline (see
+    # ingest_ownership.py / ingest_reserves.py) -- just carry the existing file over to docs/ if present.
+    _copy_to_docs([C.COMBINED_PATH, C.MONTHLY_PATH, C.YEARLY_PATH, C.FIELDS_PATH, C.DATA_DIR / "ownership.json",
+                   C.DATA_DIR / "reserves.json"])
 
     n_fields = len(combined["fields"]) - 1
     C.info(f"combined.json {'updated' if wrote else 'unchanged'}: "

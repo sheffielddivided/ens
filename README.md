@@ -19,6 +19,7 @@ automatisk, og en statisk webside på GitHub Pages visualiserer dataene.
 - [GitHub Pages](#github-pages)
 - [Kart (GIS)](#kart-gis)
 - [Eierskap](#eierskap)
+- [Reserver](#reserver)
 
 ## Status og datainnhenting
 
@@ -72,16 +73,19 @@ scripts/
   validate.py           # kvalitetskontroll av hele datasettet
   build_gis.py          # ENS-shapefiler → reprojisert, forenklet GeoJSON (kart)
   ingest_ownership.py   # manuell lisensiar-eksport (xlsx) → data/ownership.json
+  ingest_reserves.py    # manuelt sammenstilte reserver per felt (xlsx) → data/reserves.json
 data/
   sources/index.json    # alle kjente kilde-URLer + status (pending/ok/failed)
   sources/raw/          # rå nedlastede filer (xlsx/html/pdf), committes for reproduserbarhet
   sources/gis/raw/      # rå ENS-shapefiler (.zip), committes for reproduserbarhet
   sources/licences/     # manuelt vedlikeholdt lisensiar-eksport (xlsx), se ingest_ownership.py
+  sources/reserves/     # manuelt sammenstilte ressursrapporter 2018– (xlsx), se ingest_reserves.py
   yearly.json           # alle årsdata (endelige)
   monthly.json          # alle månedsdata (foreløpige)
   fields.json           # metadata per felt (navn, aliaser, operatør, år-spenn)
   combined.json         # sammenslått tidsserie klar for frontend
   ownership.json        # eierskapsandel per felt/selskap (manuelt vedlikeholdt kilde)
+  reserves.json         # reserver per felt per 1. januar, i SI-enheter og mill. fat o.e.
 docs/                   # GitHub Pages-rot
   index.html app.js     # datautforsker (Chart.js) – alltid olje+gass i 1000 fat o.e./dag
   map.js                # feltkart (Leaflet), innbakt i index.html mellom diagrammene
@@ -369,3 +373,40 @@ som kilde. Kartet krediterer ENS og bakgrunnskartets kilde (OpenStreetMap).
 (generert fra fixture-en `tests/fixtures/gis/fields.zip`). Skulle de ekte lagene
 mangle, faller kartet tilbake til denne og viser et tydelig «syntetiske
 demodata»-banner – akkurat som utforskeren.
+
+## Reserver
+
+Visningen **Reserver** på websiden viser gjenværende reserver per felt (felt i
+drift og besluttet utbygging) per 1. januar 2018–2026, omregnet til
+**millioner fat oljeekvivalent** (mill. fat o.e., MMboe). Velg ett felt i
+nedtrekkslisten for å se olje og salgsgass hver for seg.
+
+ENS publiserer feltreservene bare i PDF-rapportene «Ressourceopgørelse og
+prognoser» (tabell 1). Tallene er sammenstilt for hånd i
+`data/sources/reserves/ressurser_og_prognoser_2018_2026.xlsx` (arket
+«Felt – reserver»), og `scripts/ingest_reserves.py` gjør dette om til
+`data/reserves.json` (og en kopi i `docs/data/`). Kjør skriptet på nytt når
+arbeidsboken byttes ut med en nyere sammenstilling:
+
+```bash
+python scripts/ingest_reserves.py
+```
+
+Omregning – samme faktorer som produksjonsvisningene bruker:
+
+| Råvare    | Kildeenhet | Til mill. fat o.e.                         |
+|-----------|------------|--------------------------------------------|
+| Olje      | mill. m³   | × 6,29                                     |
+| Salgsgass | mrd. Nm³   | 1000 Nm³ gass = 1 m³ o.e., deretter × 6,29 |
+
+Forbehold:
+- Kilden avrunder hvert felt til hele mill. m³ / mrd. Nm³. Små felt vises
+  derfor som 0, og hvert felt har en avrundingsusikkerhet på noen få mill. fat;
+  summen av feltene kan avvike litt fra rapportert total (vises i tooltip).
+- Cellefargene i arbeidsboken bevares som `flags` per verdi: `reconstructed`
+  (oransje – tallet 1 som faller ut av tekstuttrekket i rapportene 2018–2023)
+  og `unresolved` (grå – tom i uttrekket, ikke avklart). Tomme celler blir
+  `null`, aldri 0.
+- «Tyra (inkl. Tyra Sydøst)» lagres på `tyra`; Tyra Sydøst har ingen egne tall.
+  «Solsort Vest» lagres på `solsort`.
+- Uventet ark, enhet eller feltnavn gir `SourceFormatError` i stedet for gjetting.

@@ -17,7 +17,13 @@
  * A still-open year (fewer than 12 months of monthly data) is never grossed
  * up to a full-year estimate -- since every value is a per-day rate already,
  * an incomplete year just averages over the months actually reported
- * (see daysForRate). */
+ * (see daysForRate).
+ *
+ * The "Reserver" view is the exception to the per-day convention: it shows
+ * remaining reserves per field at 1 January (data/reserves.json, built by
+ * scripts/ingest_reserves.py) as a stock, in million barrels of oil
+ * equivalent (MMboe), using the same 6.29 bbl/m³ and 1000 Nm³ gas = 1 m³ o.e.
+ * factors as the production views. */
 
 const MEASURE_LABEL = { oil: "Olje", gas: "Gass" };
 const OE_UNIT = "mboepd";
@@ -26,8 +32,9 @@ const SLOTS = ["--c1", "--c2", "--c3", "--c4", "--c5", "--c6", "--c7", "--c8"];
 const MONTHS_NB = ["jan", "feb", "mar", "apr", "mai", "jun", "jul", "aug", "sep", "okt", "nov", "des"];
 const STACK_CAP = 8;             // max individual bands before folding to "Andre valgte"
 const UNKNOWN_COMPANY = "Ukjent";
+const RES_UNIT = "mill. fat o.e.";
 
-let DATA = null, OWN = null, timeChart = null, lastExport = null;
+let DATA = null, OWN = null, RES = null, timeChart = null, lastExport = null;
 let RANKED = [];                 // all field slugs, biggest first
 let COMPANIES = [];               // all company names, biggest first
 let fieldColor = {};              // slug -> { v: cssVarName } or { h: hex/hsl }
@@ -129,6 +136,8 @@ async function boot() {
 async function load() {
   const real = await tryFetch("data/combined.json");
   const own = await tryFetch("data/ownership.json");
+  RES = await tryFetch("data/reserves.json");
+  if (!(RES && RES.fields && RES.years)) RES = null;
   if (real && real.series && Object.keys(real.series).length) {
     OWN = (own && own.fields) ? own : await tryFetch("data/ownership.sample.json");
     return real;
@@ -236,6 +245,8 @@ function buildControls() {
   const water = $("show-water");
   if (water) { water.checked = state.showWater; water.addEventListener("change", () => { state.showWater = water.checked; renderTime(); }); }
 
+  if (RES) $("reserves-btn").classList.remove("hidden");
+
   const exportBtn = $("export-btn");
   if (exportBtn) exportBtn.addEventListener("click", exportExcel);
 
@@ -302,9 +313,14 @@ function buildCompanySelect() {
 // own company dropdown instead, and "Totalt" shows neither (it is always the
 // sum over every field). The water toggle is only meaningful when looking at
 // one specific field.
+// "Reserver" reuses the field dropdown, but has no time resolution or start
+// year (it is a handful of 1 January snapshots, not a production series).
 function updateViewControls() {
   const isField = state.view === "field", isCompany = state.view === "company";
-  $("field-label").classList.toggle("hidden", !isField);
+  const isRes = state.view === "reserves";
+  $("field-label").classList.toggle("hidden", !(isField || isRes));
+  $("res-seg").classList.toggle("hidden", isRes);
+  $("start-year-label").classList.toggle("hidden", isRes);
   $("company-label").classList.toggle("hidden", !isCompany);
   $("company-breakdown-seg").classList.toggle("hidden", !isCompany);
   updateWaterVisibility();
@@ -322,7 +338,7 @@ function updateWaterVisibility() {
 function updateMapHighlight() {
   if (!window.refreshMapHighlight) return;
   let slugs = null;
-  if (state.view === "field" && state.field) slugs = [state.field];
+  if ((state.view === "field" || state.view === "reserves") && state.field) slugs = [state.field];
   else if (state.view === "company" && state.company) slugs = RANKED.filter((s) => shareOf(s, state.company) > 0);
   window.refreshMapHighlight(slugs);
 }
@@ -375,6 +391,8 @@ function waterDataset(labels) {
 }
 
 function renderTime() {
+  if (state.view === "reserves") return renderReserves();
+  $("time-title").textContent = "Produksjon";
   const allBase = DATA.series._total[state.res].oil || [];
   const base = allBase.filter((p) => periodYear(p.t) >= state.startYearByRes[state.res]);
   const labels = base.map((p) => p.t);
@@ -475,7 +493,8 @@ function renderTime() {
 
   // Snapshot of exactly what is charted, for the Excel export -- kept in sync
   // with the chart on every render rather than recomputed independently.
-  lastExport = { labels: labels.slice(), datasets: datasets.map((d) => ({ label: d.label, data: d.data.slice(), yAxisID: d.yAxisID })) };
+  lastExport = { unit: OE_UNIT, sheet: "Produksjon", name: `produksjon_${state.view}_${state.res}`,
+    labels: labels.slice(), datasets: datasets.map((d) => ({ label: d.label, data: d.data.slice(), yAxisID: d.yAxisID })) };
 
   const cfg = {
     type: "bar", data: { labels, datasets },
@@ -556,6 +575,103 @@ function renderTime() {
   $("time-sub").textContent = `– ${viewLabel} (${OE_UNIT})`;
 }
 
+// --------------------------------------------------------------------------- reserves
+// Remaining reserves (felt i drift og besluttet utbygging) per 1 January, in
+// MMboe. "Alle": stacked per field, biggest STACK_CAP (by latest year) shown
+// individually and the rest folded into "Andre felt". One field: oil vs gas.
+// Values the source flags as reconstructed or unresolved are marked in the
+// tooltip; blank source cells stay gaps (null), never 0.
+function renderReserves() {
+  const years = RES.years, surface = css("--surface");
+  const flagOf = (slug, y) => {
+    const fl = RES.fields[slug]?.flags || {};
+    return ["oil", "gas"].map((m) => fl[m]?.[y]).filter(Boolean);
+  };
+  let datasets = [], note = "";
+  const slug = state.field;
+  const resSlug = slug && !RES.fields[slug] ? RES.included_in?.[slug] : slug;
+
+  if (slug && !resSlug) {
+    note = `Ingen reservetall for ${displayName[slug] || slug} i kilden.`;
+  } else if (slug) {
+    const f = RES.fields[resSlug];
+    datasets = [["oil", f.oil_mmboe], ["gas", f.gas_mmboe]].map(([m, ser], i) => ({
+      ...barDS(MEASURE_LABEL[m], years.map((y) => ser[y] ?? null), css("--" + m), i === 0, surface),
+      flags: years.map((y) => f.flags?.[m]?.[y] || null),
+    }));
+    if (resSlug !== slug) note = `${displayName[slug] || slug} har ikke egne reservetall; viser ${displayName[resSlug] || resSlug}, som inkluderer feltet.`;
+  } else {
+    const last = years[years.length - 1];
+    const size = (s) => RES.fields[s].mmboe[last] ?? Math.max(0, ...years.map((y) => RES.fields[s].mmboe[y] ?? 0));
+    const ranked = Object.keys(RES.fields).sort((a, b) => size(b) - size(a) || a.localeCompare(b));
+    const shown = ranked.slice(0, STACK_CAP), rest = ranked.slice(STACK_CAP);
+    datasets = shown.map((s, i) => ({
+      ...barDS(displayName[s] || RES.fields[s].source_name, years.map((y) => RES.fields[s].mmboe[y] ?? null), colorOf(s), i === 0, surface),
+      flags: years.map((y) => flagOf(s, y)[0] || null),
+    }));
+    if (rest.length) {
+      datasets.push({
+        ...barDS("Andre felt", years.map((y) => rest.reduce((a, s) => a + (RES.fields[s].mmboe[y] || 0), 0)), css("--c-other"), false, surface),
+        flags: years.map((y) => (rest.some((s) => flagOf(s, y).length) ? "mixed" : null)),
+        names: rest.map((s) => displayName[s] || s),
+      });
+    }
+  }
+
+  lastExport = { unit: RES_UNIT, sheet: "Reserver", name: `reserver_${resSlug || "alle"}`, periodLabel: "Per 1. januar",
+    labels: years.slice(), datasets: datasets.map((d) => ({ label: d.label, data: d.data.slice() })) };
+
+  const flagTxt = { reconstructed: "rekonstruert verdi", unresolved: "uavklart i kilden", mixed: "inneholder merkede verdier" };
+  const cfg = {
+    type: "bar", data: { labels: years, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { display: true, position: "bottom",
+          labels: { boxWidth: 10, boxHeight: 10, usePointStyle: true, pointStyle: "rectRounded", padding: 10 } },
+        tooltip: {
+          filter: (it) => it.parsed.y != null,
+          callbacks: {
+            title: (it) => `Per 1. januar ${it[0].label}`,
+            label: (it) => {
+              const fl = it.dataset.flags?.[it.dataIndex];
+              return `${it.dataset.label}: ${fmtVal(it.parsed.y)} ${RES_UNIT}${fl ? ` (${flagTxt[fl] || fl})` : ""}`;
+            },
+            footer: (it) => {
+              const sum = it.reduce((a, i2) => a + (i2.parsed.y || 0), 0);
+              const parts = [`Sum: ${fmtVal(sum)} ${RES_UNIT}`];
+              const rep = RES.reported_total?.mmboe?.[it[0].label];
+              if (!slug && rep != null) parts.push(`Rapportert total: ${fmtVal(rep)}`);
+              return parts.join(" · ");
+            },
+          },
+        },
+      },
+      scales: {
+        x: { stacked: true, grid: { display: false } },
+        y: { stacked: true, beginAtZero: true, border: { display: false },
+          title: { display: true, text: RES_UNIT, color: css("--muted") }, ticks: { callback: (v) => fmtVal(v) } },
+      },
+    },
+  };
+  if (timeChart) timeChart.destroy();
+  timeChart = new Chart($("timeChart"), cfg);
+
+  const c = RES.conversion || {};
+  let cap = slug
+    ? "Gjenværende reserver per 1. januar, splittet i olje og salgsgass."
+    : `Gjenværende reserver per felt per 1. januar (felt i drift og besluttet utbygging)${datasets.some((d) => d.names) ? `; de ${STACK_CAP} største i siste år vises enkeltvis, resten er «Andre felt»` : ""}.`;
+  if (note) cap = note + " " + cap;
+  cap += ` Omregnet fra mill. m³ olje og mrd. Nm³ salgsgass med ${String(c.boe_per_m3_oil ?? 6.29).replace(".", ",")} fat/m³ og 1000 Nm³ gass = 1 m³ o.e. (som produksjonsvisningene).`
+    + " Kilden avrunder hvert felt til hele mill. m³ / mrd. Nm³, så små felt vises som 0 og hvert felt har en avrundingsusikkerhet på noen få mill. fat."
+    + " Merkede verdier i tooltip: «rekonstruert» = tallet 1 som faller ut av tekstuttrekket i rapportene 2018–2023; «uavklart» = tom celle i uttrekket. Tomme stolper = ingen tall i kilden.";
+  cap += ` Kilde: ENS «Ressourceopgørelse og prognoser» 2018–2026, tabell 1 (manuelt sammenstilt; 2017-rapporten mangler).`;
+  $("time-cap").innerHTML = cap;
+  $("time-title").textContent = "Reserver";
+  $("time-sub").textContent = `– ${slug ? (displayName[resSlug] || resSlug) : "per felt"} (${RES_UNIT})`;
+}
+
 function colorOf(slug) { const c = fieldColor[slug]; return c ? (c.v ? css(c.v) : c.h) : css("--c-other"); }
 function colorOfCompany(c) { const k = companyColor[c]; return k ? (k.v ? css(k.v) : k.h) : css("--c-other"); }
 
@@ -568,10 +684,10 @@ function barDS(label, data, color, isBottom, surface) {
 // more than one oil/gas series (water excluded from the sum: different unit).
 function exportExcel() {
   if (!lastExport || !window.XLSX) return;
-  const { labels, datasets } = lastExport;
+  const { labels, datasets, unit } = lastExport;
   const oeCols = datasets.filter((d) => d.yAxisID !== "y1");
-  const header = ["Periode", ...datasets.map((d) => `${d.label} (${d.yAxisID === "y1" ? WATER_UNIT : OE_UNIT})`)];
-  if (oeCols.length > 1) header.push(`Sum (${OE_UNIT})`);
+  const header = [lastExport.periodLabel || "Periode", ...datasets.map((d) => `${d.label} (${d.yAxisID === "y1" ? WATER_UNIT : unit})`)];
+  if (oeCols.length > 1) header.push(`Sum (${unit})`);
   const rows = labels.map((t, i) => {
     const row = [labelFmt(t), ...datasets.map((d) => (d.data[i] == null ? null : Math.round(d.data[i] * 1000) / 1000))];
     if (oeCols.length > 1) row.push(Math.round(oeCols.reduce((a, d) => a + (d.data[i] || 0), 0) * 1000) / 1000);
@@ -579,8 +695,8 @@ function exportExcel() {
   });
   const ws = XLSX.utils.aoa_to_sheet([header, ...rows]);
   const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "Produksjon");
-  XLSX.writeFile(wb, `produksjon_${state.view}_${state.res}.xlsx`);
+  XLSX.utils.book_append_sheet(wb, ws, lastExport.sheet);
+  XLSX.writeFile(wb, `${lastExport.name}.xlsx`);
 }
 
 boot();

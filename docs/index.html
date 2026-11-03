@@ -42,8 +42,9 @@
             <button data-view="total"   aria-pressed="true">Totalt</button>
             <button data-view="field"   aria-pressed="false">Per felt</button>
             <button data-view="company" aria-pressed="false">Per selskap</button>
+            <button data-view="reserves" aria-pressed="false" id="reserves-btn" class="hidden" title="Gjenværende reserver per felt per 1. januar, i millioner fat oljeekvivalent">Reserver</button>
           </div>
-          <label class="year-field" for="start-year">Fra år
+          <label class="year-field" id="start-year-label" for="start-year">Fra år
             <select id="start-year" title="Første år som vises i grafen"></select>
           </label>
           <label class="chk hidden" id="water-label" title="Legg vannproduksjon til som egen linje (skala til høyre)">
@@ -61,7 +62,7 @@
           </div>
         </div>
         <div class="panel-head">
-          <h2>Produksjon <small id="time-sub"></small></h2>
+          <h2><span id="time-title">Produksjon</span> <small id="time-sub"></small></h2>
         </div>
         <div class="chart-wrap"><canvas id="timeChart"></canvas></div>
         <div class="export-row">
@@ -98,7 +99,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-  <script src="app.js?v=14"></script>
+  <script src="app.js?v=15"></script>
   <script src="map.js?v=17"></script>
 </body>
 </html>
