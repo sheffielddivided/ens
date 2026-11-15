@@ -187,6 +187,7 @@ footer a { color: var(--water); }
 .legend .lg-title { font-weight: 600; }
 .legend .lg-none { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
 .legend .lg-sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.legend .lg-sw.lg-dot { width: 9px; height: 9px; border-radius: 50%; }
 
 @media (max-width: 900px) {
   .chart-map-row { flex-direction: column; }

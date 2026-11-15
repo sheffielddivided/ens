@@ -9,7 +9,10 @@ name: Build GIS layers
 #     downloaded, reprojected and converted; or
 #   * leave "urls" blank to (re)build from whatever is already committed under
 #     data/sources/gis/raw/.
-# The derived GeoJSON under docs/data/gis/ is committed back to the branch.
+# Tick "fetch_wells" to re-download ENS's "All oil and gas wells" spreadsheet
+# (the maintained well list; the well shapefile dates from 2019) first.
+# Downloaded inputs under data/sources/gis/raw/ and the derived GeoJSON under
+# docs/data/gis/ are committed back to the branch.
 on:
   workflow_dispatch:
     inputs:
@@ -17,6 +20,10 @@ on:
         description: "Space-separated ENS shapefile .zip URLs (blank = build from committed inputs)"
         type: string
         default: ""
+      fetch_wells:
+        description: "Re-download ENS's 'All oil and gas wells' spreadsheet first"
+        type: boolean
+        default: false
       simplify:
         description: "Douglas-Peucker tolerance in metres (0 disables simplification)"
         type: string
@@ -53,6 +60,7 @@ jobs:
           set -o pipefail
           args=""
           for u in ${{ inputs.urls }}; do args="$args --url $u"; done
+          if [[ "${{ inputs.fetch_wells }}" == "true" ]]; then args="$args --fetch-wells"; fi
           python scripts/build_gis.py $args --simplify "${{ inputs.simplify }}" \
             2>&1 | tee -a gis.log
 
@@ -60,8 +68,8 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if [[ -n "$(git status --porcelain docs/data/gis)" ]]; then
-            git add docs/data/gis
+          if [[ -n "$(git status --porcelain docs/data/gis data/sources/gis/raw)" ]]; then
+            git add docs/data/gis data/sources/gis/raw
             git commit -m "gis: rebuild map layers $(date -u +%Y-%m-%dT%H:%MZ)"
             git push
             echo "Committed GeoJSON changes."

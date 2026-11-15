@@ -16,8 +16,11 @@ Design notes
   ``build-gis`` workflow, or locally). Hence a separate ``requirements-gis.txt``.
 * No network is required to *build*: point ``--raw-dir`` at a directory holding
   the ENS ``.zip``/``.shp`` files (commit them, or let CI download them). The
-  ENS download URLs are not hard-coded because they cannot be verified from the
-  build environment; pass them explicitly with ``--url`` to fetch.
+  shapefile URLs are not hard-coded; pass them explicitly with ``--url``.
+* Wells come primarily from ENS's "All oil and gas wells" spreadsheet
+  (``*well*.xlsx`` in ``--raw-dir``; ``--fetch-wells`` downloads it), which is
+  maintained, unlike the 2019 well shapefile. Wells only the shapefile lists
+  are merged in, and every well carries ``category`` and ``source``.
 * Idempotent, like the rest of the pipeline: unchanged geometry produces a
   byte-identical file (the only volatile field, ``generated_at``, is ignored
   when deciding whether anything changed), so re-runs make no git noise.
@@ -86,6 +89,51 @@ FIELD_SLUG_ALIASES = {
     "tyra_southeast": "tyra_se",    # Tyra Southeast == Tyra SE
     "tyra_south_east": "tyra_se",
 }
+
+# --- Wells ------------------------------------------------------------------ #
+# The ENS well shapefile ("Shape file with exploration and appraisal wells",
+# media/4905) has not been refreshed since 2019-08-21 and only covers
+# exploration/appraisal wells. The "All oil and gas wells" spreadsheet on the
+# Drilling Activities page is maintained and covers every oil/gas well
+# (production, injection, gas storage too), so it is the primary well source.
+# A handful of non-hydrocarbon wells (salt research, geothermal, some old
+# onshore holes) exist only in the shapefile; those are kept, tagged by source.
+ENS_WELLS_XLSX_URL = "https://ens.dk/media/8533/download"
+WELLS_XLSX_NAME = "All_oil_and_gas_wells.xlsx"
+WELLS_SHEET = "WellsDK"
+# The spreadsheet gives degrees/minutes/seconds; its Info sheet states the
+# co-ordinate system is European Datum 1950 (geographic ED50).
+WELLS_XLSX_EPSG = "EPSG:4230"
+# Spreadsheet header -> normalised property key. All columns are required.
+WELLS_XLSX_COLUMNS = {
+    "Well name": "name",
+    "Well number": "number",
+    "Classification": "classification",
+    "Well type": "well_type",
+    "Licence": "licence",
+    "Operator": "operator",
+    "Rig": "rig",
+    "N. Latitude": "_lat",
+    "E. Longitude": "_lon",
+    "Spud date": "spud_date",
+    "Comp. date": "comp_date",
+    "Location": "location",
+    "Released": "released",
+}
+# Shapefile attribute -> normalised key (dBASE truncates names to 10 chars).
+WELLS_SHP_COLUMNS = {
+    "well_name": "name", "well_numb": "number", "classifica": "classification",
+    "licence": "licence", "operator": "operator", "rig": "rig",
+    "spud_date": "spud_date", "comp_date": "comp_date",
+    "location": "location", "released": "released",
+}
+# Plausible extent of Danish wells (North Sea sector + onshore + Bornholm).
+WELL_LAT_RANGE = (54.0, 58.5)
+WELL_LON_RANGE = (2.5, 15.5)
+_DMS_RE = re.compile(
+    r"""^\s*(\d{1,3})\s*°\s*(\d{1,2})\s*'\s*(\d{1,2})?\s*(?:[.,]\s*(\d*))?\s*"?\s*$"""
+)
+_XLSX_DATE_RE = re.compile(r"^\s*(\d{1,2})_(\d{1,2})_(\d{4})\s*$")
 
 # Map a source-file stem to a logical layer (its output filename). Substring
 # match, first hit wins; anything unmatched falls back to its geometry type.
@@ -328,7 +376,189 @@ def convert_layer(
 
 def _feature_sort_key(feat: dict):
     p = feat.get("properties", {})
-    return (str(p.get("slug") or p.get("name") or ""), str(p.get("id", "")))
+    return (str(p.get("slug") or p.get("name") or ""),
+            str(p.get("id", "")), str(p.get("number", "")))
+
+
+# --------------------------------------------------------------------------- #
+# Wells: ENS spreadsheet (primary) + legacy shapefile (extras only)
+# --------------------------------------------------------------------------- #
+def well_category(classification: str) -> str:
+    """Bucket an ENS spud classification for the map.
+
+    ``exploration`` -- anything drilled to find or appraise (incl. mixed
+    classes such as "APPRAISAL AND PRODUCTION"); ``development`` -- production,
+    injection, gas storage and observation wells; ``other`` -- non-hydrocarbon
+    holes (salt research, geothermal, ...).
+    """
+    c = (classification or "").upper()
+    if "EXPLORATION" in c or "APPRAISAL" in c:
+        return "exploration"
+    if any(k in c for k in ("PRODUCTION", "INJECTION", "STORAGE", "OBSERVATION")):
+        return "development"
+    return "other"
+
+
+def _well_key(name: str) -> str:
+    return re.sub(r"\s+", " ", str(name or "")).strip().upper()
+
+
+def parse_dms(text: Any, *, what: str = "coordinate") -> float:
+    """``55°48'36,5 "`` -> decimal degrees. Decimal comma; seconds optional."""
+    m = _DMS_RE.match(str(text or ""))
+    if not m:
+        raise C.SourceFormatError(f"{what}: cannot parse DMS value {text!r}")
+    deg, minutes = int(m.group(1)), int(m.group(2))
+    sec = float(f"{m.group(3) or 0}.{m.group(4) or 0}")
+    # Exactly 60 seconds does occur (rounding in the source, e.g. TOSTRUP-5's
+    # 09°24'60,00"); it is unambiguous (= next minute), so accept it.
+    if minutes >= 60 or sec > 60:
+        raise C.SourceFormatError(f"{what}: minutes/seconds out of range in {text!r}")
+    return deg + minutes / 60 + sec / 3600
+
+
+def parse_well_date(text: Any, *, what: str = "date") -> str | None:
+    """``23_03_1977`` (or a real date cell) -> ``1977-03-23``; blank -> None."""
+    if text is None or (isinstance(text, str) and not text.strip()):
+        return None
+    if isinstance(text, datetime):
+        return text.date().isoformat()
+    if isinstance(text, date):
+        return text.isoformat()
+    m = _XLSX_DATE_RE.match(str(text))
+    if not m:
+        raise C.SourceFormatError(f"{what}: unexpected date format {text!r}")
+    try:
+        return date(int(m.group(3)), int(m.group(2)), int(m.group(1))).isoformat()
+    except ValueError as exc:
+        raise C.SourceFormatError(f"{what}: invalid date {text!r} ({exc})") from exc
+
+
+def _parse_released(v: Any) -> bool | None:
+    s = str(v or "").strip().lower()
+    if s in ("y", "yes", "ja", "j"):
+        return True
+    if s in ("n", "no", "nej", "nei"):
+        return False
+    return None
+
+
+def _clean_well_props(props: dict[str, Any], source: str) -> dict[str, Any]:
+    out: dict[str, Any] = {}
+    for k, v in props.items():
+        if isinstance(v, str):
+            v = re.sub(r"\s+", " ", v).strip()
+        if v not in (None, ""):
+            out[k] = v
+    out["category"] = well_category(out.get("classification", ""))
+    out["source"] = source
+    return out
+
+
+def read_wells_xlsx(path: Path, *, precision: int) -> list[dict]:
+    """Parse the ENS "All oil and gas wells" spreadsheet into WGS84 features.
+
+    Raises ``SourceFormatError`` on a missing sheet/column or any row whose
+    coordinates or dates do not parse -- a misplaced well is worse than none.
+    """
+    import openpyxl
+    from pyproj import Transformer
+
+    try:
+        wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    except Exception as exc:  # noqa: BLE001 - zip/xml errors, wrong file type
+        raise C.SourceFormatError(f"{path.name}: not a readable .xlsx ({exc})") from exc
+    try:
+        ws = wb[WELLS_SHEET] if WELLS_SHEET in wb.sheetnames else None
+        rows_iter = None
+        if ws is None:  # tolerate a renamed sheet if the header still matches
+            for cand in wb.worksheets:
+                it = cand.iter_rows(values_only=True)
+                first = next(it, None) or ()
+                if "Well name" in [str(c or "").strip() for c in first]:
+                    ws, rows_iter, header = cand, it, first
+                    break
+        if ws is None:
+            raise C.SourceFormatError(
+                f"{path.name}: no '{WELLS_SHEET}' sheet (sheets: {wb.sheetnames})")
+        if rows_iter is None:
+            rows_iter = ws.iter_rows(values_only=True)
+            header = next(rows_iter, None) or ()
+        cols = [str(c or "").strip() for c in header]
+        missing = [h for h in WELLS_XLSX_COLUMNS if h not in cols]
+        if missing:
+            raise C.SourceFormatError(
+                f"{path.name}: sheet '{ws.title}' lacks column(s) {missing}; got {cols}")
+        idx = {WELLS_XLSX_COLUMNS[h]: cols.index(h) for h in WELLS_XLSX_COLUMNS}
+        rows = list(rows_iter)
+    finally:
+        wb.close()
+
+    to_wgs84 = Transformer.from_crs(WELLS_XLSX_EPSG, WGS84, always_xy=True)
+    features: list[dict] = []
+    seen: set[str] = set()
+    for rowno, row in enumerate(rows, start=2):
+        if not row or all(c in (None, "") for c in row):
+            continue
+        rec = {k: (row[i] if i < len(row) else None) for k, i in idx.items()}
+        name = _well_key(rec["name"])
+        where = f"{path.name} row {rowno} ({name or '?'})"
+        if not name:
+            raise C.SourceFormatError(f"{where}: empty well name")
+        if name in seen:
+            raise C.SourceFormatError(f"{where}: duplicate well name")
+        seen.add(name)
+        lat = parse_dms(rec.pop("_lat"), what=f"{where} latitude")
+        lon = parse_dms(rec.pop("_lon"), what=f"{where} longitude")
+        if not (WELL_LAT_RANGE[0] <= lat <= WELL_LAT_RANGE[1]
+                and WELL_LON_RANGE[0] <= lon <= WELL_LON_RANGE[1]):
+            raise C.SourceFormatError(
+                f"{where}: position {lat:.4f}N {lon:.4f}E is outside Denmark")
+        rec["spud_date"] = parse_well_date(rec["spud_date"], what=f"{where} spud date")
+        rec["comp_date"] = parse_well_date(rec["comp_date"], what=f"{where} completion date")
+        rec["released"] = _parse_released(rec["released"])
+        x, y = to_wgs84.transform(lon, lat)
+        features.append({
+            "type": "Feature",
+            "properties": _clean_well_props(rec, "xlsx"),
+            "geometry": {"type": "Point",
+                         "coordinates": [round(x, precision), round(y, precision)]},
+        })
+    if not features:
+        raise C.SourceFormatError(f"{path.name}: no wells found in sheet '{WELLS_SHEET}'")
+    C.info(f"{path.name}: {len(features)} well(s) read")
+    return features
+
+
+def normalise_shapefile_wells(features: list[dict]) -> list[dict]:
+    """Rename the legacy shapefile's dBASE columns to the shared well schema."""
+    out = []
+    for f in features:
+        src = {k.lower(): v for k, v in f["properties"].items()}
+        props = {new: src.get(old) for old, new in WELLS_SHP_COLUMNS.items()}
+        props["released"] = _parse_released(props.get("released"))
+        out.append({**f, "properties": _clean_well_props(props, "shapefile")})
+    return out
+
+
+def merge_wells(xlsx_wells: list[dict], shp_wells: list[dict]) -> list[dict]:
+    """Spreadsheet wells, plus shapefile wells whose name it does not list."""
+    have = {_well_key(f["properties"]["name"]) for f in xlsx_wells}
+    extras = [f for f in shp_wells if _well_key(f["properties"].get("name")) not in have]
+    if extras:
+        C.info(
+            f"wells: kept {len(extras)} shapefile-only well(s): "
+            + ", ".join(sorted(f["properties"].get("name", "?") for f in extras)))
+    return xlsx_wells + extras
+
+
+def find_wells_xlsx(raw_dir: Path) -> Path | None:
+    hits = sorted(p for p in raw_dir.glob("*.xlsx")
+                  if "well" in p.name.lower() and not p.name.startswith("~$"))
+    if len(hits) > 1:
+        raise C.SourceFormatError(
+            f"several well spreadsheets in {raw_dir}: {[p.name for p in hits]}; keep one")
+    return hits[0] if hits else None
 
 
 # --------------------------------------------------------------------------- #
@@ -348,7 +578,8 @@ def build(
     fields_slugs = _load_field_slugs()
 
     layers = discover_layers(raw_dir)
-    if not layers:
+    wells_xlsx = find_wells_xlsx(raw_dir)
+    if not layers and wells_xlsx is None:
         C.warn(
             f"no shapefiles under {raw_dir} -- nothing to build. Drop the ENS "
             "zip files there (or fetch with --url) and re-run."
@@ -366,13 +597,29 @@ def build(
         )
         collections.setdefault(role, []).extend(feats)
 
+    # Wells always leave in one normalised schema, whichever source(s) exist.
+    sources = {}
+    if "wells" in collections:
+        collections["wells"] = normalise_shapefile_wells(collections["wells"])
+    if wells_xlsx is not None:
+        collections["wells"] = merge_wells(
+            read_wells_xlsx(wells_xlsx, precision=precision),
+            collections.get("wells", []),
+        )
+        sources["wells"] = (
+            "Energistyrelsen (ENS): 'All oil and gas wells' spreadsheet "
+            f"({wells_xlsx.name}) plus shapefile-only wells from the exploration/"
+            "appraisal well shape file; ED50 reprojected to WGS84"
+        )
+
     written: list[Path] = []
     for role, feats in sorted(collections.items()):
         feats.sort(key=_feature_sort_key)
         fc = {
             "type": "FeatureCollection",
             "generated_at": C.utc_now_iso(),
-            "source": "Energistyrelsen (ENS) shape files, reprojected to WGS84",
+            "source": sources.get(
+                role, "Energistyrelsen (ENS) shape files, reprojected to WGS84"),
             "features": feats,
         }
         name = f"{role}{('.' + suffix) if suffix else ''}.geojson"
@@ -410,6 +657,16 @@ def fetch_urls(urls: list[str], raw_dir: Path, *, force: bool, offline: bool) ->
         fetcher.fetch(url, C.safe_filename(url) + ".zip", force=force, binary=True)
 
 
+def fetch_wells_xlsx(raw_dir: Path, *, offline: bool) -> Path:
+    """Re-download the ENS well spreadsheet (always fresh: it is updated in place)."""
+    fetcher = C.Fetcher(cache_dir=raw_dir, offline=offline)
+    body = fetcher.fetch(ENS_WELLS_XLSX_URL, WELLS_XLSX_NAME, force=not offline, binary=True)
+    if not body.startswith(b"PK"):
+        raise C.SourceFormatError(
+            f"{ENS_WELLS_XLSX_URL} did not return an .xlsx (got {body[:20]!r})")
+    return raw_dir / WELLS_XLSX_NAME
+
+
 # --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
@@ -421,6 +678,9 @@ def main(argv: list[str] | None = None) -> int:
                     help=f"where to write GeoJSON (default: {GIS_OUT_DIR})")
     ap.add_argument("--url", action="append", default=[], metavar="URL",
                     help="ENS shapefile zip to download first (repeatable)")
+    ap.add_argument("--fetch-wells", action="store_true",
+                    help=f"download ENS's 'All oil and gas wells' spreadsheet "
+                         f"({ENS_WELLS_XLSX_URL}) into --raw-dir as {WELLS_XLSX_NAME} first")
     ap.add_argument("--force", action="store_true",
                     help="re-download even if the zip is already cached")
     ap.add_argument("--offline", action="store_true",
@@ -437,6 +697,8 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.url:
         fetch_urls(args.url, args.raw_dir, force=args.force, offline=args.offline)
+    if args.fetch_wells:
+        fetch_wells_xlsx(args.raw_dir, offline=args.offline)
 
     written = build(
         raw_dir=args.raw_dir,
