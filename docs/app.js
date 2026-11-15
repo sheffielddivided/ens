@@ -23,7 +23,12 @@
  * remaining reserves per field at 1 January (data/reserves.json, built by
  * scripts/ingest_reserves.py) as a stock, in million barrels of oil
  * equivalent (MMboe), using the same 6.29 bbl/m³ and 1000 Nm³ gas = 1 m³ o.e.
- * factors as the production views. */
+ * factors as the production views.
+ *
+ * The "Brønner" view counts wells per spud year from the map's well layer
+ * (docs/data/gis/wells.geojson, built by scripts/build_gis.py from ENS's
+ * "All oil and gas wells" spreadsheet), stacked by the same three categories
+ * and colours the map uses for its well markers. */
 
 const MEASURE_LABEL = { oil: "Olje", gas: "Gass" };
 const OE_UNIT = "mboepd";
@@ -33,8 +38,16 @@ const MONTHS_NB = ["jan", "feb", "mar", "apr", "mai", "jun", "jul", "aug", "sep"
 const STACK_CAP = 8;             // max individual bands before folding to "Andre valgte"
 const UNKNOWN_COMPANY = "Ukjent";
 const RES_UNIT = "mill. fat o.e.";
+const WELL_UNIT = "antall brønner";
+// category -> [legend label, colour token]; order = stacking order (bottom up).
+// Same tokens as the well markers in docs/map.js, so chart and map agree.
+const WELL_CATS = [
+  ["exploration", "Lete-/avgrensningsbrønner", "--c7"],
+  ["development", "Produksjons-/injeksjonsbrønner", "--c3"],
+  ["other", "Andre (geotermi o.l.)", "--c-other"],
+];
 
-let DATA = null, OWN = null, RES = null, timeChart = null, lastExport = null;
+let DATA = null, OWN = null, RES = null, WELLS = null, timeChart = null, lastExport = null;
 let RANKED = [];                 // all field slugs, biggest first
 let COMPANIES = [];               // all company names, biggest first
 let fieldColor = {};              // slug -> { v: cssVarName } or { h: hex/hsl }
@@ -138,6 +151,8 @@ async function load() {
   const own = await tryFetch("data/ownership.json");
   RES = await tryFetch("data/reserves.json");
   if (!(RES && RES.fields && RES.years)) RES = null;
+  WELLS = await tryFetch("data/gis/wells.geojson");
+  if (!(WELLS && (WELLS.features || []).length)) WELLS = null;
   if (real && real.series && Object.keys(real.series).length) {
     OWN = (own && own.fields) ? own : await tryFetch("data/ownership.sample.json");
     return real;
@@ -246,6 +261,7 @@ function buildControls() {
   if (water) { water.checked = state.showWater; water.addEventListener("change", () => { state.showWater = water.checked; renderTime(); }); }
 
   if (RES) $("reserves-btn").classList.remove("hidden");
+  if (WELLS) $("wells-btn").classList.remove("hidden");
 
   const exportBtn = $("export-btn");
   if (exportBtn) exportBtn.addEventListener("click", exportExcel);
@@ -317,10 +333,10 @@ function buildCompanySelect() {
 // year (it is a handful of 1 January snapshots, not a production series).
 function updateViewControls() {
   const isField = state.view === "field", isCompany = state.view === "company";
-  const isRes = state.view === "reserves";
+  const isRes = state.view === "reserves", isWells = state.view === "wells";
   $("field-label").classList.toggle("hidden", !(isField || isRes));
-  $("res-seg").classList.toggle("hidden", isRes);
-  $("start-year-label").classList.toggle("hidden", isRes);
+  $("res-seg").classList.toggle("hidden", isRes || isWells);
+  $("start-year-label").classList.toggle("hidden", isRes || isWells);
   $("company-label").classList.toggle("hidden", !isCompany);
   $("company-breakdown-seg").classList.toggle("hidden", !isCompany);
   updateWaterVisibility();
@@ -392,6 +408,7 @@ function waterDataset(labels) {
 
 function renderTime() {
   if (state.view === "reserves") return renderReserves();
+  if (state.view === "wells") return renderWells();
   $("time-title").textContent = "Produksjon";
   const allBase = DATA.series._total[state.res].oil || [];
   const base = allBase.filter((p) => periodYear(p.t) >= state.startYearByRes[state.res]);
@@ -670,6 +687,82 @@ function renderReserves() {
   $("time-cap").innerHTML = cap;
   $("time-title").textContent = "Reserver";
   $("time-sub").textContent = `– ${slug ? (displayName[resSlug] || resSlug) : "per felt"} (${RES_UNIT})`;
+}
+
+// --------------------------------------------------------------------------- wells
+// Wells per spud year, stacked by category. Every year from the first to the
+// last spud year gets a bar slot (0 where nothing was drilled) so quiet years
+// read as gaps rather than being squeezed out of the axis. Wells without a
+// spud date cannot be placed on the axis; they are counted in the caption.
+function renderWells() {
+  const surface = css("--surface");
+  const counts = {};          // year -> { category -> n }
+  let undated = 0;
+  WELLS.features.forEach((f) => {
+    const p = f.properties || {};
+    const y = p.spud_date ? +p.spud_date.slice(0, 4) : NaN;
+    if (!Number.isFinite(y)) { undated++; return; }
+    const cat = WELL_CATS.some(([c]) => c === p.category) ? p.category : "other";
+    const row = counts[y] || (counts[y] = {});
+    row[cat] = (row[cat] || 0) + 1;
+  });
+  const ys = Object.keys(counts).map(Number);
+  const first = Math.min(...ys), last = Math.max(...ys);
+  const years = [];
+  for (let y = first; y <= last; y++) years.push(String(y));
+
+  const datasets = WELL_CATS
+    .filter(([cat]) => years.some((y) => counts[y]?.[cat]))
+    .map(([cat, label, token], i) =>
+      ({
+        ...barDS(label, years.map((y) => counts[y]?.[cat] || 0), css(token), i === 0, surface),
+        // ~90 one-year bars: a side border would eat a narrow bar entirely on a
+        // phone, so keep only the top edge (the gap between stacked segments).
+        borderWidth: { top: 1, right: 0, bottom: 0, left: 0 },
+      }));
+
+  lastExport = { unit: WELL_UNIT, sheet: "Brønner", name: "bronner_per_aar", periodLabel: "År (påbegynt)",
+    labels: years.slice(), datasets: datasets.map((d) => ({ label: d.label, data: d.data.slice() })) };
+
+  const cfg = {
+    type: "bar", data: { labels: years, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { display: true, position: "bottom",
+          labels: { boxWidth: 10, boxHeight: 10, usePointStyle: true, pointStyle: "rectRounded", padding: 10 } },
+        tooltip: {
+          filter: (it) => it.parsed.y > 0,
+          callbacks: {
+            title: (it) => `Påbegynt ${it[0].label}`,
+            label: (it) => `${it.dataset.label}: ${it.parsed.y}`,
+            footer: (it) => `Sum: ${it.reduce((a, i2) => a + (i2.parsed.y || 0), 0)} brønner`,
+          },
+        },
+      },
+      scales: {
+        x: { stacked: true, grid: { display: false },
+          ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 12 } },
+        y: { stacked: true, beginAtZero: true, border: { display: false },
+          title: { display: true, text: WELL_UNIT, color: css("--muted") },
+          ticks: { precision: 0 } },
+      },
+    },
+  };
+  if (timeChart) timeChart.destroy();
+  timeChart = new Chart($("timeChart"), cfg);
+
+  const total = WELLS.features.length;
+  let cap = `Antall olje- og gassbrønner etter år boringen startet (${total} brønner, ${first}–${last}), `
+    + "fordelt etter ENS' klassifisering ved boringsstart – den sier ikke nødvendigvis hva brønnen brukes til i dag. "
+    + "Blandingsklasser som «appraisal and production» telles som lete-/avgrensningsbrønner, som på kartet.";
+  if (undated) cap += ` ${undated} brønn${undated === 1 ? "" : "er"} uten startdato er ikke med.`;
+  cap += " Kilde: ENS «All oil and gas wells» (pluss noen få brønner som bare finnes i ENS' brønn-shapefil fra 2019)."
+    + ` Siste år kan være ufullstendig: ENS oppdaterer oversikten med forsinkelse.`;
+  $("time-cap").innerHTML = cap;
+  $("time-title").textContent = "Brønner";
+  $("time-sub").textContent = `– påbegynt per år (${WELL_UNIT})`;
 }
 
 function colorOf(slug) { const c = fieldColor[slug]; return c ? (c.v ? css(c.v) : c.h) : css("--c-other"); }

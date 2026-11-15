@@ -721,6 +721,15 @@ To JS-filer, ingen rammeverk, ingen bundling, lastet direkte som
 - Ingen bygge-/kompileringssteg: filen er den samme koden som kjører i
   nettleseren, uendret.
 
+- **Brønner-visningen** (`renderWells()`): teller `wells.geojson` per
+  startår (`spud_date`), stablet etter `category` i fast rekkefølge
+  (`WELL_CATS`: `--c7` lete/avgrensning, `--c3` produksjon/injeksjon/lager,
+  `--c-other` andre) – samme tokens som brønnmarkørene i `map.js`. Hvert år
+  fra første til siste startår får en stolpe (0 der ingenting ble boret).
+  Kun toppkant som segment-mellomrom (sidekanter ville spist ~3 px brede
+  stolper på mobil). År/måned- og startår-velgeren skjules; eksport via
+  samme `lastExport`-mekanisme.
+
 ### 9.2 `docs/map.js` — feltkart (Leaflet)
 
 - Pakket i en IIFE (linje 19-21) for å unngå globale navnekollisjoner med
