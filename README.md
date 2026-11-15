@@ -270,12 +270,18 @@ felt/Per selskap, veksle måned/år-oppløsning, en valgfri vannproduksjonslinje
 stolpediagram med Chart.js der foreløpige tall er markert i verktøytips og i
 teksten under grafen (ikke en egen visuell stil på selve stolpene), og «sist
 oppdatert» hentet fra dataene. Ren HTML/CSS/JS, ingen byggesteg, norsk UI.
+Visningen **Brønner** viser antall **offshorebrønner** påbegynt per år,
+stablet etter kategori (lete/avgrensning, produksjon/injeksjon/lager), med
+samme farger som brønnlaget i kartet. Landbrønner vises verken i grafen eller
+på kartet (de ligger fortsatt i datafilen). Den leser `data/gis/wells.geojson` (se
+*Brønner* under *Kart (GIS)*) og vises bare når filen finnes.
 
 Ved siden av produksjonsgrafen ligger et Leaflet-kart over feltene (bygget av
 `map.js`), der felt med produksjon og felt uten skilles med hver sin faste
 farge (ikke gradert etter produksjonsvolum), med en alltid synlig
 blokkrutenett-bakgrunn og av/på-knapper i kartpanelets hode for feltnavn,
-letebrønner (på som standard) og produksjonsbrønner (av som standard).
+letebrønner (på som standard) og produksjonsbrønner (av som standard) – kun
+offshorebrønner.
 Kartet deler tema (lyst/mørkt) og databehov med resten av siden.
 
 ## Kart (GIS)
