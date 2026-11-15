@@ -365,9 +365,10 @@ lete-/avgrensningsbrønner som ikke ble felt.
   `well_type`, `licence`, `operator`, `rig`, `spud_date`, `comp_date`,
   `location`, `released` (bool), `category` og `source`, pluss `field` /
   `field_name` for brønner i et felt (se *Brønn → felt*).
-- `category` grupperer ENS sin klassifisering: `exploration` (alt med
-  EXPLORATION/APPRAISAL, også blandingsklasser), `development` (produksjon,
-  injeksjon, gasslager, observasjon) og `other` (geotermi, saltforskning –
+- `category` grupperer ENS sin klassifisering: `development` (produksjon,
+  injeksjon, gasslager, observasjon – **også blandingsklasser** som
+  «APPRAISAL AND PRODUCTION» og «EXPLORATION AND INJECTION»), `exploration`
+  (bare EXPLORATION/APPRAISAL) og `other` (geotermi, saltforskning –
   i praksis bare landbrønner, så kategorien er tom etter offshore-filteret).
 - Uventet format (manglende kolonne, uparsbar koordinat/dato, posisjon
   utenfor Danmark, dublett-navn) gir `SourceFormatError` – ingen brønn

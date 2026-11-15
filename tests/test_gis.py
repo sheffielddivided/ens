@@ -252,15 +252,16 @@ def test_wells_normalised_properties(wells):
 
 @pytest.mark.parametrize("name,cat", [
     ("ADDA-1", "exploration"), ("ADDA-3", "exploration"),
-    ("SOL-1", "development"), ("TSEA-3B", "exploration"),
+    ("SOL-1", "development"), ("TSEA-3B", "development"),   # APPRAISAL AND PRODUCTION
 ])
 def test_wells_category(wells, name, cat):
     assert wells[1][name]["properties"]["category"] == cat
 
 
 @pytest.mark.parametrize("cls,cat", [
-    ("APPRAISAL AND PRODUCTION", "exploration"),
-    ("EXPLORATION AND INJECTION", "exploration"),
+    ("APPRAISAL AND PRODUCTION", "development"),   # mixed: production wins
+    ("EXPLORATION AND INJECTION", "development"),
+    ("APPRAISAL", "exploration"), ("EXPLORATION", "exploration"),
     ("INJECTION", "development"), ("GAS STORAGE", "development"),
     ("OBSERVATION", "development"), ("GEOTERMI", "other"), ("", "other"),
 ])

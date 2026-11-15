@@ -389,16 +389,18 @@ def _feature_sort_key(feat: dict):
 def well_category(classification: str) -> str:
     """Bucket an ENS spud classification for the map.
 
-    ``exploration`` -- anything drilled to find or appraise (incl. mixed
-    classes such as "APPRAISAL AND PRODUCTION"); ``development`` -- production,
-    injection, gas storage and observation wells; ``other`` -- non-hydrocarbon
-    holes (salt research, geothermal, ...).
+    ``development`` -- production, injection, gas storage and observation
+    wells, *including* mixed classes such as "APPRAISAL AND PRODUCTION" or
+    "EXPLORATION AND INJECTION": a well that went on to produce or inject is a
+    development well, whatever it was drilled to test first.
+    ``exploration`` -- wells drilled only to find or appraise.
+    ``other`` -- non-hydrocarbon holes (salt research, geothermal, ...).
     """
     c = (classification or "").upper()
-    if "EXPLORATION" in c or "APPRAISAL" in c:
-        return "exploration"
     if any(k in c for k in ("PRODUCTION", "INJECTION", "STORAGE", "OBSERVATION")):
         return "development"
+    if "EXPLORATION" in c or "APPRAISAL" in c:
+        return "exploration"
     return "other"
 
 

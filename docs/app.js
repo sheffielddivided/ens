@@ -769,7 +769,7 @@ function renderWells() {
   const total = WELLS.features.length;
   let cap = `Antall offshorebrønner (olje og gass) etter år boringen startet (${total} brønner, ${first}–${last}; landbrønner er utelatt), `
     + "fordelt etter ENS' klassifisering ved boringsstart – den sier ikke nødvendigvis hva brønnen brukes til i dag. "
-    + "Blandingsklasser som «appraisal and production» telles som lete-/avgrensningsbrønner, som på kartet.";
+    + "Blandingsklasser som «appraisal and production» telles som produksjonsbrønner, som på kartet.";
   if (undated) cap += ` ${undated} brønn${undated === 1 ? "" : "er"} uten startdato er ikke med.`;
   cap += " Kilde: ENS «All oil and gas wells» (pluss én brønn som bare finnes i ENS' brønn-shapefil fra 2019)."
     + ` Siste år kan være ufullstendig: ENS oppdaterer oversikten med forsinkelse.`;

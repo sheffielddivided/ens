@@ -728,7 +728,9 @@ To JS-filer, ingen rammeverk, ingen bundling, lastet direkte som
 - **Brønner-visningen** (`renderWells()`): teller brønnene i
   `wells.geojson` (bare offshore – filtrert i `build_gis.py`; filteret i
   `load()` er bare en sikring mot en eldre datafil) per startår (`spud_date`), stablet etter `category` i fast rekkefølge
-  (`WELL_CATS`: `--c7` lete/avgrensning, `--c3` produksjon/injeksjon/lager,
+  (`WELL_CATS`: `--c7` lete/avgrensning, `--c3` produksjon/injeksjon/lager –
+  blandingsklasser som «APPRAISAL AND PRODUCTION» regnes som produksjon, se
+  `well_category()`,
   `--c-other` andre) – samme tokens som brønnmarkørene i `map.js`. Hvert år
   fra første til siste startår får en stolpe (0 der ingenting ble boret).
   Kun toppkant som segment-mellomrom (sidekanter ville spist ~3 px brede
