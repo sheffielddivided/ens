@@ -73,18 +73,21 @@ scripts/
   validate.py           # kvalitetskontroll av hele datasettet
   build_gis.py          # ENS-shapefiler → reprojisert, forenklet GeoJSON (kart)
   ingest_ownership.py   # manuell lisensiar-eksport (xlsx) → data/ownership.json
+  ingest_ownership_history.py # kuratert eierhistorikk, kontrollert mot ENS-kildene → data/ownership_history.json
   ingest_reserves.py    # manuelt sammenstilte reserver per felt (xlsx) → data/reserves.json
 data/
   sources/index.json    # alle kjente kilde-URLer + status (pending/ok/failed)
   sources/raw/          # rå nedlastede filer (xlsx/html/pdf), committes for reproduserbarhet
   sources/gis/raw/      # rå ENS-shapefiler (.zip) + brønnregneark (.xlsx), committes
-  sources/licences/     # manuelt vedlikeholdt lisensiar-eksport (xlsx), se ingest_ownership.py
+  sources/licences/     # manuelt vedlikeholdt lisensiar-eksport (xlsx), se ingest_ownership.py,
+                        # kuratert eierhistorikk (ownership_history_curated.json) og raw/ med ENS' endringslister
   sources/reserves/     # manuelt sammenstilte ressursrapporter 2018– (xlsx), se ingest_reserves.py
   yearly.json           # alle årsdata (endelige)
   monthly.json          # alle månedsdata (foreløpige)
   fields.json           # metadata per felt (navn, aliaser, operatør, år-spenn)
   combined.json         # sammenslått tidsserie klar for frontend
   ownership.json        # eierskapsandel per felt/selskap (manuelt vedlikeholdt kilde)
+  ownership_history.json # eierskap per lisens over tid (1999–), med kildegrunnlag per periode
   reserves.json         # reserver per felt per 1. januar, i SI-enheter og mill. fat o.e.
 docs/                   # GitHub Pages-rot
   index.html app.js     # datautforsker (Chart.js) – alltid olje+gass i 1000 fat o.e./dag
@@ -398,6 +401,40 @@ To forenklinger er verdt å kjenne til:
 - Noen felt er relisensiert over tid under mer enn ett lisensnavn med
   forskjellige eierandeler (Hejre, Solsort). Skriptet lar da den **sist
   tildelte** lisensen overstyre – den eldre anses som avløst, ikke tillegg.
+
+### Eierhistorikk
+
+`data/ownership_history.json` gir eierskapet per lisens over tid, fra 1999,
+for lisensene bak feltene med produksjonsdata (DUC/Sole Concession, 7/89
+Syd Arne, 4/95 Nini, 16/98 Cecilie, 7/86+1/90 Lulita, 6/95 Siri, 3/09 Solsort,
+5/06 Ravn). ENS publiserer endringene bare som fritekst – «Amendments»
+(2014–) og en PDF for 1999–2013 – så historikken er kuratert for hånd i
+`data/sources/licences/ownership_history_curated.json`, med de rå kildene i
+`data/sources/licences/raw/` (se README der).
+
+- **Selskaper** har juridisk navn og konsern over tid, så navnebytter og
+  oppkjøp gir egne perioder automatisk. Hvert selskap har også
+  `current_group`: konsernet den samme juridiske enheten hører til i dag
+  (f.eks. DENERCO OIL A/S → BlueNord), som kobler historikken til dagens eiere.
+- **Sikkerhet per periode** (`basis`): `stated` – kilden oppgir andelene;
+  `derived` – regnet ut fra oppgitte andeler og overføringer (forklart i
+  `note`); `unknown` – eierne er kjent, andelene ikke.
+- **Forbehold:** DUC før Nordsøfonden kom inn 9. juli 2012 er utledet
+  forholdsmessig (A.P. Møller 39 %, Shell 46 %, Chevron 15 %) – kilden gir
+  ingen andeler. Nini før 1. november 2000 og Ravn før 1. juli 2010 er
+  `unknown`. Noen navnebytter er bare datert med første oppføring som bruker
+  det nye navnet (`name_basis: attested`).
+
+`scripts/ingest_ownership_history.py` stoler ikke på den kuraterte fila: hvert
+sitat i `evidence` må finnes ordrett i den rå kilden det viser til, hver
+periode må summere til 100 %, og siste periode for hver lisens må stemme med
+dagens andeler i lisensiar-eksporten. Ellers `SourceFormatError`, og ingenting
+skrives. `--check` validerer uten å skrive.
+
+```bash
+python scripts/ingest_ownership_history.py --check
+python scripts/ingest_ownership_history.py
+```
 
 Layer-rollen utledes fra filnavnet; feltnavn uten produksjonsmatch og
 produksjonsfelt uten polygon logges som `WARN` i stedet for å gjettes (f.eks.

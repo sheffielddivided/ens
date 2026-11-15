@@ -1,0 +1,4175 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-15T12:51:12Z",
+  "as_of": "2026-11-15",
+  "sources": {
+    "amendments": "https://ens.dk/en/energy-sources/amendments",
+    "earlier": "https://ens.dk/media/5083/download",
+    "licensees": "https://ens.dk/en/energy-sources/danish-licences-and-licensees"
+  },
+  "note": "Ownership per licence over time, curated from ENS' amendment lists (1999 onwards) and checked against them; see scripts/ingest_ownership_history.py. Shares in percent. basis: stated = given by the source; derived = computed from stated shares and transfers (see note); unknown = owners known, shares not. 'group' is the owning group at the time, 'current_group' the group the same legal entity belongs to today.",
+  "licences": {
+    "sole_concession": {
+      "name": "Sole Concession of 8 July 1962",
+      "licences": [
+        "Sole Concession of 8 July 1962"
+      ],
+      "relinquished": null,
+      "periods": [
+        {
+          "from": "1999-01-01",
+          "to": "2004-08-17",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "sogu",
+              "name": "Shell Olie- og Gasudvinding Danmark B.V.",
+              "name_basis": "stated",
+              "group": "Shell",
+              "current_group": "Shell",
+              "share": 46
+            },
+            {
+              "entity": "maersk",
+              "name": "A.P. Møller - Mærsk A/S and Mærsk Olie og Gas A/S (jointly)",
+              "name_basis": "stated",
+              "group": "A.P. Møller - Mærsk",
+              "current_group": "TotalEnergies",
+              "share": 39
+            },
+            {
+              "entity": "chevron",
+              "name": "Texaco Denmark Inc., Delaware, Branch in Denmark",
+              "name_basis": "stated",
+              "group": "Texaco",
+              "current_group": "TotalEnergies",
+              "share": 15
+            }
+          ],
+          "groups": {
+            "Shell": 46.0,
+            "A.P. Møller - Mærsk": 39.0,
+            "Texaco": 15.0
+          },
+          "note": "The source gives no shares before Nordsøfonden joined DUC on 9 July 2012. Derived by assuming Nordsøfonden's 20 % came pro rata from the three partners: today's 31.2 / 36.8 / 12 % divided by 0.8.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "As of 9 July 2012 the Danish North Sea Fund (Nordsøfonden) has become a partner in DUC in the A.P. Møller - Mærsk Sole Concession of 1962."
+            }
+          ]
+        },
+        {
+          "from": "2004-08-17",
+          "to": "2008-05-22",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "sogu",
+              "name": "Shell Olie- og Gasudvinding Danmark B.V.",
+              "name_basis": "stated",
+              "group": "Shell",
+              "current_group": "Shell",
+              "share": 46
+            },
+            {
+              "entity": "maersk",
+              "name": "A.P. Møller - Mærsk A/S and Mærsk Olie og Gas A/S (jointly)",
+              "name_basis": "stated",
+              "group": "A.P. Møller - Mærsk",
+              "current_group": "TotalEnergies",
+              "share": 39
+            },
+            {
+              "entity": "chevron",
+              "name": "ChevronTexaco Denmark Inc., Delaware, Branch in Denmark",
+              "name_basis": "attested",
+              "group": "Chevron",
+              "current_group": "TotalEnergies",
+              "share": 15
+            }
+          ],
+          "groups": {
+            "Shell": 46.0,
+            "A.P. Møller - Mærsk": 39.0,
+            "Chevron": 15.0
+          },
+          "note": "The source gives no shares before Nordsøfonden joined DUC on 9 July 2012. Derived by assuming Nordsøfonden's 20 % came pro rata from the three partners: today's 31.2 / 36.8 / 12 % divided by 0.8.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "As of 9 July 2012 the Danish North Sea Fund (Nordsøfonden) has become a partner in DUC in the A.P. Møller - Mærsk Sole Concession of 1962."
+            }
+          ]
+        },
+        {
+          "from": "2008-05-22",
+          "to": "2012-07-09",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "sogu",
+              "name": "Shell Olie- og Gasudvinding Danmark B.V.",
+              "name_basis": "stated",
+              "group": "Shell",
+              "current_group": "Shell",
+              "share": 46
+            },
+            {
+              "entity": "maersk",
+              "name": "A.P. Møller - Mærsk A/S and Mærsk Olie og Gas A/S (jointly)",
+              "name_basis": "stated",
+              "group": "A.P. Møller - Mærsk",
+              "current_group": "TotalEnergies",
+              "share": 39
+            },
+            {
+              "entity": "chevron",
+              "name": "Chevron Denmark Inc., Delaware, Branch in Denmark",
+              "name_basis": "attested",
+              "group": "Chevron",
+              "current_group": "TotalEnergies",
+              "share": 15
+            }
+          ],
+          "groups": {
+            "Shell": 46.0,
+            "A.P. Møller - Mærsk": 39.0,
+            "Chevron": 15.0
+          },
+          "note": "The source gives no shares before Nordsøfonden joined DUC on 9 July 2012. Derived by assuming Nordsøfonden's 20 % came pro rata from the three partners: today's 31.2 / 36.8 / 12 % divided by 0.8.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "As of 9 July 2012 the Danish North Sea Fund (Nordsøfonden) has become a partner in DUC in the A.P. Møller - Mærsk Sole Concession of 1962."
+            }
+          ]
+        },
+        {
+          "from": "2012-07-09",
+          "to": "2013-01-15",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "sogu",
+              "name": "Shell Olie- og Gasudvinding Danmark B.V.",
+              "name_basis": "stated",
+              "group": "Shell",
+              "current_group": "Shell",
+              "share": 36.8
+            },
+            {
+              "entity": "maersk",
+              "name": "A.P. Møller - Mærsk A/S and Mærsk Olie og Gas A/S (jointly)",
+              "name_basis": "stated",
+              "group": "A.P. Møller - Mærsk",
+              "current_group": "TotalEnergies",
+              "share": 31.2
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "chevron",
+              "name": "Chevron Denmark Inc., Delaware, Branch in Denmark",
+              "name_basis": "attested",
+              "group": "Chevron",
+              "current_group": "TotalEnergies",
+              "share": 12
+            }
+          ],
+          "groups": {
+            "Shell": 36.8,
+            "A.P. Møller - Mærsk": 31.2,
+            "Nordsøfonden": 20.0,
+            "Chevron": 12.0
+          },
+          "note": "Shell's 36.8 % is stated (2019); the other shares are today's, unchanged by any transfer in the source since Nordsøfonden joined.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "As of 9 July 2012 the Danish North Sea Fund (Nordsøfonden) has become a partner in DUC"
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "With effect from 7 December 2017 A.P. Møller – Mærsk A/S’ share of the Sole Concession of 8 July 1962 has been assigned to Mærsk Olie og Gas A/S. Before the assignment the Concession was held by the two companies jointly."
+            }
+          ]
+        },
+        {
+          "from": "2013-01-15",
+          "to": "2017-12-07",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "sogu",
+              "name": "Shell Olie- og Gasudvinding Danmark B.V.",
+              "name_basis": "stated",
+              "group": "Shell",
+              "current_group": "Shell",
+              "share": 36.8
+            },
+            {
+              "entity": "maersk",
+              "name": "A.P. Møller - Mærsk A/S and Mærsk Olie og Gas A/S (jointly)",
+              "name_basis": "stated",
+              "group": "A.P. Møller - Mærsk",
+              "current_group": "TotalEnergies",
+              "share": 31.2
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "chevron",
+              "name": "Chevron Denmark, Filial af Chevron Denmark Inc., USA",
+              "name_basis": "attested",
+              "group": "Chevron",
+              "current_group": "TotalEnergies",
+              "share": 12
+            }
+          ],
+          "groups": {
+            "Shell": 36.8,
+            "A.P. Møller - Mærsk": 31.2,
+            "Nordsøfonden": 20.0,
+            "Chevron": 12.0
+          },
+          "note": "Shell's 36.8 % is stated (2019); the other shares are today's, unchanged by any transfer in the source since Nordsøfonden joined.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "As of 9 July 2012 the Danish North Sea Fund (Nordsøfonden) has become a partner in DUC"
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "With effect from 7 December 2017 A.P. Møller – Mærsk A/S’ share of the Sole Concession of 8 July 1962 has been assigned to Mærsk Olie og Gas A/S. Before the assignment the Concession was held by the two companies jointly."
+            }
+          ]
+        },
+        {
+          "from": "2017-12-07",
+          "to": "2018-03-08",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "sogu",
+              "name": "Shell Olie- og Gasudvinding Danmark B.V.",
+              "name_basis": "stated",
+              "group": "Shell",
+              "current_group": "Shell",
+              "share": 36.8
+            },
+            {
+              "entity": "maersk",
+              "name": "Mærsk Olie og Gas A/S",
+              "name_basis": "stated",
+              "group": "A.P. Møller - Mærsk",
+              "current_group": "TotalEnergies",
+              "share": 31.2
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "chevron",
+              "name": "Chevron Denmark, Filial af Chevron Denmark Inc., USA",
+              "name_basis": "attested",
+              "group": "Chevron",
+              "current_group": "TotalEnergies",
+              "share": 12
+            }
+          ],
+          "groups": {
+            "Shell": 36.8,
+            "A.P. Møller - Mærsk": 31.2,
+            "Nordsøfonden": 20.0,
+            "Chevron": 12.0
+          },
+          "note": "Shell's 36.8 % is stated (2019); the other shares are today's, unchanged by any transfer in the source since Nordsøfonden joined.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "As of 9 July 2012 the Danish North Sea Fund (Nordsøfonden) has become a partner in DUC"
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "With effect from 7 December 2017 A.P. Møller – Mærsk A/S’ share of the Sole Concession of 8 July 1962 has been assigned to Mærsk Olie og Gas A/S. Before the assignment the Concession was held by the two companies jointly."
+            }
+          ]
+        },
+        {
+          "from": "2018-03-08",
+          "to": "2018-05-02",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "sogu",
+              "name": "Shell Olie- og Gasudvinding Danmark B.V.",
+              "name_basis": "stated",
+              "group": "Shell",
+              "current_group": "Shell",
+              "share": 36.8
+            },
+            {
+              "entity": "maersk",
+              "name": "Mærsk Olie og Gas A/S",
+              "name_basis": "stated",
+              "group": "Total",
+              "current_group": "TotalEnergies",
+              "share": 31.2
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "chevron",
+              "name": "Chevron Denmark, Filial af Chevron Denmark Inc., USA",
+              "name_basis": "attested",
+              "group": "Chevron",
+              "current_group": "TotalEnergies",
+              "share": 12
+            }
+          ],
+          "groups": {
+            "Shell": 36.8,
+            "Total": 31.2,
+            "Nordsøfonden": 20.0,
+            "Chevron": 12.0
+          },
+          "note": "Shell's 36.8 % is stated (2019); the other shares are today's, unchanged by any transfer in the source since Nordsøfonden joined.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "As of 9 July 2012 the Danish North Sea Fund (Nordsøfonden) has become a partner in DUC"
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "With effect from 7 December 2017 A.P. Møller – Mærsk A/S’ share of the Sole Concession of 8 July 1962 has been assigned to Mærsk Olie og Gas A/S. Before the assignment the Concession was held by the two companies jointly."
+            }
+          ]
+        },
+        {
+          "from": "2018-05-02",
+          "to": "2019-04-03",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "sogu",
+              "name": "Shell Olie- og Gasudvinding Danmark B.V.",
+              "name_basis": "stated",
+              "group": "Shell",
+              "current_group": "Shell",
+              "share": 36.8
+            },
+            {
+              "entity": "maersk",
+              "name": "Total E&P Danmark A/S",
+              "name_basis": "stated",
+              "group": "Total",
+              "current_group": "TotalEnergies",
+              "share": 31.2
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "chevron",
+              "name": "Chevron Denmark, Filial af Chevron Denmark Inc., USA",
+              "name_basis": "attested",
+              "group": "Chevron",
+              "current_group": "TotalEnergies",
+              "share": 12
+            }
+          ],
+          "groups": {
+            "Shell": 36.8,
+            "Total": 31.2,
+            "Nordsøfonden": 20.0,
+            "Chevron": 12.0
+          },
+          "note": "Shell's 36.8 % is stated (2019); the other shares are today's, unchanged by any transfer in the source since Nordsøfonden joined.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "As of 9 July 2012 the Danish North Sea Fund (Nordsøfonden) has become a partner in DUC"
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "With effect from 7 December 2017 A.P. Møller – Mærsk A/S’ share of the Sole Concession of 8 July 1962 has been assigned to Mærsk Olie og Gas A/S. Before the assignment the Concession was held by the two companies jointly."
+            }
+          ]
+        },
+        {
+          "from": "2019-04-03",
+          "to": "2019-08-01",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "sogu",
+              "name": "Shell Olie- og Gasudvinding Danmark B.V.",
+              "name_basis": "stated",
+              "group": "Shell",
+              "current_group": "Shell",
+              "share": 36.8
+            },
+            {
+              "entity": "maersk",
+              "name": "Total E&P Danmark A/S",
+              "name_basis": "stated",
+              "group": "Total",
+              "current_group": "TotalEnergies",
+              "share": 31.2
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "chevron",
+              "name": "Total Denmark ASW, Filial af Total Denmark ASW, INC., USA",
+              "name_basis": "stated",
+              "group": "Total",
+              "current_group": "TotalEnergies",
+              "share": 12
+            }
+          ],
+          "groups": {
+            "Total": 43.2,
+            "Shell": 36.8,
+            "Nordsøfonden": 20.0
+          },
+          "note": "Shell's 36.8 % is stated (2019); the other shares are today's, unchanged by any transfer in the source since Nordsøfonden joined.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "As of 9 July 2012 the Danish North Sea Fund (Nordsøfonden) has become a partner in DUC"
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "With effect from 7 December 2017 A.P. Møller – Mærsk A/S’ share of the Sole Concession of 8 July 1962 has been assigned to Mærsk Olie og Gas A/S. Before the assignment the Concession was held by the two companies jointly."
+            }
+          ]
+        },
+        {
+          "from": "2019-08-01",
+          "to": "2021-06-01",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "denerco_oil",
+              "name": "Noreco Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 36.8
+            },
+            {
+              "entity": "maersk",
+              "name": "Total E&P Danmark A/S",
+              "name_basis": "stated",
+              "group": "Total",
+              "current_group": "TotalEnergies",
+              "share": 31.2
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "chevron",
+              "name": "Total Denmark ASW, Filial af Total Denmark ASW, INC., USA",
+              "name_basis": "stated",
+              "group": "Total",
+              "current_group": "TotalEnergies",
+              "share": 12
+            }
+          ],
+          "groups": {
+            "Total": 43.2,
+            "Noreco": 36.8,
+            "Nordsøfonden": 20.0
+          },
+          "note": "The source gives no effective date for the transfer of Shell's share to Noreco; the date of the entry is used.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "an intra-group transfer of SOGU’s 36,8% share of DUC to Noreco Oil Denmark A/S, subsidiary of Altinex AS, has been effectuated"
+            }
+          ]
+        },
+        {
+          "from": "2021-06-01",
+          "to": "2023-06-19",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "denerco_oil",
+              "name": "Noreco Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 36.8
+            },
+            {
+              "entity": "maersk",
+              "name": "TotalEnergies EP Danmark A/S",
+              "name_basis": "stated",
+              "group": "TotalEnergies",
+              "current_group": "TotalEnergies",
+              "share": 31.2
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "chevron",
+              "name": "TotalEnergies Denmark ASW, Filial af TotalEnergies Denmark ASW, INC., USA",
+              "name_basis": "stated",
+              "group": "TotalEnergies",
+              "current_group": "TotalEnergies",
+              "share": 12
+            }
+          ],
+          "groups": {
+            "TotalEnergies": 43.2,
+            "Noreco": 36.8,
+            "Nordsøfonden": 20.0
+          },
+          "note": "The source gives no effective date for the transfer of Shell's share to Noreco; the date of the entry is used.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "an intra-group transfer of SOGU’s 36,8% share of DUC to Noreco Oil Denmark A/S, subsidiary of Altinex AS, has been effectuated"
+            }
+          ]
+        },
+        {
+          "from": "2023-06-19",
+          "to": null,
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "denerco_oil",
+              "name": "BlueNord Energy Denmark A/S",
+              "name_basis": "stated",
+              "group": "BlueNord",
+              "current_group": "BlueNord",
+              "share": 36.8
+            },
+            {
+              "entity": "maersk",
+              "name": "TotalEnergies EP Danmark A/S",
+              "name_basis": "stated",
+              "group": "TotalEnergies",
+              "current_group": "TotalEnergies",
+              "share": 31.2
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "chevron",
+              "name": "TotalEnergies Denmark ASW, Filial af TotalEnergies Denmark ASW, INC., USA",
+              "name_basis": "stated",
+              "group": "TotalEnergies",
+              "current_group": "TotalEnergies",
+              "share": 12
+            }
+          ],
+          "groups": {
+            "TotalEnergies": 43.2,
+            "BlueNord": 36.8,
+            "Nordsøfonden": 20.0
+          },
+          "note": "The source gives no effective date for the transfer of Shell's share to Noreco; the date of the entry is used.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "an intra-group transfer of SOGU’s 36,8% share of DUC to Noreco Oil Denmark A/S, subsidiary of Altinex AS, has been effectuated"
+            }
+          ]
+        }
+      ]
+    },
+    "7/89": {
+      "name": "7/89 (South Arne Field)",
+      "licences": [
+        "7/89"
+      ],
+      "relinquished": null,
+      "periods": [
+        {
+          "from": "1999-01-01",
+          "to": "2006-05-24",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "hess",
+              "name": "Amerada Hess ApS",
+              "name_basis": "stated",
+              "group": "Hess",
+              "current_group": "INEOS",
+              "share": 57.47875
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 34.375
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 6.5625
+            },
+            {
+              "entity": "danoil",
+              "name": "Danoil Exploration A/S",
+              "name_basis": "stated",
+              "group": "Danoil",
+              "current_group": "Danoil",
+              "share": 1.58375
+            }
+          ],
+          "groups": {
+            "Hess": 57.47875,
+            "DONG": 34.375,
+            "Denerco": 6.5625,
+            "Danoil": 1.58375
+          },
+          "note": "Today's shares minus the stated 2011 transfer of Altinex' 6.5625 %. Assumes no change between 1999 and 2011, as the source reports none for the field. The field part's state share (DONG 34.375 %) differs from the exploration part relinquished in 2003 (25 %); the source does not say when it was set.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "6.56250 % share in licence 7/89 to Hess Denmark ApS (+4.03697 %), DONG E&P A/S (+2.41430 %) and Danoil Exploration A/S (+0.11123 %). The assignments have effect as of 1 January 2011."
+            }
+          ]
+        },
+        {
+          "from": "2006-05-24",
+          "to": "2006-09-05",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "hess",
+              "name": "Hess Denmark ApS",
+              "name_basis": "stated",
+              "group": "Hess",
+              "current_group": "INEOS",
+              "share": 57.47875
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 34.375
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 6.5625
+            },
+            {
+              "entity": "danoil",
+              "name": "Danoil Exploration A/S",
+              "name_basis": "stated",
+              "group": "Danoil",
+              "current_group": "Danoil",
+              "share": 1.58375
+            }
+          ],
+          "groups": {
+            "Hess": 57.47875,
+            "DONG": 34.375,
+            "Denerco": 6.5625,
+            "Danoil": 1.58375
+          },
+          "note": "Today's shares minus the stated 2011 transfer of Altinex' 6.5625 %. Assumes no change between 1999 and 2011, as the source reports none for the field. The field part's state share (DONG 34.375 %) differs from the exploration part relinquished in 2003 (25 %); the source does not say when it was set.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "6.56250 % share in licence 7/89 to Hess Denmark ApS (+4.03697 %), DONG E&P A/S (+2.41430 %) and Danoil Exploration A/S (+0.11123 %). The assignments have effect as of 1 January 2011."
+            }
+          ]
+        },
+        {
+          "from": "2006-09-05",
+          "to": "2006-09-15",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "hess",
+              "name": "Hess Denmark ApS",
+              "name_basis": "stated",
+              "group": "Hess",
+              "current_group": "INEOS",
+              "share": 57.47875
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 34.375
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Altinex Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 6.5625
+            },
+            {
+              "entity": "danoil",
+              "name": "Danoil Exploration A/S",
+              "name_basis": "stated",
+              "group": "Danoil",
+              "current_group": "Danoil",
+              "share": 1.58375
+            }
+          ],
+          "groups": {
+            "Hess": 57.47875,
+            "DONG": 34.375,
+            "Altinex": 6.5625,
+            "Danoil": 1.58375
+          },
+          "note": "Today's shares minus the stated 2011 transfer of Altinex' 6.5625 %. Assumes no change between 1999 and 2011, as the source reports none for the field. The field part's state share (DONG 34.375 %) differs from the exploration part relinquished in 2003 (25 %); the source does not say when it was set.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "6.56250 % share in licence 7/89 to Hess Denmark ApS (+4.03697 %), DONG E&P A/S (+2.41430 %) and Danoil Exploration A/S (+0.11123 %). The assignments have effect as of 1 January 2011."
+            }
+          ]
+        },
+        {
+          "from": "2006-09-15",
+          "to": "2011-01-01",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "hess",
+              "name": "Hess Denmark ApS",
+              "name_basis": "stated",
+              "group": "Hess",
+              "current_group": "INEOS",
+              "share": 57.47875
+            },
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 34.375
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Altinex Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 6.5625
+            },
+            {
+              "entity": "danoil",
+              "name": "Danoil Exploration A/S",
+              "name_basis": "stated",
+              "group": "Danoil",
+              "current_group": "Danoil",
+              "share": 1.58375
+            }
+          ],
+          "groups": {
+            "Hess": 57.47875,
+            "DONG": 34.375,
+            "Altinex": 6.5625,
+            "Danoil": 1.58375
+          },
+          "note": "Today's shares minus the stated 2011 transfer of Altinex' 6.5625 %. Assumes no change between 1999 and 2011, as the source reports none for the field. The field part's state share (DONG 34.375 %) differs from the exploration part relinquished in 2003 (25 %); the source does not say when it was set.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "6.56250 % share in licence 7/89 to Hess Denmark ApS (+4.03697 %), DONG E&P A/S (+2.41430 %) and Danoil Exploration A/S (+0.11123 %). The assignments have effect as of 1 January 2011."
+            }
+          ]
+        },
+        {
+          "from": "2011-01-01",
+          "to": "2017-09-29",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "hess",
+              "name": "Hess Denmark ApS",
+              "name_basis": "stated",
+              "group": "Hess",
+              "current_group": "INEOS",
+              "share": 61.51572
+            },
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 36.7893
+            },
+            {
+              "entity": "danoil",
+              "name": "Danoil Exploration A/S",
+              "name_basis": "stated",
+              "group": "Danoil",
+              "current_group": "Danoil",
+              "share": 1.69498
+            }
+          ],
+          "groups": {
+            "Hess": 61.51572,
+            "DONG": 36.7893,
+            "Danoil": 1.69498
+          },
+          "note": "Today's shares to five decimals; the source states them rounded in 2016.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "Hess Danmark ApS (61.5 %), DONG E&P A/S (36.8 %) and Danoil Explorations A/S (1.7 %)"
+            }
+          ]
+        },
+        {
+          "from": "2017-09-29",
+          "to": "2021-08-30",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "hess",
+              "name": "Hess Denmark ApS",
+              "name_basis": "stated",
+              "group": "Hess",
+              "current_group": "INEOS",
+              "share": 61.51572
+            },
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 36.7893
+            },
+            {
+              "entity": "danoil",
+              "name": "Danoil Exploration A/S",
+              "name_basis": "stated",
+              "group": "Danoil",
+              "current_group": "Danoil",
+              "share": 1.69498
+            }
+          ],
+          "groups": {
+            "Hess": 61.51572,
+            "INEOS": 36.7893,
+            "Danoil": 1.69498
+          },
+          "note": "Today's shares to five decimals; the source states them rounded in 2016.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "Hess Danmark ApS (61.5 %), DONG E&P A/S (36.8 %) and Danoil Explorations A/S (1.7 %)"
+            }
+          ]
+        },
+        {
+          "from": "2021-08-30",
+          "to": null,
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "hess",
+              "name": "INEOS Energy (Syd Arne) ApS",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 61.51572
+            },
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 36.7893
+            },
+            {
+              "entity": "danoil",
+              "name": "Danoil Exploration A/S",
+              "name_basis": "stated",
+              "group": "Danoil",
+              "current_group": "Danoil",
+              "share": 1.69498
+            }
+          ],
+          "groups": {
+            "INEOS": 98.30502,
+            "Danoil": 1.69498
+          },
+          "note": "Today's shares to five decimals; the source states them rounded in 2016.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "Hess Danmark ApS (61.5 %), DONG E&P A/S (36.8 %) and Danoil Explorations A/S (1.7 %)"
+            }
+          ]
+        }
+      ]
+    },
+    "4/95": {
+      "name": "4/95 (Nini Field)",
+      "licences": [
+        "4/95"
+      ],
+      "relinquished": null,
+      "periods": [
+        {
+          "from": "1999-01-01",
+          "to": "2000-11-01",
+          "basis": "unknown",
+          "owners": [
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": null
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": null
+            },
+            {
+              "entity": "ewe_nini",
+              "name": "EWE AG",
+              "name_basis": "stated",
+              "group": "EWE",
+              "current_group": "EWE",
+              "share": null
+            },
+            {
+              "entity": "enterprise_nini",
+              "name": "Enterprise Oil Denmark Limited",
+              "name_basis": "stated",
+              "group": "Enterprise Oil",
+              "current_group": "Enterprise Oil",
+              "share": null
+            },
+            {
+              "entity": "mobil",
+              "name": "Mobil Erdgas-Erdöl GmbH",
+              "name_basis": "stated",
+              "group": "Mobil",
+              "current_group": "Mobil",
+              "share": null
+            },
+            {
+              "entity": "rwe",
+              "name": "RWE-DEA AG",
+              "name_basis": "stated",
+              "group": "RWE",
+              "current_group": "Harbour",
+              "share": null
+            }
+          ],
+          "groups": null,
+          "note": "Mobil's and Enterprise Oil's interests were taken over by DONG, Denerco and RWE-DEA on 1 November 2000; the source does not give the shares before that.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "In licence 4/95 the interests held by Mobil Erdgas-Erdöl GmbH and Enterprise Oil Denmark Limited have been taken over by DONG E & P A/S, DENERCO OIL A/S and RWE-DEA AG. The effective date for the transfers is 1 November 2000."
+            }
+          ]
+        },
+        {
+          "from": "2000-11-01",
+          "to": "2001-09-01",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 40
+            },
+            {
+              "entity": "rwe",
+              "name": "RWE-DEA AG",
+              "name_basis": "stated",
+              "group": "RWE",
+              "current_group": "Harbour",
+              "share": 30
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 25
+            },
+            {
+              "entity": "ewe_nini",
+              "name": "EWE AG",
+              "name_basis": "stated",
+              "group": "EWE",
+              "current_group": "EWE",
+              "share": 5
+            }
+          ],
+          "groups": {
+            "DONG": 40.0,
+            "RWE": 30.0,
+            "Denerco": 25.0,
+            "EWE": 5.0
+          },
+          "note": "The 2015 shares before Noreco's exit (DONG 40, DEA 30, Noreco 30), with EWE's 5 % taken back from Denerco (stated transfer of 1 September 2001).",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "In licence 4/95 the 5% interest held by EWE AG has been taken over by DENERCO OIL A/S. The effective date for the transfers is 1 September 2001."
+            }
+          ]
+        },
+        {
+          "from": "2001-09-01",
+          "to": "2006-09-05",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 40
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 30
+            },
+            {
+              "entity": "rwe",
+              "name": "RWE-DEA AG",
+              "name_basis": "stated",
+              "group": "RWE",
+              "current_group": "Harbour",
+              "share": 30
+            }
+          ],
+          "groups": {
+            "DONG": 40.0,
+            "Denerco": 30.0,
+            "RWE": 30.0
+          },
+          "note": "Noreco's 30 % is stated (2015); DONG's and DEA's are their 2015 shares less the stated increases.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of Noreco Oil Denmark A/S' 30 % share in licence 4/95 (Nini Field) to DONG E&P A/S and DEA Deutsche Erdoel AG."
+            }
+          ]
+        },
+        {
+          "from": "2006-09-05",
+          "to": "2006-09-15",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 40
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Altinex Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 30
+            },
+            {
+              "entity": "rwe",
+              "name": "RWE-DEA AG",
+              "name_basis": "stated",
+              "group": "RWE",
+              "current_group": "Harbour",
+              "share": 30
+            }
+          ],
+          "groups": {
+            "DONG": 40.0,
+            "Altinex": 30.0,
+            "RWE": 30.0
+          },
+          "note": "Noreco's 30 % is stated (2015); DONG's and DEA's are their 2015 shares less the stated increases.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of Noreco Oil Denmark A/S' 30 % share in licence 4/95 (Nini Field) to DONG E&P A/S and DEA Deutsche Erdoel AG."
+            }
+          ]
+        },
+        {
+          "from": "2006-09-15",
+          "to": "2012-06-21",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 40
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Altinex Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 30
+            },
+            {
+              "entity": "rwe",
+              "name": "RWE-DEA AG",
+              "name_basis": "stated",
+              "group": "RWE",
+              "current_group": "Harbour",
+              "share": 30
+            }
+          ],
+          "groups": {
+            "DONG": 40.0,
+            "Altinex": 30.0,
+            "RWE": 30.0
+          },
+          "note": "Noreco's 30 % is stated (2015); DONG's and DEA's are their 2015 shares less the stated increases.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of Noreco Oil Denmark A/S' 30 % share in licence 4/95 (Nini Field) to DONG E&P A/S and DEA Deutsche Erdoel AG."
+            }
+          ]
+        },
+        {
+          "from": "2012-06-21",
+          "to": "2015-01-01",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 40
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Noreco Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 30
+            },
+            {
+              "entity": "rwe",
+              "name": "RWE-DEA AG",
+              "name_basis": "stated",
+              "group": "RWE",
+              "current_group": "Harbour",
+              "share": 30
+            }
+          ],
+          "groups": {
+            "DONG": 40.0,
+            "Noreco": 30.0,
+            "RWE": 30.0
+          },
+          "note": "Noreco's 30 % is stated (2015); DONG's and DEA's are their 2015 shares less the stated increases.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of Noreco Oil Denmark A/S' 30 % share in licence 4/95 (Nini Field) to DONG E&P A/S and DEA Deutsche Erdoel AG."
+            }
+          ]
+        },
+        {
+          "from": "2015-01-01",
+          "to": "2015-01-21",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 40
+            },
+            {
+              "entity": "rwe",
+              "name": "DEA Deutsche Erdoel AG",
+              "name_basis": "attested",
+              "group": "DEA",
+              "current_group": "Harbour",
+              "share": 30
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Noreco Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 30
+            }
+          ],
+          "groups": {
+            "DONG": 40.0,
+            "DEA": 30.0,
+            "Noreco": 30.0
+          },
+          "note": "Noreco's 30 % is stated (2015); DONG's and DEA's are their 2015 shares less the stated increases.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of Noreco Oil Denmark A/S' 30 % share in licence 4/95 (Nini Field) to DONG E&P A/S and DEA Deutsche Erdoel AG."
+            }
+          ]
+        },
+        {
+          "from": "2015-01-21",
+          "to": "2017-09-29",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 57.143
+            },
+            {
+              "entity": "rwe",
+              "name": "DEA Deutsche Erdoel AG",
+              "name_basis": "attested",
+              "group": "DEA",
+              "current_group": "Harbour",
+              "share": 42.857
+            }
+          ],
+          "groups": {
+            "DONG": 57.143,
+            "DEA": 42.857
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "DONG E&P A/S' share has thereby increased with 17.143 % to 57.143 % and DEA Deutsche Erdoel AG's share has increased with 12.857 % to 42.857 %. The effective date of the transfers is 21 January 2015."
+            }
+          ]
+        },
+        {
+          "from": "2017-09-29",
+          "to": "2019-05-01",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 57.143
+            },
+            {
+              "entity": "rwe",
+              "name": "DEA Deutsche Erdoel AG",
+              "name_basis": "attested",
+              "group": "DEA",
+              "current_group": "Harbour",
+              "share": 42.857
+            }
+          ],
+          "groups": {
+            "INEOS": 57.143,
+            "DEA": 42.857
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "DONG E&P A/S' share has thereby increased with 17.143 % to 57.143 % and DEA Deutsche Erdoel AG's share has increased with 12.857 % to 42.857 %. The effective date of the transfers is 21 January 2015."
+            }
+          ]
+        },
+        {
+          "from": "2019-05-01",
+          "to": "2020-05-15",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 57.143
+            },
+            {
+              "entity": "rwe",
+              "name": "Wintershall Dea Deutschland AG",
+              "name_basis": "stated",
+              "group": "Wintershall Dea",
+              "current_group": "Harbour",
+              "share": 42.857
+            }
+          ],
+          "groups": {
+            "INEOS": 57.143,
+            "Wintershall Dea": 42.857
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "DONG E&P A/S' share has thereby increased with 17.143 % to 57.143 % and DEA Deutsche Erdoel AG's share has increased with 12.857 % to 42.857 %. The effective date of the transfers is 21 January 2015."
+            }
+          ]
+        },
+        {
+          "from": "2020-05-15",
+          "to": "2020-06-23",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 57.143
+            },
+            {
+              "entity": "rwe",
+              "name": "Wintershall Dea International AG",
+              "name_basis": "stated",
+              "group": "Wintershall Dea",
+              "current_group": "Harbour",
+              "share": 42.857
+            }
+          ],
+          "groups": {
+            "INEOS": 57.143,
+            "Wintershall Dea": 42.857
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "DONG E&P A/S' share has thereby increased with 17.143 % to 57.143 % and DEA Deutsche Erdoel AG's share has increased with 12.857 % to 42.857 %. The effective date of the transfers is 21 January 2015."
+            }
+          ]
+        },
+        {
+          "from": "2020-06-23",
+          "to": "2024-09-03",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 57.143
+            },
+            {
+              "entity": "rwe",
+              "name": "Wintershall Dea International GmbH",
+              "name_basis": "stated",
+              "group": "Wintershall Dea",
+              "current_group": "Harbour",
+              "share": 42.857
+            }
+          ],
+          "groups": {
+            "INEOS": 57.143,
+            "Wintershall Dea": 42.857
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "DONG E&P A/S' share has thereby increased with 17.143 % to 57.143 % and DEA Deutsche Erdoel AG's share has increased with 12.857 % to 42.857 %. The effective date of the transfers is 21 January 2015."
+            }
+          ]
+        },
+        {
+          "from": "2024-09-03",
+          "to": "2025-09-01",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 57.143
+            },
+            {
+              "entity": "rwe",
+              "name": "Wintershall Dea International GmbH",
+              "name_basis": "stated",
+              "group": "Harbour",
+              "current_group": "Harbour",
+              "share": 42.857
+            }
+          ],
+          "groups": {
+            "INEOS": 57.143,
+            "Harbour": 42.857
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "DONG E&P A/S' share has thereby increased with 17.143 % to 57.143 % and DEA Deutsche Erdoel AG's share has increased with 12.857 % to 42.857 %. The effective date of the transfers is 21 January 2015."
+            }
+          ]
+        },
+        {
+          "from": "2025-09-01",
+          "to": null,
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 57.143
+            },
+            {
+              "entity": "rwe",
+              "name": "Harbour Energy International GmbH",
+              "name_basis": "stated",
+              "group": "Harbour",
+              "current_group": "Harbour",
+              "share": 42.857
+            }
+          ],
+          "groups": {
+            "INEOS": 57.143,
+            "Harbour": 42.857
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "DONG E&P A/S' share has thereby increased with 17.143 % to 57.143 % and DEA Deutsche Erdoel AG's share has increased with 12.857 % to 42.857 %. The effective date of the transfers is 21 January 2015."
+            }
+          ]
+        }
+      ]
+    },
+    "16/98": {
+      "name": "16/98 (Cecilie Field)",
+      "licences": [
+        "16/98"
+      ],
+      "relinquished": null,
+      "periods": [
+        {
+          "from": "1998-06-15",
+          "to": "2001-12-31",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 37
+            },
+            {
+              "entity": "ld_energi",
+              "name": "LD Energi A/S",
+              "name_basis": "stated",
+              "group": "LD Energi",
+              "current_group": "BlueNord",
+              "share": 24
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 22
+            },
+            {
+              "entity": "rwe",
+              "name": "RWE-DEA AG",
+              "name_basis": "stated",
+              "group": "RWE",
+              "current_group": "Harbour",
+              "share": 17
+            }
+          ],
+          "groups": {
+            "Denerco": 37.0,
+            "LD Energi": 24.0,
+            "DONG": 22.0,
+            "RWE": 17.0
+          },
+          "note": "All changes before 2015 were back-dated to the grant on 15 June 1998: Denerco's 17 % to RWE-DEA, and 1 % each from LD Energi and Denerco to DONG (20 -> 22 %). LD Energi's 24 % and Denerco's 37 % are stated in 2002 and 2015.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• Licence 16/98: 17%"
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "LD Energi A/S and DENERCO OIL A/S will each transfer a 1% share to DONG."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• 16/98 24.000%"
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of a 37 % share from Noreco Oil Denmark A/S and 24 % share from Noreco Petroleum Denmark A/S to DONG E&P A/S and DEA Deutsche Erdoel AG in licence 16/98."
+            }
+          ]
+        },
+        {
+          "from": "2001-12-31",
+          "to": "2006-09-05",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 37
+            },
+            {
+              "entity": "ld_energi",
+              "name": "DENERCO Petroleum A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 24
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 22
+            },
+            {
+              "entity": "rwe",
+              "name": "RWE-DEA AG",
+              "name_basis": "stated",
+              "group": "RWE",
+              "current_group": "Harbour",
+              "share": 17
+            }
+          ],
+          "groups": {
+            "Denerco": 61.0,
+            "DONG": 22.0,
+            "RWE": 17.0
+          },
+          "note": "All changes before 2015 were back-dated to the grant on 15 June 1998: Denerco's 17 % to RWE-DEA, and 1 % each from LD Energi and Denerco to DONG (20 -> 22 %). LD Energi's 24 % and Denerco's 37 % are stated in 2002 and 2015.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• Licence 16/98: 17%"
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "LD Energi A/S and DENERCO OIL A/S will each transfer a 1% share to DONG."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• 16/98 24.000%"
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of a 37 % share from Noreco Oil Denmark A/S and 24 % share from Noreco Petroleum Denmark A/S to DONG E&P A/S and DEA Deutsche Erdoel AG in licence 16/98."
+            }
+          ]
+        },
+        {
+          "from": "2006-09-05",
+          "to": "2006-09-15",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "denerco_oil",
+              "name": "Altinex Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 37
+            },
+            {
+              "entity": "ld_energi",
+              "name": "Altinex Petroleum Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 24
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 22
+            },
+            {
+              "entity": "rwe",
+              "name": "RWE-DEA AG",
+              "name_basis": "stated",
+              "group": "RWE",
+              "current_group": "Harbour",
+              "share": 17
+            }
+          ],
+          "groups": {
+            "Altinex": 61.0,
+            "DONG": 22.0,
+            "RWE": 17.0
+          },
+          "note": "All changes before 2015 were back-dated to the grant on 15 June 1998: Denerco's 17 % to RWE-DEA, and 1 % each from LD Energi and Denerco to DONG (20 -> 22 %). LD Energi's 24 % and Denerco's 37 % are stated in 2002 and 2015.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• Licence 16/98: 17%"
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "LD Energi A/S and DENERCO OIL A/S will each transfer a 1% share to DONG."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• 16/98 24.000%"
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of a 37 % share from Noreco Oil Denmark A/S and 24 % share from Noreco Petroleum Denmark A/S to DONG E&P A/S and DEA Deutsche Erdoel AG in licence 16/98."
+            }
+          ]
+        },
+        {
+          "from": "2006-09-15",
+          "to": "2012-06-21",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "denerco_oil",
+              "name": "Altinex Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 37
+            },
+            {
+              "entity": "ld_energi",
+              "name": "Altinex Petroleum Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 24
+            },
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 22
+            },
+            {
+              "entity": "rwe",
+              "name": "RWE-DEA AG",
+              "name_basis": "stated",
+              "group": "RWE",
+              "current_group": "Harbour",
+              "share": 17
+            }
+          ],
+          "groups": {
+            "Altinex": 61.0,
+            "DONG": 22.0,
+            "RWE": 17.0
+          },
+          "note": "All changes before 2015 were back-dated to the grant on 15 June 1998: Denerco's 17 % to RWE-DEA, and 1 % each from LD Energi and Denerco to DONG (20 -> 22 %). LD Energi's 24 % and Denerco's 37 % are stated in 2002 and 2015.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• Licence 16/98: 17%"
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "LD Energi A/S and DENERCO OIL A/S will each transfer a 1% share to DONG."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• 16/98 24.000%"
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of a 37 % share from Noreco Oil Denmark A/S and 24 % share from Noreco Petroleum Denmark A/S to DONG E&P A/S and DEA Deutsche Erdoel AG in licence 16/98."
+            }
+          ]
+        },
+        {
+          "from": "2012-06-21",
+          "to": "2015-01-01",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "denerco_oil",
+              "name": "Noreco Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 37
+            },
+            {
+              "entity": "ld_energi",
+              "name": "Noreco Petroleum Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 24
+            },
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 22
+            },
+            {
+              "entity": "rwe",
+              "name": "RWE-DEA AG",
+              "name_basis": "stated",
+              "group": "RWE",
+              "current_group": "Harbour",
+              "share": 17
+            }
+          ],
+          "groups": {
+            "Noreco": 61.0,
+            "DONG": 22.0,
+            "RWE": 17.0
+          },
+          "note": "All changes before 2015 were back-dated to the grant on 15 June 1998: Denerco's 17 % to RWE-DEA, and 1 % each from LD Energi and Denerco to DONG (20 -> 22 %). LD Energi's 24 % and Denerco's 37 % are stated in 2002 and 2015.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• Licence 16/98: 17%"
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "LD Energi A/S and DENERCO OIL A/S will each transfer a 1% share to DONG."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• 16/98 24.000%"
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of a 37 % share from Noreco Oil Denmark A/S and 24 % share from Noreco Petroleum Denmark A/S to DONG E&P A/S and DEA Deutsche Erdoel AG in licence 16/98."
+            }
+          ]
+        },
+        {
+          "from": "2015-01-01",
+          "to": "2015-02-20",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "denerco_oil",
+              "name": "Noreco Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 37
+            },
+            {
+              "entity": "ld_energi",
+              "name": "Noreco Petroleum Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 24
+            },
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 22
+            },
+            {
+              "entity": "rwe",
+              "name": "DEA Deutsche Erdoel AG",
+              "name_basis": "attested",
+              "group": "DEA",
+              "current_group": "Harbour",
+              "share": 17
+            }
+          ],
+          "groups": {
+            "Noreco": 61.0,
+            "DONG": 22.0,
+            "DEA": 17.0
+          },
+          "note": "All changes before 2015 were back-dated to the grant on 15 June 1998: Denerco's 17 % to RWE-DEA, and 1 % each from LD Energi and Denerco to DONG (20 -> 22 %). LD Energi's 24 % and Denerco's 37 % are stated in 2002 and 2015.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• Licence 16/98: 17%"
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "LD Energi A/S and DENERCO OIL A/S will each transfer a 1% share to DONG."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• 16/98 24.000%"
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of a 37 % share from Noreco Oil Denmark A/S and 24 % share from Noreco Petroleum Denmark A/S to DONG E&P A/S and DEA Deutsche Erdoel AG in licence 16/98."
+            }
+          ]
+        },
+        {
+          "from": "2015-02-20",
+          "to": "2017-09-29",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 56.41
+            },
+            {
+              "entity": "rwe",
+              "name": "DEA Deutsche Erdoel AG",
+              "name_basis": "attested",
+              "group": "DEA",
+              "current_group": "Harbour",
+              "share": 43.59
+            }
+          ],
+          "groups": {
+            "DONG": 56.41,
+            "DEA": 43.59
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The transfer gives DONG E&P A/S a 56,410 % share and DEA Deutsche Erdoel AG a 43,590 % share in the licence, as of 20 February 2015."
+            }
+          ]
+        },
+        {
+          "from": "2017-09-29",
+          "to": "2019-05-01",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 56.41
+            },
+            {
+              "entity": "rwe",
+              "name": "DEA Deutsche Erdoel AG",
+              "name_basis": "attested",
+              "group": "DEA",
+              "current_group": "Harbour",
+              "share": 43.59
+            }
+          ],
+          "groups": {
+            "INEOS": 56.41,
+            "DEA": 43.59
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The transfer gives DONG E&P A/S a 56,410 % share and DEA Deutsche Erdoel AG a 43,590 % share in the licence, as of 20 February 2015."
+            }
+          ]
+        },
+        {
+          "from": "2019-05-01",
+          "to": "2020-05-15",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 56.41
+            },
+            {
+              "entity": "rwe",
+              "name": "Wintershall Dea Deutschland AG",
+              "name_basis": "stated",
+              "group": "Wintershall Dea",
+              "current_group": "Harbour",
+              "share": 43.59
+            }
+          ],
+          "groups": {
+            "INEOS": 56.41,
+            "Wintershall Dea": 43.59
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The transfer gives DONG E&P A/S a 56,410 % share and DEA Deutsche Erdoel AG a 43,590 % share in the licence, as of 20 February 2015."
+            }
+          ]
+        },
+        {
+          "from": "2020-05-15",
+          "to": "2020-06-23",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 56.41
+            },
+            {
+              "entity": "rwe",
+              "name": "Wintershall Dea International AG",
+              "name_basis": "stated",
+              "group": "Wintershall Dea",
+              "current_group": "Harbour",
+              "share": 43.59
+            }
+          ],
+          "groups": {
+            "INEOS": 56.41,
+            "Wintershall Dea": 43.59
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The transfer gives DONG E&P A/S a 56,410 % share and DEA Deutsche Erdoel AG a 43,590 % share in the licence, as of 20 February 2015."
+            }
+          ]
+        },
+        {
+          "from": "2020-06-23",
+          "to": "2024-09-03",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 56.41
+            },
+            {
+              "entity": "rwe",
+              "name": "Wintershall Dea International GmbH",
+              "name_basis": "stated",
+              "group": "Wintershall Dea",
+              "current_group": "Harbour",
+              "share": 43.59
+            }
+          ],
+          "groups": {
+            "INEOS": 56.41,
+            "Wintershall Dea": 43.59
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The transfer gives DONG E&P A/S a 56,410 % share and DEA Deutsche Erdoel AG a 43,590 % share in the licence, as of 20 February 2015."
+            }
+          ]
+        },
+        {
+          "from": "2024-09-03",
+          "to": "2025-09-01",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 56.41
+            },
+            {
+              "entity": "rwe",
+              "name": "Wintershall Dea International GmbH",
+              "name_basis": "stated",
+              "group": "Harbour",
+              "current_group": "Harbour",
+              "share": 43.59
+            }
+          ],
+          "groups": {
+            "INEOS": 56.41,
+            "Harbour": 43.59
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The transfer gives DONG E&P A/S a 56,410 % share and DEA Deutsche Erdoel AG a 43,590 % share in the licence, as of 20 February 2015."
+            }
+          ]
+        },
+        {
+          "from": "2025-09-01",
+          "to": null,
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 56.41
+            },
+            {
+              "entity": "rwe",
+              "name": "Harbour Energy International GmbH",
+              "name_basis": "stated",
+              "group": "Harbour",
+              "current_group": "Harbour",
+              "share": 43.59
+            }
+          ],
+          "groups": {
+            "INEOS": 56.41,
+            "Harbour": 43.59
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The transfer gives DONG E&P A/S a 56,410 % share and DEA Deutsche Erdoel AG a 43,590 % share in the licence, as of 20 February 2015."
+            }
+          ]
+        }
+      ]
+    },
+    "lulita": {
+      "name": "7/86 (Lulita part) and 1/90",
+      "licences": [
+        "7/86 (Lulita part)",
+        "1/90"
+      ],
+      "relinquished": null,
+      "periods": [
+        {
+          "from": "1999-01-01",
+          "to": "2001-12-31",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "statoil",
+              "name": "Statoil Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "Statoil",
+              "current_group": "Statoil",
+              "share": 37.642
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 27.184
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 24.26
+            },
+            {
+              "entity": "ld_energi",
+              "name": "LD Energi A/S",
+              "name_basis": "stated",
+              "group": "LD Energi",
+              "current_group": "BlueNord",
+              "share": 10.914
+            }
+          ],
+          "groups": {
+            "Statoil": 37.642,
+            "DONG": 27.184,
+            "Denerco": 24.26,
+            "LD Energi": 10.914
+          },
+          "note": "The 'Before 1 July 2002' column of the 2002 table; the two licences have identical shares. A June 1999 entry says the shares were corrected to fewer decimals.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "In licence 7/86 (Lulita part) and 1/90 the Statoil shares were sold to DONG E&P A/S, DENERCO OIL A/S and DENERCO Petroleum A/S."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "Produktion A/S DONG Efterforskning og 27.184% 43.594%"
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DENERCO OIL A/S 24.260% 38.904%"
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DENERCO Petroleum 10.914% 17.502%"
+            }
+          ]
+        },
+        {
+          "from": "2001-12-31",
+          "to": "2002-07-01",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "statoil",
+              "name": "Statoil Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "Statoil",
+              "current_group": "Statoil",
+              "share": 37.642
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 27.184
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 24.26
+            },
+            {
+              "entity": "ld_energi",
+              "name": "DENERCO Petroleum A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 10.914
+            }
+          ],
+          "groups": {
+            "Statoil": 37.642,
+            "Denerco": 35.174,
+            "DONG": 27.184
+          },
+          "note": "The 'Before 1 July 2002' column of the 2002 table; the two licences have identical shares. A June 1999 entry says the shares were corrected to fewer decimals.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "In licence 7/86 (Lulita part) and 1/90 the Statoil shares were sold to DONG E&P A/S, DENERCO OIL A/S and DENERCO Petroleum A/S."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "Produktion A/S DONG Efterforskning og 27.184% 43.594%"
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DENERCO OIL A/S 24.260% 38.904%"
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DENERCO Petroleum 10.914% 17.502%"
+            }
+          ]
+        },
+        {
+          "from": "2002-07-01",
+          "to": "2006-09-05",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 43.594
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 38.904
+            },
+            {
+              "entity": "ld_energi",
+              "name": "DENERCO Petroleum A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 17.502
+            }
+          ],
+          "groups": {
+            "Denerco": 56.406,
+            "DONG": 43.594
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DENERCO OIL A/S 24.260% 38.904%"
+            }
+          ]
+        },
+        {
+          "from": "2006-09-05",
+          "to": "2006-09-15",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 43.594
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Altinex Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 38.904
+            },
+            {
+              "entity": "ld_energi",
+              "name": "Altinex Petroleum Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 17.502
+            }
+          ],
+          "groups": {
+            "Altinex": 56.406,
+            "DONG": 43.594
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DENERCO OIL A/S 24.260% 38.904%"
+            }
+          ]
+        },
+        {
+          "from": "2006-09-15",
+          "to": "2012-06-21",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 43.594
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Altinex Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 38.904
+            },
+            {
+              "entity": "ld_energi",
+              "name": "Altinex Petroleum Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 17.502
+            }
+          ],
+          "groups": {
+            "Altinex": 56.406,
+            "DONG": 43.594
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DENERCO OIL A/S 24.260% 38.904%"
+            }
+          ]
+        },
+        {
+          "from": "2012-06-21",
+          "to": "2015-04-14",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 43.594
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Noreco Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 38.904
+            },
+            {
+              "entity": "ld_energi",
+              "name": "Noreco Petroleum Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 17.502
+            }
+          ],
+          "groups": {
+            "Noreco": 56.406,
+            "DONG": 43.594
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DENERCO OIL A/S 24.260% 38.904%"
+            }
+          ]
+        },
+        {
+          "from": "2015-04-14",
+          "to": "2015-10-01",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 80
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Noreco Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 10
+            },
+            {
+              "entity": "ld_energi",
+              "name": "Noreco Petroleum Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 10
+            }
+          ],
+          "groups": {
+            "DONG": 80.0,
+            "Noreco": 20.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The transfers gives DONG E&P A/S a 80 % share, Noreco Oil Denmark A/S a 10 % share and Noreco Petroleum Denmark A/S a 10 % share in both licences, as of 14 April 2015"
+            }
+          ]
+        },
+        {
+          "from": "2015-10-01",
+          "to": "2017-09-29",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 43.594
+            },
+            {
+              "entity": "dong_dk",
+              "name": "DONG E&P DK A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 36.406
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Noreco Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 10
+            },
+            {
+              "entity": "ld_energi",
+              "name": "Noreco Petroleum Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 10
+            }
+          ],
+          "groups": {
+            "DONG": 80.0,
+            "Noreco": 20.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of 36.406 % share in licence 7/86 and 1/90 (Lulita) from DONG E&P A/S to DONG E&P DK A/S. DONG E&P A/S' share is thereby reduced to 43,594 % . The effective date of the transfer is 1 October 2015."
+            }
+          ]
+        },
+        {
+          "from": "2017-09-29",
+          "to": "2023-06-19",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 43.594
+            },
+            {
+              "entity": "dong_dk",
+              "name": "INEOS E&P DK A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 36.406
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Noreco Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 10
+            },
+            {
+              "entity": "ld_energi",
+              "name": "Noreco Petroleum Denmark A/S",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "BlueNord",
+              "share": 10
+            }
+          ],
+          "groups": {
+            "INEOS": 80.0,
+            "Noreco": 20.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of 36.406 % share in licence 7/86 and 1/90 (Lulita) from DONG E&P A/S to DONG E&P DK A/S. DONG E&P A/S' share is thereby reduced to 43,594 % . The effective date of the transfer is 1 October 2015."
+            }
+          ]
+        },
+        {
+          "from": "2023-06-19",
+          "to": "2023-06-29",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 43.594
+            },
+            {
+              "entity": "dong_dk",
+              "name": "INEOS E&P DK A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 36.406
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "BlueNord Energy Denmark A/S",
+              "name_basis": "stated",
+              "group": "BlueNord",
+              "current_group": "BlueNord",
+              "share": 10
+            },
+            {
+              "entity": "ld_energi",
+              "name": "BlueNord Gas Denmark A/S",
+              "name_basis": "stated",
+              "group": "BlueNord",
+              "current_group": "BlueNord",
+              "share": 10
+            }
+          ],
+          "groups": {
+            "INEOS": 80.0,
+            "BlueNord": 20.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of 36.406 % share in licence 7/86 and 1/90 (Lulita) from DONG E&P A/S to DONG E&P DK A/S. DONG E&P A/S' share is thereby reduced to 43,594 % . The effective date of the transfer is 1 October 2015."
+            }
+          ]
+        },
+        {
+          "from": "2023-06-29",
+          "to": null,
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 43.594
+            },
+            {
+              "entity": "dong_dk",
+              "name": "INEOS Energy (Lulita) A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 36.406
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "BlueNord Energy Denmark A/S",
+              "name_basis": "stated",
+              "group": "BlueNord",
+              "current_group": "BlueNord",
+              "share": 10
+            },
+            {
+              "entity": "ld_energi",
+              "name": "BlueNord Gas Denmark A/S",
+              "name_basis": "stated",
+              "group": "BlueNord",
+              "current_group": "BlueNord",
+              "share": 10
+            }
+          ],
+          "groups": {
+            "INEOS": 80.0,
+            "BlueNord": 20.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "The Danish Energy Agency has approved the transfer of 36.406 % share in licence 7/86 and 1/90 (Lulita) from DONG E&P A/S to DONG E&P DK A/S. DONG E&P A/S' share is thereby reduced to 43,594 % . The effective date of the transfer is 1 October 2015."
+            }
+          ]
+        }
+      ]
+    },
+    "6/95": {
+      "name": "6/95 (Siri Field)",
+      "licences": [
+        "6/95"
+      ],
+      "relinquished": null,
+      "periods": [
+        {
+          "from": "1999-01-01",
+          "to": "2001-07-01",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "statoil",
+              "name": "Statoil Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "Statoil",
+              "current_group": "Statoil",
+              "share": 40
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 20
+            },
+            {
+              "entity": "siri_uk",
+              "name": "Enterprise Oil Denmark Limited",
+              "name_basis": "stated",
+              "group": "Enterprise Oil",
+              "current_group": "INEOS",
+              "share": 20
+            },
+            {
+              "entity": "phillips",
+              "name": "Phillips (legal name not given in the source)",
+              "name_basis": "stated",
+              "group": "Phillips",
+              "current_group": "Phillips",
+              "share": 12.5
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 7.5
+            }
+          ],
+          "groups": {
+            "Statoil": 40.0,
+            "DONG": 20.0,
+            "Enterprise Oil": 20.0,
+            "Phillips": 12.5,
+            "Denerco": 7.5
+          },
+          "note": "The 'Before 1 July 2002' shares less the stated split of Phillips' 12.5 % on 31 December 2001. Assumes no change between 1999 and 2001, as the source reports none.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The Danish Energy Agency has approved that Phillips' 12.5% share in the Statoil operated licence 6/95 will be taken over by Paladin Oil Denmark Limited, DENERCO OIL A/S and DONG Efterforskning og Produktion A/S from 31 December 2001:"
+            }
+          ]
+        },
+        {
+          "from": "2001-07-01",
+          "to": "2001-09-17",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "statoil",
+              "name": "Statoil Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "Statoil",
+              "current_group": "Statoil",
+              "share": 40
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 20
+            },
+            {
+              "entity": "siri_uk",
+              "name": "Enterprise Oil Denmark Limited",
+              "name_basis": "stated",
+              "group": "Paladin",
+              "current_group": "INEOS",
+              "share": 20
+            },
+            {
+              "entity": "phillips",
+              "name": "Phillips (legal name not given in the source)",
+              "name_basis": "stated",
+              "group": "Phillips",
+              "current_group": "Phillips",
+              "share": 12.5
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 7.5
+            }
+          ],
+          "groups": {
+            "Statoil": 40.0,
+            "DONG": 20.0,
+            "Paladin": 20.0,
+            "Phillips": 12.5,
+            "Denerco": 7.5
+          },
+          "note": "The 'Before 1 July 2002' shares less the stated split of Phillips' 12.5 % on 31 December 2001. Assumes no change between 1999 and 2001, as the source reports none.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The Danish Energy Agency has approved that Phillips' 12.5% share in the Statoil operated licence 6/95 will be taken over by Paladin Oil Denmark Limited, DENERCO OIL A/S and DONG Efterforskning og Produktion A/S from 31 December 2001:"
+            }
+          ]
+        },
+        {
+          "from": "2001-09-17",
+          "to": "2001-12-31",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "statoil",
+              "name": "Statoil Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "Statoil",
+              "current_group": "Statoil",
+              "share": 40
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 20
+            },
+            {
+              "entity": "siri_uk",
+              "name": "Paladin Oil Denmark Limited",
+              "name_basis": "stated",
+              "group": "Paladin",
+              "current_group": "INEOS",
+              "share": 20
+            },
+            {
+              "entity": "phillips",
+              "name": "Phillips (legal name not given in the source)",
+              "name_basis": "stated",
+              "group": "Phillips",
+              "current_group": "Phillips",
+              "share": 12.5
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 7.5
+            }
+          ],
+          "groups": {
+            "Statoil": 40.0,
+            "DONG": 20.0,
+            "Paladin": 20.0,
+            "Phillips": 12.5,
+            "Denerco": 7.5
+          },
+          "note": "The 'Before 1 July 2002' shares less the stated split of Phillips' 12.5 % on 31 December 2001. Assumes no change between 1999 and 2001, as the source reports none.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The Danish Energy Agency has approved that Phillips' 12.5% share in the Statoil operated licence 6/95 will be taken over by Paladin Oil Denmark Limited, DENERCO OIL A/S and DONG Efterforskning og Produktion A/S from 31 December 2001:"
+            }
+          ]
+        },
+        {
+          "from": "2001-12-31",
+          "to": "2002-07-01",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "statoil",
+              "name": "Statoil Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "Statoil",
+              "current_group": "Statoil",
+              "share": 40
+            },
+            {
+              "entity": "siri_uk",
+              "name": "Paladin Oil Denmark Limited",
+              "name_basis": "stated",
+              "group": "Paladin",
+              "current_group": "INEOS",
+              "share": 25.263
+            },
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 23.6185
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 11.1185
+            }
+          ],
+          "groups": {
+            "Statoil": 40.0,
+            "Paladin": 25.263,
+            "DONG": 23.6185,
+            "Denerco": 11.1185
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "• Paladin Oil Denmark Limited +5.2630% • DENERCO OIL A/S +3.6185% • DONG Efterforskning og Produktion A/S +3.6185%"
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "Statoil Efterforskning og 40.0000% 0.000%"
+            }
+          ]
+        },
+        {
+          "from": "2002-07-01",
+          "to": "2006-09-05",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 50
+            },
+            {
+              "entity": "siri_uk",
+              "name": "Paladin Oil Denmark Limited",
+              "name_basis": "stated",
+              "group": "Paladin",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "DENERCO OIL A/S",
+              "name_basis": "stated",
+              "group": "Denerco",
+              "current_group": "BlueNord",
+              "share": 20
+            }
+          ],
+          "groups": {
+            "DONG": 50.0,
+            "Paladin": 30.0,
+            "Denerco": 20.0
+          },
+          "note": "The 2002 table for licence 6/95 has its column headings swapped; the shares are read from the values (Statoil 40 % before, 0 % after).",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "In licence 6/95, which includes the Siri Field, the Statoil share has been taken over by DONG E&P A/S, Paladin Oil Denmark Limited and DENERCO OIL A/S."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DONG Efterforskning og 23.6185% 50.000%"
+            }
+          ]
+        },
+        {
+          "from": "2006-09-05",
+          "to": "2006-09-15",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG Efterforskning og Produktion A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 50
+            },
+            {
+              "entity": "siri_uk",
+              "name": "Paladin Oil Denmark Limited",
+              "name_basis": "stated",
+              "group": "Paladin",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Altinex Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 20
+            }
+          ],
+          "groups": {
+            "DONG": 50.0,
+            "Paladin": 30.0,
+            "Altinex": 20.0
+          },
+          "note": "The 2002 table for licence 6/95 has its column headings swapped; the shares are read from the values (Statoil 40 % before, 0 % after).",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "In licence 6/95, which includes the Siri Field, the Statoil share has been taken over by DONG E&P A/S, Paladin Oil Denmark Limited and DENERCO OIL A/S."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DONG Efterforskning og 23.6185% 50.000%"
+            }
+          ]
+        },
+        {
+          "from": "2006-09-15",
+          "to": "2008-01-01",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 50
+            },
+            {
+              "entity": "siri_uk",
+              "name": "Paladin Oil Denmark Limited",
+              "name_basis": "stated",
+              "group": "Paladin",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Altinex Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 20
+            }
+          ],
+          "groups": {
+            "DONG": 50.0,
+            "Paladin": 30.0,
+            "Altinex": 20.0
+          },
+          "note": "The 2002 table for licence 6/95 has its column headings swapped; the shares are read from the values (Statoil 40 % before, 0 % after).",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "In licence 6/95, which includes the Siri Field, the Statoil share has been taken over by DONG E&P A/S, Paladin Oil Denmark Limited and DENERCO OIL A/S."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DONG Efterforskning og 23.6185% 50.000%"
+            }
+          ]
+        },
+        {
+          "from": "2008-01-01",
+          "to": "2008-06-19",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 50
+            },
+            {
+              "entity": "siri_uk",
+              "name": "Talisman Oil Denmark Limited",
+              "name_basis": "attested",
+              "group": "Noreco",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Altinex Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 20
+            }
+          ],
+          "groups": {
+            "DONG": 50.0,
+            "Noreco": 30.0,
+            "Altinex": 20.0
+          },
+          "note": "The 2002 table for licence 6/95 has its column headings swapped; the shares are read from the values (Statoil 40 % before, 0 % after).",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "In licence 6/95, which includes the Siri Field, the Statoil share has been taken over by DONG E&P A/S, Paladin Oil Denmark Limited and DENERCO OIL A/S."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DONG Efterforskning og 23.6185% 50.000%"
+            }
+          ]
+        },
+        {
+          "from": "2008-06-19",
+          "to": "2011-06-30",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 50
+            },
+            {
+              "entity": "siri_uk",
+              "name": "Siri (UK) Limited",
+              "name_basis": "stated",
+              "group": "Noreco",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "denerco_oil",
+              "name": "Altinex Oil Denmark A/S",
+              "name_basis": "stated",
+              "group": "Altinex",
+              "current_group": "BlueNord",
+              "share": 20
+            }
+          ],
+          "groups": {
+            "DONG": 50.0,
+            "Noreco": 30.0,
+            "Altinex": 20.0
+          },
+          "note": "The 2002 table for licence 6/95 has its column headings swapped; the shares are read from the values (Statoil 40 % before, 0 % after).",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "In licence 6/95, which includes the Siri Field, the Statoil share has been taken over by DONG E&P A/S, Paladin Oil Denmark Limited and DENERCO OIL A/S."
+            },
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "DONG Efterforskning og 23.6185% 50.000%"
+            }
+          ]
+        },
+        {
+          "from": "2011-06-30",
+          "to": "2011-12-21",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 70
+            },
+            {
+              "entity": "siri_uk",
+              "name": "Siri (UK) Limited",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 30
+            }
+          ],
+          "groups": {
+            "DONG": 100.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "On 20 December 2011 the Danish Energy Agency approved the transfer of Altinex Oil Denmark A/S’s 20 % share in licence 6/95 to DONG E&P A/S and DONG E&P A/S’s acquisition of Siri (UK) Limited, which held a share of 30 % in the licence. The effective date of the transfers is 30 June 2011."
+            }
+          ]
+        },
+        {
+          "from": "2011-12-21",
+          "to": "2017-09-29",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 70
+            },
+            {
+              "entity": "siri_uk",
+              "name": "DONG E&P (Siri) UK Limited",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 30
+            }
+          ],
+          "groups": {
+            "DONG": 100.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "On 20 December 2011 the Danish Energy Agency approved the transfer of Altinex Oil Denmark A/S’s 20 % share in licence 6/95 to DONG E&P A/S and DONG E&P A/S’s acquisition of Siri (UK) Limited, which held a share of 30 % in the licence. The effective date of the transfers is 30 June 2011."
+            }
+          ]
+        },
+        {
+          "from": "2017-09-29",
+          "to": "2017-10-12",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 70
+            },
+            {
+              "entity": "siri_uk",
+              "name": "DONG E&P (Siri) UK Limited",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 30
+            }
+          ],
+          "groups": {
+            "INEOS": 100.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "On 20 December 2011 the Danish Energy Agency approved the transfer of Altinex Oil Denmark A/S’s 20 % share in licence 6/95 to DONG E&P A/S and DONG E&P A/S’s acquisition of Siri (UK) Limited, which held a share of 30 % in the licence. The effective date of the transfers is 30 June 2011."
+            }
+          ]
+        },
+        {
+          "from": "2017-10-12",
+          "to": null,
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 70
+            },
+            {
+              "entity": "siri_uk",
+              "name": "INEOS E&P Siri (UK) Limited",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 30
+            }
+          ],
+          "groups": {
+            "INEOS": 100.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "On 20 December 2011 the Danish Energy Agency approved the transfer of Altinex Oil Denmark A/S’s 20 % share in licence 6/95 to DONG E&P A/S and DONG E&P A/S’s acquisition of Siri (UK) Limited, which held a share of 30 % in the licence. The effective date of the transfers is 30 June 2011."
+            }
+          ]
+        }
+      ]
+    },
+    "3/09": {
+      "name": "3/09 (Solsort Field Delineation)",
+      "licences": [
+        "3/09"
+      ],
+      "relinquished": null,
+      "periods": [
+        {
+          "from": "2009-06-29",
+          "to": "2010-06-01",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 50
+            },
+            {
+              "entity": "bayerngas_dk",
+              "name": "Bayerngas Danmark ApS",
+              "name_basis": "stated",
+              "group": "Bayerngas",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            }
+          ],
+          "groups": {
+            "DONG": 50.0,
+            "Bayerngas": 30.0,
+            "Nordsøfonden": 20.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "On 29 June 2009 the Minister of Climate and Energy granted a new licence - 3/09 - under a neighbouring block procedure. The licence was granted to DONG E&P A/S (50 %), Bayerngas Danmark ApS (30 %) and Nordsøfonden (20 %)."
+            }
+          ]
+        },
+        {
+          "from": "2010-06-01",
+          "to": "2017-09-29",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "DONG E&P A/S",
+              "name_basis": "stated",
+              "group": "DONG",
+              "current_group": "INEOS",
+              "share": 35
+            },
+            {
+              "entity": "bayerngas_dk",
+              "name": "Bayerngas Danmark ApS",
+              "name_basis": "stated",
+              "group": "Bayerngas",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "vng",
+              "name": "VNG Danmark ApS",
+              "name_basis": "stated",
+              "group": "VNG",
+              "current_group": "Danoil",
+              "share": 15
+            }
+          ],
+          "groups": {
+            "DONG": 35.0,
+            "Bayerngas": 30.0,
+            "Nordsøfonden": 20.0,
+            "VNG": 15.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The Danish Energy Agency has approved the transfer of a 15 pct. share in licence 4/98 and in licence 3/09 from DONG E&P A/S to VNG Danmark ApS. DONG E&P A/S's share of the licences is thereby reduced from 50 pct. to 35 pct. The effective date of the transfers is 1 June 2010."
+            }
+          ]
+        },
+        {
+          "from": "2017-09-29",
+          "to": "2017-12-06",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 35
+            },
+            {
+              "entity": "bayerngas_dk",
+              "name": "Bayerngas Danmark ApS",
+              "name_basis": "stated",
+              "group": "Bayerngas",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "vng",
+              "name": "VNG Danmark ApS",
+              "name_basis": "stated",
+              "group": "VNG",
+              "current_group": "Danoil",
+              "share": 15
+            }
+          ],
+          "groups": {
+            "INEOS": 35.0,
+            "Bayerngas": 30.0,
+            "Nordsøfonden": 20.0,
+            "VNG": 15.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The Danish Energy Agency has approved the transfer of a 15 pct. share in licence 4/98 and in licence 3/09 from DONG E&P A/S to VNG Danmark ApS. DONG E&P A/S's share of the licences is thereby reduced from 50 pct. to 35 pct. The effective date of the transfers is 1 June 2010."
+            }
+          ]
+        },
+        {
+          "from": "2017-12-06",
+          "to": "2017-12-08",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 35
+            },
+            {
+              "entity": "bayerngas_dk",
+              "name": "Bayerngas Danmark ApS",
+              "name_basis": "stated",
+              "group": "Spirit Energy",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "vng",
+              "name": "VNG Danmark ApS",
+              "name_basis": "stated",
+              "group": "VNG",
+              "current_group": "Danoil",
+              "share": 15
+            }
+          ],
+          "groups": {
+            "INEOS": 35.0,
+            "Spirit Energy": 30.0,
+            "Nordsøfonden": 20.0,
+            "VNG": 15.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The Danish Energy Agency has approved the transfer of a 15 pct. share in licence 4/98 and in licence 3/09 from DONG E&P A/S to VNG Danmark ApS. DONG E&P A/S's share of the licences is thereby reduced from 50 pct. to 35 pct. The effective date of the transfers is 1 June 2010."
+            }
+          ]
+        },
+        {
+          "from": "2017-12-08",
+          "to": "2018-09-28",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 35
+            },
+            {
+              "entity": "bayerngas_dk",
+              "name": "Spirit Energy Danmark ApS",
+              "name_basis": "stated",
+              "group": "Spirit Energy",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "vng",
+              "name": "VNG Danmark ApS",
+              "name_basis": "stated",
+              "group": "VNG",
+              "current_group": "Danoil",
+              "share": 15
+            }
+          ],
+          "groups": {
+            "INEOS": 35.0,
+            "Spirit Energy": 30.0,
+            "Nordsøfonden": 20.0,
+            "VNG": 15.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The Danish Energy Agency has approved the transfer of a 15 pct. share in licence 4/98 and in licence 3/09 from DONG E&P A/S to VNG Danmark ApS. DONG E&P A/S's share of the licences is thereby reduced from 50 pct. to 35 pct. The effective date of the transfers is 1 June 2010."
+            }
+          ]
+        },
+        {
+          "from": "2018-09-28",
+          "to": "2020-11-19",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 35
+            },
+            {
+              "entity": "bayerngas_dk",
+              "name": "Spirit Energy Danmark ApS",
+              "name_basis": "stated",
+              "group": "Spirit Energy",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "vng",
+              "name": "Neptune Energy Danmark ApS",
+              "name_basis": "stated",
+              "group": "Neptune Energy",
+              "current_group": "Danoil",
+              "share": 15
+            }
+          ],
+          "groups": {
+            "INEOS": 35.0,
+            "Spirit Energy": 30.0,
+            "Nordsøfonden": 20.0,
+            "Neptune Energy": 15.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The Danish Energy Agency has approved the transfer of a 15 pct. share in licence 4/98 and in licence 3/09 from DONG E&P A/S to VNG Danmark ApS. DONG E&P A/S's share of the licences is thereby reduced from 50 pct. to 35 pct. The effective date of the transfers is 1 June 2010."
+            }
+          ]
+        },
+        {
+          "from": "2020-11-19",
+          "to": "2021-10-01",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 35
+            },
+            {
+              "entity": "bayerngas_dk",
+              "name": "INEOS E&P (Petroleum Denmark) ApS",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "vng",
+              "name": "Neptune Energy Danmark ApS",
+              "name_basis": "stated",
+              "group": "Neptune Energy",
+              "current_group": "Danoil",
+              "share": 15
+            }
+          ],
+          "groups": {
+            "INEOS": 65.0,
+            "Nordsøfonden": 20.0,
+            "Neptune Energy": 15.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The Danish Energy Agency has approved the transfer of a 15 pct. share in licence 4/98 and in licence 3/09 from DONG E&P A/S to VNG Danmark ApS. DONG E&P A/S's share of the licences is thereby reduced from 50 pct. to 35 pct. The effective date of the transfers is 1 June 2010."
+            }
+          ]
+        },
+        {
+          "from": "2021-10-01",
+          "to": null,
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "dong",
+              "name": "INEOS E&P A/S",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 35
+            },
+            {
+              "entity": "bayerngas_dk",
+              "name": "INEOS E&P (Petroleum Denmark) ApS",
+              "name_basis": "stated",
+              "group": "INEOS",
+              "current_group": "INEOS",
+              "share": 30
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "vng",
+              "name": "Danoil II ApS",
+              "name_basis": "stated",
+              "group": "Danoil",
+              "current_group": "Danoil",
+              "share": 15
+            }
+          ],
+          "groups": {
+            "INEOS": 65.0,
+            "Nordsøfonden": 20.0,
+            "Danoil": 15.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The Danish Energy Agency has approved the transfer of a 15 pct. share in licence 4/98 and in licence 3/09 from DONG E&P A/S to VNG Danmark ApS. DONG E&P A/S's share of the licences is thereby reduced from 50 pct. to 35 pct. The effective date of the transfers is 1 June 2010."
+            }
+          ]
+        }
+      ]
+    },
+    "5/06": {
+      "name": "5/06 (Ravn)",
+      "licences": [
+        "5/06"
+      ],
+      "relinquished": "2025-12-01",
+      "periods": [
+        {
+          "from": "2006-05-22",
+          "to": "2009-07-08",
+          "basis": "unknown",
+          "owners": [
+            {
+              "entity": "ewe_vertrieb",
+              "name": "EWE Aktiengesellschaft",
+              "name_basis": "stated",
+              "group": "EWE",
+              "current_group": "EWE",
+              "share": null
+            },
+            {
+              "entity": "bayerngas_pet",
+              "name": "Saga Petroleum Danmark AS",
+              "name_basis": "stated",
+              "group": "Saga Petroleum",
+              "current_group": "Bayerngas",
+              "share": null
+            },
+            {
+              "entity": "wintershall",
+              "name": "Wintershall Noordzee B.V.",
+              "name_basis": "stated",
+              "group": "Wintershall",
+              "current_group": "Wintershall",
+              "share": null
+            }
+          ],
+          "groups": null,
+          "note": "The source names Wintershall, Saga/Bayerngas and EWE as licensees but does not give the shares, or who held the state participation, before EWE's transfer to its subsidiary on 1 July 2010.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The affiliate participates in the following licences: 5/98, 1/06, 4/06, 5/06 and 6/06."
+            }
+          ]
+        },
+        {
+          "from": "2009-07-08",
+          "to": "2010-07-01",
+          "basis": "unknown",
+          "owners": [
+            {
+              "entity": "bayerngas_pet",
+              "name": "Bayerngas Petroleum Danmark AS",
+              "name_basis": "stated",
+              "group": "Bayerngas",
+              "current_group": "Bayerngas",
+              "share": null
+            },
+            {
+              "entity": "ewe_vertrieb",
+              "name": "EWE Aktiengesellschaft",
+              "name_basis": "stated",
+              "group": "EWE",
+              "current_group": "EWE",
+              "share": null
+            },
+            {
+              "entity": "wintershall",
+              "name": "Wintershall Noordzee B.V.",
+              "name_basis": "stated",
+              "group": "Wintershall",
+              "current_group": "Wintershall",
+              "share": null
+            }
+          ],
+          "groups": null,
+          "note": "The source names Wintershall, Saga/Bayerngas and EWE as licensees but does not give the shares, or who held the state participation, before EWE's transfer to its subsidiary on 1 July 2010.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The affiliate participates in the following licences: 5/98, 1/06, 4/06, 5/06 and 6/06."
+            }
+          ]
+        },
+        {
+          "from": "2010-07-01",
+          "to": "2012-08-30",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "wintershall",
+              "name": "Wintershall Noordzee B.V.",
+              "name_basis": "stated",
+              "group": "Wintershall",
+              "current_group": "Wintershall",
+              "share": 35
+            },
+            {
+              "entity": "bayerngas_pet",
+              "name": "Bayerngas Petroleum Danmark AS",
+              "name_basis": "stated",
+              "group": "Bayerngas",
+              "current_group": "Bayerngas",
+              "share": 30
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "ewe_vertrieb",
+              "name": "EWE ENERGIE AG",
+              "name_basis": "stated",
+              "group": "EWE",
+              "current_group": "EWE",
+              "share": 15
+            }
+          ],
+          "groups": {
+            "Wintershall": 35.0,
+            "Bayerngas": 30.0,
+            "Nordsøfonden": 20.0,
+            "EWE": 15.0
+          },
+          "note": "The stated 2013 result (Wintershall 80 %) less the stated transfers of Bayerngas' 30 % and EWE's 15 %; Nordsøfonden's 20 % is the remainder.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The Danish Energy Agency has approved the transfer of Bayerngas Petroleum Danmark A/S' share of 30 % and EWE Vertrieb GmbH's share of 15 % in licence 5/06 to Wintershall Noordzee B.V."
+            }
+          ]
+        },
+        {
+          "from": "2012-08-30",
+          "to": "2013-10-22",
+          "basis": "derived",
+          "owners": [
+            {
+              "entity": "wintershall",
+              "name": "Wintershall Noordzee B.V.",
+              "name_basis": "stated",
+              "group": "Wintershall",
+              "current_group": "Wintershall",
+              "share": 35
+            },
+            {
+              "entity": "bayerngas_pet",
+              "name": "Bayerngas Petroleum Danmark AS",
+              "name_basis": "stated",
+              "group": "Bayerngas",
+              "current_group": "Bayerngas",
+              "share": 30
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            },
+            {
+              "entity": "ewe_vertrieb",
+              "name": "EWE Vertrieb GmbH",
+              "name_basis": "stated",
+              "group": "EWE",
+              "current_group": "EWE",
+              "share": 15
+            }
+          ],
+          "groups": {
+            "Wintershall": 35.0,
+            "Bayerngas": 30.0,
+            "Nordsøfonden": 20.0,
+            "EWE": 15.0
+          },
+          "note": "The stated 2013 result (Wintershall 80 %) less the stated transfers of Bayerngas' 30 % and EWE's 15 %; Nordsøfonden's 20 % is the remainder.",
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The Danish Energy Agency has approved the transfer of Bayerngas Petroleum Danmark A/S' share of 30 % and EWE Vertrieb GmbH's share of 15 % in licence 5/06 to Wintershall Noordzee B.V."
+            }
+          ]
+        },
+        {
+          "from": "2013-10-22",
+          "to": "2014-01-02",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "wintershall",
+              "name": "Wintershall Noordzee B.V.",
+              "name_basis": "stated",
+              "group": "Wintershall",
+              "current_group": "Wintershall",
+              "share": 80
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 20
+            }
+          ],
+          "groups": {
+            "Wintershall": 80.0,
+            "Nordsøfonden": 20.0
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/media/5083/download",
+              "quote": "The transfer gives Wintershall Noordzee B.V. a 80 % share in the licence, as of 22 October 2013."
+            }
+          ]
+        },
+        {
+          "from": "2014-01-02",
+          "to": "2025-12-01",
+          "basis": "stated",
+          "owners": [
+            {
+              "entity": "wintershall",
+              "name": "Wintershall Noordzee B.V.",
+              "name_basis": "stated",
+              "group": "Wintershall",
+              "current_group": "Wintershall",
+              "share": 63.64
+            },
+            {
+              "entity": "nsf",
+              "name": "Nordsøfonden",
+              "name_basis": "stated",
+              "group": "Nordsøfonden",
+              "current_group": "Nordsøfonden",
+              "share": 36.36
+            }
+          ],
+          "groups": {
+            "Wintershall": 63.64,
+            "Nordsøfonden": 36.36
+          },
+          "note": null,
+          "evidence": [
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "Nordsøfondens share in the licence thereby increased to 36.36 % whereas Wintershall share decreased to 63.64 %. The effective date of the transfer was 2 January 2014."
+            },
+            {
+              "source": "https://ens.dk/en/energy-sources/amendments",
+              "quote": "Licences 5/06 and 2/16 covering the Ravn field and Greater Ravn, were relinquished with effect from 1 December 2025."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "fields": {
+    "cecilie": [
+      {
+        "licence": "16/98",
+        "from": null,
+        "to": null
+      }
+    ],
+    "dagmar": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "dan": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "gorm": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "halfdan": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "harald": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "kraka": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "lulita": [
+      {
+        "licence": "lulita",
+        "from": null,
+        "to": null
+      }
+    ],
+    "nini": [
+      {
+        "licence": "4/95",
+        "from": null,
+        "to": null
+      }
+    ],
+    "ravn": [
+      {
+        "licence": "5/06",
+        "from": null,
+        "to": null
+      }
+    ],
+    "regnar": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "roar": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "rolf": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "siri": [
+      {
+        "licence": "6/95",
+        "from": null,
+        "to": null
+      }
+    ],
+    "skjold": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "solsort": [
+      {
+        "licence": "3/09",
+        "from": null,
+        "to": null
+      }
+    ],
+    "svend": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "syd_arne": [
+      {
+        "licence": "7/89",
+        "from": null,
+        "to": null
+      }
+    ],
+    "tyra": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "tyra_se": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ],
+    "valdemar": [
+      {
+        "licence": "sole_concession",
+        "from": null,
+        "to": null
+      }
+    ]
+  }
+}
