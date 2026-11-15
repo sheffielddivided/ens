@@ -721,8 +721,9 @@ To JS-filer, ingen rammeverk, ingen bundling, lastet direkte som
 - Ingen bygge-/kompileringssteg: filen er den samme koden som kjører i
   nettleseren, uendret.
 
-- **Brønner-visningen** (`renderWells()`): teller `wells.geojson` per
-  startår (`spud_date`), stablet etter `category` i fast rekkefølge
+- **Brønner-visningen** (`renderWells()`): teller offshorebrønnene i
+  `wells.geojson` (landbrønner filtreres bort i `load()`, `location !==
+  "OFFSHORE"`) per startår (`spud_date`), stablet etter `category` i fast rekkefølge
   (`WELL_CATS`: `--c7` lete/avgrensning, `--c3` produksjon/injeksjon/lager,
   `--c-other` andre) – samme tokens som brønnmarkørene i `map.js`. Hvert år
   fra første til siste startår får en stolpe (0 der ingenting ble boret).
@@ -738,7 +739,8 @@ To JS-filer, ingen rammeverk, ingen bundling, lastet direkte som
   farge etter `category`, i to `layerGroup`-er styrt av avkrysningsboksene
   `#show-exp-wells` (lete/avgrensning + «annen», på) og `#show-dev-wells`
   (produksjon/injeksjon/lager, av – ~500 punkter rundt plattformene ville
-  dekket feltene). Lastes etter feltlaget så punktene ligger øverst; laget er
+  dekket feltene). Kun offshorebrønner tegnes (`location === "OFFSHORE"`);
+  landbrønnene blir liggende i datafilen. Lastes etter feltlaget så punktene ligger øverst; laget er
   valgfritt (mangler `wells.geojson`, vises kartet uten).
 - Basiskart: **OpenStreetMap** (ikke en nøkkel-krevende tjeneste) — mørkt
   tema simuleres med et **CSS-filter** på flisene

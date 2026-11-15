@@ -13,7 +13,8 @@
  * overlaid Leaflet control. So do the two well toggles: exploration/appraisal
  * wells (#show-exp-wells, on by default) and production/injection/storage
  * wells (#show-dev-wells, off by default -- ~500 points packed around the
- * platforms would bury the field outlines on the overview map).
+ * platforms would bury the field outlines on the overview map). Only offshore
+ * wells are drawn; onshore wells stay in the data file but are not shown.
  *
  * Theme (light/dark) is a single shared toggle owned by app.js: this module
  * never binds its own click handler, it just exposes refreshMapTheme() on
@@ -302,6 +303,7 @@ function buildWells(data) {
   const markers = [];
   (data.features || []).forEach((f) => {
     if (!f.geometry || f.geometry.type !== "Point") return;
+    if (f.properties.location !== "OFFSHORE") return;   // offshore wells only
     const [lon, lat] = f.geometry.coordinates;
     const m = L.circleMarker([lat, lon], wellStyle(f));
     m.feature = f;

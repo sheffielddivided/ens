@@ -28,7 +28,9 @@
  * The "Brønner" view counts wells per spud year from the map's well layer
  * (docs/data/gis/wells.geojson, built by scripts/build_gis.py from ENS's
  * "All oil and gas wells" spreadsheet), stacked by the same three categories
- * and colours the map uses for its well markers. */
+ * and colours the map uses for its well markers. Offshore wells only: the
+ * onshore ones (all pre-1966 wells among them) are dropped on load, here and
+ * on the map, while the data file keeps every well. */
 
 const MEASURE_LABEL = { oil: "Olje", gas: "Gass" };
 const OE_UNIT = "mboepd";
@@ -152,7 +154,8 @@ async function load() {
   RES = await tryFetch("data/reserves.json");
   if (!(RES && RES.fields && RES.years)) RES = null;
   WELLS = await tryFetch("data/gis/wells.geojson");
-  if (!(WELLS && (WELLS.features || []).length)) WELLS = null;
+  if (WELLS) WELLS.features = (WELLS.features || []).filter((f) => f.properties?.location === "OFFSHORE");
+  if (!(WELLS && WELLS.features.length)) WELLS = null;
   if (real && real.series && Object.keys(real.series).length) {
     OWN = (own && own.fields) ? own : await tryFetch("data/ownership.sample.json");
     return real;
@@ -754,15 +757,15 @@ function renderWells() {
   timeChart = new Chart($("timeChart"), cfg);
 
   const total = WELLS.features.length;
-  let cap = `Antall olje- og gassbrønner etter år boringen startet (${total} brønner, ${first}–${last}), `
+  let cap = `Antall offshorebrønner (olje og gass) etter år boringen startet (${total} brønner, ${first}–${last}; landbrønner er utelatt), `
     + "fordelt etter ENS' klassifisering ved boringsstart – den sier ikke nødvendigvis hva brønnen brukes til i dag. "
     + "Blandingsklasser som «appraisal and production» telles som lete-/avgrensningsbrønner, som på kartet.";
   if (undated) cap += ` ${undated} brønn${undated === 1 ? "" : "er"} uten startdato er ikke med.`;
-  cap += " Kilde: ENS «All oil and gas wells» (pluss noen få brønner som bare finnes i ENS' brønn-shapefil fra 2019)."
+  cap += " Kilde: ENS «All oil and gas wells» (pluss én brønn som bare finnes i ENS' brønn-shapefil fra 2019)."
     + ` Siste år kan være ufullstendig: ENS oppdaterer oversikten med forsinkelse.`;
   $("time-cap").innerHTML = cap;
   $("time-title").textContent = "Brønner";
-  $("time-sub").textContent = `– påbegynt per år (${WELL_UNIT})`;
+  $("time-sub").textContent = `– offshore, påbegynt per år (${WELL_UNIT})`;
 }
 
 function colorOf(slug) { const c = fieldColor[slug]; return c ? (c.v ? css(c.v) : c.h) : css("--c-other"); }
