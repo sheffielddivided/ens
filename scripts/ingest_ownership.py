@@ -31,6 +31,11 @@ import common as C
 SOURCE_URL = "https://ens.dk/en/energy-sources/danish-licences-and-licensees"
 LICENCES_XLSX = C.DATA_DIR / "sources" / "licences" / "danske_lisenser_komplett.xlsx"
 OWNERSHIP_PATH = C.DATA_DIR / "ownership.json"
+# Built by ingest_ownership_history.py. Used for fields whose licence has been
+# relinquished: they are no longer in the licensee export, so their owners are
+# the last ones the history records (e.g. Ravn, licence 5/06, relinquished 1
+# December 2025) instead of falling back to the DUC split.
+HISTORY_PATH = C.DATA_DIR / "ownership_history.json"
 
 # "Område/felt" value in the workbook that carries the default DUC consortium
 # split, applied to every canonical field not listed in FIELD_AREA below.
@@ -101,7 +106,34 @@ def build_area_shares(rows: list[dict]) -> dict[str, dict[str, float]]:
     return area_shares
 
 
-def build_ownership(fields: dict, area_shares: dict[str, dict[str, float]]) -> dict:
+def relinquished_shares(history: dict | None) -> dict[str, dict[str, float]]:
+    """{field slug: {group: share 0-1}} for fields on a relinquished licence.
+
+    The shares are those of the licence's last period in the ownership
+    history, by group. A field whose last period is 'unknown' is an error:
+    there is nothing to show and the DUC fallback would be wrong.
+    """
+    out: dict[str, dict[str, float]] = {}
+    if not history:
+        return out
+    licences = history.get("licences") or {}
+    for slug, rows in (history.get("fields") or {}).items():
+        for row in rows:
+            lic = licences.get(row["licence"]) or {}
+            if not lic.get("relinquished"):
+                continue
+            last = lic["periods"][-1]
+            if not last.get("groups"):
+                raise C.SourceFormatError(
+                    f"field {slug!r}: licence {row['licence']!r} is relinquished but its last "
+                    "period has no shares in ownership_history.json"
+                )
+            out[slug] = {g: round(v / 100, 6) for g, v in last["groups"].items()}
+    return out
+
+
+def build_ownership(fields: dict, area_shares: dict[str, dict[str, float]],
+                    relinquished: dict[str, dict[str, float]] | None = None) -> dict:
     if DUC_AREA not in area_shares:
         raise C.SourceFormatError(
             f"expected a {DUC_AREA!r} licence area in the workbook to use as the "
@@ -109,8 +141,12 @@ def build_ownership(fields: dict, area_shares: dict[str, dict[str, float]]) -> d
         )
     duc_shares = area_shares[DUC_AREA]
 
+    relinquished = relinquished or {}
     ownership = {}
     for slug in fields:
+        if slug in relinquished:
+            ownership[slug] = relinquished[slug]
+            continue
         area = FIELD_AREA.get(slug, DUC_AREA)
         shares = area_shares.get(area)
         if shares is None:
@@ -126,7 +162,9 @@ def build_ownership(fields: dict, area_shares: dict[str, dict[str, float]]) -> d
     return {
         "schema_version": C.SCHEMA_VERSION,
         "source": SOURCE_URL,
-        "note": "Manually curated from an ENS licensee export; see scripts/ingest_ownership.py.",
+        "note": ("Manually curated from an ENS licensee export; fields on relinquished licences "
+                 "(not in the export) take the last owners from ownership_history.json. "
+                 "See scripts/ingest_ownership.py."),
         # Volatile: this script is run by hand whenever the source workbook is
         # replaced (see module docstring), not on a schedule, so there is no
         # other signal for how stale the shares are. Excluded from the
@@ -149,7 +187,7 @@ def main(argv: list[str] | None = None) -> int:
 
     rows = load_rows(LICENCES_XLSX)
     area_shares = build_area_shares(rows)
-    ownership = build_ownership(fields, area_shares)
+    ownership = build_ownership(fields, area_shares, relinquished_shares(C.read_json(HISTORY_PATH)))
     wrote = C.write_json_stable(OWNERSHIP_PATH, ownership, volatile_keys=("generated_at",))
     C.info(f"ownership.json {'updated' if wrote else 'unchanged'}: "
            f"{len(ownership['fields'])} fields, {len(ownership['companies'])} companies")

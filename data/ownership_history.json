@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-15T12:51:12Z",
+  "generated_at": "2026-11-15T12:57:22Z",
   "as_of": "2026-11-15",
   "sources": {
     "amendments": "https://ens.dk/en/energy-sources/amendments",
@@ -26,7 +26,7 @@
               "name": "Shell Olie- og Gasudvinding Danmark B.V.",
               "name_basis": "stated",
               "group": "Shell",
-              "current_group": "Shell",
+              "current_group": "BlueNord",
               "share": 46
             },
             {
@@ -69,7 +69,7 @@
               "name": "Shell Olie- og Gasudvinding Danmark B.V.",
               "name_basis": "stated",
               "group": "Shell",
-              "current_group": "Shell",
+              "current_group": "BlueNord",
               "share": 46
             },
             {
@@ -112,7 +112,7 @@
               "name": "Shell Olie- og Gasudvinding Danmark B.V.",
               "name_basis": "stated",
               "group": "Shell",
-              "current_group": "Shell",
+              "current_group": "BlueNord",
               "share": 46
             },
             {
@@ -155,7 +155,7 @@
               "name": "Shell Olie- og Gasudvinding Danmark B.V.",
               "name_basis": "stated",
               "group": "Shell",
-              "current_group": "Shell",
+              "current_group": "BlueNord",
               "share": 36.8
             },
             {
@@ -211,7 +211,7 @@
               "name": "Shell Olie- og Gasudvinding Danmark B.V.",
               "name_basis": "stated",
               "group": "Shell",
-              "current_group": "Shell",
+              "current_group": "BlueNord",
               "share": 36.8
             },
             {
@@ -267,7 +267,7 @@
               "name": "Shell Olie- og Gasudvinding Danmark B.V.",
               "name_basis": "stated",
               "group": "Shell",
-              "current_group": "Shell",
+              "current_group": "BlueNord",
               "share": 36.8
             },
             {
@@ -323,7 +323,7 @@
               "name": "Shell Olie- og Gasudvinding Danmark B.V.",
               "name_basis": "stated",
               "group": "Shell",
-              "current_group": "Shell",
+              "current_group": "BlueNord",
               "share": 36.8
             },
             {
@@ -379,7 +379,7 @@
               "name": "Shell Olie- og Gasudvinding Danmark B.V.",
               "name_basis": "stated",
               "group": "Shell",
-              "current_group": "Shell",
+              "current_group": "BlueNord",
               "share": 36.8
             },
             {
@@ -435,7 +435,7 @@
               "name": "Shell Olie- og Gasudvinding Danmark B.V.",
               "name_basis": "stated",
               "group": "Shell",
-              "current_group": "Shell",
+              "current_group": "BlueNord",
               "share": 36.8
             },
             {
@@ -527,7 +527,7 @@
           "evidence": [
             {
               "source": "https://ens.dk/en/energy-sources/amendments",
-              "quote": "an intra-group transfer of SOGU’s 36,8% share of DUC to Noreco Oil Denmark A/S, subsidiary of Altinex AS, has been effectuated"
+              "quote": "Following the acquisition of Shell’s subsidiary Shell Olie- og Gasudvinding Danmark B.V(SOGU) by Altinex AS, an intra-group transfer of SOGU’s 36,8% share of DUC to Noreco Oil Denmark A/S, subsidiary of Altinex AS, has been effectuated"
             }
           ]
         },
@@ -578,7 +578,7 @@
           "evidence": [
             {
               "source": "https://ens.dk/en/energy-sources/amendments",
-              "quote": "an intra-group transfer of SOGU’s 36,8% share of DUC to Noreco Oil Denmark A/S, subsidiary of Altinex AS, has been effectuated"
+              "quote": "Following the acquisition of Shell’s subsidiary Shell Olie- og Gasudvinding Danmark B.V(SOGU) by Altinex AS, an intra-group transfer of SOGU’s 36,8% share of DUC to Noreco Oil Denmark A/S, subsidiary of Altinex AS, has been effectuated"
             }
           ]
         },
@@ -629,7 +629,7 @@
           "evidence": [
             {
               "source": "https://ens.dk/en/energy-sources/amendments",
-              "quote": "an intra-group transfer of SOGU’s 36,8% share of DUC to Noreco Oil Denmark A/S, subsidiary of Altinex AS, has been effectuated"
+              "quote": "Following the acquisition of Shell’s subsidiary Shell Olie- og Gasudvinding Danmark B.V(SOGU) by Altinex AS, an intra-group transfer of SOGU’s 36,8% share of DUC to Noreco Oil Denmark A/S, subsidiary of Altinex AS, has been effectuated"
             }
           ]
         }

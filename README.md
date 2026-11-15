@@ -398,6 +398,11 @@ To forenklinger er verdt å kjenne til:
   lisensrad i eksporten – de dekkes av hovedkonsesjonen «Sole Concession of 8
   July 1962». Alle felt som ikke er nevnt eksplisitt i `FIELD_AREA` i skriptet
   får derfor konsesjonens eierandeler som default.
+- Felt på en lisens som er levert tilbake, finnes ikke i eksporten. De får
+  de siste eierne fra eierhistorikken (under) i stedet for DUC-fordelingen –
+  i dag Ravn (5/06, tilbakelevert 1. desember 2025): Wintershall 63,64 %,
+  Nordsøfonden 36,36 %. Kjør derfor `ingest_ownership_history.py` før
+  `ingest_ownership.py`.
 - Noen felt er relisensiert over tid under mer enn ett lisensnavn med
   forskjellige eierandeler (Hejre, Solsort). Skriptet lar da den **sist
   tildelte** lisensen overstyre – den eldre anses som avløst, ikke tillegg.

@@ -16,7 +16,8 @@
     },
     "sogu": {
       "names": [["1962-07-08", "Shell Olie- og Gasudvinding Danmark B.V.", "stated"]],
-      "groups": [["1962-07-08", "Shell"]]
+      "groups": [["1962-07-08", "Shell"], ["2019-08-01", "Noreco"], ["2023-06-19", "BlueNord"]],
+      "note": "Altinex (Noreco) bought SOGU from Shell in 2019; the source gives no effective date, so the date of the entry is used. SOGU's DUC share moved to Noreco Oil Denmark A/S the same day."
     },
     "chevron": {
       "names": [["1962-07-08", "Texaco Denmark Inc., Delaware, Branch in Denmark", "stated"],
@@ -167,7 +168,7 @@
           "shares": {"maersk": 31.2, "denerco_oil": 36.8, "chevron": 12, "nsf": 20},
           "note": "The source gives no effective date for the transfer of Shell's share to Noreco; the date of the entry is used.",
           "evidence": [
-            {"src": "amendments", "quote": "an intra-group transfer of SOGU’s 36,8% share of DUC to Noreco Oil Denmark A/S, subsidiary of Altinex AS, has been effectuated"}
+            {"src": "amendments", "quote": "Following the acquisition of Shell’s subsidiary Shell Olie- og Gasudvinding Danmark B.V(SOGU) by Altinex AS, an intra-group transfer of SOGU’s 36,8% share of DUC to Noreco Oil Denmark A/S, subsidiary of Altinex AS, has been effectuated"}
           ]
         }
       ]
