@@ -271,8 +271,9 @@ stolpediagram med Chart.js der foreløpige tall er markert i verktøytips og i
 teksten under grafen (ikke en egen visuell stil på selve stolpene), og «sist
 oppdatert» hentet fra dataene. Ren HTML/CSS/JS, ingen byggesteg, norsk UI.
 Visningen **Brønner** viser antall **offshorebrønner** påbegynt per år,
-stablet etter kategori (lete/avgrensning, produksjon/injeksjon/lager), med
-samme farger som brønnlaget i kartet. Landbrønner er ikke med (de filtreres
+stablet etter kategori (lete/avgrensning, produksjon, injeksjon, andre), med
+samme farger som brønnlaget i kartet, enten **per år** eller **per felt**
+(bryter i visningen). Landbrønner er ikke med (de filtreres
 bort allerede i `build_gis.py`). Den leser `data/gis/wells.geojson` (se
 *Brønner* under *Kart (GIS)*) og vises bare når filen finnes.
 
@@ -280,7 +281,8 @@ Ved siden av produksjonsgrafen ligger et Leaflet-kart over feltene (bygget av
 `map.js`), der felt med produksjon og felt uten skilles med hver sin faste
 farge (ikke gradert etter produksjonsvolum), med en alltid synlig
 blokkrutenett-bakgrunn og av/på-knapper i kartpanelets hode for feltnavn,
-letebrønner (på som standard) og produksjonsbrønner (av som standard) – kun
+letebrønner (på som standard), produksjonsbrønner og injeksjonsbrønner (av
+som standard) – kun
 offshorebrønner.
 Kartet deler tema (lyst/mørkt) og databehov med resten av siden.
 
@@ -342,16 +344,35 @@ og de fleste shapefil-ekstraene (saltforskning, geotermi, eldre landbrønner)
 shapefil-brønn som blir igjen er TSEA-3B. En brønn uten land/hav-angivelse tas
 også ut, men navngis i en `WARN`.
 
+**Brønn → felt.** `assign_well_fields()` gir hver brønn `field` (samme slug
+som produksjonsdataene) og `field_name` når brønnens **startposisjon** ligger
+innenfor en feltavgrensning (punkt-i-polygon mot `fields.geojson`). Per
+2026-11-15: 642 av 744 brønner i 27 felt; de 102 utenfor er nesten bare
+lete-/avgrensningsbrønner som ikke ble felt.
+
+- For produksjonsbrønner er startposisjonen plattformen, så en avviksboret
+  brønn telles under feltet den er boret fra (Lulita-brønnene bores f.eks.
+  fra Harald og telles der).
+- Felt med produksjon men uten avgrensning i kilden kan ikke treffes av
+  punkt-i-polygon. De kobles på eksplisitt navneprefiks
+  (`WELL_FIELD_BY_NAME_PREFIX`, i dag bare `RAVN` → `ravn`), aldri «nærmeste
+  felt». Brønner som havner i flere overlappende felt, blir ikke tildelt noe
+  felt, og det logges som `WARN`.
+
 - Koordinatene i regnearket er grader/minutter/sekunder med desimalkomma
   (`55°48'36,5 "`) i **ED50** (`EPSG:4230`, ifølge arket *Info*), og
   reprojiseres til WGS84 som de andre lagene. Datoer `dd_mm_yyyy` → ISO.
 - Alle brønner får samme skjema: `name`, `number`, `classification`,
   `well_type`, `licence`, `operator`, `rig`, `spud_date`, `comp_date`,
-  `location`, `released` (bool), `category` og `source`.
-- `category` grupperer ENS sin klassifisering: `exploration` (alt med
-  EXPLORATION/APPRAISAL, også blandingsklasser), `development` (produksjon,
-  injeksjon, gasslager, observasjon) og `other` (geotermi, saltforskning –
-  i praksis bare landbrønner, så kategorien er tom etter offshore-filteret).
+  `location`, `released` (bool), `category` og `source`, pluss `field` /
+  `field_name` for brønner i et felt (se *Brønn → felt*).
+- `category` grupperer ENS sin klassifisering i fire: `production`
+  (produksjon), `injection` (injeksjon), `exploration` (bare
+  EXPLORATION/APPRAISAL) og `other` (observasjon, gasslager, geotermi,
+  saltforskning – til havs i praksis 4 observasjonsbrønner).
+  **Blandingsklasser** følger det brønnen ble: «APPRAISAL AND PRODUCTION» →
+  `production`, «EXPLORATION AND INJECTION» → `injection`. Per 2026-11-15:
+  435 / 86 / 219 / 4.
 - Uventet format (manglende kolonne, uparsbar koordinat/dato, posisjon
   utenfor Danmark, dublett-navn) gir `SourceFormatError` – ingen brønn
   gjettes. Eneste toleranse: `60,00` sekunder (forekommer, = neste minutt).

@@ -28,7 +28,10 @@
  * The "Brønner" view counts wells per spud year from the map's well layer
  * (docs/data/gis/wells.geojson, built by scripts/build_gis.py from ENS's
  * "All oil and gas wells" spreadsheet), stacked by the same three categories
- * and colours the map uses for its well markers. Offshore wells only: the
+ * and colours the map uses for its well markers, either per spud year or per
+ * field ("Per felt": build_gis.py tags each well with the field whose
+ * delineation contains it; wells outside every field form their own row).
+ * Offshore wells only: the
  * data file holds no onshore wells (build_gis.py drops them); the filter in
  * load() is just a guard against an older wells.geojson. */
 
@@ -45,8 +48,9 @@ const WELL_UNIT = "antall brønner";
 // Same tokens as the well markers in docs/map.js, so chart and map agree.
 const WELL_CATS = [
   ["exploration", "Lete-/avgrensningsbrønner", "--c7"],
-  ["development", "Produksjons-/injeksjonsbrønner", "--c3"],
-  ["other", "Andre (geotermi o.l.)", "--c-other"],
+  ["production", "Produksjonsbrønner", "--c3"],
+  ["injection", "Injeksjonsbrønner", "--c1"],
+  ["other", "Andre (observasjon o.l.)", "--c-other"],
 ];
 
 let DATA = null, OWN = null, RES = null, WELLS = null, timeChart = null, lastExport = null;
@@ -59,6 +63,7 @@ const state = {
   res: "yearly", view: "total", showWater: false,
   field: null, company: null,        // null = "Alle", else one slug/name
   companyBreakdown: "field",         // "Per selskap" sub-view: "field" or "measure" (olje/gass)
+  wellsBreakdown: "year",            // "Brønner" sub-view: "year" or "field"
   // First year shown in the chart, kept separately per resolution: yearly
   // defaults to the earliest year with data, monthly to last year (a full
   // multi-decade run of monthly bars is unreadable). Set in prepare().
@@ -250,6 +255,7 @@ function buildControls() {
   });
   segGroup("view-seg", "view", (v) => { state.view = v; updateViewControls(); renderTime(); });
   segGroup("company-breakdown-seg", "breakdown", (v) => { state.companyBreakdown = v; renderTime(); });
+  segGroup("wells-breakdown-seg", "wbreak", (v) => { state.wellsBreakdown = v; renderTime(); });
 
   if (startYearSel) {
     startYearSel.innerHTML = YEARS.map((y) => `<option value="${y}">${y}</option>`).join("");
@@ -342,6 +348,7 @@ function updateViewControls() {
   $("start-year-label").classList.toggle("hidden", isRes || isWells);
   $("company-label").classList.toggle("hidden", !isCompany);
   $("company-breakdown-seg").classList.toggle("hidden", !isCompany);
+  $("wells-breakdown-seg").classList.toggle("hidden", !isWells);
   updateWaterVisibility();
   updateMapHighlight();
 }
@@ -410,6 +417,9 @@ function waterDataset(labels) {
 }
 
 function renderTime() {
+  // Only the per-field well chart grows the plot (one row per field); every
+  // other view uses the stylesheet's height.
+  document.querySelector(".chart-wrap").style.height = "";
   if (state.view === "reserves") return renderReserves();
   if (state.view === "wells") return renderWells();
   $("time-title").textContent = "Produksjon";
@@ -698,6 +708,7 @@ function renderReserves() {
 // read as gaps rather than being squeezed out of the axis. Wells without a
 // spud date cannot be placed on the axis; they are counted in the caption.
 function renderWells() {
+  if (state.wellsBreakdown === "field") return renderWellsByField();
   const surface = css("--surface");
   const counts = {};          // year -> { category -> n }
   let undated = 0;
@@ -759,13 +770,91 @@ function renderWells() {
   const total = WELLS.features.length;
   let cap = `Antall offshorebrønner (olje og gass) etter år boringen startet (${total} brønner, ${first}–${last}; landbrønner er utelatt), `
     + "fordelt etter ENS' klassifisering ved boringsstart – den sier ikke nødvendigvis hva brønnen brukes til i dag. "
-    + "Blandingsklasser som «appraisal and production» telles som lete-/avgrensningsbrønner, som på kartet.";
+    + "Blandingsklasser som «appraisal and production» telles som produksjonsbrønner, som på kartet.";
   if (undated) cap += ` ${undated} brønn${undated === 1 ? "" : "er"} uten startdato er ikke med.`;
   cap += " Kilde: ENS «All oil and gas wells» (pluss én brønn som bare finnes i ENS' brønn-shapefil fra 2019)."
     + ` Siste år kan være ufullstendig: ENS oppdaterer oversikten med forsinkelse.`;
   $("time-cap").innerHTML = cap;
   $("time-title").textContent = "Brønner";
   $("time-sub").textContent = `– offshore, påbegynt per år (${WELL_UNIT})`;
+}
+
+// Wells per field, one horizontal stacked bar per field (biggest first) plus a
+// final "Utenfor felt" row for wells outside every delineation. The field is
+// the one containing the well's surface position (scripts/build_gis.py,
+// assign_well_fields), so a deviated well counts under the field it was
+// drilled from.
+const OUTSIDE = "_outside";
+function renderWellsByField() {
+  const surface = css("--surface");
+  const counts = {};          // slug -> { category -> n }
+  const label = {};
+  WELLS.features.forEach((f) => {
+    const p = f.properties || {};
+    const slug = p.field || OUTSIDE;
+    if (p.field) label[slug] = displayName[slug] || p.field_name || slug;
+    const cat = WELL_CATS.some(([c]) => c === p.category) ? p.category : "other";
+    const row = counts[slug] || (counts[slug] = {});
+    row[cat] = (row[cat] || 0) + 1;
+  });
+  const total = (s) => Object.values(counts[s]).reduce((a, b) => a + b, 0);
+  const slugs = Object.keys(counts).filter((s) => s !== OUTSIDE)
+    .sort((a, b) => total(b) - total(a) || label[a].localeCompare(label[b], "nb"));
+  if (counts[OUTSIDE]) { slugs.push(OUTSIDE); label[OUTSIDE] = "Utenfor felt"; }
+  const labels = slugs.map((s) => label[s]);
+
+  const datasets = WELL_CATS
+    .filter(([cat]) => slugs.some((s) => counts[s][cat]))
+    .map(([cat, name, token], i) => ({
+      ...barDS(name, slugs.map((s) => counts[s][cat] || 0), css(token), i === 0, surface),
+      // Horizontal stack: the segment gap is the right edge, not the top.
+      borderWidth: { top: 0, right: 1, bottom: 0, left: 0 },
+      maxBarThickness: 16,
+    }));
+
+  // One ~20px row per field so every name stays legible.
+  document.querySelector(".chart-wrap").style.height = `${Math.max(400, slugs.length * 20 + 70)}px`;
+
+  lastExport = { unit: WELL_UNIT, sheet: "Brønner per felt", name: "bronner_per_felt", periodLabel: "Felt",
+    labels: labels.slice(), datasets: datasets.map((d) => ({ label: d.label, data: d.data.slice() })) };
+
+  const cfg = {
+    type: "bar", data: { labels, datasets },
+    options: {
+      indexAxis: "y",
+      responsive: true, maintainAspectRatio: false, animation: { duration: 250 },
+      interaction: { mode: "index", axis: "y", intersect: false },
+      plugins: {
+        legend: { display: true, position: "bottom",
+          labels: { boxWidth: 10, boxHeight: 10, usePointStyle: true, pointStyle: "rectRounded", padding: 10 } },
+        tooltip: {
+          filter: (it) => it.parsed.x > 0,
+          callbacks: {
+            label: (it) => `${it.dataset.label}: ${it.parsed.x}`,
+            footer: (it) => `Sum: ${it.reduce((a, i2) => a + (i2.parsed.x || 0), 0)} brønner`,
+          },
+        },
+      },
+      scales: {
+        x: { stacked: true, beginAtZero: true, border: { display: false },
+          title: { display: true, text: WELL_UNIT, color: css("--muted") }, ticks: { precision: 0 } },
+        y: { stacked: true, grid: { display: false }, ticks: { autoSkip: false, font: { size: 11 } } },
+      },
+    },
+  };
+  if (timeChart) timeChart.destroy();
+  timeChart = new Chart($("timeChart"), cfg);
+
+  const inFields = WELLS.features.length - (counts[OUTSIDE] ? total(OUTSIDE) : 0);
+  let cap = `Antall offshorebrønner per felt (${inFields} av ${WELLS.features.length} brønner ligger i et felt, ${slugs.length - (counts[OUTSIDE] ? 1 : 0)} felt). `
+    + "En brønn regnes til feltet som har brønnens startposisjon innenfor ENS' feltavgrensning – for produksjonsbrønner er det plattformen, "
+    + "så en avviksboret brønn telles under feltet den er boret fra, ikke nødvendigvis der den produserer. "
+    + "Ravn har ingen avgrensning i kilden; brønnene der er koblet på navnet (RAVN-…). "
+    + "«Utenfor felt» er nesten bare lete-/avgrensningsbrønner som ikke førte til et felt.";
+  cap += " Kilde: ENS «All oil and gas wells» og ENS' feltavgrensninger.";
+  $("time-cap").innerHTML = cap;
+  $("time-title").textContent = "Brønner";
+  $("time-sub").textContent = `– offshore, per felt (${WELL_UNIT})`;
 }
 
 function colorOf(slug) { const c = fieldColor[slug]; return c ? (c.v ? css(c.v) : c.h) : css("--c-other"); }
