@@ -14,7 +14,8 @@
  * wells (#show-exp-wells, on by default) and production/injection/storage
  * wells (#show-dev-wells, off by default -- ~500 points packed around the
  * platforms would bury the field outlines on the overview map). Only offshore
- * wells are drawn; onshore wells stay in the data file but are not shown.
+ * wells are drawn: the data file is offshore-only already (build_gis.py), the
+ * check in buildWells() just guards against an older wells.geojson.
  *
  * Theme (light/dark) is a single shared toggle owned by app.js: this module
  * never binds its own click handler, it just exposes refreshMapTheme() on

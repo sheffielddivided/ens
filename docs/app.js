@@ -29,8 +29,8 @@
  * (docs/data/gis/wells.geojson, built by scripts/build_gis.py from ENS's
  * "All oil and gas wells" spreadsheet), stacked by the same three categories
  * and colours the map uses for its well markers. Offshore wells only: the
- * onshore ones (all pre-1966 wells among them) are dropped on load, here and
- * on the map, while the data file keeps every well. */
+ * data file holds no onshore wells (build_gis.py drops them); the filter in
+ * load() is just a guard against an older wells.geojson. */
 
 const MEASURE_LABEL = { oil: "Olje", gas: "Gass" };
 const OE_UNIT = "mboepd";

@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
-  "generated_at": "2026-11-15T08:12:20Z",
-  "source": "Energistyrelsen (ENS): 'All oil and gas wells' spreadsheet (All_oil_and_gas_wells.xlsx) plus shapefile-only wells from the exploration/appraisal well shape file; ED50 reprojected to WGS84",
+  "generated_at": "2026-11-15T09:15:43Z",
+  "source": "Energistyrelsen (ENS): 'All oil and gas wells' spreadsheet (All_oil_and_gas_wells.xlsx) plus shapefile-only wells from the exploration/appraisal well shape file; offshore wells only; ED50 reprojected to WGS84",
   "features": [
     {
       "type": "Feature",
@@ -231,30 +231,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "AARS-1",
-        "number": "5609/07-01",
-        "classification": "EXPLORATION",
-        "licence": "DONG GEOTHERMAL CONCESS.",
-        "operator": "DONG",
-        "rig": "Dst Gh 1400/23",
-        "spud_date": "1978-11-06",
-        "comp_date": "1979-09-04",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "shapefile"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.50807,
-          56.79483
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "ADDA-1",
         "number": "5504/8-1",
         "classification": "EXPLORATION",
@@ -449,31 +425,6 @@
         "coordinates": [
           5.07834,
           55.39328
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "ARNUM-1",
-        "number": "5508/28-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1952-09-06",
-        "comp_date": "1952-11-27",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.96207,
-          55.21962
         ]
       }
     },
@@ -730,31 +681,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "BORG-1",
-        "number": "5508/32-2",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "9/86",
-        "operator": "DANOP",
-        "rig": "Kenting 34",
-        "spud_date": "1988-04-18",
-        "comp_date": "1988-05-29",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.8051,
-          55.04851
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "BRODER TUCK-1",
         "number": "5504/20-3",
         "classification": "EXPLORATION",
@@ -799,56 +725,6 @@
         "coordinates": [
           4.8248,
           55.47993
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "BRØNS-1",
-        "number": "5508/27-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "MÆRSK OLIE OG GAS AS",
-        "rig": "Deutag-14",
-        "spud_date": "1981-01-11",
-        "comp_date": "1981-04-11",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.73442,
-          55.20048
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "BØRGLUM-1",
-        "number": "5709/20-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1951-08-14",
-        "comp_date": "1951-09-26",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8384,
-          57.37499
         ]
       }
     },
@@ -1905,54 +1781,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "ERSLEV-1",
-        "number": "5608/08-01",
-        "classification": "EXPLORATION",
-        "licence": "WASTE STORAGE INVESTIG.",
-        "operator": "ELSAM",
-        "rig": "Cabot Frank 900",
-        "spud_date": "1980-01-28",
-        "comp_date": "1980-04-13",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "shapefile"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.76925,
-          56.80192
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "ERSLEV-2",
-        "number": "5608/08-02",
-        "classification": "EXPLORATION",
-        "licence": "WASTE STORAGE INVESTIG.",
-        "operator": "ELSAM",
-        "rig": "Cabot Frank 900",
-        "spud_date": "1980-04-21",
-        "comp_date": "1980-07-12",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "shapefile"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.77398,
-          56.81141
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "F-1X",
         "number": "5706/32-1",
         "classification": "EXPLORATION",
@@ -1997,30 +1825,6 @@
         "coordinates": [
           4.31233,
           55.83305
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "FARSØ-1",
-        "number": "5609/06-02",
-        "classification": "EXPLORATION",
-        "licence": "DONG GEOTHERMAL CONCESS.",
-        "operator": "DONG",
-        "rig": "Ideco Bir-8085",
-        "spud_date": "1981-10-22",
-        "comp_date": "1982-01-24",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "shapefile"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.36248,
-          56.7808
         ]
       }
     },
@@ -2077,81 +1881,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "FELSTED-1",
-        "number": "5409/3-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "1/05",
-        "operator": "PGNIG SA Danish Branch",
-        "rig": "Rig No4 IRI-1200",
-        "spud_date": "2011-12-05",
-        "comp_date": "2012-01-26",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.57307,
-          54.97646
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "FJERRITSLEV-1",
-        "number": "5709/29-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(STANDARD) DAPCO",
-        "rig": "Emsco",
-        "spud_date": "1958-02-14",
-        "comp_date": "1958-02-28",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.21422,
-          57.08052
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "FJERRITSLEV-2",
-        "number": "5709/30-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(STANDARD) DAPCO",
-        "rig": "Emsco",
-        "spud_date": "1958-03-13",
-        "comp_date": "1958-05-05",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.25006,
-          57.09552
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "FLOKI-1",
         "number": "5605/18-1",
         "classification": "EXPLORATION",
@@ -2177,31 +1906,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "FLYVBJERG-1",
-        "number": "5710/21-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(STANDARD) DAPCO",
-        "rig": "Emsco",
-        "spud_date": "1958-06-14",
-        "comp_date": "1958-07-05",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.05371,
-          57.30376
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "FRANCISCA-1",
         "number": "5604/24-1",
         "classification": "EXPLORATION",
@@ -2221,81 +1925,6 @@
         "coordinates": [
           4.80004,
           56.37378
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "FREDERIKSHAVN-1",
-        "number": "5710/19-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1950-07-03",
-        "comp_date": "1950-08-22",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.5198,
-          57.43311
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "FREDERIKSHAVN-2",
-        "number": "5710/19-2",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1952-04-21",
-        "comp_date": "1952-05-28",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.51119,
-          57.42877
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "FREDERIKSHAVN-3",
-        "number": "5710/19-3",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1952-06-06",
-        "comp_date": "1952-07-26",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.53247,
-          57.45811
         ]
       }
     },
@@ -2396,31 +2025,6 @@
         "coordinates": [
           5.13449,
           55.55723
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "GASSUM-1",
-        "number": "5610/13-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Emsco",
-        "spud_date": "1948-03-18",
-        "comp_date": "1951-03-19",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.00371,
-          56.5619
         ]
       }
     },
@@ -2546,56 +2150,6 @@
         "coordinates": [
           4.28601,
           56.26108
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "GLAMSBJERG-1",
-        "number": "5510/21-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1951-07-05",
-        "comp_date": "1951-08-02",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.12854,
-          55.29186
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "GRINDSTED-1",
-        "number": "5508/8-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(STANDARD) GULF",
-        "rig": "Emsco",
-        "spud_date": "1958-10-29",
-        "comp_date": "1958-11-27",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.82215,
-          55.75674
         ]
       }
     },
@@ -2802,31 +2356,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "HALDAGER-1",
-        "number": "5709/32-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1950-10-10",
-        "comp_date": "1950-12-30",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.77813,
-          57.11831
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "HALFDAN-2X",
         "number": "5505/13-4",
         "classification": "APPRAISAL AND PRODUCTION",
@@ -2946,56 +2475,6 @@
         "coordinates": [
           12.01266,
           56.36473
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "HARTE-1",
-        "number": "5509/14-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "DAPCO",
-        "rig": "Cardwell",
-        "spud_date": "1935-07-27",
-        "comp_date": "1936-07-29",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.41651,
-          55.50963
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "HARTE-2",
-        "number": "5509/14-2",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "DAPCO",
-        "rig": "Cardwell",
-        "spud_date": "1936-09-02",
-        "comp_date": "1937-08-16",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.41624,
-          55.50963
         ]
       }
     },
@@ -5277,56 +4756,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "HOBRO-1",
-        "number": "5609/15-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "Gulf",
-        "rig": "Deutag-14",
-        "spud_date": "1974-06-07",
-        "comp_date": "1974-07-10",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.63314,
-          56.60773
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "HORSENS-1",
-        "number": "5509/4-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(STANDARD) DAPCO",
-        "rig": "Emsco",
-        "spud_date": "1958-07-13",
-        "comp_date": "1958-07-31",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.90241,
-          55.9358
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "HWA-7",
         "number": "5604/22-0",
         "classification": "PRODUCTION",
@@ -5371,56 +4800,6 @@
         "coordinates": [
           4.27173,
           56.3454
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "HYLLEBJERG-1",
-        "number": "5609/6-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "MÆRSK OLIE OG GAS AS",
-        "rig": "National 80b",
-        "spud_date": "1975-12-07",
-        "comp_date": "1976-01-19",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.34702,
-          56.81413
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "HØNNING-1",
-        "number": "5508/28-2",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(STANDARD) GULF",
-        "rig": "Emsco",
-        "spud_date": "1958-08-09",
-        "comp_date": "1958-10-19",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.90679,
-          55.18045
         ]
       }
     },
@@ -5596,31 +4975,6 @@
         "coordinates": [
           8.55019,
           57.43203
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "JELLING-1",
-        "number": "5509/10-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "9/89",
-        "operator": "DANOP",
-        "rig": "Kenting 31",
-        "spud_date": "1992-10-05",
-        "comp_date": "1992-10-24",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.37456,
-          55.73867
         ]
       }
     },
@@ -5852,31 +5206,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "KARLEBO-1",
-        "number": "5512/2-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "1/02",
-        "operator": "TETHYS OIL",
-        "rig": "IRI 750",
-        "spud_date": "2006-09-26",
-        "comp_date": "2006-11-22",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.4166,
-          55.91966
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "KATHERINE-1",
         "number": "5604/30-4",
         "classification": "APPRAISAL",
@@ -5977,56 +5306,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "KVOLS-1",
-        "number": "5609/14-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "MÆRSK OLIE OG GAS AS",
-        "rig": "National 80b",
-        "spud_date": "1976-02-27",
-        "comp_date": "1976-03-29",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.29758,
-          56.52967
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "KVÆRS-1",
-        "number": "5409/2-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "MÆRSK OLIE OG GAS AS",
-        "rig": "Kenting 31",
-        "spud_date": "1985-07-27",
-        "comp_date": "1985-09-06",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.47902,
-          54.94027
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "L-1X",
         "number": "5605/21-1",
         "classification": "EXPLORATION",
@@ -6046,31 +5325,6 @@
         "coordinates": [
           5.24725,
           56.25205
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "LAVØ-1",
-        "number": "5612/29-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(STANDARD) DAPCO",
-        "rig": "Emsco",
-        "spud_date": "1959-01-19",
-        "comp_date": "1959-03-01",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.17415,
-          56.03251
         ]
       }
     },
@@ -6171,30 +5425,6 @@
         "coordinates": [
           4.66417,
           55.70798
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "LINDE-1",
-        "number": "5608/18-02",
-        "classification": "EXPLORATION",
-        "licence": "WASTE STORAGE INVESTIG.",
-        "operator": "ELSAM",
-        "rig": "Franks Explorer Iii/",
-        "spud_date": "1979-11-22",
-        "comp_date": "1980-01-24",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "shapefile"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.44041,
-          56.43273
         ]
       }
     },
@@ -6420,81 +5650,6 @@
         "coordinates": [
           5.87963,
           56.09866
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "LØGUMKLOSTER-1",
-        "number": "5508/32-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "MÆRSK OLIE OG GAS AS",
-        "rig": "Deutag-14",
-        "spud_date": "1980-07-31",
-        "comp_date": "1980-10-31",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.94985,
-          55.04184
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "LØGUMKLOSTER-2",
-        "number": "5508/32-3",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "1/92",
-        "operator": "DANOP",
-        "rig": "Kenting 31",
-        "spud_date": "1993-09-01",
-        "comp_date": "1993-10-18",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.94092,
-          55.03272
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "LØVE-1",
-        "number": "5509/6-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "2/07",
-        "operator": "GMT Exploration Co.",
-        "rig": "Variorig",
-        "spud_date": "2011-05-12",
-        "comp_date": "2011-06-05",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.37996,
-          55.8016
         ]
       }
     },
@@ -6845,54 +6000,6 @@
         "coordinates": [
           5.13258,
           55.46873
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "MARGRETHEHOLM-1",
-        "number": "5512/11-01",
-        "classification": "EXPLORATION",
-        "licence": "HGS GEOTHERMAL CONCESSION",
-        "operator": "DONG E&P A/S",
-        "rig": "Deutag T-61",
-        "spud_date": "2002-06-01",
-        "comp_date": "2002-07-14",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "shapefile"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.63235,
-          55.68864
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "MARGRETHEHOLM-2",
-        "number": "5512/11-02",
-        "classification": "APPRAISAL",
-        "licence": "HGS GEOTHERMAL CONCESSION",
-        "operator": "DONG E&P A/S",
-        "rig": "Deutag T-61",
-        "spud_date": "2003-04-27",
-        "comp_date": "2003-06-28",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "shapefile"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.63353,
-          55.68917
         ]
       }
     },
@@ -7418,31 +6525,6 @@
         "coordinates": [
           5.11627,
           55.48069
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "MEJRUP-1",
-        "number": "5608/19-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "15/84",
-        "operator": "Phillips",
-        "rig": "Kenting 36",
-        "spud_date": "1987-03-22",
-        "comp_date": "1987-04-29",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.67543,
-          56.37685
         ]
       }
     },
@@ -10224,31 +9306,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "MORS-1",
-        "number": "5608/4-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "Gulf",
-        "rig": "Oilwell 940e",
-        "spud_date": "1966-12-13",
-        "comp_date": "1967-09-21",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.88339,
-          56.8994
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "N-10",
         "number": "5504/16-0",
         "classification": "PRODUCTION",
@@ -12499,31 +11556,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "NØVLING-1",
-        "number": "5608/28-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "Gulf",
-        "rig": "Oilwell 940e",
-        "spud_date": "1966-09-13",
-        "comp_date": "1966-11-25",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.80869,
-          56.16854
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "O-1X",
         "number": "5505/22-1",
         "classification": "EXPLORATION",
@@ -12543,31 +11575,6 @@
         "coordinates": [
           5.32068,
           55.36649
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "ODDESUND-1",
-        "number": "5608/15-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "MÆRSK OLIE OG GAS AS",
-        "rig": "National 80b",
-        "spud_date": "1976-05-04",
-        "comp_date": "1976-08-10",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.56814,
-          56.55958
         ]
       }
     },
@@ -13099,31 +12106,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "RINGE-1",
-        "number": "5510/23-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1951-02-04",
-        "comp_date": "1951-04-19",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.50488,
-          55.28087
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "RITA-1X",
         "number": "5603/27-5",
         "classification": "EXPLORATION",
@@ -13443,131 +12425,6 @@
         "coordinates": [
           4.91333,
           55.53822
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "RØDBY-1",
-        "number": "5411/10-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1952-01-11",
-        "comp_date": "1952-03-24",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.40172,
-          54.69232
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "RØDBY-2",
-        "number": "5411/10-2",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Emsco",
-        "spud_date": "1953-04-20",
-        "comp_date": "1953-10-24",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.36974,
-          54.69095
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "RØDDING-1",
-        "number": "5608/12-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "MÆRSK OLIE OG GAS AS",
-        "rig": "National 80b",
-        "spud_date": "1976-01-27",
-        "comp_date": "1976-02-20",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.80367,
-          56.64634
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "RØDEKRO-1",
-        "number": "5509/30-2",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(STANDARD) GULF",
-        "rig": "Emsco",
-        "spud_date": "1958-12-05",
-        "comp_date": "1958-12-30",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.33903,
-          55.0849
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "RØNDE-1",
-        "number": "5610/22-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "Gulf",
-        "rig": "Oilwell 940e",
-        "spud_date": "1965-10-23",
-        "comp_date": "1966-08-25",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.43373,
-          56.30329
         ]
       }
     },
@@ -15074,56 +13931,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SKAGEN-1",
-        "number": "5710/11-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1949-08-24",
-        "comp_date": "1949-09-02",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.59924,
-          57.73611
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "SKAGEN-2",
-        "number": "5710/11-2",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Sullivan",
-        "spud_date": "1951-09-24",
-        "comp_date": "1951-10-25",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.6009,
-          57.7389
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "SKARV-1",
         "number": "5504/10-2",
         "classification": "EXPLORATION",
@@ -15143,56 +13950,6 @@
         "coordinates": [
           4.41478,
           55.71997
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "SKIVE-1",
-        "number": "5609/9-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "MÆRSK OLIE OG GAS AS",
-        "rig": "National 80b",
-        "spud_date": "1976-04-04",
-        "comp_date": "1976-04-28",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.00174,
-          56.62662
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "SKIVE-2",
-        "number": "5609/13-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "7/84",
-        "operator": "BP",
-        "rig": "Boldon 41",
-        "spud_date": "1985-09-03",
-        "comp_date": "1985-09-25",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.00457,
-          56.5932
         ]
       }
     },
@@ -15999,31 +14756,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "SLAGELSE-1",
-        "number": "5511/22-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(STANDARD) GULF",
-        "rig": "Emsco",
-        "spud_date": "1959-03-09",
-        "comp_date": "1959-05-21",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.37694,
-          55.37211
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "SOFIE-1",
         "number": "5605/13-3",
         "classification": "EXPLORATION",
@@ -16224,506 +14956,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "STENLILLE-1",
-        "number": "5511/15-1",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DONG",
-        "rig": "Ideco Bir-800",
-        "spud_date": "1980-06-06",
-        "comp_date": "1980-07-08",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.61724,
-          55.54334
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-10",
-        "number": "5511/15-10",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DANOP",
-        "rig": "Kenting 31",
-        "spud_date": "1992-02-26",
-        "comp_date": "1992-03-27",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.59845,
-          55.54942
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-11",
-        "number": "5511/15-11",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DANOP",
-        "rig": "Kenting 31",
-        "spud_date": "1992-04-05",
-        "comp_date": "1992-05-30",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.60549,
-          55.53803
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-12",
-        "number": "5511/15-12",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DANOP",
-        "rig": "Kenting 31",
-        "spud_date": "1994-01-11",
-        "comp_date": "1994-02-08",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.60495,
-          55.5378
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-13",
-        "number": "5511/15-13",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DANOP",
-        "rig": "Kenting 31",
-        "spud_date": "1994-02-13",
-        "comp_date": "1994-03-14",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.60446,
-          55.53783
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-14",
-        "number": "5511/15-14",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DANOP",
-        "rig": "Kenting 31",
-        "spud_date": "1995-06-04",
-        "comp_date": "1995-07-21",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.60503,
-          55.53807
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-15",
-        "number": "5511/15-15",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DANOP",
-        "rig": "Kenting 31",
-        "spud_date": "1995-07-22",
-        "comp_date": "1995-08-23",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.56436,
-          55.51099
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-16",
-        "number": "5511/15-16",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DANOP",
-        "rig": "Kenting 21",
-        "spud_date": "1996-02-06",
-        "comp_date": "1996-03-24",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.60456,
-          55.53811
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-17",
-        "number": "5511/15-17",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DANOP",
-        "rig": "Kenting 21",
-        "spud_date": "1996-09-23",
-        "comp_date": "1996-11-01",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.59767,
-          55.53326
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-18",
-        "number": "5511/15-18",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DANOP",
-        "rig": "Kenting 21",
-        "spud_date": "1996-11-02",
-        "comp_date": "1996-12-12",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.59723,
-          55.53336
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-19",
-        "number": "5511/15-19",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DANOP",
-        "rig": "Deutag T-2000",
-        "spud_date": "2000-07-19",
-        "comp_date": "2000-08-21",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.59749,
-          55.53301
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-2",
-        "number": "5511/15-2",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DOPAS",
-        "rig": "Kenting 36",
-        "spud_date": "1987-07-27",
-        "comp_date": "1987-08-28",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.60967,
-          55.53753
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-20",
-        "number": "5511/15-0",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DONG E&P A/S",
-        "rig": "InterWell IW25-10",
-        "spud_date": "2009-02-21",
-        "comp_date": "2009-06-02",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.59705,
-          55.53311
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-3",
-        "number": "5511/15-3",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DOPAS",
-        "rig": "Kenting 36",
-        "spud_date": "1987-08-30",
-        "comp_date": "1987-09-16",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.60379,
-          55.53744
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-4",
-        "number": "5511/15-4",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DANOP",
-        "rig": "Kenting 36",
-        "spud_date": "1988-07-19",
-        "comp_date": "1988-08-09",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.58593,
-          55.51785
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-5",
-        "number": "5511/15-5",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DOPAS",
-        "rig": "Kenting 36",
-        "spud_date": "1988-08-14",
-        "comp_date": "1988-09-03",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.62469,
-          55.53501
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-6",
-        "number": "5511/15-6",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DANOP",
-        "rig": "Kenting 36",
-        "spud_date": "1988-09-07",
-        "comp_date": "1988-09-27",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.65116,
-          55.55737
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-7",
-        "number": "5511/15-7",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DANOP",
-        "rig": "Kenting 31",
-        "spud_date": "1990-09-10",
-        "comp_date": "1990-12-17",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.60629,
-          55.53772
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-8",
-        "number": "5511/15-8",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DANOP",
-        "rig": "Kenting 31",
-        "spud_date": "1991-11-08",
-        "comp_date": "1992-01-16",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.60597,
-          55.53798
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "STENLILLE-9",
-        "number": "5511/15-9",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE PERMIT",
-        "operator": "DANOP",
-        "rig": "Kenting 31",
-        "spud_date": "1992-01-22",
-        "comp_date": "1992-02-26",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.60589,
-          55.53771
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "STINA-1",
         "number": "5414/7-1",
         "classification": "EXPLORATION",
@@ -16918,80 +15150,6 @@
         "coordinates": [
           4.1793,
           56.1784
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "SÆBY-1",
-        "number": "5710/22-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "9/84",
-        "operator": "DOPAS",
-        "rig": "Boldon 41",
-        "spud_date": "1985-08-07",
-        "comp_date": "1985-08-28",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.39453,
-          57.36084
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "SØLLESTED-1",
-        "number": "5411/6-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "MÆRSK OLIE OG GAS AS",
-        "rig": "Deutag-14",
-        "spud_date": "1982-10-27",
-        "comp_date": "1982-12-11",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.29742,
-          54.80075
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "SØNDERBORG-1",
-        "number": "5409/04-01",
-        "classification": "GEOTERMI",
-        "licence": "Sønderborg Geotermi",
-        "operator": "DONG E&P A/S",
-        "rig": "No Limit 01",
-        "spud_date": "2010-03-17",
-        "comp_date": "2010-05-18",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "other",
-        "source": "shapefile"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.83879,
-          54.92815
         ]
       }
     },
@@ -18023,104 +16181,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "THISTED-1",
-        "number": "5708/31-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 A-SV",
-        "operator": "Gulf",
-        "rig": "Oilwell 940e",
-        "spud_date": "1967-10-01",
-        "comp_date": "1967-10-16",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.65143,
-          57.02329
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "THISTED-2",
-        "number": "5608/03-01",
-        "classification": "EXPLORATION",
-        "licence": "DONG GEOTHERMAL CONCESS.",
-        "operator": "DONG",
-        "rig": "Ideco Bir-8085",
-        "spud_date": "1982-02-04",
-        "comp_date": "1982-03-28",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "shapefile"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.71442,
-          56.96495
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "THISTED-3",
-        "number": "5608/03-02",
-        "classification": "APPRAISAL AND PRODUCTION",
-        "licence": "DONG GEOTHERMAL CONCESS.",
-        "operator": "DONG",
-        "rig": "National 80 U",
-        "spud_date": "1983-08-10",
-        "comp_date": "1983-08-26",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "shapefile"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.73915,
-          56.96585
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "THISTED-4",
-        "number": "5708/31-2",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "3/84",
-        "operator": "Amoco",
-        "rig": "Kenting 31",
-        "spud_date": "1985-05-19",
-        "comp_date": "1985-07-18",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.69676,
-          57.02074
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "TORDENSKJOLD-1",
         "number": "5503/3-2",
         "classification": "EXPLORATION",
@@ -18140,279 +16200,6 @@
         "coordinates": [
           3.54057,
           55.93796
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TOSTRUP-1",
-        "number": "5609/10-01",
-        "classification": "SALT RESEARCH",
-        "licence": "01/35",
-        "operator": "DAPCO",
-        "rig": "Sullivan",
-        "spud_date": "1951-05-29",
-        "comp_date": "1951-06-17",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "other",
-        "source": "shapefile"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.43147,
-          56.63912
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TOSTRUP-10",
-        "number": "5609/10-10",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DONG",
-        "rig": "Ideco Bir-8085",
-        "spud_date": "1981-09-03",
-        "comp_date": "1981-10-12",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.40786,
-          56.63634
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TOSTRUP-11",
-        "number": "5609/10-0",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GASLAGER UNDERSØGELSE",
-        "operator": "DANOP",
-        "rig": "Kenting 36",
-        "spud_date": "1987-10-10",
-        "comp_date": "1987-11-08",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.42203,
-          56.6313
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TOSTRUP-2",
-        "number": "5609/10-02",
-        "classification": "SALT RESEARCH",
-        "licence": "01/35",
-        "operator": "DAPCO",
-        "rig": "Sullivan",
-        "spud_date": "1951-07-26",
-        "comp_date": "1951-08-24",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "other",
-        "source": "shapefile"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.40786,
-          56.62579
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TOSTRUP-3",
-        "number": "5609/10-3",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DONG",
-        "rig": "Dst Smg Fb-291",
-        "spud_date": "1978-04-21",
-        "comp_date": "1978-05-26",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.40064,
-          56.63579
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TOSTRUP-4",
-        "number": "5609/10-4",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DONG",
-        "rig": "Dst Gh 1400/23",
-        "spud_date": "1979-03-10",
-        "comp_date": "1979-10-22",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.39564,
-          56.63634
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TOSTRUP-5",
-        "number": "5609/10-5",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DONG",
-        "rig": "Ideco Bir-800",
-        "spud_date": "1980-04-21",
-        "comp_date": "1980-10-19",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.41536,
-          56.64162
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TOSTRUP-6",
-        "number": "5609/10-6",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DONG",
-        "rig": "Ideco Bir-800",
-        "spud_date": "1980-07-14",
-        "comp_date": "1980-08-27",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.42119,
-          56.63912
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TOSTRUP-7",
-        "number": "5609/10-7",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DONG",
-        "rig": "Ideco Bir-800",
-        "spud_date": "1980-08-30",
-        "comp_date": "1980-10-13",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.42202,
-          56.64329
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TOSTRUP-8",
-        "number": "5609/10-8",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DONG",
-        "rig": "Ideco Bir-8085",
-        "spud_date": "1981-05-31",
-        "comp_date": "1981-07-14",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.41758,
-          56.6344
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TOSTRUP-9",
-        "number": "5609/10-9",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DONG",
-        "rig": "Ideco Bir-8085",
-        "spud_date": "1981-07-19",
-        "comp_date": "1981-08-30",
-        "location": "ONSHORE",
-        "released": false,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.42036,
-          56.63579
         ]
       }
     },
@@ -19793,131 +17580,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "TØNDER-1",
-        "number": "5408/4-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1951-05-05",
-        "comp_date": "1952-06-19",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.85346,
-          54.95961
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TØNDER-2",
-        "number": "5408/4-2",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Emsco",
-        "spud_date": "1952-07-10",
-        "comp_date": "1953-03-07",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.8593,
-          54.98461
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TØNDER-3",
-        "number": "5408/4-3",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "MÆRSK OLIE OG GAS AS",
-        "rig": "Deutag-14",
-        "spud_date": "1980-10-10",
-        "comp_date": "1980-11-10",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.85652,
-          54.95767
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TØNDER-4",
-        "number": "5408/4-4",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DONG",
-        "rig": "National 80 U",
-        "spud_date": "1983-03-13",
-        "comp_date": "1983-03-30",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.84582,
-          54.95906
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "TØNDER-5",
-        "number": "5408/4-5",
-        "classification": "GAS STORAGE",
-        "well_type": "GAS STORAGE",
-        "licence": "GAS STORAGE INVESTIGATION",
-        "operator": "DONG",
-        "rig": "National 80 U",
-        "spud_date": "1983-02-13",
-        "comp_date": "1983-03-09",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "development",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.83072,
-          54.9502
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "U-1X",
         "number": "5504/16-2",
         "classification": "EXPLORATION",
@@ -19962,56 +17624,6 @@
         "coordinates": [
           5.20143,
           55.72016
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "UGLEV-1",
-        "number": "5608/11-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Emsco",
-        "spud_date": "1951-10-11",
-        "comp_date": "1951-12-17",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.53445,
-          56.62572
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "ULLERSLEV-1",
-        "number": "5510/23-2",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1951-05-02",
-        "comp_date": "1951-06-11",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.64355,
-          55.36987
         ]
       }
     },
@@ -20543,31 +18155,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "VARNÆS-1",
-        "number": "5509/31-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "MÆRSK OLIE OG GAS AS",
-        "rig": "Deutag-14",
-        "spud_date": "1980-11-20",
-        "comp_date": "1980-12-23",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.59098,
-          55.03629
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "VBA-1",
         "number": "5504/7-0",
         "classification": "PRODUCTION",
@@ -20818,106 +18405,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "VEDSTED-1",
-        "number": "5709/27-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(STANDARD) DAPCO",
-        "rig": "Emsco",
-        "spud_date": "1958-05-09",
-        "comp_date": "1958-06-08",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.66868,
-          57.13997
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "VEMB-1",
-        "number": "5608/18-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(STANDARD) DAPCO",
-        "rig": "Emsco",
-        "spud_date": "1957-12-14",
-        "comp_date": "1958-01-27",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.36168,
-          56.38088
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "VENDSYSSEL-1",
-        "number": "5710/22-2",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "1/10",
-        "operator": "Total E&P Denmark B.V.",
-        "rig": "Comax-1000",
-        "spud_date": "2015-05-04",
-        "comp_date": "2015-09-02",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.26838,
-          57.28422
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "VINDING-1",
-        "number": "5608/23-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Emsco",
-        "spud_date": "1947-07-17",
-        "comp_date": "1947-12-24",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.69757,
-          56.28993
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name": "VIVI-1",
         "number": "5605/10-5",
         "classification": "EXPLORATION",
@@ -20937,31 +18424,6 @@
         "coordinates": [
           5.48315,
           56.72191
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "VOLDUM-1",
-        "number": "5610/18-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "Gulf",
-        "rig": "Deutag-14",
-        "spud_date": "1974-03-04",
-        "comp_date": "1974-04-15",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          10.26559,
-          56.38334
         ]
       }
     },
@@ -21137,56 +18599,6 @@
         "coordinates": [
           4.28205,
           56.24268
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "ÅBENRÅ-1",
-        "number": "5509/30-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DAPCO",
-        "operator": "(DAPCO) GULF",
-        "rig": "Cardwell",
-        "spud_date": "1952-12-11",
-        "comp_date": "1953-07-04",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.35347,
-          55.0249
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "ØRSLEV-1",
-        "number": "5411/8-1",
-        "classification": "EXPLORATION",
-        "well_type": "OIL/GAS",
-        "licence": "DUC ENERET 1962 B",
-        "operator": "Gulf",
-        "rig": "Oilwell 940e",
-        "spud_date": "1967-10-31",
-        "comp_date": "1968-01-09",
-        "location": "ONSHORE",
-        "released": true,
-        "category": "exploration",
-        "source": "xlsx"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          11.98272,
-          54.78131
         ]
       }
     }

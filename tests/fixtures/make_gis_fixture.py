@@ -100,11 +100,13 @@ WELLS_ROWS = [
      "56°38'30,00\"", "09°24'60,00\"", "21_04_1980", "19_10_1980", "ONSHORE   ", "n"],
 ]
 # Legacy shapefile wells: ADDA-1 duplicates the spreadsheet (must be dropped),
-# the other two exist only here (must be kept, tagged source=shapefile).
+# the others exist only here. TSEA-3B is offshore (kept, tagged
+# source=shapefile); the two onshore ones are dropped by the offshore filter.
 SHP_WELLS = [
-    ("ADDA-1", "5504/08-01", "EXPLORATION", 4.8700, 55.8105, "YES"),
-    ("SØNDERBORG-1", "5409/04-01", "GEOTERMI", 9.8400, 54.9295, "YES"),
-    ("TOSTRUP-1", "5609/10-01", "SALT RESEARCH", 9.4100, 56.6500, None),
+    ("ADDA-1", "5504/08-01", "EXPLORATION", 4.8700, 55.8105, "YES", "OFFSHORE"),
+    ("TSEA-3B", "5504/12-14", "APPRAISAL AND PRODUCTION", 4.9200, 55.7200, "YES", "OFFSHORE"),
+    ("SØNDERBORG-1", "5409/04-01", "GEOTERMI", 9.8400, 54.9295, "YES", "ONSHORE"),
+    ("TOSTRUP-1", "5609/10-01", "SALT RESEARCH", 9.4100, 56.6500, None, "ONSHORE"),
 ]
 
 
@@ -133,9 +135,9 @@ def write_wells_shapefile(zip_path: Path) -> None:
         w.field(name, "C", size)
     w.field("Spud_Date", "D")
     w.field("N_degrees", "N", 12, 6)  # coordinate echo column; must be dropped
-    for name, number, cls, lon, lat, released in SHP_WELLS:
+    for name, number, cls, lon, lat, released, location in SHP_WELLS:
         w.point(lon, lat)
-        w.record(name, number, cls, "01/35", "DAPCO", "ONSHORE", released or "",
+        w.record(name, number, cls, "01/35", "DAPCO", location, released or "",
                  datetime.date(1951, 5, 29), lat)
     w.close()
     stem.with_suffix(".prj").write_text(PRJ_WKT_ED50_GEO, encoding="utf-8")

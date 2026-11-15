@@ -210,12 +210,25 @@ def wells(built):
 
 def test_wells_merge_spreadsheet_and_shapefile_extras(wells):
     fc, by = wells
-    # 4 spreadsheet wells + 2 shapefile-only; the shapefile's ADDA-1 is dropped.
-    assert set(by) == {"ADDA-1", "ADDA-3", "SOL-1", "TOSTRUP-5",
-                       "SØNDERBORG-1", "TOSTRUP-1"}
+    # 3 offshore spreadsheet wells + the offshore shapefile-only TSEA-3B. The
+    # shapefile's ADDA-1 duplicates the spreadsheet; TOSTRUP-5 (spreadsheet),
+    # SØNDERBORG-1 and TOSTRUP-1 (shapefile) are onshore and filtered out.
+    assert set(by) == {"ADDA-1", "ADDA-3", "SOL-1", "TSEA-3B"}
     assert by["ADDA-1"]["properties"]["source"] == "xlsx"
-    assert by["SØNDERBORG-1"]["properties"]["source"] == "shapefile"
-    assert "spreadsheet" in fc["source"]
+    assert by["TSEA-3B"]["properties"]["source"] == "shapefile"
+    assert "spreadsheet" in fc["source"] and "offshore" in fc["source"]
+
+
+def test_wells_offshore_only(wells):
+    fc, _ = wells
+    assert {f["properties"]["location"] for f in fc["features"]} == {"OFFSHORE"}
+
+
+def test_offshore_only_drops_unknown_location_loudly(capsys):
+    feats = [{"properties": {"name": n, "location": loc}}
+             for n, loc in (("A", "OFFSHORE"), ("B", "ONSHORE"), ("C", None))]
+    assert [f["properties"]["name"] for f in G.offshore_only(feats)] == ["A"]
+    assert "WARN" in (out := capsys.readouterr().out) and ": C" in out
 
 
 def test_wells_normalised_properties(wells):
@@ -231,16 +244,15 @@ def test_wells_normalised_properties(wells):
     }
     assert by["SOL-1"]["properties"]["released"] is False   # name whitespace stripped
     # Shapefile extras get the same schema; noise columns do not leak through.
-    son = by["SØNDERBORG-1"]["properties"]
-    assert son["number"] == "5409/04-01" and son["spud_date"] == "1951-05-29"
-    assert not {k for k in son if k.lower() in G.DROP_FIELDS}
-    assert "released" not in by["TOSTRUP-1"]["properties"]   # blank -> omitted
+    tsea = by["TSEA-3B"]["properties"]
+    assert tsea["number"] == "5504/12-14" and tsea["spud_date"] == "1951-05-29"
+    assert tsea["released"] is True
+    assert not {k for k in tsea if k.lower() in G.DROP_FIELDS}
 
 
 @pytest.mark.parametrize("name,cat", [
     ("ADDA-1", "exploration"), ("ADDA-3", "exploration"),
-    ("SOL-1", "development"), ("TOSTRUP-5", "development"),
-    ("SØNDERBORG-1", "other"), ("TOSTRUP-1", "other"),
+    ("SOL-1", "development"), ("TSEA-3B", "exploration"),
 ])
 def test_wells_category(wells, name, cat):
     assert wells[1][name]["properties"]["category"] == cat
@@ -346,7 +358,7 @@ def test_wells_without_spreadsheet_use_shapefile_schema(tmp_path):
     G.build(raw_dir=raw, out_dir=tmp_path, tol_m=G.DEFAULT_SIMPLIFY_M,
             do_simplify=True, precision=G.DEFAULT_PRECISION)
     fc = json.loads((tmp_path / "wells.geojson").read_text(encoding="utf-8"))
-    assert len(fc["features"]) == 3
+    assert len(fc["features"]) == 2   # the 2 offshore of 4 shapefile wells
     assert {f["properties"]["source"] for f in fc["features"]} == {"shapefile"}
     assert all("category" in f["properties"] for f in fc["features"])
 

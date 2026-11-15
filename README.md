@@ -272,8 +272,8 @@ teksten under grafen (ikke en egen visuell stil på selve stolpene), og «sist
 oppdatert» hentet fra dataene. Ren HTML/CSS/JS, ingen byggesteg, norsk UI.
 Visningen **Brønner** viser antall **offshorebrønner** påbegynt per år,
 stablet etter kategori (lete/avgrensning, produksjon/injeksjon/lager), med
-samme farger som brønnlaget i kartet. Landbrønner vises verken i grafen eller
-på kartet (de ligger fortsatt i datafilen). Den leser `data/gis/wells.geojson` (se
+samme farger som brønnlaget i kartet. Landbrønner er ikke med (de filtreres
+bort allerede i `build_gis.py`). Den leser `data/gis/wells.geojson` (se
 *Brønner* under *Kart (GIS)*) og vises bare når filen finnes.
 
 Ved siden av produksjonsgrafen ligger et Leaflet-kart over feltene (bygget av
@@ -331,9 +331,16 @@ wells»** fra siden *Drilling Activities*
 (<https://ens.dk/media/8533/download>, lagret som
 `data/sources/gis/raw/All_oil_and_gas_wells.xlsx`). Det har alle olje-,
 gass- og gasslagerbrønner, også produksjons- og injeksjonsbrønner (835 per
-filen sist lagret 2026-05-08). Brønner som bare finnes i shapefilen –
-saltforskning, geotermi og noen eldre landbrønner (13 stk.) – flettes inn
-(navnematch) og merkes `source: "shapefile"`.
+filen sist lagret 2026-05-08). Brønner som bare finnes i shapefilen, flettes
+inn (navnematch) og merkes `source: "shapefile"`.
+
+**Kun offshore.** Prosjektet dekker Nordsjøen, så `wells.geojson` inneholder
+bare brønner med `location: "OFFSHORE"` (`offshore_only()`): **744** per
+2026-11-15, 1966–2024. De 104 landbrønnene – deriblant alle brønner før 1966
+og de fleste shapefil-ekstraene (saltforskning, geotermi, eldre landbrønner)
+– tas ut ved bygging, men ligger fortsatt i de rå kildefilene. Eneste
+shapefil-brønn som blir igjen er TSEA-3B. En brønn uten land/hav-angivelse tas
+også ut, men navngis i en `WARN`.
 
 - Koordinatene i regnearket er grader/minutter/sekunder med desimalkomma
   (`55°48'36,5 "`) i **ED50** (`EPSG:4230`, ifølge arket *Info*), og
@@ -343,12 +350,11 @@ saltforskning, geotermi og noen eldre landbrønner (13 stk.) – flettes inn
   `location`, `released` (bool), `category` og `source`.
 - `category` grupperer ENS sin klassifisering: `exploration` (alt med
   EXPLORATION/APPRAISAL, også blandingsklasser), `development` (produksjon,
-  injeksjon, gasslager, observasjon) og `other` (geotermi, saltforskning).
+  injeksjon, gasslager, observasjon) og `other` (geotermi, saltforskning –
+  i praksis bare landbrønner, så kategorien er tom etter offshore-filteret).
 - Uventet format (manglende kolonne, uparsbar koordinat/dato, posisjon
   utenfor Danmark, dublett-navn) gir `SourceFormatError` – ingen brønn
   gjettes. Eneste toleranse: `60,00` sekunder (forekommer, = neste minutt).
-- To landbrønner (Rødby-1/-2) har 120–150 m ulik posisjon i de to kildene;
-  regnearket vinner.
 
 ## Eierskap
 

@@ -20,7 +20,8 @@ Design notes
 * Wells come primarily from ENS's "All oil and gas wells" spreadsheet
   (``*well*.xlsx`` in ``--raw-dir``; ``--fetch-wells`` downloads it), which is
   maintained, unlike the 2019 well shapefile. Wells only the shapefile lists
-  are merged in, and every well carries ``category`` and ``source``.
+  are merged in, and every well carries ``category`` and ``source``. Only
+  offshore wells are published (``offshore_only``); onshore ones are dropped.
 * Idempotent, like the rest of the pipeline: unchanged geometry produces a
   byte-identical file (the only volatile field, ``generated_at``, is ignored
   when deciding whether anything changed), so re-runs make no git noise.
@@ -552,6 +553,30 @@ def merge_wells(xlsx_wells: list[dict], shp_wells: list[dict]) -> list[dict]:
     return xlsx_wells + extras
 
 
+def offshore_only(wells: list[dict]) -> list[dict]:
+    """Keep offshore wells only -- the project covers the Danish North Sea.
+
+    Onshore wells (ENS ``Location`` = ONSHORE; every pre-1966 well among them)
+    are dropped from the published layer; the raw ENS inputs keep them. A well
+    with no location at all cannot be placed either way, so it is dropped too,
+    but named in a warning rather than discarded silently.
+    """
+    kept, onshore, unknown = [], 0, []
+    for f in wells:
+        loc = str(f["properties"].get("location") or "").upper()
+        if loc == "OFFSHORE":
+            kept.append(f)
+        elif loc == "ONSHORE":
+            onshore += 1
+        else:
+            unknown.append(f["properties"].get("name", "?"))
+    C.info(f"wells: {len(kept)} offshore kept, {onshore} onshore dropped")
+    if unknown:
+        C.warn(f"wells: dropped {len(unknown)} well(s) with no on-/offshore location: "
+               + ", ".join(sorted(unknown)))
+    return kept
+
+
 def find_wells_xlsx(raw_dir: Path) -> Path | None:
     hits = sorted(p for p in raw_dir.glob("*.xlsx")
                   if "well" in p.name.lower() and not p.name.startswith("~$"))
@@ -609,8 +634,10 @@ def build(
         sources["wells"] = (
             "Energistyrelsen (ENS): 'All oil and gas wells' spreadsheet "
             f"({wells_xlsx.name}) plus shapefile-only wells from the exploration/"
-            "appraisal well shape file; ED50 reprojected to WGS84"
+            "appraisal well shape file; offshore wells only; ED50 reprojected to WGS84"
         )
+    if "wells" in collections:
+        collections["wells"] = offshore_only(collections["wells"])
 
     written: list[Path] = []
     for role, feats in sorted(collections.items()):
