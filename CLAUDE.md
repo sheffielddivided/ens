@@ -22,6 +22,7 @@ Hovedside: <https://ens.dk/en/energy-sources/monthly-and-yearly-production>
 - `scripts/parse_monthly_html.py` / `parse_monthly_pdf.py` — én månedsrapport → records.
 - `scripts/update.py` — orkestrator: finn og hent manglende måneder, bygg `combined.json`.
 - `scripts/validate.py` — kvalitetskontroll av hele datasettet.
+- `scripts/ingest_ownership_history.py` — kuratert eierhistorikk per lisens → `data/ownership_history.json`, kontrollert mot ENS' endringslister.
 - `scripts/common.py` — delt: HTTP-klient (høflig, cachende), atomisk JSON, feltnormalisering.
 
 Alle skript kjøres fra repo-rot og har `--help`. Se `README.md` for full

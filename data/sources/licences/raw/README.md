@@ -11,5 +11,6 @@ reproduserbarhet (hentet 2026-11-15):
 
 Begge endringskildene er fritekst, ikke tabeller: overføringer, tildelinger,
 tilbakeleveringer, navnebytter og forlengelser i samme strøm. Eierhistorikken
-bygges derfor fra en kuratert hendelsestabell med henvisning til kilden for
-hver hendelse (under arbeid).
+bygges derfor fra en kuratert fil (`../ownership_history_curated.json`) med
+ordrette sitater fra disse kildene; `scripts/ingest_ownership_history.py`
+kontrollerer at hvert sitat faktisk står her.

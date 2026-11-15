@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "description": "Hand-curated ownership history for the licences behind the Danish fields with production data, read from the ENS amendment lists in data/sources/licences/raw/. Each licence has a timeline of periods; each period gives the shares (percent) per legal entity, how certain they are (basis), and verbatim quotes from the sources (evidence) that scripts/ingest_ownership_history.py checks against the raw files. Entities carry their legal name and group over time, so renames and acquisitions do not need their own periods.",
+  "basis": {
+    "stated": "The source states these shares (or states the transfer that produces them from the previous stated period).",
+    "derived": "Computed from shares and transfers the source states, e.g. today's shares minus a stated transfer; the period's note says how.",
+    "unknown": "The source names the owners but not their shares."
+  },
+  "entities": {
+    "maersk": {
+      "names": [["1962-07-08", "A.P. Møller - Mærsk A/S and Mærsk Olie og Gas A/S (jointly)", "stated"],
+                ["2017-12-07", "Mærsk Olie og Gas A/S", "stated"],
+                ["2018-05-02", "Total E&P Danmark A/S", "stated"],
+                ["2021-06-01", "TotalEnergies EP Danmark A/S", "stated"]],
+      "groups": [["1962-07-08", "A.P. Møller - Mærsk"], ["2018-03-08", "Total"], ["2021-06-01", "TotalEnergies"]]
+    },
+    "sogu": {
+      "names": [["1962-07-08", "Shell Olie- og Gasudvinding Danmark B.V.", "stated"]],
+      "groups": [["1962-07-08", "Shell"]]
+    },
+    "chevron": {
+      "names": [["1962-07-08", "Texaco Denmark Inc., Delaware, Branch in Denmark", "stated"],
+                ["2004-08-17", "ChevronTexaco Denmark Inc., Delaware, Branch in Denmark", "attested"],
+                ["2008-05-22", "Chevron Denmark Inc., Delaware, Branch in Denmark", "attested"],
+                ["2013-01-15", "Chevron Denmark, Filial af Chevron Denmark Inc., USA", "attested"],
+                ["2019-04-03", "Total Denmark ASW, Filial af Total Denmark ASW, INC., USA", "stated"],
+                ["2021-06-01", "TotalEnergies Denmark ASW, Filial af TotalEnergies Denmark ASW, INC., USA", "stated"]],
+      "groups": [["1962-07-08", "Texaco"], ["2004-08-17", "Chevron"], ["2019-04-03", "Total"], ["2021-06-01", "TotalEnergies"]],
+      "note": "The source gives the dates of the Texaco -> ChevronTexaco and ChevronTexaco -> Chevron name changes only as the first entry that uses the new name (basis 'attested')."
+    },
+    "nsf": {
+      "names": [["2008-01-01", "Nordsøfonden", "stated"]],
+      "groups": [["2008-01-01", "Nordsøfonden"]]
+    },
+    "dong": {
+      "names": [["1972-01-01", "DONG Efterforskning og Produktion A/S", "stated"],
+                ["2006-09-15", "DONG E&P A/S", "stated"],
+                ["2017-09-29", "INEOS E&P A/S", "stated"]],
+      "groups": [["1972-01-01", "DONG"], ["2017-09-29", "INEOS"]]
+    },
+    "dong_dk": {
+      "names": [["2013-12-17", "DONG E&P DK A/S", "stated"],
+                ["2017-09-29", "INEOS E&P DK A/S", "stated"],
+                ["2023-06-29", "INEOS Energy (Lulita) A/S", "stated"]],
+      "groups": [["2013-12-17", "DONG"], ["2017-09-29", "INEOS"]]
+    },
+    "hess": {
+      "names": [["1989-12-20", "Amerada Hess ApS", "stated"],
+                ["2006-05-24", "Hess Denmark ApS", "stated"],
+                ["2021-08-30", "INEOS Energy (Syd Arne) ApS", "stated"]],
+      "groups": [["1989-12-20", "Hess"], ["2021-08-30", "INEOS"]]
+    },
+    "danoil": {
+      "names": [["1989-12-20", "Danoil Exploration A/S", "stated"]],
+      "groups": [["1989-12-20", "Danoil"]]
+    },
+    "denerco_oil": {
+      "names": [["1986-01-01", "DENERCO OIL A/S", "stated"],
+                ["2006-09-05", "Altinex Oil Denmark A/S", "stated"],
+                ["2012-06-21", "Noreco Oil Denmark A/S", "stated"],
+                ["2023-06-19", "BlueNord Energy Denmark A/S", "stated"]],
+      "groups": [["1986-01-01", "Denerco"], ["2006-09-05", "Altinex"], ["2012-06-21", "Noreco"], ["2023-06-19", "BlueNord"]],
+      "note": "Group follows the company name as the source gives it; the source does not say when Noreco took over Altinex."
+    },
+    "ld_energi": {
+      "names": [["1986-01-01", "LD Energi A/S", "stated"],
+                ["2001-12-31", "DENERCO Petroleum A/S", "stated"],
+                ["2006-09-05", "Altinex Petroleum Denmark A/S", "stated"],
+                ["2012-06-21", "Noreco Petroleum Denmark A/S", "stated"],
+                ["2023-06-19", "BlueNord Gas Denmark A/S", "stated"]],
+      "groups": [["1986-01-01", "LD Energi"], ["2001-12-31", "Denerco"], ["2006-09-05", "Altinex"], ["2012-06-21", "Noreco"], ["2023-06-19", "BlueNord"]]
+    },
+    "statoil": {
+      "names": [["1986-01-01", "Statoil Efterforskning og Produktion A/S", "stated"]],
+      "groups": [["1986-01-01", "Statoil"]]
+    },
+    "phillips": {
+      "names": [["1995-05-15", "Phillips (legal name not given in the source)", "stated"]],
+      "groups": [["1995-05-15", "Phillips"]]
+    },
+    "siri_uk": {
+      "names": [["1995-05-15", "Enterprise Oil Denmark Limited", "stated"],
+                ["2001-09-17", "Paladin Oil Denmark Limited", "stated"],
+                ["2008-01-01", "Talisman Oil Denmark Limited", "attested"],
+                ["2008-06-19", "Siri (UK) Limited", "stated"],
+                ["2011-12-21", "DONG E&P (Siri) UK Limited", "stated"],
+                ["2017-10-12", "INEOS E&P Siri (UK) Limited", "stated"]],
+      "groups": [["1995-05-15", "Enterprise Oil"], ["2001-07-01", "Paladin"], ["2008-01-01", "Noreco"], ["2011-06-30", "DONG"], ["2017-09-29", "INEOS"]],
+      "note": "The source does not date the change from Paladin Oil Denmark Limited to Talisman Oil Denmark Limited (Talisman bought Paladin in 2005); the Talisman name is shown from 1 January 2008, the effective date of Noreco's acquisition, the first point at which the source uses it."
+    },
+    "rwe": {
+      "names": [["1995-05-15", "RWE-DEA AG", "stated"],
+                ["2015-01-01", "DEA Deutsche Erdoel AG", "attested"],
+                ["2019-05-01", "Wintershall Dea Deutschland AG", "stated"],
+                ["2020-05-15", "Wintershall Dea International AG", "stated"],
+                ["2020-06-23", "Wintershall Dea International GmbH", "stated"],
+                ["2025-09-01", "Harbour Energy International GmbH", "stated"]],
+      "groups": [["1995-05-15", "RWE"], ["2015-01-01", "DEA"], ["2019-05-01", "Wintershall Dea"], ["2024-09-03", "Harbour"]],
+      "note": "The source says RWE Dea AG was renamed DEA Deutsche Erdoel GmbH 'earlier this year' (entry of 7 April 2015) and later uses 'DEA Deutsche Erdoel AG'; the change is shown from 1 January 2015."
+    },
+    "ewe_nini": {
+      "names": [["1995-05-15", "EWE AG", "stated"]],
+      "groups": [["1995-05-15", "EWE"]]
+    },
+    "mobil": {
+      "names": [["1995-05-15", "Mobil Erdgas-Erdöl GmbH", "stated"]],
+      "groups": [["1995-05-15", "Mobil"]]
+    },
+    "enterprise_nini": {
+      "names": [["1995-05-15", "Enterprise Oil Denmark Limited", "stated"]],
+      "groups": [["1995-05-15", "Enterprise Oil"]]
+    },
+    "bayerngas_dk": {
+      "names": [["2009-01-01", "Bayerngas Danmark ApS", "stated"],
+                ["2017-12-08", "Spirit Energy Danmark ApS", "stated"],
+                ["2020-11-19", "INEOS E&P (Petroleum Denmark) ApS", "stated"]],
+      "groups": [["2009-01-01", "Bayerngas"], ["2017-12-06", "Spirit Energy"], ["2020-11-19", "INEOS"]],
+      "note": "The source dates the rename to INEOS E&P (Petroleum Denmark) ApS but not INEOS' acquisition; the group change is shown from the rename."
+    },
+    "vng": {
+      "names": [["2010-06-01", "VNG Danmark ApS", "stated"],
+                ["2018-09-28", "Neptune Energy Danmark ApS", "stated"],
+                ["2021-10-01", "Danoil II ApS", "stated"]],
+      "groups": [["2010-06-01", "VNG"], ["2018-09-28", "Neptune Energy"], ["2021-10-01", "Danoil"]]
+    },
+    "wintershall": {
+      "names": [["2006-05-22", "Wintershall Noordzee B.V.", "stated"]],
+      "groups": [["2006-05-22", "Wintershall"]]
+    },
+    "bayerngas_pet": {
+      "names": [["2006-05-22", "Saga Petroleum Danmark AS", "stated"],
+                ["2009-07-08", "Bayerngas Petroleum Danmark AS", "stated"]],
+      "groups": [["2006-05-22", "Saga Petroleum"], ["2009-07-08", "Bayerngas"]]
+    },
+    "ewe_vertrieb": {
+      "names": [["2006-05-22", "EWE Aktiengesellschaft", "stated"],
+                ["2010-07-01", "EWE ENERGIE AG", "stated"],
+                ["2012-08-30", "EWE Vertrieb GmbH", "stated"]],
+      "groups": [["2006-05-22", "EWE"]],
+      "note": "EWE's share passed from EWE Aktiengesellschaft to its wholly owned subsidiary EWE ENERGIE AG on 1 July 2010 (intra-group); treated as one line here."
+    }
+  },
+  "licences": {
+    "sole_concession": {
+      "name": "Sole Concession of 8 July 1962",
+      "current_area": "Contiguous Area",
+      "periods": [
+        {
+          "from": "1999-01-01", "basis": "derived",
+          "shares": {"maersk": 39, "sogu": 46, "chevron": 15},
+          "note": "The source gives no shares before Nordsøfonden joined DUC on 9 July 2012. Derived by assuming Nordsøfonden's 20 % came pro rata from the three partners: today's 31.2 / 36.8 / 12 % divided by 0.8.",
+          "evidence": [
+            {"src": "earlier", "quote": "As of 9 July 2012 the Danish North Sea Fund (Nordsøfonden) has become a partner in DUC in the A.P. Møller - Mærsk Sole Concession of 1962."}
+          ]
+        },
+        {
+          "from": "2012-07-09", "basis": "derived",
+          "shares": {"maersk": 31.2, "sogu": 36.8, "chevron": 12, "nsf": 20},
+          "note": "Shell's 36.8 % is stated (2019); the other shares are today's, unchanged by any transfer in the source since Nordsøfonden joined.",
+          "evidence": [
+            {"src": "earlier", "quote": "As of 9 July 2012 the Danish North Sea Fund (Nordsøfonden) has become a partner in DUC"},
+            {"src": "amendments", "quote": "With effect from 7 December 2017 A.P. Møller – Mærsk A/S’ share of the Sole Concession of 8 July 1962 has been assigned to Mærsk Olie og Gas A/S. Before the assignment the Concession was held by the two companies jointly."}
+          ]
+        },
+        {
+          "from": "2019-08-01", "basis": "stated",
+          "shares": {"maersk": 31.2, "denerco_oil": 36.8, "chevron": 12, "nsf": 20},
+          "note": "The source gives no effective date for the transfer of Shell's share to Noreco; the date of the entry is used.",
+          "evidence": [
+            {"src": "amendments", "quote": "an intra-group transfer of SOGU’s 36,8% share of DUC to Noreco Oil Denmark A/S, subsidiary of Altinex AS, has been effectuated"}
+          ]
+        }
+      ]
+    },
+    "7/89": {
+      "name": "7/89 (South Arne Field)",
+      "current_area": "South Arne Field",
+      "periods": [
+        {
+          "from": "1999-01-01", "basis": "derived",
+          "shares": {"hess": 57.47875, "dong": 34.375, "denerco_oil": 6.5625, "danoil": 1.58375},
+          "note": "Today's shares minus the stated 2011 transfer of Altinex' 6.5625 %. Assumes no change between 1999 and 2011, as the source reports none for the field. The field part's state share (DONG 34.375 %) differs from the exploration part relinquished in 2003 (25 %); the source does not say when it was set.",
+          "evidence": [
+            {"src": "earlier", "quote": "6.56250 % share in licence 7/89 to Hess Denmark ApS (+4.03697 %), DONG E&P A/S (+2.41430 %) and Danoil Exploration A/S (+0.11123 %). The assignments have effect as of 1 January 2011."}
+          ]
+        },
+        {
+          "from": "2011-01-01", "basis": "derived",
+          "shares": {"hess": 61.51572, "dong": 36.7893, "danoil": 1.69498},
+          "note": "Today's shares to five decimals; the source states them rounded in 2016.",
+          "evidence": [
+            {"src": "amendments", "quote": "Hess Danmark ApS (61.5 %), DONG E&P A/S (36.8 %) and Danoil Explorations A/S (1.7 %)"}
+          ]
+        }
+      ]
+    },
+    "4/95": {
+      "name": "4/95 (Nini Field)",
+      "current_area": "Nini Field",
+      "periods": [
+        {
+          "from": "1999-01-01", "basis": "unknown",
+          "owners": ["dong", "rwe", "denerco_oil", "ewe_nini", "mobil", "enterprise_nini"],
+          "note": "Mobil's and Enterprise Oil's interests were taken over by DONG, Denerco and RWE-DEA on 1 November 2000; the source does not give the shares before that.",
+          "evidence": [
+            {"src": "earlier", "quote": "In licence 4/95 the interests held by Mobil Erdgas-Erdöl GmbH and Enterprise Oil Denmark Limited have been taken over by DONG E & P A/S, DENERCO OIL A/S and RWE-DEA AG. The effective date for the transfers is 1 November 2000."}
+          ]
+        },
+        {
+          "from": "2000-11-01", "basis": "derived",
+          "shares": {"dong": 40, "rwe": 30, "denerco_oil": 25, "ewe_nini": 5},
+          "note": "The 2015 shares before Noreco's exit (DONG 40, DEA 30, Noreco 30), with EWE's 5 % taken back from Denerco (stated transfer of 1 September 2001).",
+          "evidence": [
+            {"src": "earlier", "quote": "In licence 4/95 the 5% interest held by EWE AG has been taken over by DENERCO OIL A/S. The effective date for the transfers is 1 September 2001."}
+          ]
+        },
+        {
+          "from": "2001-09-01", "basis": "derived",
+          "shares": {"dong": 40, "rwe": 30, "denerco_oil": 30},
+          "note": "Noreco's 30 % is stated (2015); DONG's and DEA's are their 2015 shares less the stated increases.",
+          "evidence": [
+            {"src": "amendments", "quote": "The Danish Energy Agency has approved the transfer of Noreco Oil Denmark A/S' 30 % share in licence 4/95 (Nini Field) to DONG E&P A/S and DEA Deutsche Erdoel AG."}
+          ]
+        },
+        {
+          "from": "2015-01-21", "basis": "stated",
+          "shares": {"dong": 57.143, "rwe": 42.857},
+          "evidence": [
+            {"src": "amendments", "quote": "DONG E&P A/S' share has thereby increased with 17.143 % to 57.143 % and DEA Deutsche Erdoel AG's share has increased with 12.857 % to 42.857 %. The effective date of the transfers is 21 January 2015."}
+          ]
+        }
+      ]
+    },
+    "16/98": {
+      "name": "16/98 (Cecilie Field)",
+      "current_area": "Cecilie Field",
+      "periods": [
+        {
+          "from": "1998-06-15", "basis": "derived",
+          "shares": {"dong": 22, "ld_energi": 24, "denerco_oil": 37, "rwe": 17},
+          "note": "All changes before 2015 were back-dated to the grant on 15 June 1998: Denerco's 17 % to RWE-DEA, and 1 % each from LD Energi and Denerco to DONG (20 -> 22 %). LD Energi's 24 % and Denerco's 37 % are stated in 2002 and 2015.",
+          "evidence": [
+            {"src": "earlier", "quote": "• Licence 16/98: 17%"},
+            {"src": "earlier", "quote": "LD Energi A/S and DENERCO OIL A/S will each transfer a 1% share to DONG."},
+            {"src": "earlier", "quote": "• 16/98 24.000%"},
+            {"src": "amendments", "quote": "The Danish Energy Agency has approved the transfer of a 37 % share from Noreco Oil Denmark A/S and 24 % share from Noreco Petroleum Denmark A/S to DONG E&P A/S and DEA Deutsche Erdoel AG in licence 16/98."}
+          ]
+        },
+        {
+          "from": "2015-02-20", "basis": "stated",
+          "shares": {"dong": 56.41, "rwe": 43.59},
+          "evidence": [
+            {"src": "amendments", "quote": "The transfer gives DONG E&P A/S a 56,410 % share and DEA Deutsche Erdoel AG a 43,590 % share in the licence, as of 20 February 2015."}
+          ]
+        }
+      ]
+    },
+    "lulita": {
+      "name": "7/86 (Lulita part) and 1/90",
+      "licences": ["7/86 (Lulita part)", "1/90"],
+      "current_area": "Lulita",
+      "periods": [
+        {
+          "from": "1999-01-01", "basis": "stated",
+          "shares": {"statoil": 37.642, "dong": 27.184, "denerco_oil": 24.26, "ld_energi": 10.914},
+          "note": "The 'Before 1 July 2002' column of the 2002 table; the two licences have identical shares. A June 1999 entry says the shares were corrected to fewer decimals.",
+          "evidence": [
+            {"src": "earlier", "quote": "In licence 7/86 (Lulita part) and 1/90 the Statoil shares were sold to DONG E&P A/S, DENERCO OIL A/S and DENERCO Petroleum A/S."},
+            {"src": "earlier", "quote": "Produktion A/S DONG Efterforskning og 27.184% 43.594%"},
+            {"src": "earlier", "quote": "DENERCO OIL A/S 24.260% 38.904%"},
+            {"src": "earlier", "quote": "DENERCO Petroleum 10.914% 17.502%"}
+          ]
+        },
+        {
+          "from": "2002-07-01", "basis": "stated",
+          "shares": {"dong": 43.594, "denerco_oil": 38.904, "ld_energi": 17.502},
+          "evidence": [
+            {"src": "earlier", "quote": "DENERCO OIL A/S 24.260% 38.904%"}
+          ]
+        },
+        {
+          "from": "2015-04-14", "basis": "stated",
+          "shares": {"dong": 80, "denerco_oil": 10, "ld_energi": 10},
+          "evidence": [
+            {"src": "amendments", "quote": "The transfers gives DONG E&P A/S a 80 % share, Noreco Oil Denmark A/S a 10 % share and Noreco Petroleum Denmark A/S a 10 % share in both licences, as of 14 April 2015"}
+          ]
+        },
+        {
+          "from": "2015-10-01", "basis": "stated",
+          "shares": {"dong": 43.594, "dong_dk": 36.406, "denerco_oil": 10, "ld_energi": 10},
+          "evidence": [
+            {"src": "amendments", "quote": "The Danish Energy Agency has approved the transfer of 36.406 % share in licence 7/86 and 1/90 (Lulita) from DONG E&P A/S to DONG E&P DK A/S. DONG E&P A/S' share is thereby reduced to 43,594 % . The effective date of the transfer is 1 October 2015."}
+          ]
+        }
+      ]
+    },
+    "6/95": {
+      "name": "6/95 (Siri Field)",
+      "current_area": "Siri Field",
+      "periods": [
+        {
+          "from": "1999-01-01", "basis": "derived",
+          "shares": {"statoil": 40, "dong": 20, "siri_uk": 20, "denerco_oil": 7.5, "phillips": 12.5},
+          "note": "The 'Before 1 July 2002' shares less the stated split of Phillips' 12.5 % on 31 December 2001. Assumes no change between 1999 and 2001, as the source reports none.",
+          "evidence": [
+            {"src": "earlier", "quote": "The Danish Energy Agency has approved that Phillips' 12.5% share in the Statoil operated licence 6/95 will be taken over by Paladin Oil Denmark Limited, DENERCO OIL A/S and DONG Efterforskning og Produktion A/S from 31 December 2001:"}
+          ]
+        },
+        {
+          "from": "2001-12-31", "basis": "stated",
+          "shares": {"statoil": 40, "dong": 23.6185, "siri_uk": 25.263, "denerco_oil": 11.1185},
+          "evidence": [
+            {"src": "earlier", "quote": "• Paladin Oil Denmark Limited +5.2630% • DENERCO OIL A/S +3.6185% • DONG Efterforskning og Produktion A/S +3.6185%"},
+            {"src": "earlier", "quote": "Statoil Efterforskning og 40.0000% 0.000%"}
+          ]
+        },
+        {
+          "from": "2002-07-01", "basis": "stated",
+          "shares": {"dong": 50, "siri_uk": 30, "denerco_oil": 20},
+          "note": "The 2002 table for licence 6/95 has its column headings swapped; the shares are read from the values (Statoil 40 % before, 0 % after).",
+          "evidence": [
+            {"src": "earlier", "quote": "In licence 6/95, which includes the Siri Field, the Statoil share has been taken over by DONG E&P A/S, Paladin Oil Denmark Limited and DENERCO OIL A/S."},
+            {"src": "earlier", "quote": "DONG Efterforskning og 23.6185% 50.000%"}
+          ]
+        },
+        {
+          "from": "2011-06-30", "basis": "stated",
+          "shares": {"dong": 70, "siri_uk": 30},
+          "evidence": [
+            {"src": "earlier", "quote": "On 20 December 2011 the Danish Energy Agency approved the transfer of Altinex Oil Denmark A/S’s 20 % share in licence 6/95 to DONG E&P A/S and DONG E&P A/S’s acquisition of Siri (UK) Limited, which held a share of 30 % in the licence. The effective date of the transfers is 30 June 2011."}
+          ]
+        }
+      ]
+    },
+    "3/09": {
+      "name": "3/09 (Solsort Field Delineation)",
+      "current_area": "Solsort Field Delineation",
+      "periods": [
+        {
+          "from": "2009-06-29", "basis": "stated",
+          "shares": {"dong": 50, "bayerngas_dk": 30, "nsf": 20},
+          "evidence": [
+            {"src": "earlier", "quote": "On 29 June 2009 the Minister of Climate and Energy granted a new licence - 3/09 - under a neighbouring block procedure. The licence was granted to DONG E&P A/S (50 %), Bayerngas Danmark ApS (30 %) and Nordsøfonden (20 %)."}
+          ]
+        },
+        {
+          "from": "2010-06-01", "basis": "stated",
+          "shares": {"dong": 35, "bayerngas_dk": 30, "vng": 15, "nsf": 20},
+          "evidence": [
+            {"src": "earlier", "quote": "The Danish Energy Agency has approved the transfer of a 15 pct. share in licence 4/98 and in licence 3/09 from DONG E&P A/S to VNG Danmark ApS. DONG E&P A/S's share of the licences is thereby reduced from 50 pct. to 35 pct. The effective date of the transfers is 1 June 2010."}
+          ]
+        }
+      ]
+    },
+    "5/06": {
+      "name": "5/06 (Ravn)",
+      "current_area": null,
+      "relinquished": "2025-12-01",
+      "periods": [
+        {
+          "from": "2006-05-22", "basis": "unknown",
+          "owners": ["wintershall", "bayerngas_pet", "ewe_vertrieb"],
+          "note": "The source names Wintershall, Saga/Bayerngas and EWE as licensees but does not give the shares, or who held the state participation, before EWE's transfer to its subsidiary on 1 July 2010.",
+          "evidence": [
+            {"src": "earlier", "quote": "The affiliate participates in the following licences: 5/98, 1/06, 4/06, 5/06 and 6/06."}
+          ]
+        },
+        {
+          "from": "2010-07-01", "basis": "derived",
+          "shares": {"wintershall": 35, "bayerngas_pet": 30, "ewe_vertrieb": 15, "nsf": 20},
+          "note": "The stated 2013 result (Wintershall 80 %) less the stated transfers of Bayerngas' 30 % and EWE's 15 %; Nordsøfonden's 20 % is the remainder.",
+          "evidence": [
+            {"src": "earlier", "quote": "The Danish Energy Agency has approved the transfer of Bayerngas Petroleum Danmark A/S' share of 30 % and EWE Vertrieb GmbH's share of 15 % in licence 5/06 to Wintershall Noordzee B.V."}
+          ]
+        },
+        {
+          "from": "2013-10-22", "basis": "stated",
+          "shares": {"wintershall": 80, "nsf": 20},
+          "evidence": [
+            {"src": "earlier", "quote": "The transfer gives Wintershall Noordzee B.V. a 80 % share in the licence, as of 22 October 2013."}
+          ]
+        },
+        {
+          "from": "2014-01-02", "basis": "stated",
+          "shares": {"wintershall": 63.64, "nsf": 36.36},
+          "evidence": [
+            {"src": "amendments", "quote": "Nordsøfondens share in the licence thereby increased to 36.36 % whereas Wintershall share decreased to 63.64 %. The effective date of the transfer was 2 January 2014."},
+            {"src": "amendments", "quote": "Licences 5/06 and 2/16 covering the Ravn field and Greater Ravn, were relinquished with effect from 1 December 2025."}
+          ]
+        }
+      ]
+    }
+  },
+  "fields": {
+    "dan": [["sole_concession", null, null]],
+    "dagmar": [["sole_concession", null, null]],
+    "gorm": [["sole_concession", null, null]],
+    "halfdan": [["sole_concession", null, null]],
+    "harald": [["sole_concession", null, null]],
+    "kraka": [["sole_concession", null, null]],
+    "regnar": [["sole_concession", null, null]],
+    "roar": [["sole_concession", null, null]],
+    "rolf": [["sole_concession", null, null]],
+    "skjold": [["sole_concession", null, null]],
+    "svend": [["sole_concession", null, null]],
+    "tyra": [["sole_concession", null, null]],
+    "tyra_se": [["sole_concession", null, null]],
+    "valdemar": [["sole_concession", null, null]],
+    "syd_arne": [["7/89", null, null]],
+    "nini": [["4/95", null, null]],
+    "cecilie": [["16/98", null, null]],
+    "lulita": [["lulita", null, null]],
+    "siri": [["6/95", null, null]],
+    "solsort": [["3/09", null, null]],
+    "ravn": [["5/06", null, null]]
+  }
+}
