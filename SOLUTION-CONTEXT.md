@@ -560,8 +560,10 @@ faktisk `0`.
 zip-URL-er manuelt via `--url`). **Unntak: brønner.** Shapefilen er fra 2019
 og har bare lete-/avgrensningsbrønner, så `wells.geojson` bygges primært fra
 ENS-regnearket «All oil and gas wells» (`ENS_WELLS_XLSX_URL`,
-`https://ens.dk/media/8533/download`, hentes med `--fetch-wells`), med de 13
-brønnene som bare finnes i shapefilen flettet inn. Se README, *Brønner*.
+`https://ens.dk/media/8533/download`, hentes med `--fetch-wells`), med
+brønnene som bare finnes i shapefilen flettet inn, og deretter filtrert til
+**kun offshorebrønner** (`offshore_only()`; 104 landbrønner tas ut). Se
+README, *Brønner*.
 
 **Fem lag** → `docs/data/gis/*.geojson` (ekte feature-antall per
 2026-09-13, verifisert direkte):
@@ -572,7 +574,7 @@ brønnene som bare finnes i shapefilen flettet inn. Se README, *Brønner*.
 | `licences.geojson` | tildelte lisensområder | polygon | 20 |
 | `blocks.geojson` | blokk-/kvadrantrutenett | polygon | 785 |
 | `installations.geojson` | offshore-installasjoner | punkt | 66 |
-| `wells.geojson` | alle olje-/gassbrønner (regneark + 13 fra shapefil) | punkt | 848 (per 2026-11-15) |
+| `wells.geojson` | offshore olje-/gassbrønner (regneark + TSEA-3B fra shapefil) | punkt | 744 (per 2026-11-15) |
 
 **34 feltpolygoner vs. 21 produksjonsfelt** (`data/fields.json`) — disse
 tallene er **bevisst forskjellige**, ikke en feil: noen polygoner har aldri
@@ -721,9 +723,9 @@ To JS-filer, ingen rammeverk, ingen bundling, lastet direkte som
 - Ingen bygge-/kompileringssteg: filen er den samme koden som kjører i
   nettleseren, uendret.
 
-- **Brønner-visningen** (`renderWells()`): teller offshorebrønnene i
-  `wells.geojson` (landbrønner filtreres bort i `load()`, `location !==
-  "OFFSHORE"`) per startår (`spud_date`), stablet etter `category` i fast rekkefølge
+- **Brønner-visningen** (`renderWells()`): teller brønnene i
+  `wells.geojson` (bare offshore – filtrert i `build_gis.py`; filteret i
+  `load()` er bare en sikring mot en eldre datafil) per startår (`spud_date`), stablet etter `category` i fast rekkefølge
   (`WELL_CATS`: `--c7` lete/avgrensning, `--c3` produksjon/injeksjon/lager,
   `--c-other` andre) – samme tokens som brønnmarkørene i `map.js`. Hvert år
   fra første til siste startår får en stolpe (0 der ingenting ble boret).
@@ -739,8 +741,8 @@ To JS-filer, ingen rammeverk, ingen bundling, lastet direkte som
   farge etter `category`, i to `layerGroup`-er styrt av avkrysningsboksene
   `#show-exp-wells` (lete/avgrensning + «annen», på) og `#show-dev-wells`
   (produksjon/injeksjon/lager, av – ~500 punkter rundt plattformene ville
-  dekket feltene). Kun offshorebrønner tegnes (`location === "OFFSHORE"`);
-  landbrønnene blir liggende i datafilen. Lastes etter feltlaget så punktene ligger øverst; laget er
+  dekket feltene). Kun offshorebrønner (datafilen har ingen
+  landbrønner; sjekken i `buildWells()` er en sikring). Lastes etter feltlaget så punktene ligger øverst; laget er
   valgfritt (mangler `wells.geojson`, vises kartet uten).
 - Basiskart: **OpenStreetMap** (ikke en nøkkel-krevende tjeneste) — mørkt
   tema simuleres med et **CSS-filter** på flisene
@@ -793,7 +795,7 @@ Alle tall verifisert direkte mot repoet 2026-09-13:
 | Felt i `data/fields.json` | 21 |
 | Serier i `data/combined.json` | 22 (21 felt + `_total`) |
 | Kjente månedlige kilde-URL-er i `data/sources/index.json` | 103 |
-| GeoJSON-features (fields/blocks/licences/installations/wells) | 34/785/20/66/848 (wells per 2026-11-15) |
+| GeoJSON-features (fields/blocks/licences/installations/wells) | 34/785/20/66/744 (wells per 2026-11-15) |
 | Git-commits totalt | 49 |
 | Repohistorikk | 2026-07-21 → 2026-09-10 (siste commit) |
 
