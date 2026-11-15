@@ -371,3 +371,54 @@ def test_wells_build_is_idempotent(tmp_path):
     first = (tmp_path / "wells.geojson").read_bytes()
     G.build(**kw)
     assert (tmp_path / "wells.geojson").read_bytes() == first
+
+
+# --------------------------------------------------------------------------- #
+# Wells -> fields (point in delineation polygon, plus the explicit name-prefix
+# fallback for producing fields that have no polygon).
+# --------------------------------------------------------------------------- #
+def _sq(slug, name, x0, y0, d=0.1):
+    ring = [[x0, y0], [x0 + d, y0], [x0 + d, y0 + d], [x0, y0 + d], [x0, y0]]
+    return {"type": "Feature", "properties": {"slug": slug, "name": name},
+            "geometry": {"type": "Polygon", "coordinates": [ring]}}
+
+
+def _well(name, x, y, **extra):
+    return {"type": "Feature", "properties": {"name": name, **extra},
+            "geometry": {"type": "Point", "coordinates": [x, y]}}
+
+
+def test_assign_well_fields():
+    fields = [
+        _sq("dan", "Dan", 5.0, 55.0),
+        _sq("halfdan", "Halfdan (Igor area)", 5.2, 55.0),
+        _sq("lulita", "Lulita - 1/90 part", 4.0, 56.0),        # split field:
+        _sq("lulita", "Lulita - 2/90 part", 4.1, 56.0),        # two parts, one slug
+    ]
+    wells = [
+        _well("MFF-1", 5.05, 55.05),
+        _well("HBA-1", 5.25, 55.05, field="stale"),            # stale tag replaced
+        _well("LULITA-2", 4.15, 56.05),
+        _well("DRY-1", 6.0, 57.0),                             # outside every field
+        _well("RAVN A-1", 6.5, 56.5),                          # no polygon: by name
+    ]
+    by = {w["properties"]["name"]: w["properties"] for w in G.assign_well_fields(wells, fields)}
+    assert by["MFF-1"]["field"] == "dan" and by["MFF-1"]["field_name"] == "Dan"
+    assert by["HBA-1"]["field"] == "halfdan" and by["HBA-1"]["field_name"] == "Halfdan"
+    assert by["LULITA-2"]["field"] == "lulita" and by["LULITA-2"]["field_name"] == "Lulita"
+    assert "field" not in by["DRY-1"] and "field_name" not in by["DRY-1"]
+    assert by["RAVN A-1"]["field"] == "ravn"
+
+
+def test_assign_well_fields_overlap_left_unassigned(capsys):
+    fields = [_sq("a", "A", 5.0, 55.0), _sq("b", "B", 5.05, 55.0)]
+    out = G.assign_well_fields([_well("X-1", 5.07, 55.05)], fields)
+    assert "field" not in out[0]["properties"]
+    assert "more than one field" in capsys.readouterr().out
+
+
+def test_wells_build_does_not_invent_fields(wells):
+    # The fixture's wells sit outside the fixture's 6 km field squares, so the
+    # build must run the tagging without inventing a field for any of them.
+    fc, _ = wells
+    assert all("field" not in f["properties"] for f in fc["features"])

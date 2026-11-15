@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_at": "2026-11-15T09:15:43Z",
+  "generated_at": "2026-11-15T09:19:40Z",
   "source": "Energistyrelsen (ENS): 'All oil and gas wells' spreadsheet (All_oil_and_gas_wells.xlsx) plus shapefile-only wells from the exploration/appraisal well shape file; offshore wells only; ED50 reprojected to WGS84",
   "features": [
     {
@@ -18,7 +18,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "kraka",
+        "field_name": "Kraka"
       },
       "geometry": {
         "type": "Point",
@@ -43,7 +45,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "kraka",
+        "field_name": "Kraka"
       },
       "geometry": {
         "type": "Point",
@@ -68,7 +72,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "kraka",
+        "field_name": "Kraka"
       },
       "geometry": {
         "type": "Point",
@@ -93,7 +99,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "kraka",
+        "field_name": "Kraka"
       },
       "geometry": {
         "type": "Point",
@@ -118,7 +126,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "kraka",
+        "field_name": "Kraka"
       },
       "geometry": {
         "type": "Point",
@@ -143,7 +153,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "kraka",
+        "field_name": "Kraka"
       },
       "geometry": {
         "type": "Point",
@@ -168,7 +180,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "kraka",
+        "field_name": "Kraka"
       },
       "geometry": {
         "type": "Point",
@@ -193,7 +207,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "kraka",
+        "field_name": "Kraka"
       },
       "geometry": {
         "type": "Point",
@@ -218,7 +234,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "kraka",
+        "field_name": "Kraka"
       },
       "geometry": {
         "type": "Point",
@@ -243,7 +261,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "adda",
+        "field_name": "Adda"
       },
       "geometry": {
         "type": "Point",
@@ -268,7 +288,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "adda",
+        "field_name": "Adda"
       },
       "geometry": {
         "type": "Point",
@@ -293,7 +315,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "adda",
+        "field_name": "Adda"
       },
       "geometry": {
         "type": "Point",
@@ -318,7 +342,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "adda",
+        "field_name": "Adda"
       },
       "geometry": {
         "type": "Point",
@@ -343,7 +369,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "alma",
+        "field_name": "Alma"
       },
       "geometry": {
         "type": "Point",
@@ -368,7 +396,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "alma",
+        "field_name": "Alma"
       },
       "geometry": {
         "type": "Point",
@@ -418,7 +448,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "kraka",
+        "field_name": "Kraka"
       },
       "geometry": {
         "type": "Point",
@@ -468,7 +500,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -493,7 +527,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -543,7 +579,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -568,7 +606,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -593,7 +633,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -618,7 +660,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -643,7 +687,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "boje",
+        "field_name": "Boje"
       },
       "geometry": {
         "type": "Point",
@@ -668,7 +714,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "boje",
+        "field_name": "Boje"
       },
       "geometry": {
         "type": "Point",
@@ -693,7 +741,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "broder_tuck",
+        "field_name": "Broder Tuck"
       },
       "geometry": {
         "type": "Point",
@@ -718,7 +768,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "broder_tuck",
+        "field_name": "Broder Tuck"
       },
       "geometry": {
         "type": "Point",
@@ -768,7 +820,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "cecilie",
+        "field_name": "Cecilie"
       },
       "geometry": {
         "type": "Point",
@@ -793,7 +847,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "cecilie",
+        "field_name": "Cecilie"
       },
       "geometry": {
         "type": "Point",
@@ -818,7 +874,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "cecilie",
+        "field_name": "Cecilie"
       },
       "geometry": {
         "type": "Point",
@@ -843,7 +901,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "cecilie",
+        "field_name": "Cecilie"
       },
       "geometry": {
         "type": "Point",
@@ -868,7 +928,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "cecilie",
+        "field_name": "Cecilie"
       },
       "geometry": {
         "type": "Point",
@@ -893,7 +955,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "cecilie",
+        "field_name": "Cecilie"
       },
       "geometry": {
         "type": "Point",
@@ -968,7 +1032,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "cecilie",
+        "field_name": "Cecilie"
       },
       "geometry": {
         "type": "Point",
@@ -1018,7 +1084,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dagmar",
+        "field_name": "Dagmar"
       },
       "geometry": {
         "type": "Point",
@@ -1043,7 +1111,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dagmar",
+        "field_name": "Dagmar"
       },
       "geometry": {
         "type": "Point",
@@ -1068,7 +1138,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dagmar",
+        "field_name": "Dagmar"
       },
       "geometry": {
         "type": "Point",
@@ -1093,7 +1165,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dagmar",
+        "field_name": "Dagmar"
       },
       "geometry": {
         "type": "Point",
@@ -1118,7 +1192,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dagmar",
+        "field_name": "Dagmar"
       },
       "geometry": {
         "type": "Point",
@@ -1143,7 +1219,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "kraka",
+        "field_name": "Kraka"
       },
       "geometry": {
         "type": "Point",
@@ -1168,7 +1246,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "adda",
+        "field_name": "Adda"
       },
       "geometry": {
         "type": "Point",
@@ -1218,7 +1298,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -1243,7 +1325,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -1268,7 +1352,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -1293,7 +1379,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -1318,7 +1406,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -1343,7 +1433,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -1368,7 +1460,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -1393,7 +1487,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -1418,7 +1514,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -1443,7 +1541,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dagmar",
+        "field_name": "Dagmar"
       },
       "geometry": {
         "type": "Point",
@@ -1468,7 +1568,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dagmar",
+        "field_name": "Dagmar"
       },
       "geometry": {
         "type": "Point",
@@ -1493,7 +1595,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dagmar",
+        "field_name": "Dagmar"
       },
       "geometry": {
         "type": "Point",
@@ -1518,7 +1622,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dagmar",
+        "field_name": "Dagmar"
       },
       "geometry": {
         "type": "Point",
@@ -1968,7 +2074,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -1993,7 +2101,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2018,7 +2128,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2043,7 +2155,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "freja",
+        "field_name": "Freja"
       },
       "geometry": {
         "type": "Point",
@@ -2068,7 +2182,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "freja",
+        "field_name": "Freja"
       },
       "geometry": {
         "type": "Point",
@@ -2093,7 +2209,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "freja",
+        "field_name": "Freja"
       },
       "geometry": {
         "type": "Point",
@@ -2118,7 +2236,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "freja",
+        "field_name": "Freja"
       },
       "geometry": {
         "type": "Point",
@@ -2218,7 +2338,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "roar",
+        "field_name": "Roar"
       },
       "geometry": {
         "type": "Point",
@@ -2243,7 +2365,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "hejre",
+        "field_name": "Hejre"
       },
       "geometry": {
         "type": "Point",
@@ -2268,7 +2392,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "hejre",
+        "field_name": "Hejre"
       },
       "geometry": {
         "type": "Point",
@@ -2293,7 +2419,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "hejre",
+        "field_name": "Hejre"
       },
       "geometry": {
         "type": "Point",
@@ -2318,7 +2446,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "hejre",
+        "field_name": "Hejre"
       },
       "geometry": {
         "type": "Point",
@@ -2343,7 +2473,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "hejre",
+        "field_name": "Hejre"
       },
       "geometry": {
         "type": "Point",
@@ -2368,7 +2500,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2393,7 +2527,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2418,7 +2554,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2493,7 +2631,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2518,7 +2658,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2543,7 +2685,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2568,7 +2712,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2593,7 +2739,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2618,7 +2766,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2643,7 +2793,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2668,7 +2820,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2693,7 +2847,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2718,7 +2874,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2743,7 +2901,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2768,7 +2928,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2793,7 +2955,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2818,7 +2982,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2843,7 +3009,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2868,7 +3036,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2893,7 +3063,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2918,7 +3090,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2943,7 +3117,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2968,7 +3144,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -2993,7 +3171,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3018,7 +3198,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3043,7 +3225,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3068,7 +3252,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3093,7 +3279,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3118,7 +3306,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3143,7 +3333,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3168,7 +3360,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3193,7 +3387,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3218,7 +3414,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3243,7 +3441,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3268,7 +3468,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3293,7 +3495,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3318,7 +3522,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3343,7 +3549,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3368,7 +3576,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3393,7 +3603,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3418,7 +3630,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3443,7 +3657,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3468,7 +3684,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3493,7 +3711,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3518,7 +3738,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3543,7 +3765,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3568,7 +3792,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3593,7 +3819,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3618,7 +3846,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3643,7 +3873,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3668,7 +3900,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3693,7 +3927,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3718,7 +3954,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3743,7 +3981,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3768,7 +4008,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3793,7 +4035,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3818,7 +4062,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3843,7 +4089,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3868,7 +4116,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3893,7 +4143,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3918,7 +4170,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3943,7 +4197,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3968,7 +4224,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -3993,7 +4251,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4018,7 +4278,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4043,7 +4305,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4068,7 +4332,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4093,7 +4359,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4118,7 +4386,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4143,7 +4413,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4168,7 +4440,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4193,7 +4467,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4218,7 +4494,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4243,7 +4521,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4268,7 +4548,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4293,7 +4575,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4318,7 +4602,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4343,7 +4629,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4368,7 +4656,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4393,7 +4683,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4418,7 +4710,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4443,7 +4737,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4468,7 +4764,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4493,7 +4791,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4518,7 +4818,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4543,7 +4845,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4568,7 +4872,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4593,7 +4899,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -4618,7 +4926,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "harald",
+        "field_name": "Harald"
       },
       "geometry": {
         "type": "Point",
@@ -4643,7 +4953,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "harald",
+        "field_name": "Harald"
       },
       "geometry": {
         "type": "Point",
@@ -4668,7 +4980,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "harald",
+        "field_name": "Harald"
       },
       "geometry": {
         "type": "Point",
@@ -4693,7 +5007,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "hejre",
+        "field_name": "Hejre"
       },
       "geometry": {
         "type": "Point",
@@ -4718,7 +5034,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "hejre",
+        "field_name": "Hejre"
       },
       "geometry": {
         "type": "Point",
@@ -4768,7 +5086,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "harald",
+        "field_name": "Harald"
       },
       "geometry": {
         "type": "Point",
@@ -4793,7 +5113,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "harald",
+        "field_name": "Harald"
       },
       "geometry": {
         "type": "Point",
@@ -4818,7 +5140,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -5093,7 +5417,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "lille_john",
+        "field_name": "Lille John"
       },
       "geometry": {
         "type": "Point",
@@ -5118,7 +5444,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "lille_john",
+        "field_name": "Lille John"
       },
       "geometry": {
         "type": "Point",
@@ -5218,7 +5546,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -5368,7 +5698,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "lille_john",
+        "field_name": "Lille John"
       },
       "geometry": {
         "type": "Point",
@@ -5393,7 +5725,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "lille_john",
+        "field_name": "Lille John"
       },
       "geometry": {
         "type": "Point",
@@ -5418,7 +5752,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "roar",
+        "field_name": "Roar"
       },
       "geometry": {
         "type": "Point",
@@ -5468,7 +5804,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "broder_tuck",
+        "field_name": "Broder Tuck"
       },
       "geometry": {
         "type": "Point",
@@ -5543,7 +5881,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "harald",
+        "field_name": "Harald"
       },
       "geometry": {
         "type": "Point",
@@ -5568,7 +5908,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "harald",
+        "field_name": "Harald"
       },
       "geometry": {
         "type": "Point",
@@ -5593,7 +5935,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "harald",
+        "field_name": "Harald"
       },
       "geometry": {
         "type": "Point",
@@ -5618,7 +5962,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "harald",
+        "field_name": "Harald"
       },
       "geometry": {
         "type": "Point",
@@ -5668,7 +6014,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5693,7 +6041,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5718,7 +6068,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5743,7 +6095,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5768,7 +6122,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5793,7 +6149,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5818,7 +6176,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5843,7 +6203,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5868,7 +6230,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5893,7 +6257,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5918,7 +6284,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5943,7 +6311,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5968,7 +6338,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -5993,7 +6365,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6018,7 +6392,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6043,7 +6419,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6068,7 +6446,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6093,7 +6473,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6118,7 +6500,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6143,7 +6527,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6168,7 +6554,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6193,7 +6581,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6218,7 +6608,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6243,7 +6635,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6268,7 +6662,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6293,7 +6689,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6318,7 +6716,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6343,7 +6743,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6368,7 +6770,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6393,7 +6797,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6418,7 +6824,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6443,7 +6851,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6468,7 +6878,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6493,7 +6905,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6518,7 +6932,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6543,7 +6959,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6568,7 +6986,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6593,7 +7013,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6618,7 +7040,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6643,7 +7067,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6668,7 +7094,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6693,7 +7121,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6718,7 +7148,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6743,7 +7175,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6768,7 +7202,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6793,7 +7229,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6818,7 +7256,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6843,7 +7283,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6868,7 +7310,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6893,7 +7337,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6918,7 +7364,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6943,7 +7391,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6968,7 +7418,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -6993,7 +7445,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7018,7 +7472,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7043,7 +7499,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7068,7 +7526,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7093,7 +7553,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7118,7 +7580,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7143,7 +7607,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7168,7 +7634,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7193,7 +7661,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7218,7 +7688,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7243,7 +7715,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7268,7 +7742,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7293,7 +7769,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7318,7 +7796,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7343,7 +7823,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7368,7 +7850,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7393,7 +7877,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7418,7 +7904,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7443,7 +7931,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7468,7 +7958,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7493,7 +7985,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7518,7 +8012,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7543,7 +8039,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7568,7 +8066,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7593,7 +8093,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7618,7 +8120,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7643,7 +8147,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7668,7 +8174,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7693,7 +8201,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7718,7 +8228,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7743,7 +8255,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7768,7 +8282,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7793,7 +8309,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7818,7 +8336,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7843,7 +8363,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7868,7 +8390,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7893,7 +8417,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7918,7 +8444,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7943,7 +8471,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7968,7 +8498,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -7993,7 +8525,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8018,7 +8552,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8043,7 +8579,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8068,7 +8606,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8093,7 +8633,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8118,7 +8660,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8143,7 +8687,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8168,7 +8714,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8193,7 +8741,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8218,7 +8768,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8243,7 +8795,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8268,7 +8822,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8293,7 +8849,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8318,7 +8876,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8343,7 +8903,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8368,7 +8930,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8393,7 +8957,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8418,7 +8984,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8443,7 +9011,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8468,7 +9038,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8493,7 +9065,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8518,7 +9092,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8543,7 +9119,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8568,7 +9146,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8593,7 +9173,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8618,7 +9200,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8643,7 +9227,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8668,7 +9254,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8693,7 +9281,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8718,7 +9308,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8743,7 +9335,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8768,7 +9362,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8793,7 +9389,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8818,7 +9416,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8843,7 +9443,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8868,7 +9470,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8893,7 +9497,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8918,7 +9524,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8943,7 +9551,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8968,7 +9578,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -8993,7 +9605,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -9018,7 +9632,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -9043,7 +9659,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -9068,7 +9686,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -9093,7 +9713,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -9118,7 +9740,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -9143,7 +9767,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -9168,7 +9794,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "dan",
+        "field_name": "Dan"
       },
       "geometry": {
         "type": "Point",
@@ -9193,7 +9821,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "rolf",
+        "field_name": "Rolf"
       },
       "geometry": {
         "type": "Point",
@@ -9218,7 +9848,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "rolf",
+        "field_name": "Rolf"
       },
       "geometry": {
         "type": "Point",
@@ -9243,7 +9875,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "rolf",
+        "field_name": "Rolf"
       },
       "geometry": {
         "type": "Point",
@@ -9268,7 +9902,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -9293,7 +9929,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "hejre",
+        "field_name": "Hejre"
       },
       "geometry": {
         "type": "Point",
@@ -9318,7 +9956,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9343,7 +9983,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9368,7 +10010,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9393,7 +10037,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9418,7 +10064,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9443,7 +10091,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9468,7 +10118,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9493,7 +10145,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9518,7 +10172,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9543,7 +10199,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9568,7 +10226,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9593,7 +10253,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9618,7 +10280,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9643,7 +10307,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9668,7 +10334,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9693,7 +10361,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9718,7 +10388,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9743,7 +10415,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9768,7 +10442,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9793,7 +10469,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9818,7 +10496,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9843,7 +10523,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9868,7 +10550,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9893,7 +10577,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9918,7 +10604,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9943,7 +10631,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9968,7 +10658,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -9993,7 +10685,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10018,7 +10712,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10043,7 +10739,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10068,7 +10766,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10093,7 +10793,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10118,7 +10820,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10143,7 +10847,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10168,7 +10874,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10193,7 +10901,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10218,7 +10928,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10243,7 +10955,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10268,7 +10982,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10293,7 +11009,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10318,7 +11036,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10343,7 +11063,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10368,7 +11090,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10393,7 +11117,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10418,7 +11144,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10443,7 +11171,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10468,7 +11198,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10493,7 +11225,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10518,7 +11252,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10543,7 +11279,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10568,7 +11306,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10593,7 +11333,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10618,7 +11360,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10643,7 +11387,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10668,7 +11414,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10693,7 +11441,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10718,7 +11468,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10743,7 +11495,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10768,7 +11522,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10793,7 +11549,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10818,7 +11576,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "gorm",
+        "field_name": "Gorm"
       },
       "geometry": {
         "type": "Point",
@@ -10843,7 +11603,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -10868,7 +11630,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -10893,7 +11657,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -10918,7 +11684,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -10943,7 +11711,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -10968,7 +11738,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -10993,7 +11765,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11018,7 +11792,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11043,7 +11819,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11068,7 +11846,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11093,7 +11873,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -11118,7 +11900,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11143,7 +11927,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11168,7 +11954,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11193,7 +11981,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11218,7 +12008,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11268,7 +12060,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "regnar",
+        "field_name": "Regnar"
       },
       "geometry": {
         "type": "Point",
@@ -11293,7 +12087,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "regnar",
+        "field_name": "Regnar"
       },
       "geometry": {
         "type": "Point",
@@ -11318,7 +12114,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11343,7 +12141,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11368,7 +12168,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11393,7 +12195,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11418,7 +12222,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "nini",
+        "field_name": "Nini"
       },
       "geometry": {
         "type": "Point",
@@ -11493,7 +12299,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -11518,7 +12326,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -11693,7 +12503,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "svend",
+        "field_name": "Svend"
       },
       "geometry": {
         "type": "Point",
@@ -11868,7 +12680,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "ravn",
+        "field_name": "Ravn"
       },
       "geometry": {
         "type": "Point",
@@ -11893,7 +12707,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "ravn",
+        "field_name": "Ravn"
       },
       "geometry": {
         "type": "Point",
@@ -11918,7 +12734,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "ravn",
+        "field_name": "Ravn"
       },
       "geometry": {
         "type": "Point",
@@ -11943,7 +12761,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "ravn",
+        "field_name": "Ravn"
       },
       "geometry": {
         "type": "Point",
@@ -11968,7 +12788,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "ravn",
+        "field_name": "Ravn"
       },
       "geometry": {
         "type": "Point",
@@ -11993,7 +12815,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "regnar",
+        "field_name": "Regnar"
       },
       "geometry": {
         "type": "Point",
@@ -12018,7 +12842,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12043,7 +12869,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12068,7 +12896,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12093,7 +12923,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12143,7 +12975,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "roar",
+        "field_name": "Roar"
       },
       "geometry": {
         "type": "Point",
@@ -12168,7 +13002,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "roar",
+        "field_name": "Roar"
       },
       "geometry": {
         "type": "Point",
@@ -12193,7 +13029,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "roar",
+        "field_name": "Roar"
       },
       "geometry": {
         "type": "Point",
@@ -12218,7 +13056,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "roar",
+        "field_name": "Roar"
       },
       "geometry": {
         "type": "Point",
@@ -12243,7 +13083,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "roar",
+        "field_name": "Roar"
       },
       "geometry": {
         "type": "Point",
@@ -12293,7 +13135,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "rolf",
+        "field_name": "Rolf"
       },
       "geometry": {
         "type": "Point",
@@ -12318,7 +13162,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "rolf",
+        "field_name": "Rolf"
       },
       "geometry": {
         "type": "Point",
@@ -12343,7 +13189,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "rolf",
+        "field_name": "Rolf"
       },
       "geometry": {
         "type": "Point",
@@ -12368,7 +13216,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "rolf",
+        "field_name": "Rolf"
       },
       "geometry": {
         "type": "Point",
@@ -12418,7 +13268,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -12468,7 +13320,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "adda",
+        "field_name": "Adda"
       },
       "geometry": {
         "type": "Point",
@@ -12518,7 +13372,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12543,7 +13399,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12568,7 +13426,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12593,7 +13453,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12618,7 +13480,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12643,7 +13507,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12668,7 +13534,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12693,7 +13561,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12718,7 +13588,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12743,7 +13615,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12768,7 +13642,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12793,7 +13669,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12818,7 +13696,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12843,7 +13723,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12868,7 +13750,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12893,7 +13777,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12918,7 +13804,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12943,7 +13831,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12968,7 +13858,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -12993,7 +13885,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -13018,7 +13912,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -13043,7 +13939,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -13068,7 +13966,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -13093,7 +13993,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -13118,7 +14020,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -13143,7 +14047,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -13168,7 +14074,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -13193,7 +14101,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -13218,7 +14128,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -13243,7 +14155,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -13268,7 +14182,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -13368,7 +14284,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13393,7 +14311,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13418,7 +14338,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13443,7 +14365,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13468,7 +14392,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13493,7 +14419,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13518,7 +14446,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13543,7 +14473,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13568,7 +14500,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13593,7 +14527,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13618,7 +14554,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13643,7 +14581,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13668,7 +14608,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13693,7 +14635,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "boje",
+        "field_name": "Boje"
       },
       "geometry": {
         "type": "Point",
@@ -13718,7 +14662,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "halfdan",
+        "field_name": "Halfdan"
       },
       "geometry": {
         "type": "Point",
@@ -13768,7 +14714,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13793,7 +14741,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13818,7 +14768,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13843,7 +14795,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13868,7 +14822,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "siri",
+        "field_name": "Siri"
       },
       "geometry": {
         "type": "Point",
@@ -13968,7 +14924,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -13993,7 +14951,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14018,7 +14978,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14043,7 +15005,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14068,7 +15032,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14093,7 +15059,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14118,7 +15086,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14143,7 +15113,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14168,7 +15140,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14193,7 +15167,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14218,7 +15194,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14243,7 +15221,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14268,7 +15248,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14293,7 +15275,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14318,7 +15302,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14343,7 +15329,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14368,7 +15356,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14393,7 +15383,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14418,7 +15410,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14443,7 +15437,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14468,7 +15464,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14493,7 +15491,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14518,7 +15518,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14543,7 +15545,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14568,7 +15572,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14593,7 +15599,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14618,7 +15626,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14643,7 +15653,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14668,7 +15680,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14693,7 +15707,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14718,7 +15734,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14743,7 +15761,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "skjold",
+        "field_name": "Skjold"
       },
       "geometry": {
         "type": "Point",
@@ -14818,7 +15838,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -14843,7 +15865,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "syd_arne",
+        "field_name": "South Arne"
       },
       "geometry": {
         "type": "Point",
@@ -14868,7 +15892,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "solsort",
+        "field_name": "Solsort"
       },
       "geometry": {
         "type": "Point",
@@ -14893,7 +15919,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "solsort",
+        "field_name": "Solsort"
       },
       "geometry": {
         "type": "Point",
@@ -15043,7 +16071,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "svend",
+        "field_name": "Svend"
       },
       "geometry": {
         "type": "Point",
@@ -15068,7 +16098,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "svend",
+        "field_name": "Svend"
       },
       "geometry": {
         "type": "Point",
@@ -15093,7 +16125,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "svend",
+        "field_name": "Svend"
       },
       "geometry": {
         "type": "Point",
@@ -15118,7 +16152,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "svend",
+        "field_name": "Svend"
       },
       "geometry": {
         "type": "Point",
@@ -15143,7 +16179,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "svend",
+        "field_name": "Svend"
       },
       "geometry": {
         "type": "Point",
@@ -15168,7 +16206,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "svend",
+        "field_name": "Svend"
       },
       "geometry": {
         "type": "Point",
@@ -15193,7 +16233,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "svend",
+        "field_name": "Svend"
       },
       "geometry": {
         "type": "Point",
@@ -15243,7 +16285,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15268,7 +16312,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15293,7 +16339,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15318,7 +16366,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15343,7 +16393,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15368,7 +16420,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15393,7 +16447,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15418,7 +16474,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15443,7 +16501,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15468,7 +16528,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15493,7 +16555,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15518,7 +16582,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15543,7 +16609,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15568,7 +16636,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15593,7 +16663,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15618,7 +16690,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15643,7 +16717,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15668,7 +16744,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15693,7 +16771,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15718,7 +16798,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15743,7 +16825,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15768,7 +16852,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15793,7 +16879,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15818,7 +16906,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15843,7 +16933,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15868,7 +16960,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15893,7 +16987,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15918,7 +17014,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15943,7 +17041,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15968,7 +17068,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -15993,7 +17095,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16018,7 +17122,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16043,7 +17149,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16068,7 +17176,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16093,7 +17203,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16118,7 +17230,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16143,7 +17257,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16243,7 +17359,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16268,7 +17386,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16293,7 +17413,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16318,7 +17440,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16343,7 +17467,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16368,7 +17494,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16393,7 +17521,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16418,7 +17548,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16443,7 +17575,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16468,7 +17602,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16493,7 +17629,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16518,7 +17656,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16542,7 +17682,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "shapefile"
+        "source": "shapefile",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16567,7 +17709,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16592,7 +17736,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16617,7 +17763,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16642,7 +17790,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra_se",
+        "field_name": "Tyra Southeast"
       },
       "geometry": {
         "type": "Point",
@@ -16667,7 +17817,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16692,7 +17844,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16717,7 +17871,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16742,7 +17898,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16767,7 +17925,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16792,7 +17952,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16817,7 +17979,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16842,7 +18006,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16867,7 +18033,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16892,7 +18060,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16917,7 +18087,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16942,7 +18114,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16967,7 +18141,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -16992,7 +18168,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17017,7 +18195,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17042,7 +18222,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17067,7 +18249,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17092,7 +18276,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17117,7 +18303,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17142,7 +18330,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17167,7 +18357,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17192,7 +18384,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17217,7 +18411,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17242,7 +18438,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17267,7 +18465,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17292,7 +18492,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17317,7 +18519,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17342,7 +18546,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17367,7 +18573,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17392,7 +18600,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17417,7 +18627,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17442,7 +18654,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17467,7 +18681,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17492,7 +18708,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17517,7 +18735,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17542,7 +18762,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17567,7 +18789,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "tyra",
+        "field_name": "Tyra"
       },
       "geometry": {
         "type": "Point",
@@ -17592,7 +18816,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "broder_tuck",
+        "field_name": "Broder Tuck"
       },
       "geometry": {
         "type": "Point",
@@ -17667,7 +18893,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -17692,7 +18920,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -17717,7 +18947,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -17742,7 +18974,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -17767,7 +19001,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -17792,7 +19028,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -17817,7 +19055,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -17842,7 +19082,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -17942,7 +19184,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -17967,7 +19211,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -17992,7 +19238,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18017,7 +19265,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18042,7 +19292,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18067,7 +19319,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18092,7 +19346,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18117,7 +19373,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18167,7 +19425,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18192,7 +19452,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18217,7 +19479,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18242,7 +19506,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18267,7 +19533,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18292,7 +19560,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18317,7 +19587,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18342,7 +19614,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18367,7 +19641,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18392,7 +19668,9 @@
         "location": "OFFSHORE",
         "released": false,
         "category": "development",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "valdemar",
+        "field_name": "Valdemar"
       },
       "geometry": {
         "type": "Point",
@@ -18492,7 +19770,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "harald",
+        "field_name": "Harald"
       },
       "geometry": {
         "type": "Point",
@@ -18517,7 +19797,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "harald",
+        "field_name": "Harald"
       },
       "geometry": {
         "type": "Point",
@@ -18542,7 +19824,9 @@
         "location": "OFFSHORE",
         "released": true,
         "category": "exploration",
-        "source": "xlsx"
+        "source": "xlsx",
+        "field": "harald",
+        "field_name": "Harald"
       },
       "geometry": {
         "type": "Point",

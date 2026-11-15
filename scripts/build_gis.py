@@ -22,6 +22,8 @@ Design notes
   maintained, unlike the 2019 well shapefile. Wells only the shapefile lists
   are merged in, and every well carries ``category`` and ``source``. Only
   offshore wells are published (``offshore_only``); onshore ones are dropped.
+  Each well is tagged with the field whose delineation contains it
+  (``assign_well_fields``), so the site can count wells per field.
 * Idempotent, like the rest of the pipeline: unchanged geometry produces a
   byte-identical file (the only volatile field, ``generated_at``, is ignored
   when deciding whether anything changed), so re-runs make no git noise.
@@ -577,6 +579,76 @@ def offshore_only(wells: list[dict]) -> list[dict]:
     return kept
 
 
+# Fields that produce but have no delineation polygon in ENS's shapefile, so a
+# point-in-polygon test can never place their wells. Their wells are named
+# after the field, so they are matched by that explicit name prefix instead
+# (never by "nearest field", which would be a guess). Keep this list short and
+# exact; every entry is logged when used.
+WELL_FIELD_BY_NAME_PREFIX = {
+    "RAVN": "ravn",
+}
+
+
+def assign_well_fields(wells: list[dict], field_features: list[dict]) -> list[dict]:
+    """Tag each well with the field whose delineation contains its position.
+
+    Adds ``field`` (the production-data slug) and ``field_name`` (a display
+    label) to wells that fall inside a field polygon -- or, for the few fields
+    without one, match ``WELL_FIELD_BY_NAME_PREFIX``. Wells outside every field
+    (mostly dry exploration wells) get no ``field``. The position is the well's
+    surface location, i.e. the platform for development wells: a deviated well
+    is counted under the field it was drilled from.
+    """
+    from shapely.geometry import Point, shape
+    from shapely.ops import unary_union
+    from shapely.prepared import prep
+
+    parts: dict[str, list] = {}
+    names: dict[str, str] = {}
+    for f in field_features:
+        slug = f["properties"].get("slug")
+        if not slug:
+            continue
+        parts.setdefault(slug, []).append(shape(f["geometry"]))
+        label = _PART_SUFFIX_RE.sub("", f["properties"].get("name") or "")
+        label = re.sub(r"\s*\([^)]*\)", "", label).strip()   # "Halfdan (Igor area)"
+        names.setdefault(slug, label or slug)
+    polys = {slug: prep(unary_union(g)) for slug, g in sorted(parts.items())}
+
+    out, by_prefix, ambiguous = [], [], []
+    for w in wells:
+        props = dict(w["properties"])
+        props.pop("field", None)
+        props.pop("field_name", None)
+        pt = Point(w["geometry"]["coordinates"])
+        hits = [slug for slug, poly in polys.items() if poly.contains(pt)]
+        if len(hits) > 1:
+            ambiguous.append(f"{props.get('name')} ({', '.join(hits)})")
+        slug = hits[0] if len(hits) == 1 else None
+        if slug is None and not hits:
+            key = _well_key(props.get("name"))
+            for prefix, pslug in WELL_FIELD_BY_NAME_PREFIX.items():
+                if key.startswith(prefix):
+                    slug = pslug
+                    by_prefix.append(props.get("name"))
+                    break
+        if slug:
+            props["field"] = slug
+            props["field_name"] = names.get(slug) or slug.replace("_", " ").title()
+        out.append({**w, "properties": props})
+
+    placed = sum(1 for w in out if w["properties"].get("field"))
+    C.info(f"wells: {placed} placed in a field, {len(out) - placed} outside every field")
+    if by_prefix:
+        C.info(f"wells: matched by name prefix (field has no polygon): {', '.join(sorted(by_prefix))}")
+    if ambiguous:
+        # Overlapping delineations would make the count depend on dict order;
+        # leave those wells unassigned and say so rather than pick one.
+        C.warn(f"wells: {len(ambiguous)} well(s) inside more than one field left unassigned: "
+               + "; ".join(sorted(ambiguous)))
+    return out
+
+
 def find_wells_xlsx(raw_dir: Path) -> Path | None:
     hits = sorted(p for p in raw_dir.glob("*.xlsx")
                   if "well" in p.name.lower() and not p.name.startswith("~$"))
@@ -638,6 +710,10 @@ def build(
         )
     if "wells" in collections:
         collections["wells"] = offshore_only(collections["wells"])
+        if "fields" in collections:
+            collections["wells"] = assign_well_fields(collections["wells"], collections["fields"])
+        else:
+            C.warn("wells: no field layer in this build -- wells are not tagged with a field")
 
     written: list[Path] = []
     for role, feats in sorted(collections.items()):

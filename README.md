@@ -272,7 +272,8 @@ teksten under grafen (ikke en egen visuell stil på selve stolpene), og «sist
 oppdatert» hentet fra dataene. Ren HTML/CSS/JS, ingen byggesteg, norsk UI.
 Visningen **Brønner** viser antall **offshorebrønner** påbegynt per år,
 stablet etter kategori (lete/avgrensning, produksjon/injeksjon/lager), med
-samme farger som brønnlaget i kartet. Landbrønner er ikke med (de filtreres
+samme farger som brønnlaget i kartet, enten **per år** eller **per felt**
+(bryter i visningen). Landbrønner er ikke med (de filtreres
 bort allerede i `build_gis.py`). Den leser `data/gis/wells.geojson` (se
 *Brønner* under *Kart (GIS)*) og vises bare når filen finnes.
 
@@ -342,12 +343,28 @@ og de fleste shapefil-ekstraene (saltforskning, geotermi, eldre landbrønner)
 shapefil-brønn som blir igjen er TSEA-3B. En brønn uten land/hav-angivelse tas
 også ut, men navngis i en `WARN`.
 
+**Brønn → felt.** `assign_well_fields()` gir hver brønn `field` (samme slug
+som produksjonsdataene) og `field_name` når brønnens **startposisjon** ligger
+innenfor en feltavgrensning (punkt-i-polygon mot `fields.geojson`). Per
+2026-11-15: 642 av 744 brønner i 27 felt; de 102 utenfor er nesten bare
+lete-/avgrensningsbrønner som ikke ble felt.
+
+- For produksjonsbrønner er startposisjonen plattformen, så en avviksboret
+  brønn telles under feltet den er boret fra (Lulita-brønnene bores f.eks.
+  fra Harald og telles der).
+- Felt med produksjon men uten avgrensning i kilden kan ikke treffes av
+  punkt-i-polygon. De kobles på eksplisitt navneprefiks
+  (`WELL_FIELD_BY_NAME_PREFIX`, i dag bare `RAVN` → `ravn`), aldri «nærmeste
+  felt». Brønner som havner i flere overlappende felt, blir ikke tildelt noe
+  felt, og det logges som `WARN`.
+
 - Koordinatene i regnearket er grader/minutter/sekunder med desimalkomma
   (`55°48'36,5 "`) i **ED50** (`EPSG:4230`, ifølge arket *Info*), og
   reprojiseres til WGS84 som de andre lagene. Datoer `dd_mm_yyyy` → ISO.
 - Alle brønner får samme skjema: `name`, `number`, `classification`,
   `well_type`, `licence`, `operator`, `rig`, `spud_date`, `comp_date`,
-  `location`, `released` (bool), `category` og `source`.
+  `location`, `released` (bool), `category` og `source`, pluss `field` /
+  `field_name` for brønner i et felt (se *Brønn → felt*).
 - `category` grupperer ENS sin klassifisering: `exploration` (alt med
   EXPLORATION/APPRAISAL, også blandingsklasser), `development` (produksjon,
   injeksjon, gasslager, observasjon) og `other` (geotermi, saltforskning –

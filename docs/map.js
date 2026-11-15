@@ -281,7 +281,8 @@ function wellPopup(p) {
   const src = p.source === "shapefile"
     ? "ENS shapefil (2019) – mangler i ENS' brønnoversikt" : null;
   return kv(p.name, p.classification, [
-    ["Brønnnummer", p.number], ["Type", p.well_type], ["Lisens", p.licence],
+    ["Brønnnummer", p.number], ["Felt", p.field ? ((PROD[p.field] && PROD[p.field].name) || p.field_name) : "Utenfor felt"],
+    ["Type", p.well_type], ["Lisens", p.licence],
     ["Operatør", p.operator], ["Rigg", p.rig],
     ["Påbegynt", isoToNb(p.spud_date)], ["Avsluttet", isoToNb(p.comp_date)],
     ["Plassering", place], ["Frigitt", released], ["Kilde", src],
