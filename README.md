@@ -77,7 +77,7 @@ scripts/
 data/
   sources/index.json    # alle kjente kilde-URLer + status (pending/ok/failed)
   sources/raw/          # rå nedlastede filer (xlsx/html/pdf), committes for reproduserbarhet
-  sources/gis/raw/      # rå ENS-shapefiler (.zip), committes for reproduserbarhet
+  sources/gis/raw/      # rå ENS-shapefiler (.zip) + brønnregneark (.xlsx), committes
   sources/licences/     # manuelt vedlikeholdt lisensiar-eksport (xlsx), se ingest_ownership.py
   sources/reserves/     # manuelt sammenstilte ressursrapporter 2018– (xlsx), se ingest_reserves.py
   yearly.json           # alle årsdata (endelige)
@@ -274,7 +274,8 @@ oppdatert» hentet fra dataene. Ren HTML/CSS/JS, ingen byggesteg, norsk UI.
 Ved siden av produksjonsgrafen ligger et Leaflet-kart over feltene (bygget av
 `map.js`), der felt med produksjon og felt uten skilles med hver sin faste
 farge (ikke gradert etter produksjonsvolum), med en alltid synlig
-blokkrutenett-bakgrunn og en «Feltnavn»-av/på-knapp i kartpanelets hode.
+blokkrutenett-bakgrunn og av/på-knapper i kartpanelets hode for feltnavn,
+letebrønner (på som standard) og produksjonsbrønner (av som standard).
 Kartet deler tema (lyst/mørkt) og databehov med resten av siden.
 
 ## Kart (GIS)
@@ -302,7 +303,7 @@ transformasjonen (fallback `EPSG:23032` bare hvis en `.prj` mangler).
 | `licences.geojson`      | tildelte lisensområder                          | polygon |
 | `blocks.geojson`        | blokk-/kvadrantrutenett                          | polygon |
 | `installations.geojson` | offshore-installasjoner                          | punkt   |
-| `wells.geojson`         | lete- og vurderingsbrønner                       | punkt   |
+| `wells.geojson`         | alle olje-/gassbrønner (se *Brønner* under)      | punkt   |
 
 **Pipeline.** `scripts/build_gis.py`:
 
@@ -316,6 +317,32 @@ transformasjonen (fallback `EPSG:23032` bare hvis en `.prj` mangler).
 - fjerner støykolonner (`Shape_Area`, `FID`, dupliserte koordinatfelt),
 - runder koordinater og skriver `<lag>.geojson` **idempotent**
   (uendret geometri ⇒ ingen diff).
+
+**Brønner.** ENS sin brønn-shapefil («Shape file with exploration and
+appraisal wells») er fra 2019-08-21 og har bare lete- og avgrensningsbrønner.
+Primærkilden for `wells.geojson` er derfor regnearket **«All oil and gas
+wells»** fra siden *Drilling Activities*
+(<https://ens.dk/media/8533/download>, lagret som
+`data/sources/gis/raw/All_oil_and_gas_wells.xlsx`). Det har alle olje-,
+gass- og gasslagerbrønner, også produksjons- og injeksjonsbrønner (835 per
+filen sist lagret 2026-05-08). Brønner som bare finnes i shapefilen –
+saltforskning, geotermi og noen eldre landbrønner (13 stk.) – flettes inn
+(navnematch) og merkes `source: "shapefile"`.
+
+- Koordinatene i regnearket er grader/minutter/sekunder med desimalkomma
+  (`55°48'36,5 "`) i **ED50** (`EPSG:4230`, ifølge arket *Info*), og
+  reprojiseres til WGS84 som de andre lagene. Datoer `dd_mm_yyyy` → ISO.
+- Alle brønner får samme skjema: `name`, `number`, `classification`,
+  `well_type`, `licence`, `operator`, `rig`, `spud_date`, `comp_date`,
+  `location`, `released` (bool), `category` og `source`.
+- `category` grupperer ENS sin klassifisering: `exploration` (alt med
+  EXPLORATION/APPRAISAL, også blandingsklasser), `development` (produksjon,
+  injeksjon, gasslager, observasjon) og `other` (geotermi, saltforskning).
+- Uventet format (manglende kolonne, uparsbar koordinat/dato, posisjon
+  utenfor Danmark, dublett-navn) gir `SourceFormatError` – ingen brønn
+  gjettes. Eneste toleranse: `60,00` sekunder (forekommer, = neste minutt).
+- To landbrønner (Rødby-1/-2) har 120–150 m ulik posisjon i de to kildene;
+  regnearket vinner.
 
 ## Eierskap
 
@@ -351,6 +378,9 @@ python scripts/build_gis.py
 
 # …eller last ned først (lim inn zip-URL-ene fra ENS-siden):
 python scripts/build_gis.py --url <zip-url> [--url …] --simplify 50
+
+# Hent ferskt brønnregneark fra ENS før bygging:
+python scripts/build_gis.py --fetch-wells
 python scripts/build_gis.py --help
 ```
 
@@ -358,8 +388,9 @@ python scripts/build_gis.py --help
 inn tyngre avhengigheter, så dette ligger i en egen `workflow_dispatch`-jobb
 (`Actions → Build GIS layers → Run workflow`) med egen `requirements-gis.txt` –
 den daglige dataoppdateringen er urørt. Jobben kan enten laste ned URL-er du
-oppgir, eller bygge fra committede filer, og committer resultatet under
-`docs/data/gis/`.
+oppgir (og/eller brønnregnearket, `fetch_wells`), eller bygge fra committede
+filer, og committer nedlastede kilder under `data/sources/gis/raw/` og
+resultatet under `docs/data/gis/`.
 
 **Lisens.** ENS publiserer ingen egne, separate vilkår for shape-fil-siden,
 så de generelle opphavsrettsvilkårene for ens.dk (attribusjon påkrevd,

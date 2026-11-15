@@ -10,7 +10,10 @@
  *
  * The field-name-label toggle lives in the "Kart" panel head (outside the
  * map itself, see index.html's #show-labels checkbox) rather than as an
- * overlaid Leaflet control.
+ * overlaid Leaflet control. So do the two well toggles: exploration/appraisal
+ * wells (#show-exp-wells, on by default) and production/injection/storage
+ * wells (#show-dev-wells, off by default -- ~500 points packed around the
+ * platforms would bury the field outlines on the overview map).
  *
  * Theme (light/dark) is a single shared toggle owned by app.js: this module
  * never binds its own click handler, it just exposes refreshMapTheme() on
@@ -52,6 +55,7 @@ const OSM_TILE_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 const TILE_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 let map = null, tileLayer = null, fieldLayer = null, labelsLayer = null, fieldsGeoData = null;
+let wellGroups = null;   // { exploration: L.LayerGroup, development: L.LayerGroup } or null
 let PROD = {}, OWN = null;
 let highlightSet = null;   // Set of slugs to emphasise, or null for the default choropleth
 const restylers = [];   // [() => void] re-applied on theme change
@@ -238,12 +242,89 @@ function renderLegend() {
     $("legend").innerHTML =
       `<div class="lg-title">Utvalgte felt</div>` +
       `<div class="lg-none"><span class="lg-sw" style="background:${seq}"></span>Uthevet</div>` +
-      `<div class="lg-none"><span class="lg-sw" style="background:${none};opacity:.4"></span>Andre felt</div>`;
+      `<div class="lg-none"><span class="lg-sw" style="background:${none};opacity:.4"></span>Andre felt</div>` +
+      wellLegend();
     return;
   }
   $("legend").innerHTML =
     `<div class="lg-none"><span class="lg-sw" style="background:${css("--oil")}"></span>Felt med produksjon</div>` +
-    `<div class="lg-none"><span class="lg-sw" style="background:${none};opacity:.4"></span>Ingen data</div>`;
+    `<div class="lg-none"><span class="lg-sw" style="background:${none};opacity:.4"></span>Ingen data</div>` +
+    wellLegend();
+}
+
+// --------------------------------------------------------------------------- //
+// Wells (scripts/build_gis.py: ENS "All oil and gas wells" + legacy shapefile)
+// --------------------------------------------------------------------------- //
+// category -> [toggle group, colour token, legend label]. "other" (geothermal,
+// salt research) rides along with the exploration toggle but keeps its own,
+// neutral colour.
+const WELL_CATS = {
+  exploration: ["exploration", "--c7", "Lete-/avgrensningsbrønn"],
+  other:       ["exploration", "--c-other", "Annen brønn (geotermi o.l.)"],
+  development: ["development", "--c3", "Produksjons-/injeksjonsbrønn"],
+};
+const wellCat = (p) => WELL_CATS[p.category] || WELL_CATS.other;
+const isoToNb = (d) => (d ? d.split("-").reverse().join(".") : null);
+
+function wellStyle(feature) {
+  return {
+    radius: 3.5, weight: 1, color: css("--surface"), opacity: 0.9,
+    fillColor: css(wellCat(feature.properties)[1]), fillOpacity: 0.95,
+  };
+}
+
+function wellPopup(p) {
+  const place = { OFFSHORE: "Til havs", ONSHORE: "På land" }[p.location] || p.location;
+  const released = p.released == null ? null : p.released ? "Ja" : "Nei";
+  const src = p.source === "shapefile"
+    ? "ENS shapefil (2019) – mangler i ENS' brønnoversikt" : null;
+  return kv(p.name, p.classification, [
+    ["Brønnnummer", p.number], ["Type", p.well_type], ["Lisens", p.licence],
+    ["Operatør", p.operator], ["Rigg", p.rig],
+    ["Påbegynt", isoToNb(p.spud_date)], ["Avsluttet", isoToNb(p.comp_date)],
+    ["Plassering", place], ["Frigitt", released], ["Kilde", src],
+  ]);
+}
+
+function wellLegend() {
+  if (!wellGroups) return "";
+  const shown = new Set(Object.keys(wellGroups).filter((g) => map.hasLayer(wellGroups[g])));
+  return Object.entries(WELL_CATS)
+    .filter(([cat, [group]]) => shown.has(group) && wellCounts[cat])
+    .map(([, [, token, label]]) =>
+      `<div class="lg-none"><span class="lg-sw lg-dot" style="background:${css(token)}"></span>${label}</div>`)
+    .join("");
+}
+
+const wellCounts = {};
+function buildWells(data) {
+  wellGroups = { exploration: L.layerGroup(), development: L.layerGroup() };
+  const markers = [];
+  (data.features || []).forEach((f) => {
+    if (!f.geometry || f.geometry.type !== "Point") return;
+    const [lon, lat] = f.geometry.coordinates;
+    const m = L.circleMarker([lat, lon], wellStyle(f));
+    m.feature = f;
+    m.bindPopup(wellPopup(f.properties), { maxWidth: 280 });
+    wellGroups[wellCat(f.properties)[0]].addLayer(m);
+    const cat = WELL_CATS[f.properties.category] ? f.properties.category : "other";
+    wellCounts[cat] = (wellCounts[cat] || 0) + 1;
+    markers.push(m);
+  });
+  restylers.push(() => markers.forEach((m) => m.setStyle(wellStyle(m.feature))));
+
+  [["exploration", "show-exp-wells", true], ["development", "show-dev-wells", false]]
+    .forEach(([group, id, dflt]) => {
+      const box = $(id);
+      const on = box ? box.checked : dflt;
+      if (on) wellGroups[group].addTo(map);
+      if (box) {
+        box.addEventListener("change", () => {
+          if (box.checked) wellGroups[group].addTo(map); else map.removeLayer(wellGroups[group]);
+          renderLegend();
+        });
+      }
+    });
 }
 
 // --------------------------------------------------------------------------- //
@@ -363,10 +444,17 @@ async function main() {
     });
   }
 
+  // Wells: drawn last so they sit above the field polygons. Optional layer --
+  // the map works without it (e.g. before build_gis.py has been run).
+  const wellsData = await loadJson("data/gis/wells.geojson");
+  if (wellsData && (wellsData.features || []).length) buildWells(wellsData);
+
   const n = geo.data.features.length;
+  const nWells = Object.values(wellCounts).reduce((a, b) => a + b, 0);
+  const wellsStr = nWells ? ` · ${nWells} brønner` : "";
   const upd = geo.data.generated_at ? ` · geometri oppdatert ${geo.data.generated_at.slice(0, 10)}` : "";
   const ownUpd = OWN && OWN.generated_at ? ` · eierskap oppdatert ${OWN.generated_at.slice(0, 10)}` : "";
-  $("map-note").textContent = `${n} felt vist${upd}${ownUpd}.`;
+  $("map-note").textContent = `${n} felt${wellsStr}${upd}${ownUpd}.`;
   renderLegend();
 }
 

@@ -557,7 +557,11 @@ faktisk `0`.
 **Kilde:** ENS' egne shapefiler,
 <https://ens.dk/en/energy-sources/oil-and-gas-related-data/shape-files-oil-and-gas-maps>
 (lenket fra `README.md:281`, ikke hardkodet URL i skript — brukeren limer inn
-zip-URL-er manuelt via `--url`).
+zip-URL-er manuelt via `--url`). **Unntak: brønner.** Shapefilen er fra 2019
+og har bare lete-/avgrensningsbrønner, så `wells.geojson` bygges primært fra
+ENS-regnearket «All oil and gas wells» (`ENS_WELLS_XLSX_URL`,
+`https://ens.dk/media/8533/download`, hentes med `--fetch-wells`), med de 13
+brønnene som bare finnes i shapefilen flettet inn. Se README, *Brønner*.
 
 **Fem lag** → `docs/data/gis/*.geojson` (ekte feature-antall per
 2026-09-13, verifisert direkte):
@@ -568,7 +572,7 @@ zip-URL-er manuelt via `--url`).
 | `licences.geojson` | tildelte lisensområder | polygon | 20 |
 | `blocks.geojson` | blokk-/kvadrantrutenett | polygon | 785 |
 | `installations.geojson` | offshore-installasjoner | punkt | 66 |
-| `wells.geojson` | lete-/vurderingsbrønner | punkt | 371 |
+| `wells.geojson` | alle olje-/gassbrønner (regneark + 13 fra shapefil) | punkt | 848 (per 2026-11-15) |
 
 **34 feltpolygoner vs. 21 produksjonsfelt** (`data/fields.json`) — disse
 tallene er **bevisst forskjellige**, ikke en feil: noen polygoner har aldri
@@ -584,6 +588,7 @@ mot de rå `.prj`-filene i `data/sources/gis/raw/` med `pyproj`:
 | FieldDelineations, Licenses, OffshoreInstallations | `EPSG:23031` (UTM 31N / ED50) | projisert |
 | Blocks | `EPSG:23032` (UTM 32N / ED50) | projisert |
 | ExpAppWells | `EPSG:4230` (geografisk ED50, lon/lat) | geografisk |
+| All_oil_and_gas_wells.xlsx | `EPSG:4230` (ED50, grader/min/sek som tekst; ingen `.prj`, datum fra arket *Info*) | geografisk |
 
 Alle er ED50-baserte (europeisk datum 1950), **ikke** WGS84. GeoJSON krever
 WGS84 (`EPSG:4326`, RFC 7946), så hvert lag reprojiseres individuelt —
@@ -720,6 +725,12 @@ To JS-filer, ingen rammeverk, ingen bundling, lastet direkte som
 
 - Pakket i en IIFE (linje 19-21) for å unngå globale navnekollisjoner med
   `app.js` i samme side.
+- **Brønnlag** (`buildWells()`, `WELL_CATS`): `circleMarker` per brønn,
+  farge etter `category`, i to `layerGroup`-er styrt av avkrysningsboksene
+  `#show-exp-wells` (lete/avgrensning + «annen», på) og `#show-dev-wells`
+  (produksjon/injeksjon/lager, av – ~500 punkter rundt plattformene ville
+  dekket feltene). Lastes etter feltlaget så punktene ligger øverst; laget er
+  valgfritt (mangler `wells.geojson`, vises kartet uten).
 - Basiskart: **OpenStreetMap** (ikke en nøkkel-krevende tjeneste) — mørkt
   tema simuleres med et **CSS-filter** på flisene
   (`invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.9)
@@ -771,7 +782,7 @@ Alle tall verifisert direkte mot repoet 2026-09-13:
 | Felt i `data/fields.json` | 21 |
 | Serier i `data/combined.json` | 22 (21 felt + `_total`) |
 | Kjente månedlige kilde-URL-er i `data/sources/index.json` | 103 |
-| GeoJSON-features (fields/blocks/licences/installations/wells) | 34/785/20/66/371 |
+| GeoJSON-features (fields/blocks/licences/installations/wells) | 34/785/20/66/848 (wells per 2026-11-15) |
 | Git-commits totalt | 49 |
 | Repohistorikk | 2026-07-21 → 2026-09-10 (siste commit) |
 
