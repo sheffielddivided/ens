@@ -728,10 +728,9 @@ To JS-filer, ingen rammeverk, ingen bundling, lastet direkte som
 - **Brønner-visningen** (`renderWells()`): teller brønnene i
   `wells.geojson` (bare offshore – filtrert i `build_gis.py`; filteret i
   `load()` er bare en sikring mot en eldre datafil) per startår (`spud_date`), stablet etter `category` i fast rekkefølge
-  (`WELL_CATS`: `--c7` lete/avgrensning, `--c3` produksjon/injeksjon/lager –
-  blandingsklasser som «APPRAISAL AND PRODUCTION» regnes som produksjon, se
-  `well_category()`,
-  `--c-other` andre) – samme tokens som brønnmarkørene i `map.js`. Hvert år
+  (`WELL_CATS`: `--c7` lete/avgrensning, `--c3` produksjon, `--c1`
+  injeksjon, `--c-other` andre/observasjon – blandingsklasser som
+  «APPRAISAL AND PRODUCTION» følger det brønnen ble, se `well_category()`) – samme tokens som brønnmarkørene i `map.js`. Hvert år
   fra første til siste startår får en stolpe (0 der ingenting ble boret).
   Kun toppkant som segment-mellomrom (sidekanter ville spist ~3 px brede
   stolper på mobil). År/måned- og startår-velgeren skjules; eksport via
@@ -746,10 +745,10 @@ To JS-filer, ingen rammeverk, ingen bundling, lastet direkte som
 - Pakket i en IIFE (linje 19-21) for å unngå globale navnekollisjoner med
   `app.js` i samme side.
 - **Brønnlag** (`buildWells()`, `WELL_CATS`): `circleMarker` per brønn,
-  farge etter `category`, i to `layerGroup`-er styrt av avkrysningsboksene
-  `#show-exp-wells` (lete/avgrensning + «annen», på) og `#show-dev-wells`
-  (produksjon/injeksjon/lager, av – ~500 punkter rundt plattformene ville
-  dekket feltene). Kun offshorebrønner (datafilen har ingen
+  farge etter `category`, i tre `layerGroup`-er styrt av avkrysningsboksene
+  `#show-exp-wells` (lete/avgrensning + «annen», på), `#show-prod-wells`
+  (produksjon, av) og `#show-inj-wells` (injeksjon, av – ~500 punkter rundt
+  plattformene ville dekket feltene). Kun offshorebrønner (datafilen har ingen
   landbrønner; sjekken i `buildWells()` er en sikring). Lastes etter feltlaget så punktene ligger øverst; laget er
   valgfritt (mangler `wells.geojson`, vises kartet uten).
 - Basiskart: **OpenStreetMap** (ikke en nøkkel-krevende tjeneste) — mørkt

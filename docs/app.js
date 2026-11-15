@@ -48,8 +48,9 @@ const WELL_UNIT = "antall brønner";
 // Same tokens as the well markers in docs/map.js, so chart and map agree.
 const WELL_CATS = [
   ["exploration", "Lete-/avgrensningsbrønner", "--c7"],
-  ["development", "Produksjons-/injeksjonsbrønner", "--c3"],
-  ["other", "Andre (geotermi o.l.)", "--c-other"],
+  ["production", "Produksjonsbrønner", "--c3"],
+  ["injection", "Injeksjonsbrønner", "--c1"],
+  ["other", "Andre (observasjon o.l.)", "--c-other"],
 ];
 
 let DATA = null, OWN = null, RES = null, WELLS = null, timeChart = null, lastExport = null;

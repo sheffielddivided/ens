@@ -1,6 +1,6 @@
 {
   "type": "FeatureCollection",
-  "generated_at": "2026-11-15T09:24:11Z",
+  "generated_at": "2026-11-15T09:26:02Z",
   "source": "Energistyrelsen (ENS): 'All oil and gas wells' spreadsheet (All_oil_and_gas_wells.xlsx) plus shapefile-only wells from the exploration/appraisal well shape file; offshore wells only; ED50 reprojected to WGS84",
   "features": [
     {
@@ -98,7 +98,7 @@
         "comp_date": "2011-03-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "kraka",
         "field_name": "Kraka"
@@ -125,7 +125,7 @@
         "comp_date": "1994-10-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "kraka",
         "field_name": "Kraka"
@@ -152,7 +152,7 @@
         "comp_date": "1992-08-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "kraka",
         "field_name": "Kraka"
@@ -179,7 +179,7 @@
         "comp_date": "1993-05-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "kraka",
         "field_name": "Kraka"
@@ -206,7 +206,7 @@
         "comp_date": "1994-06-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "kraka",
         "field_name": "Kraka"
@@ -233,7 +233,7 @@
         "comp_date": "1994-08-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "kraka",
         "field_name": "Kraka"
@@ -819,7 +819,7 @@
         "comp_date": "2003-06-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "cecilie",
         "field_name": "Cecilie"
@@ -846,7 +846,7 @@
         "comp_date": "2004-03-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "cecilie",
         "field_name": "Cecilie"
@@ -873,7 +873,7 @@
         "comp_date": "2004-07-11",
         "location": "OFFSHORE",
         "released": true,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "cecilie",
         "field_name": "Cecilie"
@@ -900,7 +900,7 @@
         "comp_date": "2004-08-05",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "cecilie",
         "field_name": "Cecilie"
@@ -1083,7 +1083,7 @@
         "comp_date": "1991-01-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dagmar",
         "field_name": "Dagmar"
@@ -1110,7 +1110,7 @@
         "comp_date": "1990-12-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dagmar",
         "field_name": "Dagmar"
@@ -1164,7 +1164,7 @@
         "comp_date": "1997-08-06",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dagmar",
         "field_name": "Dagmar"
@@ -2364,7 +2364,7 @@
         "comp_date": "2015-02-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "hejre",
         "field_name": "Hejre"
@@ -2391,7 +2391,7 @@
         "comp_date": "2015-07-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "hejre",
         "field_name": "Hejre"
@@ -2418,7 +2418,7 @@
         "comp_date": "2015-12-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "hejre",
         "field_name": "Hejre"
@@ -2445,7 +2445,7 @@
         "comp_date": "2016-05-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "hejre",
         "field_name": "Hejre"
@@ -2472,7 +2472,7 @@
         "comp_date": "2016-09-20",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "hejre",
         "field_name": "Hejre"
@@ -2499,7 +2499,7 @@
         "comp_date": "1999-10-18",
         "location": "OFFSHORE",
         "released": true,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2526,7 +2526,7 @@
         "comp_date": "2000-02-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2553,7 +2553,7 @@
         "comp_date": "2000-10-15",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2630,7 +2630,7 @@
         "comp_date": "2002-08-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2657,7 +2657,7 @@
         "comp_date": "2005-01-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2684,7 +2684,7 @@
         "comp_date": "2003-01-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2711,7 +2711,7 @@
         "comp_date": "2003-03-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2738,7 +2738,7 @@
         "comp_date": "2003-07-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2765,7 +2765,7 @@
         "comp_date": "2004-11-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2792,7 +2792,7 @@
         "comp_date": "2004-08-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2819,7 +2819,7 @@
         "comp_date": "2007-03-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2846,7 +2846,7 @@
         "comp_date": "2006-02-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2873,7 +2873,7 @@
         "comp_date": "2005-02-15",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2900,7 +2900,7 @@
         "comp_date": "2005-06-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2927,7 +2927,7 @@
         "comp_date": "2002-05-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2954,7 +2954,7 @@
         "comp_date": "2005-12-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -2981,7 +2981,7 @@
         "comp_date": "2005-08-05",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3008,7 +3008,7 @@
         "comp_date": "2006-04-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3035,7 +3035,7 @@
         "comp_date": "2006-06-05",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3062,7 +3062,7 @@
         "comp_date": "2004-11-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3089,7 +3089,7 @@
         "comp_date": "2006-09-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3116,7 +3116,7 @@
         "comp_date": "2004-12-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3143,7 +3143,7 @@
         "comp_date": "2006-12-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3170,7 +3170,7 @@
         "comp_date": "2024-01-20",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3197,7 +3197,7 @@
         "comp_date": "2007-11-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3224,7 +3224,7 @@
         "comp_date": "2007-05-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3251,7 +3251,7 @@
         "comp_date": "2003-01-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3278,7 +3278,7 @@
         "comp_date": "2006-07-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3305,7 +3305,7 @@
         "comp_date": "2002-09-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3332,7 +3332,7 @@
         "comp_date": "2003-04-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3359,7 +3359,7 @@
         "comp_date": "2004-04-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3386,7 +3386,7 @@
         "comp_date": "2003-03-25",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3413,7 +3413,7 @@
         "comp_date": "2005-03-06",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3440,7 +3440,7 @@
         "comp_date": "2004-05-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3467,7 +3467,7 @@
         "comp_date": "2009-09-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3494,7 +3494,7 @@
         "comp_date": "2019-08-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3521,7 +3521,7 @@
         "comp_date": "2012-07-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3548,7 +3548,7 @@
         "comp_date": "2013-06-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3575,7 +3575,7 @@
         "comp_date": "2017-06-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3602,7 +3602,7 @@
         "comp_date": "2019-08-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3629,7 +3629,7 @@
         "comp_date": "2009-09-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3656,7 +3656,7 @@
         "comp_date": "2009-07-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3683,7 +3683,7 @@
         "comp_date": "2009-11-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3710,7 +3710,7 @@
         "comp_date": "2010-03-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3737,7 +3737,7 @@
         "comp_date": "2009-08-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3764,7 +3764,7 @@
         "comp_date": "2015-06-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3791,7 +3791,7 @@
         "comp_date": "2008-12-06",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3818,7 +3818,7 @@
         "comp_date": "2008-06-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3845,7 +3845,7 @@
         "comp_date": "2009-04-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3872,7 +3872,7 @@
         "comp_date": "2007-11-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3899,7 +3899,7 @@
         "comp_date": "2008-09-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3926,7 +3926,7 @@
         "comp_date": "2008-03-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3953,7 +3953,7 @@
         "comp_date": "2009-10-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -3980,7 +3980,7 @@
         "comp_date": "2001-06-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4007,7 +4007,7 @@
         "comp_date": "2002-01-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4034,7 +4034,7 @@
         "comp_date": "2001-09-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4061,7 +4061,7 @@
         "comp_date": "2002-03-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4088,7 +4088,7 @@
         "comp_date": "2001-07-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4115,7 +4115,7 @@
         "comp_date": "2002-01-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4142,7 +4142,7 @@
         "comp_date": "2002-04-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4169,7 +4169,7 @@
         "comp_date": "2002-07-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4196,7 +4196,7 @@
         "comp_date": "2014-05-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "other",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4223,7 +4223,7 @@
         "comp_date": "2004-08-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4250,7 +4250,7 @@
         "comp_date": "2002-05-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4277,7 +4277,7 @@
         "comp_date": "2002-06-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4304,7 +4304,7 @@
         "comp_date": "2002-03-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4331,7 +4331,7 @@
         "comp_date": "2003-03-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4358,7 +4358,7 @@
         "comp_date": "2002-03-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4385,7 +4385,7 @@
         "comp_date": "2002-11-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4412,7 +4412,7 @@
         "comp_date": "2001-12-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4439,7 +4439,7 @@
         "comp_date": "2009-06-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4466,7 +4466,7 @@
         "comp_date": "2003-07-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4493,7 +4493,7 @@
         "comp_date": "2001-04-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4520,7 +4520,7 @@
         "comp_date": "2003-06-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4547,7 +4547,7 @@
         "comp_date": "2001-06-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4574,7 +4574,7 @@
         "comp_date": "2003-04-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4601,7 +4601,7 @@
         "comp_date": "2002-02-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4628,7 +4628,7 @@
         "comp_date": "2002-11-20",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4655,7 +4655,7 @@
         "comp_date": "2001-10-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4682,7 +4682,7 @@
         "comp_date": "2009-05-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4709,7 +4709,7 @@
         "comp_date": "2001-01-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4736,7 +4736,7 @@
         "comp_date": "2000-10-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4763,7 +4763,7 @@
         "comp_date": "2001-05-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4790,7 +4790,7 @@
         "comp_date": "2001-02-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4817,7 +4817,7 @@
         "comp_date": "2012-05-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "halfdan",
         "field_name": "Halfdan"
@@ -4925,7 +4925,7 @@
         "comp_date": "2000-10-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "harald",
         "field_name": "Harald"
@@ -4952,7 +4952,7 @@
         "comp_date": "2024-11-25",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "harald",
         "field_name": "Harald"
@@ -4979,7 +4979,7 @@
         "comp_date": "1997-02-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "harald",
         "field_name": "Harald"
@@ -5085,7 +5085,7 @@
         "comp_date": "1997-05-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "harald",
         "field_name": "Harald"
@@ -5112,7 +5112,7 @@
         "comp_date": "1998-03-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "harald",
         "field_name": "Harald"
@@ -5907,7 +5907,7 @@
         "comp_date": "1998-06-01",
         "location": "OFFSHORE",
         "released": true,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "harald",
         "field_name": "Harald"
@@ -6148,7 +6148,7 @@
         "comp_date": "1997-12-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6175,7 +6175,7 @@
         "comp_date": "1972-03-20",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6202,7 +6202,7 @@
         "comp_date": "2001-12-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6229,7 +6229,7 @@
         "comp_date": "1971-12-15",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6256,7 +6256,7 @@
         "comp_date": "1998-01-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6283,7 +6283,7 @@
         "comp_date": "1979-07-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6310,7 +6310,7 @@
         "comp_date": "1998-02-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6337,7 +6337,7 @@
         "comp_date": "1993-08-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6364,7 +6364,7 @@
         "comp_date": "1993-07-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6391,7 +6391,7 @@
         "comp_date": "1978-07-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6418,7 +6418,7 @@
         "comp_date": "1992-06-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6445,7 +6445,7 @@
         "comp_date": "1996-06-05",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6472,7 +6472,7 @@
         "comp_date": "1978-07-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6499,7 +6499,7 @@
         "comp_date": "2001-04-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6526,7 +6526,7 @@
         "comp_date": "1978-08-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6553,7 +6553,7 @@
         "comp_date": "1996-07-25",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6580,7 +6580,7 @@
         "comp_date": "1978-07-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6607,7 +6607,7 @@
         "comp_date": "1996-11-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6634,7 +6634,7 @@
         "comp_date": "1975-12-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6661,7 +6661,7 @@
         "comp_date": "1997-01-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6688,7 +6688,7 @@
         "comp_date": "1991-12-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6715,7 +6715,7 @@
         "comp_date": "1990-08-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6742,7 +6742,7 @@
         "comp_date": "1991-09-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6769,7 +6769,7 @@
         "comp_date": "1992-03-31",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6796,7 +6796,7 @@
         "comp_date": "1976-09-15",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6823,7 +6823,7 @@
         "comp_date": "1976-12-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6850,7 +6850,7 @@
         "comp_date": "1976-10-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6877,7 +6877,7 @@
         "comp_date": "1976-11-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6904,7 +6904,7 @@
         "comp_date": "1976-10-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6931,7 +6931,7 @@
         "comp_date": "1976-12-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6958,7 +6958,7 @@
         "comp_date": "1986-06-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -6985,7 +6985,7 @@
         "comp_date": "1986-06-15",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7012,7 +7012,7 @@
         "comp_date": "1986-06-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7039,7 +7039,7 @@
         "comp_date": "1986-06-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7066,7 +7066,7 @@
         "comp_date": "1989-05-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7093,7 +7093,7 @@
         "comp_date": "2005-04-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7120,7 +7120,7 @@
         "comp_date": "1991-04-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7147,7 +7147,7 @@
         "comp_date": "1990-11-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7174,7 +7174,7 @@
         "comp_date": "1989-08-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7201,7 +7201,7 @@
         "comp_date": "1989-10-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7228,7 +7228,7 @@
         "comp_date": "1991-08-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7255,7 +7255,7 @@
         "comp_date": "1993-03-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7282,7 +7282,7 @@
         "comp_date": "1996-07-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7309,7 +7309,7 @@
         "comp_date": "1986-06-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7336,7 +7336,7 @@
         "comp_date": "1992-09-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7363,7 +7363,7 @@
         "comp_date": "1991-10-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7390,7 +7390,7 @@
         "comp_date": "1992-04-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7417,7 +7417,7 @@
         "comp_date": "1991-12-31",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7444,7 +7444,7 @@
         "comp_date": "1992-02-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7471,7 +7471,7 @@
         "comp_date": "1992-06-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7498,7 +7498,7 @@
         "comp_date": "1998-08-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7525,7 +7525,7 @@
         "comp_date": "1986-06-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7552,7 +7552,7 @@
         "comp_date": "1986-04-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7579,7 +7579,7 @@
         "comp_date": "2005-07-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7606,7 +7606,7 @@
         "comp_date": "1996-03-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7633,7 +7633,7 @@
         "comp_date": "2005-09-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7660,7 +7660,7 @@
         "comp_date": "1986-06-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7687,7 +7687,7 @@
         "comp_date": "1986-06-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7714,7 +7714,7 @@
         "comp_date": "1986-04-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7741,7 +7741,7 @@
         "comp_date": "1986-04-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7768,7 +7768,7 @@
         "comp_date": "1995-08-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7795,7 +7795,7 @@
         "comp_date": "1986-04-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7822,7 +7822,7 @@
         "comp_date": "1986-04-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7849,7 +7849,7 @@
         "comp_date": "1995-11-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7876,7 +7876,7 @@
         "comp_date": "1999-01-25",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7903,7 +7903,7 @@
         "comp_date": "1987-06-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7930,7 +7930,7 @@
         "comp_date": "1988-03-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7957,7 +7957,7 @@
         "comp_date": "1993-03-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -7984,7 +7984,7 @@
         "comp_date": "1993-05-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8011,7 +8011,7 @@
         "comp_date": "1994-01-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8038,7 +8038,7 @@
         "comp_date": "1993-11-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8065,7 +8065,7 @@
         "comp_date": "1986-04-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8092,7 +8092,7 @@
         "comp_date": "1992-09-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8119,7 +8119,7 @@
         "comp_date": "1993-09-05",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8146,7 +8146,7 @@
         "comp_date": "1995-03-31",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8173,7 +8173,7 @@
         "comp_date": "1994-12-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8200,7 +8200,7 @@
         "comp_date": "1994-09-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8227,7 +8227,7 @@
         "comp_date": "1996-12-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8254,7 +8254,7 @@
         "comp_date": "2006-07-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8281,7 +8281,7 @@
         "comp_date": "1986-04-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8308,7 +8308,7 @@
         "comp_date": "1986-04-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8335,7 +8335,7 @@
         "comp_date": "1996-03-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8362,7 +8362,7 @@
         "comp_date": "1986-04-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8389,7 +8389,7 @@
         "comp_date": "1986-04-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8416,7 +8416,7 @@
         "comp_date": "1996-05-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8443,7 +8443,7 @@
         "comp_date": "1986-04-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8470,7 +8470,7 @@
         "comp_date": "1986-04-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8497,7 +8497,7 @@
         "comp_date": "1998-11-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8524,7 +8524,7 @@
         "comp_date": "1994-06-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8551,7 +8551,7 @@
         "comp_date": "1993-06-05",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8578,7 +8578,7 @@
         "comp_date": "1993-09-05",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8605,7 +8605,7 @@
         "comp_date": "1993-07-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8632,7 +8632,7 @@
         "comp_date": "1994-03-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8659,7 +8659,7 @@
         "comp_date": "1994-04-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8686,7 +8686,7 @@
         "comp_date": "1993-11-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8713,7 +8713,7 @@
         "comp_date": "1993-12-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8740,7 +8740,7 @@
         "comp_date": "1998-09-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8767,7 +8767,7 @@
         "comp_date": "2000-06-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8794,7 +8794,7 @@
         "comp_date": "2000-11-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8821,7 +8821,7 @@
         "comp_date": "2000-04-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8848,7 +8848,7 @@
         "comp_date": "2000-08-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8875,7 +8875,7 @@
         "comp_date": "2000-12-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8902,7 +8902,7 @@
         "comp_date": "2007-02-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8929,7 +8929,7 @@
         "comp_date": "1998-12-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8956,7 +8956,7 @@
         "comp_date": "2003-07-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -8983,7 +8983,7 @@
         "comp_date": "1999-05-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9010,7 +9010,7 @@
         "comp_date": "1999-02-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9037,7 +9037,7 @@
         "comp_date": "1997-12-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9064,7 +9064,7 @@
         "comp_date": "2001-07-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9091,7 +9091,7 @@
         "comp_date": "1999-04-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9118,7 +9118,7 @@
         "comp_date": "1998-05-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9145,7 +9145,7 @@
         "comp_date": "2004-01-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9172,7 +9172,7 @@
         "comp_date": "1998-10-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9199,7 +9199,7 @@
         "comp_date": "2002-03-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9226,7 +9226,7 @@
         "comp_date": "2002-11-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9253,7 +9253,7 @@
         "comp_date": "2004-06-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9280,7 +9280,7 @@
         "comp_date": "2003-05-15",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9307,7 +9307,7 @@
         "comp_date": "2003-01-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9334,7 +9334,7 @@
         "comp_date": "2007-05-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9361,7 +9361,7 @@
         "comp_date": "1998-07-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9388,7 +9388,7 @@
         "comp_date": "2003-03-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9415,7 +9415,7 @@
         "comp_date": "2004-06-05",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9442,7 +9442,7 @@
         "comp_date": "2002-06-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9469,7 +9469,7 @@
         "comp_date": "2008-05-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9496,7 +9496,7 @@
         "comp_date": "2008-06-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9523,7 +9523,7 @@
         "comp_date": "2012-06-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9550,7 +9550,7 @@
         "comp_date": "2011-10-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9577,7 +9577,7 @@
         "comp_date": "2016-05-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9604,7 +9604,7 @@
         "comp_date": "1997-04-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9631,7 +9631,7 @@
         "comp_date": "2012-02-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9658,7 +9658,7 @@
         "comp_date": "2007-06-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9685,7 +9685,7 @@
         "comp_date": "1998-09-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9712,7 +9712,7 @@
         "comp_date": "1998-03-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9739,7 +9739,7 @@
         "comp_date": "1998-06-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9766,7 +9766,7 @@
         "comp_date": "1997-12-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9793,7 +9793,7 @@
         "comp_date": "2006-12-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "dan",
         "field_name": "Dan"
@@ -9955,7 +9955,7 @@
         "comp_date": "1981-02-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -9982,7 +9982,7 @@
         "comp_date": "1981-12-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10009,7 +10009,7 @@
         "comp_date": "1981-12-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10036,7 +10036,7 @@
         "comp_date": "2013-01-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10063,7 +10063,7 @@
         "comp_date": "1982-01-31",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10090,7 +10090,7 @@
         "comp_date": "2013-05-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10117,7 +10117,7 @@
         "comp_date": "1991-01-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10144,7 +10144,7 @@
         "comp_date": "1982-09-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10171,7 +10171,7 @@
         "comp_date": "1982-01-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10198,7 +10198,7 @@
         "comp_date": "1982-01-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10252,7 +10252,7 @@
         "comp_date": "1982-04-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10279,7 +10279,7 @@
         "comp_date": "1982-04-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10333,7 +10333,7 @@
         "comp_date": "1989-03-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10360,7 +10360,7 @@
         "comp_date": "1989-03-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10387,7 +10387,7 @@
         "comp_date": "1989-03-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10414,7 +10414,7 @@
         "comp_date": "1989-03-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10441,7 +10441,7 @@
         "comp_date": "1989-03-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10468,7 +10468,7 @@
         "comp_date": "1989-03-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10495,7 +10495,7 @@
         "comp_date": "1988-08-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10549,7 +10549,7 @@
         "comp_date": "1988-10-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10576,7 +10576,7 @@
         "comp_date": "1990-12-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10603,7 +10603,7 @@
         "comp_date": "1990-08-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10630,7 +10630,7 @@
         "comp_date": "1990-12-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10657,7 +10657,7 @@
         "comp_date": "1992-08-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10684,7 +10684,7 @@
         "comp_date": "1992-05-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10711,7 +10711,7 @@
         "comp_date": "1992-10-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10738,7 +10738,7 @@
         "comp_date": "1992-12-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10765,7 +10765,7 @@
         "comp_date": "1993-05-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10792,7 +10792,7 @@
         "comp_date": "1993-07-31",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10846,7 +10846,7 @@
         "comp_date": "1981-02-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10873,7 +10873,7 @@
         "comp_date": "2009-07-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10900,7 +10900,7 @@
         "comp_date": "1994-02-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10927,7 +10927,7 @@
         "comp_date": "1994-09-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10954,7 +10954,7 @@
         "comp_date": "1993-11-06",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -10981,7 +10981,7 @@
         "comp_date": "1994-07-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11008,7 +11008,7 @@
         "comp_date": "1994-11-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11035,7 +11035,7 @@
         "comp_date": "1995-04-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11062,7 +11062,7 @@
         "comp_date": "1995-06-15",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11089,7 +11089,7 @@
         "comp_date": "1995-07-25",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11116,7 +11116,7 @@
         "comp_date": "1995-03-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11143,7 +11143,7 @@
         "comp_date": "1990-07-06",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11170,7 +11170,7 @@
         "comp_date": "1995-09-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11197,7 +11197,7 @@
         "comp_date": "2001-10-25",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11224,7 +11224,7 @@
         "comp_date": "1993-06-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11251,7 +11251,7 @@
         "comp_date": "2004-06-15",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11278,7 +11278,7 @@
         "comp_date": "2001-08-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11305,7 +11305,7 @@
         "comp_date": "2003-01-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11332,7 +11332,7 @@
         "comp_date": "2002-10-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11359,7 +11359,7 @@
         "comp_date": "2002-12-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11386,7 +11386,7 @@
         "comp_date": "2005-10-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11413,7 +11413,7 @@
         "comp_date": "2006-03-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11440,7 +11440,7 @@
         "comp_date": "1980-11-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11467,7 +11467,7 @@
         "comp_date": "2006-05-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11494,7 +11494,7 @@
         "comp_date": "2006-06-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11521,7 +11521,7 @@
         "comp_date": "1981-02-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11548,7 +11548,7 @@
         "comp_date": "1980-12-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11575,7 +11575,7 @@
         "comp_date": "2006-08-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "gorm",
         "field_name": "Gorm"
@@ -11602,7 +11602,7 @@
         "comp_date": "2003-07-31",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11629,7 +11629,7 @@
         "comp_date": "2009-08-15",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11656,7 +11656,7 @@
         "comp_date": "2003-11-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11683,7 +11683,7 @@
         "comp_date": "2003-10-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11710,7 +11710,7 @@
         "comp_date": "2004-12-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11737,7 +11737,7 @@
         "comp_date": "2004-01-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11764,7 +11764,7 @@
         "comp_date": "2004-11-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11791,7 +11791,7 @@
         "comp_date": "2005-05-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11818,7 +11818,7 @@
         "comp_date": "2007-08-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11845,7 +11845,7 @@
         "comp_date": "2009-07-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11899,7 +11899,7 @@
         "comp_date": "2009-09-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11926,7 +11926,7 @@
         "comp_date": "2009-12-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11953,7 +11953,7 @@
         "comp_date": "2009-12-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -11980,7 +11980,7 @@
         "comp_date": "2011-03-31",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -12007,7 +12007,7 @@
         "comp_date": "2016-02-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "nini",
         "field_name": "Nini"
@@ -12679,7 +12679,7 @@
         "comp_date": "2015-12-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "ravn",
         "field_name": "Ravn"
@@ -12706,7 +12706,7 @@
         "comp_date": "2016-08-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "ravn",
         "field_name": "Ravn"
@@ -12814,7 +12814,7 @@
         "comp_date": "1993-07-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "regnar",
         "field_name": "Regnar"
@@ -12974,7 +12974,7 @@
         "comp_date": "1999-12-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "roar",
         "field_name": "Roar"
@@ -13028,7 +13028,7 @@
         "comp_date": "1995-12-06",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "roar",
         "field_name": "Roar"
@@ -13055,7 +13055,7 @@
         "comp_date": "2001-05-25",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "roar",
         "field_name": "Roar"
@@ -13082,7 +13082,7 @@
         "comp_date": "1996-02-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "roar",
         "field_name": "Roar"
@@ -13134,7 +13134,7 @@
         "comp_date": "2003-03-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "rolf",
         "field_name": "Rolf"
@@ -13161,7 +13161,7 @@
         "comp_date": "1986-01-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "other",
         "source": "xlsx",
         "field": "rolf",
         "field_name": "Rolf"
@@ -13188,7 +13188,7 @@
         "comp_date": "1991-04-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "rolf",
         "field_name": "Rolf"
@@ -13215,7 +13215,7 @@
         "comp_date": "1998-06-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "rolf",
         "field_name": "Rolf"
@@ -13371,7 +13371,7 @@
         "comp_date": "1999-11-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13398,7 +13398,7 @@
         "comp_date": "2002-01-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13425,7 +13425,7 @@
         "comp_date": "2002-03-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13452,7 +13452,7 @@
         "comp_date": "2002-09-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13479,7 +13479,7 @@
         "comp_date": "2002-12-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13506,7 +13506,7 @@
         "comp_date": "2003-04-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13533,7 +13533,7 @@
         "comp_date": "2004-03-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13560,7 +13560,7 @@
         "comp_date": "2004-08-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13587,7 +13587,7 @@
         "comp_date": "2010-10-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13614,7 +13614,7 @@
         "comp_date": "2007-09-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13641,7 +13641,7 @@
         "comp_date": "2007-09-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13668,7 +13668,7 @@
         "comp_date": "1999-09-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13695,7 +13695,7 @@
         "comp_date": "2010-09-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13722,7 +13722,7 @@
         "comp_date": "2000-02-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13749,7 +13749,7 @@
         "comp_date": "1998-12-31",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13776,7 +13776,7 @@
         "comp_date": "1999-07-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13803,7 +13803,7 @@
         "comp_date": "2000-09-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13830,7 +13830,7 @@
         "comp_date": "2000-12-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13857,7 +13857,7 @@
         "comp_date": "2001-05-25",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13884,7 +13884,7 @@
         "comp_date": "2002-01-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13911,7 +13911,7 @@
         "comp_date": "2015-01-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13938,7 +13938,7 @@
         "comp_date": "2015-04-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13965,7 +13965,7 @@
         "comp_date": "2015-07-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -13992,7 +13992,7 @@
         "comp_date": "2015-10-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -14019,7 +14019,7 @@
         "comp_date": "2013-10-06",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -14046,7 +14046,7 @@
         "comp_date": "2016-05-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -14073,7 +14073,7 @@
         "comp_date": "2014-08-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -14100,7 +14100,7 @@
         "comp_date": "2013-07-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -14127,7 +14127,7 @@
         "comp_date": "2014-01-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -14154,7 +14154,7 @@
         "comp_date": "2014-10-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -14181,7 +14181,7 @@
         "comp_date": "2016-01-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -14283,7 +14283,7 @@
         "comp_date": "1999-03-25",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "siri",
         "field_name": "Siri"
@@ -14310,7 +14310,7 @@
         "comp_date": "1999-05-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "siri",
         "field_name": "Siri"
@@ -14364,7 +14364,7 @@
         "comp_date": "2008-05-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "siri",
         "field_name": "Siri"
@@ -14391,7 +14391,7 @@
         "comp_date": "1999-06-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "siri",
         "field_name": "Siri"
@@ -14418,7 +14418,7 @@
         "comp_date": "2008-06-24",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "siri",
         "field_name": "Siri"
@@ -14445,7 +14445,7 @@
         "comp_date": "1999-07-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "siri",
         "field_name": "Siri"
@@ -14499,7 +14499,7 @@
         "comp_date": "2003-04-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "siri",
         "field_name": "Siri"
@@ -14526,7 +14526,7 @@
         "comp_date": "2001-09-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "siri",
         "field_name": "Siri"
@@ -14553,7 +14553,7 @@
         "comp_date": "1998-10-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "siri",
         "field_name": "Siri"
@@ -14580,7 +14580,7 @@
         "comp_date": "2004-04-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "siri",
         "field_name": "Siri"
@@ -14607,7 +14607,7 @@
         "comp_date": "2004-10-31",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "siri",
         "field_name": "Siri"
@@ -14950,7 +14950,7 @@
         "comp_date": "1991-07-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -14977,7 +14977,7 @@
         "comp_date": "1991-09-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15004,7 +15004,7 @@
         "comp_date": "1992-12-06",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15031,7 +15031,7 @@
         "comp_date": "1993-02-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15058,7 +15058,7 @@
         "comp_date": "1993-04-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15085,7 +15085,7 @@
         "comp_date": "1993-05-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15112,7 +15112,7 @@
         "comp_date": "1993-07-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15139,7 +15139,7 @@
         "comp_date": "1995-04-20",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15166,7 +15166,7 @@
         "comp_date": "1995-02-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15193,7 +15193,7 @@
         "comp_date": "1995-05-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15220,7 +15220,7 @@
         "comp_date": "1982-07-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15247,7 +15247,7 @@
         "comp_date": "1995-06-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15274,7 +15274,7 @@
         "comp_date": "1995-07-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15301,7 +15301,7 @@
         "comp_date": "1996-09-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15328,7 +15328,7 @@
         "comp_date": "1999-07-06",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15355,7 +15355,7 @@
         "comp_date": "1999-08-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15382,7 +15382,7 @@
         "comp_date": "1999-09-05",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15409,7 +15409,7 @@
         "comp_date": "1999-10-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15436,7 +15436,7 @@
         "comp_date": "2000-03-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15463,7 +15463,7 @@
         "comp_date": "2000-05-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15490,7 +15490,7 @@
         "comp_date": "2000-08-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15517,7 +15517,7 @@
         "comp_date": "1982-10-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "other",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15544,7 +15544,7 @@
         "comp_date": "2001-01-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15571,7 +15571,7 @@
         "comp_date": "2001-12-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15598,7 +15598,7 @@
         "comp_date": "2003-08-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15625,7 +15625,7 @@
         "comp_date": "1985-08-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "other",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15652,7 +15652,7 @@
         "comp_date": "1988-01-25",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15679,7 +15679,7 @@
         "comp_date": "1988-10-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15706,7 +15706,7 @@
         "comp_date": "1989-01-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15733,7 +15733,7 @@
         "comp_date": "1990-05-05",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15760,7 +15760,7 @@
         "comp_date": "1991-02-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "skjold",
         "field_name": "Skjold"
@@ -15837,7 +15837,7 @@
         "comp_date": "2024-03-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -15864,7 +15864,7 @@
         "comp_date": "2024-08-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "injection",
         "source": "xlsx",
         "field": "syd_arne",
         "field_name": "South Arne"
@@ -16070,7 +16070,7 @@
         "comp_date": "1996-05-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "svend",
         "field_name": "Svend"
@@ -16097,7 +16097,7 @@
         "comp_date": "2002-05-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "svend",
         "field_name": "Svend"
@@ -16124,7 +16124,7 @@
         "comp_date": "1999-06-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "svend",
         "field_name": "Svend"
@@ -16151,7 +16151,7 @@
         "comp_date": "1996-07-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "svend",
         "field_name": "Svend"
@@ -16178,7 +16178,7 @@
         "comp_date": "2002-05-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "svend",
         "field_name": "Svend"
@@ -16284,7 +16284,7 @@
         "comp_date": "1989-03-20",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16311,7 +16311,7 @@
         "comp_date": "1983-01-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16338,7 +16338,7 @@
         "comp_date": "2014-02-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16365,7 +16365,7 @@
         "comp_date": "1983-04-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16392,7 +16392,7 @@
         "comp_date": "1998-09-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16419,7 +16419,7 @@
         "comp_date": "2001-03-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16446,7 +16446,7 @@
         "comp_date": "2004-12-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16473,7 +16473,7 @@
         "comp_date": "2006-05-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16500,7 +16500,7 @@
         "comp_date": "1997-04-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16527,7 +16527,7 @@
         "comp_date": "1997-01-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16554,7 +16554,7 @@
         "comp_date": "1999-02-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16581,7 +16581,7 @@
         "comp_date": "2001-05-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16608,7 +16608,7 @@
         "comp_date": "1983-04-20",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16635,7 +16635,7 @@
         "comp_date": "2006-07-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16662,7 +16662,7 @@
         "comp_date": "2006-10-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16689,7 +16689,7 @@
         "comp_date": "2007-02-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16716,7 +16716,7 @@
         "comp_date": "2010-10-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16743,7 +16743,7 @@
         "comp_date": "2005-10-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16770,7 +16770,7 @@
         "comp_date": "1991-07-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16797,7 +16797,7 @@
         "comp_date": "1983-04-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16824,7 +16824,7 @@
         "comp_date": "1983-04-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16851,7 +16851,7 @@
         "comp_date": "1991-05-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16878,7 +16878,7 @@
         "comp_date": "1983-04-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16905,7 +16905,7 @@
         "comp_date": "1982-07-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16932,7 +16932,7 @@
         "comp_date": "1983-04-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16959,7 +16959,7 @@
         "comp_date": "1983-12-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -16986,7 +16986,7 @@
         "comp_date": "1983-12-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17013,7 +17013,7 @@
         "comp_date": "1983-12-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17040,7 +17040,7 @@
         "comp_date": "1984-01-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17067,7 +17067,7 @@
         "comp_date": "1983-12-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17094,7 +17094,7 @@
         "comp_date": "1993-12-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17121,7 +17121,7 @@
         "comp_date": "1983-12-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17148,7 +17148,7 @@
         "comp_date": "1994-04-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17175,7 +17175,7 @@
         "comp_date": "1984-01-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17202,7 +17202,7 @@
         "comp_date": "1983-12-15",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17229,7 +17229,7 @@
         "comp_date": "1983-12-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17256,7 +17256,7 @@
         "comp_date": "1994-02-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17358,7 +17358,7 @@
         "comp_date": "2016-09-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17385,7 +17385,7 @@
         "comp_date": "2015-11-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17412,7 +17412,7 @@
         "comp_date": "2016-06-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17439,7 +17439,7 @@
         "comp_date": "2017-03-21",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17466,7 +17466,7 @@
         "comp_date": "2017-01-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17493,7 +17493,7 @@
         "comp_date": "2016-09-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17520,7 +17520,7 @@
         "comp_date": "2016-03-31",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17547,7 +17547,7 @@
         "comp_date": "2016-02-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17574,7 +17574,7 @@
         "comp_date": "2015-04-05",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17601,7 +17601,7 @@
         "comp_date": "2002-04-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17628,7 +17628,7 @@
         "comp_date": "2004-03-19",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17655,7 +17655,7 @@
         "comp_date": "2009-02-22",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17681,7 +17681,7 @@
         "comp_date": "2009-02-22",
         "location": "OFFSHORE",
         "released": true,
-        "category": "development",
+        "category": "production",
         "source": "shapefile",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17708,7 +17708,7 @@
         "comp_date": "2008-09-20",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17735,7 +17735,7 @@
         "comp_date": "2008-11-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17762,7 +17762,7 @@
         "comp_date": "2002-03-06",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17789,7 +17789,7 @@
         "comp_date": "2003-12-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra_se",
         "field_name": "Tyra Southeast"
@@ -17816,7 +17816,7 @@
         "comp_date": "1983-06-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17843,7 +17843,7 @@
         "comp_date": "1992-03-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17870,7 +17870,7 @@
         "comp_date": "1991-12-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17897,7 +17897,7 @@
         "comp_date": "1983-06-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17924,7 +17924,7 @@
         "comp_date": "1983-06-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17951,7 +17951,7 @@
         "comp_date": "1983-06-28",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -17978,7 +17978,7 @@
         "comp_date": "2006-11-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18005,7 +18005,7 @@
         "comp_date": "1983-06-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18032,7 +18032,7 @@
         "comp_date": "1983-06-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18059,7 +18059,7 @@
         "comp_date": "1983-06-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18086,7 +18086,7 @@
         "comp_date": "1983-06-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18113,7 +18113,7 @@
         "comp_date": "1983-06-26",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18140,7 +18140,7 @@
         "comp_date": "1988-12-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18167,7 +18167,7 @@
         "comp_date": "1984-07-07",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18194,7 +18194,7 @@
         "comp_date": "1990-08-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18221,7 +18221,7 @@
         "comp_date": "1984-07-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18248,7 +18248,7 @@
         "comp_date": "1990-06-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18275,7 +18275,7 @@
         "comp_date": "1994-01-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18302,7 +18302,7 @@
         "comp_date": "2000-05-29",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18329,7 +18329,7 @@
         "comp_date": "2000-04-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18356,7 +18356,7 @@
         "comp_date": "1995-11-15",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18383,7 +18383,7 @@
         "comp_date": "1994-04-20",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18410,7 +18410,7 @@
         "comp_date": "1995-10-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18437,7 +18437,7 @@
         "comp_date": "2012-11-25",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18464,7 +18464,7 @@
         "comp_date": "1984-07-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18491,7 +18491,7 @@
         "comp_date": "1992-07-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18518,7 +18518,7 @@
         "comp_date": "1993-11-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18545,7 +18545,7 @@
         "comp_date": "1995-04-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18572,7 +18572,7 @@
         "comp_date": "1994-03-13",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18599,7 +18599,7 @@
         "comp_date": "1992-09-11",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18626,7 +18626,7 @@
         "comp_date": "1992-01-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18653,7 +18653,7 @@
         "comp_date": "1984-07-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18680,7 +18680,7 @@
         "comp_date": "1984-07-06",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18707,7 +18707,7 @@
         "comp_date": "1984-07-06",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18734,7 +18734,7 @@
         "comp_date": "1984-07-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18761,7 +18761,7 @@
         "comp_date": "1984-07-18",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18788,7 +18788,7 @@
         "comp_date": "1984-07-17",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "tyra",
         "field_name": "Tyra"
@@ -18892,7 +18892,7 @@
         "comp_date": "2008-02-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -18919,7 +18919,7 @@
         "comp_date": "2010-07-27",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -18946,7 +18946,7 @@
         "comp_date": "2006-08-20",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -18973,7 +18973,7 @@
         "comp_date": "2006-05-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19000,7 +19000,7 @@
         "comp_date": "2010-05-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19027,7 +19027,7 @@
         "comp_date": "2006-12-31",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19054,7 +19054,7 @@
         "comp_date": "2007-09-20",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19081,7 +19081,7 @@
         "comp_date": "2008-07-12",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19183,7 +19183,7 @@
         "comp_date": "1989-10-30",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19210,7 +19210,7 @@
         "comp_date": "1991-01-14",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19237,7 +19237,7 @@
         "comp_date": "1994-03-08",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19264,7 +19264,7 @@
         "comp_date": "1996-10-10",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19291,7 +19291,7 @@
         "comp_date": "2001-05-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19318,7 +19318,7 @@
         "comp_date": "2001-09-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19345,7 +19345,7 @@
         "comp_date": "2003-06-09",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19372,7 +19372,7 @@
         "comp_date": "2003-09-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19424,7 +19424,7 @@
         "comp_date": "2007-10-25",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19451,7 +19451,7 @@
         "comp_date": "2018-09-20",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19478,7 +19478,7 @@
         "comp_date": "2007-08-03",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19505,7 +19505,7 @@
         "comp_date": "2007-08-23",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19532,7 +19532,7 @@
         "comp_date": "2008-09-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19559,7 +19559,7 @@
         "comp_date": "2008-08-02",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19586,7 +19586,7 @@
         "comp_date": "2011-08-16",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19613,7 +19613,7 @@
         "comp_date": "2008-10-04",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19640,7 +19640,7 @@
         "comp_date": "2008-12-01",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"
@@ -19667,7 +19667,7 @@
         "comp_date": "2012-01-31",
         "location": "OFFSHORE",
         "released": false,
-        "category": "development",
+        "category": "production",
         "source": "xlsx",
         "field": "valdemar",
         "field_name": "Valdemar"

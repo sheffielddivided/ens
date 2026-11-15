@@ -271,7 +271,7 @@ stolpediagram med Chart.js der foreløpige tall er markert i verktøytips og i
 teksten under grafen (ikke en egen visuell stil på selve stolpene), og «sist
 oppdatert» hentet fra dataene. Ren HTML/CSS/JS, ingen byggesteg, norsk UI.
 Visningen **Brønner** viser antall **offshorebrønner** påbegynt per år,
-stablet etter kategori (lete/avgrensning, produksjon/injeksjon/lager), med
+stablet etter kategori (lete/avgrensning, produksjon, injeksjon, andre), med
 samme farger som brønnlaget i kartet, enten **per år** eller **per felt**
 (bryter i visningen). Landbrønner er ikke med (de filtreres
 bort allerede i `build_gis.py`). Den leser `data/gis/wells.geojson` (se
@@ -281,7 +281,8 @@ Ved siden av produksjonsgrafen ligger et Leaflet-kart over feltene (bygget av
 `map.js`), der felt med produksjon og felt uten skilles med hver sin faste
 farge (ikke gradert etter produksjonsvolum), med en alltid synlig
 blokkrutenett-bakgrunn og av/på-knapper i kartpanelets hode for feltnavn,
-letebrønner (på som standard) og produksjonsbrønner (av som standard) – kun
+letebrønner (på som standard), produksjonsbrønner og injeksjonsbrønner (av
+som standard) – kun
 offshorebrønner.
 Kartet deler tema (lyst/mørkt) og databehov med resten av siden.
 
@@ -365,11 +366,13 @@ lete-/avgrensningsbrønner som ikke ble felt.
   `well_type`, `licence`, `operator`, `rig`, `spud_date`, `comp_date`,
   `location`, `released` (bool), `category` og `source`, pluss `field` /
   `field_name` for brønner i et felt (se *Brønn → felt*).
-- `category` grupperer ENS sin klassifisering: `development` (produksjon,
-  injeksjon, gasslager, observasjon – **også blandingsklasser** som
-  «APPRAISAL AND PRODUCTION» og «EXPLORATION AND INJECTION»), `exploration`
-  (bare EXPLORATION/APPRAISAL) og `other` (geotermi, saltforskning –
-  i praksis bare landbrønner, så kategorien er tom etter offshore-filteret).
+- `category` grupperer ENS sin klassifisering i fire: `production`
+  (produksjon), `injection` (injeksjon), `exploration` (bare
+  EXPLORATION/APPRAISAL) og `other` (observasjon, gasslager, geotermi,
+  saltforskning – til havs i praksis 4 observasjonsbrønner).
+  **Blandingsklasser** følger det brønnen ble: «APPRAISAL AND PRODUCTION» →
+  `production`, «EXPLORATION AND INJECTION» → `injection`. Per 2026-11-15:
+  435 / 86 / 219 / 4.
 - Uventet format (manglende kolonne, uparsbar koordinat/dato, posisjon
   utenfor Danmark, dublett-navn) gir `SourceFormatError` – ingen brønn
   gjettes. Eneste toleranse: `60,00` sekunder (forekommer, = neste minutt).

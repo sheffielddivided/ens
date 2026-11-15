@@ -10,10 +10,10 @@
  *
  * The field-name-label toggle lives in the "Kart" panel head (outside the
  * map itself, see index.html's #show-labels checkbox) rather than as an
- * overlaid Leaflet control. So do the two well toggles: exploration/appraisal
- * wells (#show-exp-wells, on by default) and production/injection/storage
- * wells (#show-dev-wells, off by default -- ~500 points packed around the
- * platforms would bury the field outlines on the overview map). Only offshore
+ * overlaid Leaflet control. So do the three well toggles: exploration/appraisal
+ * wells (#show-exp-wells, on by default), production wells (#show-prod-wells)
+ * and injection wells (#show-inj-wells), both off by default -- ~500 points
+ * packed around the platforms would bury the field outlines on the overview map. Only offshore
  * wells are drawn: the data file is offshore-only already (build_gis.py), the
  * check in buildWells() just guards against an older wells.geojson.
  *
@@ -57,7 +57,7 @@ const OSM_TILE_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 const TILE_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 let map = null, tileLayer = null, fieldLayer = null, labelsLayer = null, fieldsGeoData = null;
-let wellGroups = null;   // { exploration: L.LayerGroup, development: L.LayerGroup } or null
+let wellGroups = null;   // { exploration, production, injection: L.LayerGroup } or null
 let PROD = {}, OWN = null;
 let highlightSet = null;   // Set of slugs to emphasise, or null for the default choropleth
 const restylers = [];   // [() => void] re-applied on theme change
@@ -257,13 +257,14 @@ function renderLegend() {
 // --------------------------------------------------------------------------- //
 // Wells (scripts/build_gis.py: ENS "All oil and gas wells" + legacy shapefile)
 // --------------------------------------------------------------------------- //
-// category -> [toggle group, colour token, legend label]. "other" (geothermal,
-// salt research) rides along with the exploration toggle but keeps its own,
-// neutral colour.
+// category -> [toggle group, colour token, legend label]. "other" (a handful
+// of observation wells) rides along with the exploration toggle but keeps its
+// own, neutral colour. Colours match WELL_CATS in docs/app.js.
 const WELL_CATS = {
   exploration: ["exploration", "--c7", "Lete-/avgrensningsbrønn"],
-  other:       ["exploration", "--c-other", "Annen brønn (geotermi o.l.)"],
-  development: ["development", "--c3", "Produksjons-/injeksjonsbrønn"],
+  production:  ["production", "--c3", "Produksjonsbrønn"],
+  injection:   ["injection", "--c1", "Injeksjonsbrønn"],
+  other:       ["exploration", "--c-other", "Annen brønn (observasjon o.l.)"],
 };
 const wellCat = (p) => WELL_CATS[p.category] || WELL_CATS.other;
 const isoToNb = (d) => (d ? d.split("-").reverse().join(".") : null);
@@ -301,7 +302,7 @@ function wellLegend() {
 
 const wellCounts = {};
 function buildWells(data) {
-  wellGroups = { exploration: L.layerGroup(), development: L.layerGroup() };
+  wellGroups = { exploration: L.layerGroup(), production: L.layerGroup(), injection: L.layerGroup() };
   const markers = [];
   (data.features || []).forEach((f) => {
     if (!f.geometry || f.geometry.type !== "Point") return;
@@ -317,7 +318,8 @@ function buildWells(data) {
   });
   restylers.push(() => markers.forEach((m) => m.setStyle(wellStyle(m.feature))));
 
-  [["exploration", "show-exp-wells", true], ["development", "show-dev-wells", false]]
+  [["exploration", "show-exp-wells", true], ["production", "show-prod-wells", false],
+   ["injection", "show-inj-wells", false]]
     .forEach(([group, id, dflt]) => {
       const box = $(id);
       const on = box ? box.checked : dflt;
