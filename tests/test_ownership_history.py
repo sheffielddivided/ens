@@ -187,3 +187,24 @@ def test_build_is_deterministic(tmp_path):
     for k in ("generated_at", "as_of"):
         a.pop(k), b.pop(k)
     assert a == b
+
+
+# --------------------------------------------------------------------------- #
+# ingest_ownership.py: fields on relinquished licences use the history
+# --------------------------------------------------------------------------- #
+def test_relinquished_field_takes_last_owners_from_history(history):
+    import ingest_ownership as O
+
+    shares = O.relinquished_shares(history)
+    assert shares == {"ravn": {"Wintershall": 0.6364, "Nordsøfonden": 0.3636}}
+    assert C.read_json(C.DATA_DIR / "ownership.json")["fields"]["ravn"] == shares["ravn"]
+
+
+def test_relinquished_without_shares_is_an_error():
+    import ingest_ownership as O
+
+    hist = {"licences": {"x": {"relinquished": "2020-01-01",
+                               "periods": [{"groups": None}]}},
+            "fields": {"f": [{"licence": "x"}]}}
+    with pytest.raises(C.SourceFormatError, match="relinquished"):
+        O.relinquished_shares(hist)
