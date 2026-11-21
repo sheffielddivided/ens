@@ -225,7 +225,9 @@ python scripts/parse_monthly_pdf.py  --dump --file rapport.pdf   # rå tabeller
 ```
 
 Nyttige flagg: `--offline` (kun hurtiglager, aldri nett), `--no-crawl` (bruk
-eksisterende indeks), `--refresh-yearly`, `--force` (hent alle måneder på nytt
+eksisterende indeks), `--refresh-yearly` (last ned årsfilen på nytt forbi
+hurtiglageret og les den inn – brukes når ENS publiserer endelige tall for et
+nytt år; månedene røres ikke), `--force` (hent alle måneder på nytt
 for å fange revisjoner). Alle skript høflig mot kilden: ≤ 1 forespørsel/sekund,
 beskrivende User-Agent, og alt som lastes ned caches i `data/sources/raw/`.
 

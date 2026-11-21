@@ -278,6 +278,17 @@ def _copy_to_docs(paths: list[Path]) -> None:
             C.write_json_stable(C.DOCS_DATA_DIR / p.name, data)
 
 
+def yearly_force(*, refresh_yearly: bool, force: bool, offline: bool) -> bool:
+    """Whether the yearly Excel must bypass the on-disk cache.
+
+    ENS republishes the yearly file under the same URL when a year becomes
+    final, and the cached copy is committed, so ``--refresh-yearly`` alone would
+    just re-parse the old download. An explicit refresh therefore always
+    re-downloads -- except offline, where only the cache is available.
+    """
+    return force or (refresh_yearly and not offline)
+
+
 def run(*, offline: bool, crawl: bool, refresh_yearly: bool, force: bool) -> int:
     fetcher = C.Fetcher(offline=offline)
 
@@ -301,7 +312,9 @@ def run(*, offline: bool, crawl: bool, refresh_yearly: bool, force: bool) -> int
     yearly_failed = False
     if refresh_yearly or not C.YEARLY_PATH.exists():
         C.info("ingesting yearly Excel ...")
-        rc = ingest_yearly.ingest(source_url=None, offline=offline, force=force,
+        rc = ingest_yearly.ingest(source_url=None, offline=offline,
+                                  force=yearly_force(refresh_yearly=refresh_yearly,
+                                                     force=force, offline=offline),
                                   xlsx_path=None, do_inspect=False)
         if rc != 0:
             C.error("yearly ingestion failed -- continuing with monthly data")
@@ -352,7 +365,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--no-crawl", action="store_true",
                    help="Skip re-crawling the landing page (use existing index).")
     p.add_argument("--refresh-yearly", action="store_true",
-                   help="Re-download and re-parse the yearly Excel.")
+                   help="Re-download (bypassing the cache) and re-parse the yearly "
+                        "Excel, without re-fetching monthly reports.")
     p.add_argument("--force", action="store_true",
                    help="Re-fetch and re-parse every month (revision sweep).")
     args = p.parse_args(argv)

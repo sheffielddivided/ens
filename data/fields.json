@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-21T21:42:23Z",
+  "generated_at": "2026-11-21T12:39:59Z",
   "fields": {
     "cecilie": {
       "slug": "cecilie",
@@ -9,7 +9,7 @@
         "Cecilie"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "INEOS"
     },
     "dagmar": {
@@ -19,7 +19,7 @@
         "Dagmar"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": null
     },
     "dan": {
@@ -29,7 +29,7 @@
         "Dan"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "TotalEnergies"
     },
     "gorm": {
@@ -39,7 +39,7 @@
         "Gorm"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "TotalEnergies"
     },
     "halfdan": {
@@ -49,7 +49,7 @@
         "Halfdan"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "TotalEnergies"
     },
     "harald": {
@@ -59,7 +59,7 @@
         "Harald"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "TotalEnergies"
     },
     "kraka": {
@@ -69,7 +69,7 @@
         "Kraka"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": null
     },
     "lulita": {
@@ -79,7 +79,7 @@
         "Lulita"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": null
     },
     "nini": {
@@ -89,7 +89,7 @@
         "Nini"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "INEOS"
     },
     "ravn": {
@@ -99,7 +99,7 @@
         "Ravn"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": null
     },
     "regnar": {
@@ -109,7 +109,7 @@
         "Regnar"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": null
     },
     "roar": {
@@ -119,7 +119,7 @@
         "Roar"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "TotalEnergies"
     },
     "rolf": {
@@ -129,7 +129,7 @@
         "Rolf"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": null
     },
     "siri": {
@@ -139,7 +139,7 @@
         "Siri"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "INEOS"
     },
     "skjold": {
@@ -149,7 +149,7 @@
         "Skjold"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "TotalEnergies"
     },
     "solsort": {
@@ -159,7 +159,7 @@
         "Solsort"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": null
     },
     "svend": {
@@ -169,7 +169,7 @@
         "Svend"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "TotalEnergies"
     },
     "syd_arne": {
@@ -179,7 +179,7 @@
         "Syd Arne"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "Hess"
     },
     "tyra": {
@@ -189,7 +189,7 @@
         "Tyra"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "TotalEnergies"
     },
     "tyra_se": {
@@ -199,7 +199,7 @@
         "Tyra Se"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": null
     },
     "valdemar": {
@@ -209,7 +209,7 @@
         "Valdemar"
       ],
       "first_year": 1972,
-      "last_year": 2024,
+      "last_year": 2025,
       "operator": "TotalEnergies"
     }
   }
