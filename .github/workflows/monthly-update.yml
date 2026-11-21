@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       refresh_yearly:
-        description: "Re-download and re-parse the yearly Excel"
+        description: "Re-download (bypass cache) and re-parse the yearly Excel, e.g. when ENS publishes final figures"
         type: boolean
         default: false
       force:
